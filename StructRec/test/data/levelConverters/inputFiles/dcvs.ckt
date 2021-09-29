@@ -1,0 +1,27 @@
+** Generated for: hspiceD
+** Generated on: May 18 14:54:03 2021
+** Design library name: levelConverters
+** Design cell name: dcvs
+** Design view name: schematic
+.GLOBAL vdd! vssd! vdda! vddd! vssa!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: levelConverters
+** Cell name: dcvs
+** View name: schematic
+m0 net010 vinv vssd! vssd! nmos
+m6 out net010 vssd! vssd! nmos
+m1 net3 vin vssd! vssd! nmos
+m5 vinv vin vssa! vssa! nmos
+m3 net3 net010 vddd! vdd! pmos
+m2 net010 net3 vddd! vdd! pmos
+m4 vinv vin vdda! vdd! pmos
+m7 out net010 vddd! vdd! pmos
+.END

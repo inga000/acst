@@ -1,0 +1,66 @@
+** Generated for: hspiceD
+** Generated on: May 18 17:37:38 2021
+** Design library name: levelConverters
+** Design cell name: allConverters
+** Design view name: schematic
+.GLOBAL vssd! vdda! vddd! vdd! vcc! vss! vcca! vssa! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: levelConverters
+** Cell name: allConverters
+** View name: schematic
+m47 out net059 vssd! gnd! nmos
+m46 outpg2 vypg2 gnd! gnd! nmos
+m45 vypg2 inpg2 gnd! gnd! nmos
+m44 inpg2 vdd! vxpg2 gnd! nmos
+m38 net046 net033 in5 gnd! nmos
+m37 vdd! in5 net030 gnd! nmos
+m34 in5 vdd! net030 gnd! nmos
+m32 net046 net064 gnd! gnd! nmos
+m30 net064 in5 gnd! gnd! nmos
+m29 out5 net046 vss! gnd! nmos
+m28 out5 in5 vss! gnd! nmos
+m26 out4 in4 gnd! gnd! nmos
+m24 net013 out4 gnd! gnd! nmos
+m22 net013 net010 in4 gnd! nmos
+m14 in3 vdd! vx2 gnd! nmos
+m13 out3 vy2 gnd! gnd! nmos
+m12 vy2 in3 gnd! gnd! nmos
+m8 inpg1 vdd! vxpg1 gnd! nmos
+m7 outpg1 vypg1 gnd! gnd! nmos
+m6 vypg1 inpg1 gnd! gnd! nmos
+m1 net5 vin vssd! gnd! nmos
+m0 net059 vinv vssd! gnd! nmos
+m5 vinv vin vssa! gnd! nmos
+m48 out net059 vddd! vdd! pmos
+m43 vypg2 vxpg2 vcca! vdd! pmos
+m42 outpg2 vypg2 vcca! vdd! pmos
+m41 vxpg2 vypg2 vcca! vdd! pmos
+m40 net046 net064 vcc! vdd! pmos
+m39 net064 net046 vcc! vdd! pmos
+m36 vcc! net033 vcc! vcc! pmos
+m35 net067 net046 vcc! vdd! pmos
+m33 net033 net064 net030 vdd! pmos
+m31 out5 in5 net067 vdd! pmos
+m27 out4 net013 vcca! vdd! pmos
+m25 net013 out4 vcca! vdd! pmos
+m23 vcca! net010 vcca! vcca! pmos
+m21 net010 out4 in4 vdd! pmos
+m18 net070 0 vcc! vdd! pmos
+m17 out3 vy2 vcc! vdd! pmos
+m16 vy2 vx2 vcc! vdd! pmos
+m15 vx2 vy2 net070 vdd! pmos
+m11 vxpg1 vypg1 vcca! vdd! pmos
+m10 outpg1 vypg1 vcca! vdd! pmos
+m9 vypg1 vxpg1 vcca! vdd! pmos
+m3 net5 net059 vddd! vdd! pmos
+m2 net059 net5 vddd! vdd! pmos
+m4 vinv vin vdda! vdd! pmos
+.END

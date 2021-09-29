@@ -1,0 +1,12 @@
+GND_1 "gnd!"
+GND_1 "vss!"
+GND_1 "vssb!"
+GND_1 "vssp!"
+GND_1 "vssb"
+GND_1 "vssp"
+VDD_1 "vddLow!"
+VDD_2 "vdd!"
+VDD_2 "vddp!"
+VDD_2 "vdd"
+VDD_2 "vddp"
+VDD_1 "Vdd

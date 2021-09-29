@@ -1,0 +1,32 @@
+** Generated for: hspiceD
+** Generated on: May 18 15:01:07 2021
+** Design library name: levelConverters
+** Design cell name: singleSupplyTVVS
+** Design view name: schematic
+.GLOBAL vdd! vcc! vss! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: levelConverters
+** Cell name: singleSupplyTVVS
+** View name: schematic
+m28 out5 in5 vss! gnd! nmos
+m29 out5 net13 vss! gnd! nmos
+m37 vdd! in5 net3 gnd! nmos
+m30 net20 in5 gnd! gnd! nmos
+m34 in5 vdd! net3 gnd! nmos
+m38 net13 net4 in5 gnd! nmos
+m32 net13 net20 gnd! gnd! nmos
+m36 vcc! net4 vcc! vcc! pmos
+m33 net4 net20 net3 vdd! pmos
+m35 net23 net13 vcc! vdd! pmos
+m39 net20 net13 vcc! vdd! pmos
+m31 out5 in5 net23 vdd! pmos
+m40 net13 net20 vcc! vdd! pmos
+.END

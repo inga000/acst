@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pairLibrary>
+	<pairLibraryItemFiles>
+		<pairLibraryItemFile>Items/singleSupplyLC1.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyLC2.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyLC3.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyLC4.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyLC5.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyLC6.xml</pairLibraryItemFile>
+	</pairLibraryItemFiles>
+	<hierarchyLevels>
+		<hierarchyLevel level="1">
+			<pairLibraryItem persistence="1">singleSupplyLC1</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyLC2</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyLC3</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="2">
+			<pairLibraryItem persistence="1">singleSupplyLC4</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyLC5</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="3">
+			<pairLibraryItem>singleSupplyLC6</pairLibraryItem>
+		</hierarchyLevel>
+	</hierarchyLevels>
+	<dominanceRelations/>
+</pairLibrary>
+

@@ -1,0 +1,57 @@
+** Name: OpAmp15
+
+.MACRO OpAmp15 gnd vdd in1 in2 outSecondStage vbBias vbBiasSecondStage
+mL12 outFirstStage2 outFirstStage2 gnd! gnd! nmos4 L=1e-6 W=29e-6
+mBOBias vbBias vbBias vdd! vdd! pmos4 L=1e-6 W=15e-6
+mL11 outFirstStage1 outFirstStage2 gnd! gnd! nmos4 L=1e-6 W=29e-6
+mT21 outSecondStage outFirstStage1 gnd! gnd! nmos4 L=2e-6 W=422e-6
+mB11 dpSource vbBias vdd! vdd! pmos4 L=1e-6 W=163e-6
+mT11 outFirstStage1 in1 dpSource dpSource pmos4 L=1e-6 W=73e-6
+mT12 outFirstStage2 in2 dpSource dpSource pmos4 L=1e-6 W=73e-6
+mB21 outSecondStage vbBiasSecondStage vdd! vdd! pmos4 L=1e-6 W=596e-6
+cc outFirstStage1 outSecondStage 9.20001e-12
+cl outSecondStage gnd! 20e-12
+.EOM OpAmp15
+
+** Expected Performance Values: 
+** Gain: 93 dB
+** Power consumption: 2.62601 mW
+** Area: 1822 (mu_m)^2
+** Transit frequency: 9.27401 MHz
+** Transit frequency with error factor: 9.25781 MHz
+** Slew rate: 12.0045 V/mu_s
+** Phase margin: 60.1606°
+** CMRR: 98 dB
+** negPSRR: 100 dB
+** posPSRR: 153 dB
+** VoutMax: 4.81001 V
+** VoutMin: 0.150001 V
+** VcmMax: 4.04001 V
+** VcmMin: -0.00999999 V
+
+
+** Expected Currents: 
+** mB11: -1.10732e+08 muA
+** mB21: -4.0438e+08 muA
+** mBOBias: -9.99899e+06 muA
+** mL11: 5.53661e+07 muA
+** mL12: 5.53661e+07 muA
+** mT11: -5.53669e+07 muA
+** mT12: -5.53669e+07 muA
+** mT21: 4.04381e+08 muA
+
+
+** Expected Voltages: 
+** dpSource: 3.26901  V
+** gnd!: 0  V
+** in1: 2.5  V
+** in2: 2.5  V
+** outFirstStage1: 0.555001  V
+** outFirstStage2: 0.555001  V
+** outSecondStage: 2.5  V
+** vbBias: 4.24201  V
+** vbBiasSecondStage: 4.24201  V
+** vdd!: 5  V
+
+
+.END

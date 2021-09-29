@@ -1,0 +1,50 @@
+** Generated for: hspiceD
+** Generated on: Aug 17 10:42:48 2018
+** Design library name: oaLib
+** Design cell name: twoOTAsOnDifferentHL
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: oaLib
+** Cell name: OTA
+** View name: schematic
+.subckt OTA ib in ip out inh_bulk_n inh_bulk_p
+m3 net17 net17 gnd! inh_bulk_n nmos
+m2 net13 net12 gnd! inh_bulk_n nmos
+m1 out net17 gnd! inh_bulk_n nmos
+m0 net12 net12 gnd! inh_bulk_n nmos
+m9 out net13 vdd! inh_bulk_p pmos
+m8 net16 ib vdd! inh_bulk_p pmos
+m7 ib ib vdd! inh_bulk_p pmos
+m6 net13 net13 vdd! inh_bulk_p pmos
+m5 net17 ip net16 inh_bulk_p pmos
+m4 net12 in net16 inh_bulk_p pmos
+.ends OTA
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: OTAcircuit
+** View name: schematic
+.subckt OTAcircuit in out inh_bulk_n inh_bulk_p
+m1 net1 net1 gnd! inh_bulk_n nmos
+m0 net4 net1 gnd! inh_bulk_n nmos
+xi0 out net4 in net1 inh_bulk_n inh_bulk_p OTA
+.ends OTAcircuit
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: twoOTAsOnDifferentHL
+** View name: schematic
+xi4 net09 net010 net5 vdd! gnd! vdd! OTA
+m1 net02 net02 vdd! vdd! nmos
+m0 net5 net02 vdd! vdd! nmos
+xi2 net02 net5 gnd! vdd! OTAcircuit
+.END

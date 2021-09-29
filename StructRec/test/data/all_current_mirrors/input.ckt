@@ -1,0 +1,99 @@
+** Generated for: hspiceD
+** Generated on: Aug 16 15:58:15 2018
+** Design library name: currentMirrors
+** Design cell name: allCurrentMirrors
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: currentMirrors
+** Cell name: allCurrentMirrors
+** View name: schematic
+m51 net18 net18 gnd! gnd! nmos
+m50 net19 net19 gnd! gnd! nmos
+m49 net22 net31 gnd! gnd! nmos
+m48 net62 net75 gnd! gnd! nmos
+m47 net65 net35 gnd! gnd! nmos
+m46 net15 net6 gnd! gnd! nmos
+m45 net111 net18 gnd! gnd! nmos
+m44 net30 net19 gnd! gnd! nmos
+m43 net44 net31 gnd! gnd! nmos
+m42 net34 net75 gnd! gnd! nmos
+m41 net36 net35 gnd! gnd! nmos
+m40 net6 net6 gnd! gnd! nmos
+m12 net42 net42 net30 gnd! nmos
+m11 net31 in2 net44 gnd! nmos
+m10 net75 net46 net34 gnd! nmos
+m9 net35 net35 net36 gnd! nmos
+m8 net11 net11 net6 gnd! nmos
+m7 net3 net3 gnd! gnd! nmos
+m6 net54 net111 net18 gnd! nmos
+m5 net116 net42 net19 gnd! nmos
+m3 net122 net46 net62 gnd! nmos
+m2 net125 net35 net65 gnd! nmos
+m1 net13 net11 net15 gnd! nmos
+m0 net16 net3 gnd! gnd! nmos
+m39 net67 net67 vdd! vdd! pmos
+m38 net69 net69 vdd! vdd! pmos
+m37 net22 net31 vdd! vdd! pmos
+m36 net121 net75 vdd! vdd! pmos
+m35 net124 net35 vdd! vdd! pmos
+m34 net14 net12 vdd! vdd! pmos
+m33 net111 net67 vdd! vdd! pmos
+m32 net100 net69 vdd! vdd! pmos
+m31 net89 net31 vdd! vdd! pmos
+m30 net92 net75 vdd! vdd! pmos
+m29 net95 net35 vdd! vdd! pmos
+m28 net12 net12 vdd! vdd! pmos
+m26 net42 net42 net100 vdd! pmos
+m25 net31 in1 net89 vdd! pmos
+m24 net75 net105 net92 vdd! pmos
+m23 net35 net35 net95 vdd! pmos
+m22 net11 net11 net12 vdd! pmos
+m21 net3 net3 vdd! vdd! pmos
+m20 net54 net111 net67 vdd! pmos
+m19 net116 net42 net69 vdd! pmos
+m17 net122 net105 net121 vdd! pmos
+m16 net125 net35 net124 vdd! pmos
+m15 net13 net11 net14 vdd! pmos
+m14 net16 net3 vdd! vdd! pmos
+q19 net075 net048 net050 gnd! npn
+q17 net077 net040 gnd! gnd! npn
+q16 net037 net037 net077 gnd! npn
+q15 net040 net040 gnd! gnd! npn
+q14 net031 net031 gnd! gnd! npn
+q13 net013 net013 gnd! gnd! npn
+q12 net078 net013 gnd! gnd! npn
+q9 net048 net050 gnd! gnd! npn
+q8 net027 net031 gnd! gnd! npn
+q7 net021 net021 net013 gnd! npn
+q6 net06 net06 gnd! gnd! npn
+q5 net076 net050 gnd! gnd! npn
+q3 net042 net037 net040 gnd! npn
+q2 net073 net027 net031 gnd! npn
+q1 net071 net021 net078 gnd! npn
+q0 net070 net06 gnd! gnd! npn
+q40 net048 net051 vdd! vdd! pnp
+q37 net043 net043 vdd! vdd! pnp
+q36 net037 net042 net043 vdd! pnp
+q35 net027 net032 vdd! vdd! pnp
+q33 net022 net022 vdd! vdd! pnp
+q32 net021 net021 net022 vdd! pnp
+q31 net06 net06 vdd! vdd! pnp
+q30 net075 net048 net051 vdd! pnp
+q29 net076 net051 vdd! vdd! pnp
+q26 net074 net043 vdd! vdd! pnp
+q25 net042 net042 net074 vdd! pnp
+q24 net073 net027 net032 vdd! pnp
+q23 net032 net032 vdd! vdd! pnp
+q22 net072 net022 vdd! vdd! pnp
+q21 net071 net021 net072 vdd! pnp
+q20 net070 net06 vdd! vdd! pnp
+.END

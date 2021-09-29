@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pairLibrary>
+	<pairLibraryItemFiles>
+		<pairLibraryItemFile>Items/passGateLCKeeper1.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/passGateLCKeeper4.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/passGateLCKeeper5.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/passGateLCKeeper6.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/passGateLCKeeper7.xml</pairLibraryItemFile>
+	</pairLibraryItemFiles>
+	<hierarchyLevels>
+		<hierarchyLevel level="1">
+			<pairLibraryItem persistence="1">passGateLCKeeper1</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="2">
+			<pairLibraryItem persistence="1">passGateLCKeeper4</pairLibraryItem>
+			<pairLibraryItem persistence="1">passGateLCKeeper5</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="3">
+			<pairLibraryItem persistence="1">passGateLCKeeper6</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="4">
+			<pairLibraryItem>passGateLCKeeper7</pairLibraryItem>
+		</hierarchyLevel>
+	</hierarchyLevels>
+	<dominanceRelations/>
+</pairLibrary>
+

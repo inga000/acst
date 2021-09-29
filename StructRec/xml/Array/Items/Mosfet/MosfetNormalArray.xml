@@ -1,0 +1,108 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="UTF-8"?>
+<arrayLibraryItem>
+    <structureName>MosfetNormalArray</structureName>
+    <imageFilePath>../../Images/MosfetNormalArray.png</imageFilePath>
+    <arrayConnection>
+        <connection>
+            <structurePinType>
+                <structureName>MosfetNormalArray</structureName>
+                <structurePinName>Drain</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Mosfet</deviceTypeName>
+                <devicePinName>Drain</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>MosfetNormalArray</structureName>
+                <structurePinName>Source</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Mosfet</deviceTypeName>
+                <devicePinName>Source</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>MosfetNormalArray</structureName>
+                <structurePinName>Bulk</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Mosfet</deviceTypeName>
+                <devicePinName>Bulk</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>MosfetNormalArray</structureName>
+                <structurePinName>Gate</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Mosfet</deviceTypeName>
+                <devicePinName>Gate</devicePinName>
+            </devicePinType>
+        </connection>
+    </arrayConnection>
+    <recognitionRules>
+        <deviceTypeRule>Mosfet</deviceTypeRule>
+        <connectionRules>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Drain</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Gate</devicePinName>
+                </devicePinType>
+            </connectionRule>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Drain</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Source</devicePinName>
+                </devicePinType>
+            </connectionRule>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Gate</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Source</devicePinName>
+                </devicePinType>
+            </connectionRule>
+        </connectionRules>
+    </recognitionRules>
+    <parallelNets>
+        <devicePinType>
+            <deviceTypeName>Mosfet</deviceTypeName>
+            <devicePinName>Drain</devicePinName>
+        </devicePinType>
+        <devicePinType>
+            <deviceTypeName>Mosfet</deviceTypeName>
+            <devicePinName>Source</devicePinName>
+        </devicePinType>
+        <devicePinType>
+            <deviceTypeName>Mosfet</deviceTypeName>
+            <devicePinName>Gate</devicePinName>
+        </devicePinType>
+    </parallelNets>
+</arrayLibraryItem>

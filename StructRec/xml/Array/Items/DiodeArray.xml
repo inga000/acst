@@ -1,0 +1,62 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="UTF-8"?>
+<arrayLibraryItem>
+    <structureName>DiodeArray</structureName>
+    <imageFilePath>../Images/DiodeArray.png</imageFilePath>
+    <arrayConnection>
+        <connection>
+            <structurePinType>
+                <structureName>DiodeArray</structureName>
+                <structurePinName>Anode</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Diode</deviceTypeName>
+                <devicePinName>Anode</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>DiodeArray</structureName>
+                <structurePinName>Cathode</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Diode</deviceTypeName>
+                <devicePinName>Cathode</devicePinName>
+            </devicePinType>
+        </connection>
+    </arrayConnection>
+    <recognitionRules>
+        <deviceTypeRule>Diode</deviceTypeRule>
+        <connectionRules>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Diode</deviceTypeName>
+                    <devicePinName>Anode</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Diode</deviceTypeName>
+                    <devicePinName>Cathode</devicePinName>
+                </devicePinType>
+            </connectionRule>
+        </connectionRules>
+    </recognitionRules>
+    <parallelNets>
+        <devicePinType>
+            <deviceTypeName>Diode</deviceTypeName>
+            <devicePinName>Anode</devicePinName>
+        </devicePinType>
+        <devicePinType>
+            <deviceTypeName>Diode</deviceTypeName>
+            <devicePinName>Cathode</devicePinName>
+        </devicePinType>
+    </parallelNets>
+</arrayLibraryItem>

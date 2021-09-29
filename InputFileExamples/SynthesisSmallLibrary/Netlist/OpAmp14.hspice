@@ -1,0 +1,65 @@
+** Name: OpAmp14
+
+.MACRO OpAmp14 gnd vdd in1 in2 outSecondStage vbBias vbBiasSecondStage2 vbBiasSecondStage vbTrans
+mL12 outFirstStage2 outFirstStage2 gnd! gnd! nmos4 L=1e-6 W=105e-6
+mBOBias vbBias vbBias vdd! vdd! pmos4 L=2e-6 W=8e-6
+mL11 outFirstStage1 outFirstStage2 gnd! gnd! nmos4 L=1e-6 W=105e-6
+mT22 innerTrans outFirstStage1 gnd! gnd! nmos4 L=1e-6 W=369e-6
+mT21 outSecondStage vbTrans innerTrans innerTrans nmos4 L=1e-6 W=313e-6
+mB11 dpSource vbBias vdd! vdd! pmos4 L=2e-6 W=318e-6
+mT11 outFirstStage1 in1 dpSource dpSource pmos4 L=8e-6 W=161e-6
+mT12 outFirstStage2 in2 dpSource dpSource pmos4 L=8e-6 W=161e-6
+mB21 innerBias vbBiasSecondStage vdd! vdd! pmos4 L=2e-6 W=556e-6
+mB22 outSecondStage vbBiasSecondStage2 innerBias innerBias pmos4 L=1e-6 W=287e-6
+cc outFirstStage1 outSecondStage 4.5e-12
+cl outSecondStage gnd! 20e-12
+.EOM OpAmp14
+
+** Expected Performance Values: 
+** Gain: 130 dB
+** Power consumption: 5.58201 mW
+** Area: 5519 (mu_m)^2
+** Transit frequency: 18.7771 MHz
+** Transit frequency with error factor: 18.662 MHz
+** Slew rate: 28.5012 V/mu_s
+** Phase margin: 63.0254°
+** CMRR: 87 dB
+** negPSRR: 88 dB
+** posPSRR: 109 dB
+** VoutMax: 4.26001 V
+** VoutMin: 0.310001 V
+** VcmMax: 3.32001 V
+** VcmMin: -0.00999999 V
+
+
+** Expected Currents: 
+** mB11: -4.03596e+08 muA
+** mB21: -7.02807e+08 muA
+** mB22: -7.02806e+08 muA
+** mBOBias: -9.99899e+06 muA
+** mL11: 2.01799e+08 muA
+** mL12: 2.01799e+08 muA
+** mT11: -2.01798e+08 muA
+** mT12: -2.01798e+08 muA
+** mT21: 7.02807e+08 muA
+** mT22: 7.02808e+08 muA
+
+
+** Expected Voltages: 
+** dpSource: 3.81001  V
+** gnd!: 0  V
+** in1: 2.5  V
+** in2: 2.5  V
+** innerBias: 2.86901  V
+** innerTrans: 0.150001  V
+** outFirstStage1: 0.555001  V
+** outFirstStage2: 0.555001  V
+** outSecondStage: 2.5  V
+** vbBias: 4.06101  V
+** vbBiasSecondStage: 4.06101  V
+** vbBiasSecondStage2: 1.93601  V
+** vbTrans: 0.718001  V
+** vdd!: 5  V
+
+
+.END

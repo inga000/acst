@@ -1,0 +1,31 @@
+** Generated for: hspiceD
+** Generated on: Sep 25 13:33:25 2014
+** Design library name: oaLib
+** Design cell name: 2inv
+** Design view name: schematic
+.GLOBAL net2! net1! vss! vdd!
+
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: oaLib
+** Cell name: simple1
+** View name: schematic
+.subckt simple1 in out
+m0 out in net2! net2! nmos24 
+m1 out in net1! net1! pmos24
+.ends simple1
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: 2inv
+** View name: schematic
+xi1 net1 out simple1
+xi0 in net1 simple1
+v0 vdd! vss!
+.END

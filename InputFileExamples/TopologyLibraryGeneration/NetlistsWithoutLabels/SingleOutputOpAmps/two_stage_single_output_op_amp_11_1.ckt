@@ -1,0 +1,17 @@
+.suckt  two_stage_single_output_op_amp_11_1 ibias in1 in2 out sourceNmos sourcePmos
+c1 outFirstStage out 
+m1 outVoltageBiasXXpXX1 ibias sourceNmos sourceNmos nmos
+m2 FirstStageYinnerOutputLoad1 FirstStageYinnerOutputLoad1 FirstStageYinnerSourceLoad1 FirstStageYinnerSourceLoad1 pmos
+m3 FirstStageYinnerSourceLoad1 FirstStageYinnerSourceLoad1 sourcePmos sourcePmos pmos
+m4 outFirstStage FirstStageYinnerOutputLoad1 FirstStageYinnerTransistorStack2Load1 FirstStageYinnerTransistorStack2Load1 pmos
+m5 FirstStageYinnerTransistorStack2Load1 FirstStageYinnerSourceLoad1 sourcePmos sourcePmos pmos
+m6 FirstStageYsourceTransconductance ibias sourceNmos sourceNmos nmos
+m7 FirstStageYinnerOutputLoad1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+m8 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+c2 out sourceNmos 
+m9 out outFirstStage sourceNmos sourceNmos nmos
+m10 out outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos
+m11 ibias ibias sourceNmos sourceNmos nmos
+m12 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos
+.end two_stage_single_output_op_amp_11_1
+

@@ -1,0 +1,62 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<arrayLibraryItem>
+    <structureName>ResistorArray</structureName>
+    <imageFilePath>../Images/ResistorArray.png</imageFilePath>
+    <arrayConnection>
+        <connection>
+            <structurePinType>
+                <structureName>ResistorArray</structureName>
+                <structurePinName>Plus</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Resistor</deviceTypeName>
+                <devicePinName>Plus</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>ResistorArray</structureName>
+                <structurePinName>Minus</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Resistor</deviceTypeName>
+                <devicePinName>Minus</devicePinName>
+            </devicePinType>
+        </connection>
+    </arrayConnection>
+    <recognitionRules>
+        <deviceTypeRule>Resistor</deviceTypeRule>
+        <connectionRules>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Resistor</deviceTypeName>
+                    <devicePinName>Plus</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Resistor</deviceTypeName>
+                    <devicePinName>Minus</devicePinName>
+                </devicePinType>
+            </connectionRule>
+        </connectionRules>
+    </recognitionRules>
+    <parallelNets>
+        <devicePinType>
+            <deviceTypeName>Resistor</deviceTypeName>
+            <devicePinName>Plus</devicePinName>
+        </devicePinType>
+        <devicePinType>
+            <deviceTypeName>Resistor</deviceTypeName>
+            <devicePinName>Minus</devicePinName>
+        </devicePinType>
+    </parallelNets>
+</arrayLibraryItem>
+

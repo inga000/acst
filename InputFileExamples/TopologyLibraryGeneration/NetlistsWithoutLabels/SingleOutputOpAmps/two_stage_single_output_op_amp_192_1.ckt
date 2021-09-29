@@ -1,0 +1,22 @@
+.suckt  two_stage_single_output_op_amp_192_1 ibias in1 in2 out sourceNmos sourcePmos
+c1 outFirstStage out 
+m1 outInputVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos
+m2 outVoltageBiasXXnXX2 ibias sourcePmos sourcePmos pmos
+m3 FirstStageYout1 FirstStageYout1 sourceNmos sourceNmos nmos
+m4 outFirstStage outVoltageBiasXXnXX2 FirstStageYinnerTransistorStack2Load1 FirstStageYinnerTransistorStack2Load1 nmos
+m5 FirstStageYinnerTransistorStack2Load1 FirstStageYout1 sourceNmos sourceNmos nmos
+m6 FirstStageYout1 ibias sourcePmos sourcePmos pmos
+m7 outFirstStage ibias sourcePmos sourcePmos pmos
+m8 FirstStageYsourceTransconductance outInputVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 nmos
+m9 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m10 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+m11 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+c2 out sourceNmos 
+m12 out outFirstStage sourceNmos sourceNmos nmos
+m13 out ibias sourcePmos sourcePmos pmos
+m14 outInputVoltageBiasXXnXX1 outInputVoltageBiasXXnXX1 VoltageBiasXXnXX1Yinner VoltageBiasXXnXX1Yinner nmos
+m15 VoltageBiasXXnXX1Yinner outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m16 outVoltageBiasXXnXX2 outVoltageBiasXXnXX2 sourceNmos sourceNmos nmos
+m17 ibias ibias sourcePmos sourcePmos pmos
+.end two_stage_single_output_op_amp_192_1
+

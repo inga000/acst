@@ -1,0 +1,75 @@
+** Generated for: hspiceD
+** Generated on: Aug 17 10:17:04 2018
+** Design library name: oaLib
+** Design cell name: OTA3HL
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: oaLib
+** Cell name: scm_nmos
+** View name: schematic
+.subckt scm_nmos input output inh_bulk_n
+m_scmn_diode input input gnd! inh_bulk_n nmos
+m_scmn_normal output input gnd! inh_bulk_n nmos
+.ends scm_nmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: dp_pmos
+** View name: schematic
+.subckt dp_pmos in1 in2 out1 out2 source inh_bulk_p
+m_dpp_1 out2 in2 source inh_bulk_p pmos
+m_dpp_2 out1 in1 source inh_bulk_p pmos
+.ends dp_pmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: OTApart2
+** View name: schematic
+.subckt OTApart2 input output source inh_bulk_n inh_bulk_p
+x_scmn net8 output inh_bulk_n scm_nmos
+x_dpp net10 net9 input net8 source inh_bulk_p dp_pmos
+.ends OTApart2
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: OTApart3
+** View name: schematic
+.subckt OTApart3 out output source inh_bulk_n inh_bulk_p
+x_scmn net7 out inh_bulk_n scm_nmos
+x_dpp_scmn net7 output source inh_bulk_n inh_bulk_p OTApart2
+.ends OTApart3
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: scm_pmos
+** View name: schematic
+.subckt scm_pmos input output source inh_bulk_p
+m_scmp_diode input input source inh_bulk_p pmos
+m_scmp_normal output input source inh_bulk_p pmos
+.ends scm_pmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: OTApart1
+** View name: schematic
+.subckt OTApart1 ib input out output source inh_bulk_p
+x_scmp1 input out source inh_bulk_p scm_pmos
+x_scmp2 ib output source inh_bulk_p scm_pmos
+.ends OTApart1
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: OTA3HL
+** View name: schematic
+x_dpp_scmn_scmn net4 net1 net3 gnd! vdd! OTApart3
+x_scmp1_scmp2 net5 net1 net4 net3 vdd! vdd! OTApart1
+.END

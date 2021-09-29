@@ -1,0 +1,71 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="UTF-8"?>
+<arrayLibraryItem>
+    <structureName>InductorArray</structureName>
+    <imageFilePath>../Images/InductorArray.png</imageFilePath>
+    <arrayConnection>
+        <connection>
+            <structurePinType>
+                <structureName>InductorArray</structureName>
+                <structurePinName>Plus</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Inductor</deviceTypeName>
+                <devicePinName>Plus</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>InductorArray</structureName>
+                <structurePinName>Minus</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Inductor</deviceTypeName>
+                <devicePinName>Minus</devicePinName>
+            </devicePinType>
+        </connection>
+    </arrayConnection>
+    <recognitionRules>
+        <deviceTypeRule>Inductor</deviceTypeRule>
+        <connectionRules>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Inductor</deviceTypeName>
+                    <devicePinName>Plus</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Inductor</deviceTypeName>
+                    <devicePinName>Minus</devicePinName>
+                </devicePinType>
+            </connectionRule>
+        </connectionRules>
+    </recognitionRules>
+    <parallelNets>
+        <devicePinType>
+            <deviceTypeName>Inductor</deviceTypeName>
+            <devicePinName>Plus</devicePinName>
+        </devicePinType>
+        <devicePinType>
+            <deviceTypeName>Inductor</deviceTypeName>
+            <devicePinName>Minus</devicePinName>
+        </devicePinType>
+    </parallelNets>
+</arrayLibraryItem>

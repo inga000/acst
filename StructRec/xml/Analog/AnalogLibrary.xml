@@ -1,0 +1,181 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="utf-8"?>
+ <pairLibrary>
+        <pairLibraryItemFiles>
+            <pairLibraryItemFile>Items/Mosfet/MosfetSimpleCurrentMirror.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Mosfet/MosfetCrossCoupledPair.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetCascodePair.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetLevelShifter.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetVoltageReference1.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetVoltageReference2.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetGateConnectedCouple.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetDifferentialPair.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Mosfet/MosfetCurrentMirrorLoad.xml</pairLibraryItemFile>  
+            <pairLibraryItemFile>Items/Mosfet/MosfetDiodeStack.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Mosfet/MosfetMixedCascodePair1.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetMixedCascodePair2.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetAnalogInverter.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodedAnalogInverter.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodedPMOSAnalogInverter.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodedNMOSAnalogInverter.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodeAnalogInverterPmosDiodeTransistor.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodeAnalogInverterNmosDiodeTransistor.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodePMOSAnalogInverterOneDiodeTransistor.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodeNMOSAnalogInverterOneDiodeTransistor.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Mosfet/MosfetCascodeAnalogInverterNmosCurrentMirrorLoad.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodeAnalogInverterPmosCurrentMirrorLoad.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodeAnalogInverterPmosDiodeTransistorNmosCurrentMirrorLoad.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodeAnalogInverterNmosDiodeTransistorPmosCurrentMirrorLoad.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodePMOSAnalogInverterCurrentMirrorLoad.xml</pairLibraryItemFile>
+			<pairLibraryItemFile>Items/Mosfet/MosfetCascodeNMOSAnalogInverterCurrentMirrorLoad.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Mosfet/MosfetCascodeAnalogInverterTwoCurrentMirrorLoads.xml</pairLibraryItemFile>
+
+            <pairLibraryItemFile>Items/Mosfet/MosfetCascodeCurrentMirror.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Mosfet/MosfetFourTransistorCurrentMirror.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetImprovedWilsonCurrentMirror.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetWideSwingCascodeCurrentMirror.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetWideSwingCurrentMirror.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetWilsonCurrentMirror.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Mosfet/MosfetCascodedDifferentialPair.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetFoldedCascodeDifferentialPair.xml</pairLibraryItemFile> 
+            
+            <pairLibraryItemFile>Items/Mosfet/MosfetDifferentialStage.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetDifferentialStageWithCascodedDifferentialPair.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Mosfet/MosfetDifferentialStageWithFoldedCascodeDifferentialPair.xml</pairLibraryItemFile> 
+
+            <pairLibraryItemFile>Items/Bipolar/BipolarSimpleCurrentMirror.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Bipolar/BipolarDarlingtonConfiguration1.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Bipolar/BipolarDarlingtonConfiguration2.xml</pairLibraryItemFile> 
+            <pairLibraryItemFile>Items/Bipolar/BipolarLevelShifter.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Bipolar/BipolarCrossCoupledPair.xml</pairLibraryItemFile>
+            
+            <pairLibraryItemFile>Items/Bipolar/BipolarBufferedCurrentMirror.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Bipolar/BipolarDifferentialPair.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Bipolar/BipolarCascodeCurrentMirror.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Bipolar/BipolarImprovedWilsonCurrentMirror.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/Bipolar/BipolarWilsonCurrentMirror.xml</pairLibraryItemFile>
+                                     
+            <pairLibraryItemFile>Items/Bipolar/BipolarDifferentialStage.xml</pairLibraryItemFile>  
+            
+            <pairLibraryItemFile>Items/TwoPort/CapacitorRow.xml</pairLibraryItemFile>
+            <pairLibraryItemFile>Items/TwoPort/ResistorRow.xml</pairLibraryItemFile>
+                                     
+            <pairLibraryItemFile>Items/TwoPort/CommonModeSignalDetector.xml</pairLibraryItemFile>              
+            
+                      
+        </pairLibraryItemFiles>
+        <hierarchyLevels>
+            <hierarchyLevel level="1">
+                <pairLibraryItem>MosfetSimpleCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>MosfetCrossCoupledPair</pairLibraryItem>                
+                <pairLibraryItem persistence="1">MosfetCascodePair</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetLevelShifter</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetCurrentMirrorLoad</pairLibraryItem>
+                <pairLibraryItem>MosfetVoltageReference1</pairLibraryItem>
+                <pairLibraryItem>MosfetAnalogInverter</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetVoltageReference2</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetGateConnectedCouple</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetDiodeStack</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetMixedCascodePair1</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetMixedCascodePair2</pairLibraryItem>
+                
+                
+                <pairLibraryItem>BipolarSimpleCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>BipolarCrossCoupledPair</pairLibraryItem>
+                <pairLibraryItem persistence="1">BipolarDarlingtonConfiguration1</pairLibraryItem>
+                <pairLibraryItem persistence="1">BipolarDarlingtonConfiguration2</pairLibraryItem>
+                <pairLibraryItem persistence="1">BipolarLevelShifter</pairLibraryItem>
+                
+                
+                <pairLibraryItem persistence="2">MosfetDifferentialPair</pairLibraryItem>
+                <pairLibraryItem persistence="2">BipolarDifferentialPair</pairLibraryItem>
+                
+                <pairLibraryItem persistence="1">CapacitorRow</pairLibraryItem>
+                <pairLibraryItem persistence="1">ResistorRow</pairLibraryItem>
+            </hierarchyLevel>
+            <hierarchyLevel level="2">
+                <pairLibraryItem>MosfetCascodeCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>MosfetFourTransistorCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>MosfetImprovedWilsonCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>MosfetWideSwingCascodeCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>MosfetWideSwingCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>MosfetWilsonCurrentMirror</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetCascodedDifferentialPair</pairLibraryItem>
+                <pairLibraryItem persistence="1">MosfetFoldedCascodeDifferentialPair</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodedAnalogInverter</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodedPMOSAnalogInverter</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodedNMOSAnalogInverter</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeAnalogInverterNmosDiodeTransistor</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeAnalogInverterPmosDiodeTransistor</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodePMOSAnalogInverterOneDiodeTransistor</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeNMOSAnalogInverterOneDiodeTransistor</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeAnalogInverterPmosCurrentMirrorLoad</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeAnalogInverterNmosCurrentMirrorLoad</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeAnalogInverterNmosDiodeTransistorPmosCurrentMirrorLoad</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeAnalogInverterPmosDiodeTransistorNmosCurrentMirrorLoad</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodePMOSAnalogInverterCurrentMirrorLoad</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeNMOSAnalogInverterCurrentMirrorLoad</pairLibraryItem>
+                <pairLibraryItem>MosfetCascodeAnalogInverterTwoCurrentMirrorLoads</pairLibraryItem>
+                
+                <pairLibraryItem>BipolarBufferedCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>BipolarCascodeCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>BipolarImprovedWilsonCurrentMirror</pairLibraryItem>
+                <pairLibraryItem>BipolarWilsonCurrentMirror</pairLibraryItem>
+
+                <pairLibraryItem>CommonModeSignalDetector</pairLibraryItem>
+            </hierarchyLevel>
+            <hierarchyLevel level="3">
+                <pairLibraryItem>MosfetDifferentialStage</pairLibraryItem>
+                <pairLibraryItem>MosfetDifferentialStageWithFoldedCascodeDifferentialPair</pairLibraryItem>
+                <pairLibraryItem>MosfetDifferentialStageWithCascodedDifferentialPair</pairLibraryItem>
+                <pairLibraryItem>BipolarDifferentialStage</pairLibraryItem>
+            </hierarchyLevel>
+        </hierarchyLevels>
+        <dominanceRelations>
+            <dominanceRelation>
+                <dominatingStructure>MosfetCrossCoupledPair</dominatingStructure>
+                <dominatedStructure>MosfetSimpleCurrentMirror</dominatedStructure>
+                <dominatedStructure>MosfetCascodePair</dominatedStructure>
+                <dominatedStructure>MosfetCurrentMirrorLoad</dominatedStructure>
+                <dominatedStructure>MosfetLevelShifter</dominatedStructure>
+                <dominatedStructure>MosfetVoltageReference1</dominatedStructure>
+                <dominatedStructure>MosfetVoltageReference2</dominatedStructure>
+          </dominanceRelation>
+          <dominanceRelationForCurrentMirrors>
+                <dominatingStructure>MosfetCascodeCurrentMirror</dominatingStructure>
+                <dominatedStructure>MosfetWideSwingCurrentMirror</dominatedStructure>
+                <dominatedStructure>MosfetSimpleCurrentMirror</dominatedStructure>
+          </dominanceRelationForCurrentMirrors>
+          <dominanceRelationForCurrentMirrors>
+                <dominatingStructure>MosfetImprovedWilsonCurrentMirror</dominatingStructure>
+                <dominatingStructure>MosfetWilsonCurrentMirror</dominatingStructure>
+                <dominatedStructure>MosfetSimpleCurrentMirror</dominatedStructure>
+          </dominanceRelationForCurrentMirrors>
+           <dominanceRelationForCurrentMirrors>
+                <dominatingStructure>MosfetWideSwingCascodeCurrentMirror</dominatingStructure>
+                <dominatedStructure>MosfetWideSwingCurrentMirror</dominatedStructure>
+          </dominanceRelationForCurrentMirrors>
+          <dominanceRelation>
+              <dominatingStructure>MosfetDifferentialPair</dominatingStructure>
+              <dominatedStructure>MosfetCascodedAnalogInverter</dominatedStructure>
+              <dominatedStructure>MosfetCascodedNMOSAnalogInverter</dominatedStructure>
+              <dominatedStructure>MosfetCascodedPMOSAnalogInverter</dominatedStructure>
+        </dominanceRelation>
+         <dominanceRelation>
+              <dominatingStructure>BipolarCrossCoupledPair</dominatingStructure>
+              <dominatedStructure>BipolarSimpleCurrentMirror</dominatedStructure>
+              <dominatedStructure>BipolarDarlingtonConfiguration1</dominatedStructure>
+              <dominatedStructure>BipolarDarlingtonConfiguration2</dominatedStructure>
+             <dominatedStructure>BipolarLevelShifter</dominatedStructure>
+        </dominanceRelation>
+    </dominanceRelations>
+</pairLibrary>
+

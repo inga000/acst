@@ -1,0 +1,21 @@
+.suckt  two_stage_single_output_op_amp_129_3 ibias in1 in2 out sourceNmos sourcePmos
+c1 outFirstStage out 
+m1 outVoltageBiasXXpXX1 ibias sourceNmos sourceNmos nmos
+m2 outVoltageBiasXXpXX2 ibias sourceNmos sourceNmos nmos
+m3 FirstStageYout1 FirstStageYinnerSourceLoad1 sourcePmos sourcePmos pmos
+m4 outFirstStage FirstStageYout1 FirstStageYinnerSourceLoad1 FirstStageYinnerSourceLoad1 pmos
+m5 FirstStageYinnerSourceLoad1 FirstStageYinnerSourceLoad1 sourcePmos sourcePmos pmos
+m6 FirstStageYout1 ibias sourceNmos sourceNmos nmos
+m7 outFirstStage ibias sourceNmos sourceNmos nmos
+m8 FirstStageYsourceTransconductance outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+m9 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+m10 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+c2 out sourceNmos 
+m11 out outFirstStage sourceNmos sourceNmos nmos
+m12 out outVoltageBiasXXpXX1 SecondStageYinnerStageBias SecondStageYinnerStageBias pmos
+m13 SecondStageYinnerStageBias outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+m14 ibias ibias sourceNmos sourceNmos nmos
+m15 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos
+m16 outVoltageBiasXXpXX2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+.end two_stage_single_output_op_amp_129_3
+

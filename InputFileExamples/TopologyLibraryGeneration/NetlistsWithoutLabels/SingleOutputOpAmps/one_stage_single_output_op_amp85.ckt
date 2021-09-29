@@ -1,0 +1,16 @@
+.suckt  one_stage_single_output_op_amp85 ibias in1 in2 out sourceNmos sourcePmos
+m1 outVoltageBiasXXpXX1 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos
+m2 outVoltageBiasXXnXX0 ibias sourcePmos sourcePmos pmos
+m3 FirstStageYout1 outVoltageBiasXXpXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 pmos
+m4 out outVoltageBiasXXpXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 pmos
+m5 FirstStageYout1 FirstStageYout1 sourceNmos sourceNmos nmos
+m6 out FirstStageYout1 sourceNmos sourceNmos nmos
+m7 sourceTransconductance ibias sourcePmos sourcePmos pmos
+m8 FirstStageYsourceGCC1 in1 sourceTransconductance sourceTransconductance pmos
+m9 FirstStageYsourceGCC2 in2 sourceTransconductance sourceTransconductance pmos
+c1 out sourceNmos 
+m10 outVoltageBiasXXnXX0 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos
+m11 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourceTransconductance sourceTransconductance pmos
+m12 ibias ibias sourcePmos sourcePmos pmos
+.end one_stage_single_output_op_amp85
+

@@ -1,0 +1,21 @@
+.suckt  two_stage_single_output_op_amp_43_8 ibias in1 in2 out sourceNmos sourcePmos
+c1 outFirstStage out 
+m1 outInputVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos
+m2 FirstStageYout1 outInputVoltageBiasXXnXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 nmos
+m3 FirstStageYsourceGCC1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m4 outFirstStage outInputVoltageBiasXXnXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 nmos
+m5 FirstStageYsourceGCC2 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m6 FirstStageYout1 FirstStageYout1 sourcePmos sourcePmos pmos
+m7 outFirstStage FirstStageYout1 sourcePmos sourcePmos pmos
+m8 FirstStageYsourceTransconductance ibias sourcePmos sourcePmos pmos
+m9 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+m10 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+c2 out sourceNmos 
+m11 out outInputVoltageBiasXXnXX1 SecondStageYinnerStageBias SecondStageYinnerStageBias nmos
+m12 SecondStageYinnerStageBias outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m13 out outFirstStage sourcePmos sourcePmos pmos
+m14 outInputVoltageBiasXXnXX1 outInputVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 nmos
+m15 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m16 ibias ibias sourcePmos sourcePmos pmos
+.end two_stage_single_output_op_amp_43_8
+

@@ -1,0 +1,22 @@
+<Specifications>
+	<BiasCurrent Ibias = "10"></BiasCurrent><!--- [muA] -->
+	<LoadCapacity Cl = "20"></LoadCapacity><!--- [pF] -->
+	<SupplyVoltage Vdd="5">	</SupplyVoltage><!--- [V] -->
+	<GroundVoltage Gnd="0"></GroundVoltage><!--- [V] -->
+	<InputVoltage Vin="2.5"></InputVoltage><!--- [V] -->
+	<minimumGain A="80"></minimumGain>
+	<minimumTransientFrequency ft="2.5"></minimumTransientFrequency><!--- [MHz] -->
+	<maximumSlewRate SR="3.5"></maximumSlewRate><!--- [V/(uS)] -->
+	<minimumCMRR CMRR="70"></minimumCMRR><!--- [dB] -->
+	<minimumPosPSRR posPSRR="0"></minimumPosPSRR><!--- [dB] -->
+	<minimumNegPSRR negPSRR="0"></minimumNegPSRR><!--- [dB] -->
+	<OutputVoltageSwing Voutmax="3" Voutmin="2"></OutputVoltageSwing><!--- [V] -->
+	<CommonModeInputVoltage Vcmmin="-0.5" Vcmmax="0.5" ></CommonModeInputVoltage><!--- [V] -->
+	<OffsetError Vmin="-4" Vmax="4"></OffsetError><!--- [mV] -->
+	<GateOverDriveVoltage Vover="0.15"></GateOverDriveVoltage><!--- [V] --->
+	<maximumPowerConsumption P ="15"></maximumPowerConsumption><!--- [mW] -->
+	<maximumArea Area = "15000"></maximumArea><!--- [mum^2]--->
+	<settlingTime ts = "450"></settlingTime><!-- [ns] -->
+	<phaseMargin PM = "80"></phaseMargin><!-- [°] -->
+</Specifications>
+	

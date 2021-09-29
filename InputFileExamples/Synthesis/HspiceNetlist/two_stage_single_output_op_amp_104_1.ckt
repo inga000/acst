@@ -1,0 +1,89 @@
+** Name: two_stage_single_output_op_amp_104_1
+
+.MACRO two_stage_single_output_op_amp_104_1 ibias in1 in2 out sourceNmos sourcePmos
+m1 inputVoltageBiasXXnXX1 inputVoltageBiasXXnXX1 sourceNmos sourceNmos nmos4 L=9e-6 W=18e-6
+m2 outVoltageBiasXXnXX0 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=7e-6 W=48e-6
+m3 FirstStageYout1 FirstStageYout1 sourceNmos sourceNmos nmos4 L=10e-6 W=84e-6
+m4 ibias ibias sourcePmos sourcePmos pmos4 L=3e-6 W=46e-6
+m5 outInputVoltageBiasXXpXX1 outInputVoltageBiasXXpXX1 VoltageBiasXXpXX1Yinner VoltageBiasXXpXX1Yinner pmos4 L=7e-6 W=12e-6
+m6 outSourceVoltageBiasXXpXX1 outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=7e-6 W=333e-6
+m7 outVoltageBiasXXpXX2 outVoltageBiasXXpXX2 sourceTransconductance sourceTransconductance pmos4 L=7e-6 W=7e-6
+m8 out outFirstStage sourceNmos sourceNmos nmos4 L=7e-6 W=471e-6
+m9 outFirstStage inputVoltageBiasXXnXX1 FirstStageYinnerTransistorStack2Load2 FirstStageYinnerTransistorStack2Load2 nmos4 L=9e-6 W=76e-6
+m10 outInputVoltageBiasXXpXX1 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=7e-6 W=8e-6
+m11 outVoltageBiasXXpXX2 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=7e-6 W=106e-6
+m12 FirstStageYinnerTransistorStack2Load2 FirstStageYout1 sourceNmos sourceNmos nmos4 L=10e-6 W=84e-6
+m13 inputVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos4 L=3e-6 W=69e-6
+m14 out ibias sourcePmos sourcePmos pmos4 L=3e-6 W=589e-6
+m15 outFirstStage outVoltageBiasXXpXX2 FirstStageYsourceGCC2 FirstStageYsourceGCC2 pmos4 L=7e-6 W=7e-6
+m16 outVoltageBiasXXnXX0 ibias sourcePmos sourcePmos pmos4 L=3e-6 W=60e-6
+m17 sourceTransconductance outInputVoltageBiasXXpXX1 outSourceVoltageBiasXXpXX1 outSourceVoltageBiasXXpXX1 pmos4 L=7e-6 W=333e-6
+m18 FirstStageYout1 outVoltageBiasXXpXX2 FirstStageYsourceGCC1 FirstStageYsourceGCC1 pmos4 L=7e-6 W=7e-6
+m19 FirstStageYsourceGCC1 in1 sourceTransconductance sourceTransconductance pmos4 L=7e-6 W=55e-6
+m20 FirstStageYsourceGCC2 in2 sourceTransconductance sourceTransconductance pmos4 L=7e-6 W=55e-6
+m21 VoltageBiasXXpXX1Yinner outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=7e-6 W=12e-6
+Capacitor1 out sourceNmos 20e-12
+Capacitor2 outFirstStage out 5.10001e-12
+.EOM two_stage_single_output_op_amp_104_1
+
+** Expected Performance Values: 
+** Gain: 130 dB
+** Power consumption: 1.20401 mW
+** Area: 14996 (mu_m)^2
+** Transit frequency: 2.94801 MHz
+** Transit frequency with error factor: 2.94781 MHz
+** Slew rate: 5.10674 V/mu_s
+** Phase margin: 60.1606°
+** CMRR: 130 dB
+** VoutMax: 4.81001 V
+** VoutMin: 0.150001 V
+** VcmMax: 3 V
+** VcmMin: 1.09001 V
+
+
+** Expected Currents: 
+** NormalTransistorNmos: 2.17701e+06 muA
+** NormalTransistorNmos: 2.90451e+07 muA
+** NormalTransistorPmos: -1.30619e+07 muA
+** NormalTransistorPmos: -1.50879e+07 muA
+** NormalTransistorPmos: -1.60839e+07 muA
+** NormalTransistorPmos: -1.60849e+07 muA
+** DiodeTransistorNmos: 1.60831e+07 muA
+** NormalTransistorNmos: 1.60841e+07 muA
+** NormalTransistorNmos: 1.60831e+07 muA
+** NormalTransistorPmos: -6.12149e+07 muA
+** DiodeTransistorPmos: -6.12159e+07 muA
+** NormalTransistorPmos: -1.60849e+07 muA
+** NormalTransistorPmos: -1.60849e+07 muA
+** NormalTransistorNmos: 1.29285e+08 muA
+** NormalTransistorPmos: -1.29284e+08 muA
+** DiodeTransistorNmos: 1.30611e+07 muA
+** DiodeTransistorNmos: 1.50871e+07 muA
+** DiodeTransistorPmos: -2.17799e+06 muA
+** NormalTransistorPmos: -2.17899e+06 muA
+** DiodeTransistorPmos: -2.90459e+07 muA
+** DiodeTransistorPmos: -9.99899e+06 muA
+
+
+** Expected Voltages: 
+** ibias: 4.24501  V
+** in1: 2.5  V
+** in2: 2.5  V
+** inputVoltageBiasXXnXX1: 0.705001  V
+** out: 2.5  V
+** outFirstStage: 0.555001  V
+** outInputVoltageBiasXXpXX1: 3.33701  V
+** outSourceVoltageBiasXXpXX1: 4.16801  V
+** outVoltageBiasXXnXX0: 0.555001  V
+** outVoltageBiasXXpXX2: 1.55601  V
+** sourceNmos: 0  V
+** sourcePmos: 5  V
+** sourceTransconductance: 3.40101  V
+** innerTransistorStack2Load2: 0.150001  V
+** out1: 0.555001  V
+** sourceGCC1: 3.06401  V
+** sourceGCC2: 3.06401  V
+** inner: 4.16701  V
+
+
+.END

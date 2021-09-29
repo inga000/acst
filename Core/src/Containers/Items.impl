@@ -1,0 +1,191 @@
+/*******************************************************************************
+        Copyright (C) 2013
+        Institute for Electronic Design Automation
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann
+        Technische Universitaet Muenchen
+        Arcisstrasse 21
+        D-80333 Muenchen
+        Germany
+*******************************************************************************/
+
+#include "Core/incl/Common/BacktraceAssert.h"
+#include <sstream>
+
+namespace Core {
+
+    template<class Type, class TypeItemsIterator>
+    inline Items<Type,TypeItemsIterator>::Items() :
+        initializedFlag_(false)
+    {
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline void Items<Type,TypeItemsIterator>::initializeEmpty()
+    {
+        types_.clear();
+        initializedFlag_ = true;
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline bool Items<Type,TypeItemsIterator>::isInitialized() const
+    {
+        return initializedFlag_;
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline TypeItemsIterator Items<Type, TypeItemsIterator>::begin() const
+    {
+        assert(isInitialized());
+        typename TypeVector::const_iterator itBegin = types_.begin();
+        return TypeItemsIterator(itBegin);
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline TypeItemsIterator Items<Type, TypeItemsIterator>::end() const
+    {
+        assert(isInitialized());
+        typename TypeVector::const_iterator itEnd = types_.end();
+        return TypeItemsIterator(itEnd);
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline TypeItemsIterator Items<Type, TypeItemsIterator>::operator++(int i) const
+    {
+        assert(isInitialized());
+        return std::next(types_.begin(), i);
+    }
+    
+    template<class Type, class TypeItemsIterator>
+    inline const Type& Items<Type, TypeItemsIterator>::front() const
+    {
+        assert(isInitialized());
+        assert(!empty());
+        const Type & type = types_.front();
+        return type;
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline Type& Items<Type, TypeItemsIterator>::front()
+    {
+        assert(isInitialized());
+        assert(!empty());
+        Type & type = types_.front();
+        return type;
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline const Type& Items<Type, TypeItemsIterator>::back() const
+    {
+        assert(isInitialized());
+        assert(!empty());
+        const Type & type = types_.back();
+        return type;
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline Type& Items<Type, TypeItemsIterator>::back()
+    {
+        assert(isInitialized());
+        assert(!empty());
+        Type & type = types_.back();
+        return type;
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline Type Items<Type, TypeItemsIterator>::operator[](int i)
+    {
+        assert(isInitialized());
+        assert(!empty());
+        assert(i <= types_.size());
+        return types_[i];
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline void Items<Type, TypeItemsIterator>::add(const Type& type)
+    {
+        assert(isInitialized());
+        types_.push_back(type);
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline void Items<Type, TypeItemsIterator>::add(const TypedItems& pointers)
+    {
+        assert(isInitialized());
+        for(const_iterator it = pointers.begin(); it != pointers.end(); it++)
+        {
+            const Type & type = *it;
+            add(type);
+        }
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline unsigned int Items<Type, TypeItemsIterator>::size() const
+    {
+        assert(isInitialized());
+        return types_.size();
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline bool Items<Type, TypeItemsIterator>::empty() const
+    {
+        assert(isInitialized());
+        return types_.empty();
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline void Items<Type, TypeItemsIterator>::clear()
+    {
+        initializedFlag_ = false;
+        types_.clear();
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline void Items<Type, TypeItemsIterator>::removeFirstElement()
+    {
+        assert(!empty());
+        types_.erase(types_.begin());
+    }
+
+
+    template<class Type, class TypeItemsIterator>
+    inline void Items<Type, TypeItemsIterator>::removeLastElement()
+    {
+        assert(!empty());
+        types_.pop_back();
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline bool Items<Type, TypeItemsIterator>::has(const Type& type) const
+    {
+        bool hasItem = false;
+        for(typename TypeVector::const_iterator it = types_.begin(); it != types_.end(); it++)
+        {
+            const Type & currentType = *it;
+            if(currentType == type) {
+                hasItem = true;
+                break;
+            }
+        }
+        return hasItem;
+    }
+
+    template<class Type, class TypeItemsIterator>
+    inline std::string Items<Type,TypeItemsIterator>::toStr() const
+    {
+        assert(isInitialized());
+        std::ostringstream stream;
+        stream << "Items(";
+        for(typename TypeVector::const_iterator it = types_.begin(); it != types_.end();)
+        {
+            const Type & type = *it;
+            stream << type;
+            if(it != types_.end()) {
+                stream << ",";
+            }
+            it++;
+        }
+        stream << ")";
+        return stream.str();
+    }
+
+}

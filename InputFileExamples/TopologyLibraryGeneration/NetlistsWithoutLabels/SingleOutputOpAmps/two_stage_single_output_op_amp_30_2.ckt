@@ -1,0 +1,20 @@
+.suckt  two_stage_single_output_op_amp_30_2 ibias in1 in2 out sourceNmos sourcePmos
+c1 outFirstStage out 
+m1 outInputVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos
+m2 inputVoltageBiasXXnXX2 ibias sourcePmos sourcePmos pmos
+m3 FirstStageYout1 FirstStageYout1 sourcePmos sourcePmos pmos
+m4 outFirstStage FirstStageYout1 sourcePmos sourcePmos pmos
+m5 FirstStageYsourceTransconductance outInputVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 nmos
+m6 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m7 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+m8 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+c2 out sourceNmos 
+m9 out inputVoltageBiasXXnXX2 SecondStageYinnerTransconductance SecondStageYinnerTransconductance nmos
+m10 SecondStageYinnerTransconductance outFirstStage sourceNmos sourceNmos nmos
+m11 out ibias sourcePmos sourcePmos pmos
+m12 outInputVoltageBiasXXnXX1 outInputVoltageBiasXXnXX1 VoltageBiasXXnXX1Yinner VoltageBiasXXnXX1Yinner nmos
+m13 VoltageBiasXXnXX1Yinner outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m14 inputVoltageBiasXXnXX2 inputVoltageBiasXXnXX2 sourceNmos sourceNmos nmos
+m15 ibias ibias sourcePmos sourcePmos pmos
+.end two_stage_single_output_op_amp_30_2
+

@@ -1,0 +1,7 @@
+GND_1 "gnd!"
+GND_2 "vssa!"
+GND_2 "vssd!"
+VDD_1 "vdd!"
+VDD_2 "vcc!"
+VDD_2 "vdda!"
+VDD_2 "vddd!"

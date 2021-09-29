@@ -1,0 +1,296 @@
+<acst_results>
+	<date day="10" month="6" year="2021" hour="17" minute="52" second="21"/>
+	<structure_recognition_results>
+		<structure name="MosfetCascodeCurrentMirror[1]" techType="n" instance="/">
+			<pins>
+				<pin name="Inner1" net="/net1"/>
+				<pin name="Inner2" net="/net2"/>
+				<pin name="Input" net="/net07"/>
+				<pin name="Output" net="/net06"/>
+				<pin name="Source" net="/xi0/xi3/source"/>
+			</pins>
+			<structure name="MosfetDiodeStack[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Drain" net="/net07"/>
+					<pin name="Inner" net="/net1"/>
+					<pin name="Source" net="/xi0/xi3/source"/>
+				</pins>
+				<structure name="/xi2/MosfetDiodeArray[6]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/inh_bulk_n"/>
+						<pin name="Drain" net="/in1"/>
+						<pin name="Source" net="/out1"/>
+					</pins>
+					<devices>
+						<device name="/m1" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="/xi0/xi3/MosfetDiodeArray[5]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/inh_bulk_n"/>
+						<pin name="Drain" net="/input"/>
+						<pin name="Source" net="/source"/>
+					</pins>
+					<devices>
+						<device name="/m1" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+			<structure name="MosfetCascodePair[4]" techType="n" instance="/">
+				<pins>
+					<pin name="Drain" net="/net06"/>
+					<pin name="Gate1" net="/net07"/>
+					<pin name="Gate2" net="/net1"/>
+					<pin name="Inner" net="/net2"/>
+					<pin name="Source" net="/xi0/xi3/source"/>
+				</pins>
+				<structure name="/xi2/MosfetNormalArray[8]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/inh_bulk_n"/>
+						<pin name="Drain" net="/in2"/>
+						<pin name="Gate" net="/in1"/>
+						<pin name="Source" net="/out2"/>
+					</pins>
+					<devices>
+						<device name="/m0" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="/xi0/xi3/MosfetNormalArray[7]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/inh_bulk_n"/>
+						<pin name="Drain" net="/output"/>
+						<pin name="Gate" net="/input"/>
+						<pin name="Source" net="/source"/>
+					</pins>
+					<devices>
+						<device name="/m0" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+		</structure>
+		<structure name="MosfetAnalogInverter[1]" techType="undefined" instance="/xi0/xi2/">
+			<pins>
+				<pin name="Gnd" net="/gnd!"/>
+				<pin name="InputNMOS1" net="/net17"/>
+				<pin name="InputPMOS1" net="/net13"/>
+				<pin name="Output" net="/out"/>
+				<pin name="Vdd" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetNormalArray[6]" techType="p" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/out"/>
+					<pin name="Gate" net="/net13"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m9" deviceType="Mosfet" techType="p" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[2]" techType="n" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/out"/>
+					<pin name="Gate" net="/net17"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m1" deviceType="Mosfet" techType="n" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetDifferentialPair[1]" techType="p" instance="/xi0/xi2/">
+			<pins>
+				<pin name="Input1" net="/ip"/>
+				<pin name="Input2" net="/in"/>
+				<pin name="Output1" net="/net17"/>
+				<pin name="Output2" net="/net12"/>
+				<pin name="Source" net="/net16"/>
+			</pins>
+			<structure name="MosfetNormalArray[4]" techType="p" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/net17"/>
+					<pin name="Gate" net="/ip"/>
+					<pin name="Source" net="/net16"/>
+				</pins>
+				<devices>
+					<device name="/m5" deviceType="Mosfet" techType="p" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[5]" techType="p" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/net12"/>
+					<pin name="Gate" net="/in"/>
+					<pin name="Source" net="/net16"/>
+				</pins>
+				<devices>
+					<device name="/m4" deviceType="Mosfet" techType="p" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[1]" techType="p" instance="/xi0/xi2/">
+			<pins>
+				<pin name="Input" net="/ib"/>
+				<pin name="Output" net="/net16"/>
+				<pin name="Source" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[3]" techType="p" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/ib"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m7" deviceType="Mosfet" techType="p" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[3]" techType="p" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/net16"/>
+					<pin name="Gate" net="/ib"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m8" deviceType="Mosfet" techType="p" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[2]" techType="n" instance="/xi0/xi2/">
+			<pins>
+				<pin name="Input" net="/net12"/>
+				<pin name="Output" net="/net13"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[2]" techType="n" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/net12"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m0" deviceType="Mosfet" techType="n" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[1]" techType="n" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/net13"/>
+					<pin name="Gate" net="/net12"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m2" deviceType="Mosfet" techType="n" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[3]" techType="p" instance="/xi0/xi2/">
+			<pins>
+				<pin name="Input" net="/net13"/>
+				<pin name="Output" net="/out"/>
+				<pin name="Source" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[4]" techType="p" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/net13"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m6" deviceType="Mosfet" techType="p" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[6]" techType="p" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/out"/>
+					<pin name="Gate" net="/net13"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m9" deviceType="Mosfet" techType="p" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[4]" techType="n" instance="/xi0/xi2/">
+			<pins>
+				<pin name="Input" net="/net17"/>
+				<pin name="Output" net="/out"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/net17"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m3" deviceType="Mosfet" techType="n" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[2]" techType="n" instance="/xi0/xi2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/out"/>
+					<pin name="Gate" net="/net17"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m1" deviceType="Mosfet" techType="n" instance="/xi0/xi2/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[5]" techType="n" instance="/xi0/xi3/">
+			<pins>
+				<pin name="Input" net="/input"/>
+				<pin name="Output" net="/output"/>
+				<pin name="Source" net="/source"/>
+			</pins>
+			<structure name="MosfetDiodeArray[5]" techType="n" instance="/xi0/xi3/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m1" deviceType="Mosfet" techType="n" instance="/xi0/xi3/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[7]" techType="n" instance="/xi0/xi3/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m0" deviceType="Mosfet" techType="n" instance="/xi0/xi3/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetDiodeArray[6]" techType="n" instance="/xi2/">
+			<pins>
+				<pin name="Bulk" net="/inh_bulk_n"/>
+				<pin name="Drain" net="/in1"/>
+				<pin name="Source" net="/out1"/>
+			</pins>
+			<devices>
+				<device name="/m1" deviceType="Mosfet" techType="n" instance="/xi2/"/>
+			</devices>
+		</structure>
+		<structure name="MosfetNormalArray[8]" techType="n" instance="/xi2/">
+			<pins>
+				<pin name="Bulk" net="/inh_bulk_n"/>
+				<pin name="Drain" net="/in2"/>
+				<pin name="Gate" net="/in1"/>
+				<pin name="Source" net="/out2"/>
+			</pins>
+			<devices>
+				<device name="/m0" deviceType="Mosfet" techType="n" instance="/xi2/"/>
+			</devices>
+		</structure>
+	</structure_recognition_results>
+</acst_results>
+

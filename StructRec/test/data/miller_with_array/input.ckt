@@ -1,0 +1,31 @@
+** Generated for: hspiceD
+** Generated on: Sep 17 16:17:47 2014
+** Design library name: test
+** Design cell name: miller_with_array
+** Design view name: schematic
+.GLOBAL vss! vdd!
+
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: test
+** Cell name: miller_with_array
+** View name: schematic
+m1 net29 net38 vss! vss! nmos24 L=6e-6 W=60e-6
+m2 out net29 vss! vss! nmos24 L=620e-6 W=6e-6
+m17 net38 net38 vss! vss! nmos24 L=6e-6 W=60e-6
+m0 net38 net38 vss! vss! nmos24 L=6e-6 W=60e-6
+m20 net38 out net32 vdd! pmos24 L=6e-6 W=90e-6
+m5 net38 out net32 vdd! pmos24 L=6e-6 W=90e-6
+m3 net29 in net32 vdd! pmos24 L=6e-6 W=90e-6
+m19 net29 in net32 vdd! pmos24 L=6e-6 W=90e-6
+m7 bias bias vdd! vdd! pmos24 L=90e-6 W=6e-6
+m15 net32 bias vdd! vdd! pmos24 L=6e-6 W=15e-6
+m4 net32 bias vdd! vdd! pmos24 L=6e-6 W=15e-6
+m6 out bias vdd! vdd! pmos24 L=6e-6 W=100e-6
+.END

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pairLibrary>
+	<pairLibraryItemFiles>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp2.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp3.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp4.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp5.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp1.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp7.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp8.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp6.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp9.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/SymmetricalCascodeOpAmp10.xml</pairLibraryItemFile>
+	</pairLibraryItemFiles>
+	<hierarchyLevels>
+		<hierarchyLevel level="2">
+			<pairLibraryItem persistence="1">SymmetricalCascodeOpAmp2</pairLibraryItem>
+			<pairLibraryItem persistence="1">SymmetricalCascodeOpAmp3</pairLibraryItem>
+			<pairLibraryItem persistence="2">SymmetricalCascodeOpAmp4</pairLibraryItem>
+			<pairLibraryItem persistence="1">SymmetricalCascodeOpAmp5</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="3">
+			<pairLibraryItem persistence="1">SymmetricalCascodeOpAmp1</pairLibraryItem>
+			<pairLibraryItem persistence="2">SymmetricalCascodeOpAmp7</pairLibraryItem>
+			<pairLibraryItem persistence="3">SymmetricalCascodeOpAmp8</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="4">
+			<pairLibraryItem persistence="1">SymmetricalCascodeOpAmp6</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="5">
+			<pairLibraryItem persistence="1">SymmetricalCascodeOpAmp9</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="6">
+			<pairLibraryItem>SymmetricalCascodeOpAmp10</pairLibraryItem>
+		</hierarchyLevel>
+	</hierarchyLevels>
+	<dominanceRelations/>
+</pairLibrary>
+

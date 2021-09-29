@@ -1,0 +1,18 @@
+.suckt  one_stage_single_output_op_amp44 ibias in1 in2 out sourceNmos sourcePmos
+m1 inputVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos
+m2 FirstStageYout1 inputVoltageBiasXXnXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 nmos
+m3 FirstStageYsourceGCC1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m4 out inputVoltageBiasXXnXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 nmos
+m5 FirstStageYsourceGCC2 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m6 FirstStageYout1 FirstStageYinnerSourceLoad2 sourcePmos sourcePmos pmos
+m7 out FirstStageYout1 FirstStageYinnerSourceLoad2 FirstStageYinnerSourceLoad2 pmos
+m8 FirstStageYinnerSourceLoad2 FirstStageYinnerSourceLoad2 sourcePmos sourcePmos pmos
+m9 FirstStageYsourceTransconductance ibias sourcePmos sourcePmos pmos
+m10 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+m11 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+c1 out sourceNmos 
+m12 inputVoltageBiasXXnXX1 inputVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 nmos
+m13 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m14 ibias ibias sourcePmos sourcePmos pmos
+.end one_stage_single_output_op_amp44
+

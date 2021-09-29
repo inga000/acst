@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pairLibrary>
+	<pairLibraryItemFiles>
+		<pairLibraryItemFile>Items/dcvs1.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/dcvs2.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/dcvs4.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/dcvs5.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/dcvs6.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/dcvs7.xml</pairLibraryItemFile>
+	</pairLibraryItemFiles>
+	<hierarchyLevels>
+		<hierarchyLevel level="1">
+			<pairLibraryItem persistence="1">dcvs1</pairLibraryItem>
+			<pairLibraryItem persistence="3">dcvs2</pairLibraryItem>
+			<pairLibraryItem persistence="1">dcvs4</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="2">
+			<pairLibraryItem persistence="1">dcvs5</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="3">
+			<pairLibraryItem persistence="1">dcvs6</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="4">
+			<pairLibraryItem>dcvs7</pairLibraryItem>
+		</hierarchyLevel>
+	</hierarchyLevels>
+	<dominanceRelations/>
+</pairLibrary>
+

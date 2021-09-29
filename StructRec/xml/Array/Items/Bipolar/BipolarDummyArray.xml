@@ -1,0 +1,49 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="UTF-8"?>
+<arrayLibraryItem>
+    <structureName>BipolarDummyArray</structureName>
+     <imageFilePath>../../Images/BipolarDummyArray.png</imageFilePath>
+    <arrayConnection>
+    </arrayConnection>
+    <recognitionRules>
+        <deviceTypeRule>Bipolar</deviceTypeRule>
+        <connectionRules>
+            <connectionRule>
+                <connected>true</connected>
+                <devicePinType>
+                    <deviceTypeName>Bipolar</deviceTypeName>
+                    <devicePinName>Collector</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Bipolar</deviceTypeName>
+                    <devicePinName>Base</devicePinName>
+                </devicePinType>
+            </connectionRule>
+            <connectionRule>
+                <connected>true</connected>
+                <devicePinType>
+                    <deviceTypeName>Bipolar</deviceTypeName>
+                    <devicePinName>Collector</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Bipolar</deviceTypeName>
+                    <devicePinName>Emitter</devicePinName>
+                </devicePinType>
+            </connectionRule>
+        </connectionRules>
+    </recognitionRules>
+    <parallelNets>
+        <devicePinType>
+            <deviceTypeName>Bipolar</deviceTypeName>
+            <devicePinName>Collector</devicePinName>
+        </devicePinType>
+    </parallelNets>
+</arrayLibraryItem>

@@ -1,0 +1,73 @@
+** Name: OpAmp6
+
+.MACRO OpAmp6 gnd vdd in1 in2 outSecondStage vbBias vbTrans
+mL12 outFirstStage2 outFirstStage2 gnd! gnd! nmos4 L=3e-6 W=11e-6
+mL11 outFirstStage1 outFirstStage1 gnd! gnd! nmos4 L=3e-6 W=11e-6
+mBOBias vbBias vbBias vdd! vdd! pmos4 L=2e-6 W=33e-6
+mBV21 vbBiasSecondStage vbBiasSecondStage vdd! vdd! pmos4 L=1e-6 W=68e-6
+mBV22 vbBiasSecondStage2 vbBiasSecondStage2 vbBiasSecondStage vbBiasSecondStage pmos4 L=1e-6 W=11e-6
+mT22 innerTrans outFirstStage1 gnd! gnd! nmos4 L=3e-6 W=29e-6
+mT21 outSecondStage vbTrans innerTrans innerTrans nmos4 L=5e-6 W=30e-6
+mTC21 vbBiasSecondStage2 vbTrans innerTC2 innerTC2 nmos4 L=5e-6 W=30e-6
+mTC22 innerTC2 outFirstStage2 gnd! gnd! nmos4 L=3e-6 W=29e-6
+mT12 outFirstStage2 in2 dpSource dpSource pmos4 L=4e-6 W=138e-6
+mB21 innerBias vbBiasSecondStage vdd! vdd! pmos4 L=1e-6 W=68e-6
+mB22 outSecondStage vbBiasSecondStage2 innerBias innerBias pmos4 L=1e-6 W=116e-6
+mB11 dpSource vbBias vdd! vdd! pmos4 L=2e-6 W=126e-6
+mT11 outFirstStage1 in1 dpSource dpSource pmos4 L=4e-6 W=138e-6
+cl outSecondStage gnd! 20e-12
+.EOM OpAmp6
+
+** Expected Performance Values: 
+** Gain: 97 dB
+** Power consumption: 0.761001 mW
+** Area: 2225 (mu_m)^2
+** Transit frequency: 4.58801 MHz
+** Transit frequency with error factor: 4.58807 MHz
+** Slew rate: 5.15732 V/mu_s
+** Phase margin: 80.7871°
+** CMRR: 146 dB
+** negPSRR: 51 dB
+** posPSRR: 63 dB
+** VoutMax: 4.07001 V
+** VoutMin: 0.570001 V
+** VcmMax: 4.07001 V
+** VcmMin: 0.0900001 V
+
+
+** Expected Currents: 
+** mB11: -3.89199e+07 muA
+** mB21: -5.16619e+07 muA
+** mB22: -5.16609e+07 muA
+** mBOBias: -9.99899e+06 muA
+** mBV21: -5.16619e+07 muA
+** mBV22: -5.16609e+07 muA
+** mL11: 1.94591e+07 muA
+** mL12: 1.94591e+07 muA
+** mT11: -1.94599e+07 muA
+** mT12: -1.94599e+07 muA
+** mT21: 5.16601e+07 muA
+** mT22: 5.16591e+07 muA
+** mTC21: 5.16601e+07 muA
+** mTC22: 5.16591e+07 muA
+
+
+** Expected Voltages: 
+** dpSource: 3.24101  V
+** gnd!: 0  V
+** in1: 2.5  V
+** in2: 2.5  V
+** innerBias: 3.87201  V
+** innerTC2: 0.25  V
+** innerTrans: 0.25  V
+** outFirstStage1: 0.655001  V
+** outFirstStage2: 0.655001  V
+** outSecondStage: 2.5  V
+** vbBias: 4.25101  V
+** vbBiasSecondStage: 4.22901  V
+** vbBiasSecondStage2: 3.15001  V
+** vbTrans: 0.973001  V
+** vdd!: 5  V
+
+
+.END

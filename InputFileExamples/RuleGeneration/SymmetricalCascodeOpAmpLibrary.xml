@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<library>
+	<arrayLibraries>
+		<arrayLibraryFile>../../StructRec/xml/Array/ArrayLibrary.xml</arrayLibraryFile>
+	</arrayLibraries>
+	<pairLibraries>
+		<pairLibraryFile>../../StructRec/xml/Analog/AnalogLibrary.xml</pairLibraryFile>
+		<pairLibraryFile>SymmetricalCascodeOpAmp/SymmetricalCascodeOpAmpLibrary.xml</pairLibraryFile>
+	</pairLibraries>
+</library>
+

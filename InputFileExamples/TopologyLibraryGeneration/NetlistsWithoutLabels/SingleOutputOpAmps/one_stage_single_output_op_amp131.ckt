@@ -1,0 +1,17 @@
+.suckt  one_stage_single_output_op_amp131 ibias in1 in2 out sourceNmos sourcePmos
+m1 inputVoltageBiasXXpXX1 ibias sourceNmos sourceNmos nmos
+m2 inputVoltageBiasXXpXX2 ibias sourceNmos sourceNmos nmos
+m3 FirstStageYinnerSourceLoad1 FirstStageYinnerSourceLoad1 sourcePmos sourcePmos pmos
+m4 out inputVoltageBiasXXpXX1 FirstStageYinnerTransistorStack2Load1 FirstStageYinnerTransistorStack2Load1 pmos
+m5 FirstStageYinnerTransistorStack2Load1 FirstStageYinnerSourceLoad1 sourcePmos sourcePmos pmos
+m6 FirstStageYinnerSourceLoad1 ibias sourceNmos sourceNmos nmos
+m7 out ibias sourceNmos sourceNmos nmos
+m8 FirstStageYsourceTransconductance inputVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+m9 FirstStageYinnerSourceLoad1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+m10 out in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+c1 out sourceNmos 
+m11 ibias ibias sourceNmos sourceNmos nmos
+m12 inputVoltageBiasXXpXX1 inputVoltageBiasXXpXX1 sourcePmos sourcePmos pmos
+m13 inputVoltageBiasXXpXX2 inputVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+.end one_stage_single_output_op_amp131
+

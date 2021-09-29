@@ -1,0 +1,84 @@
+** Name: symmetrical_op_amp7
+
+.MACRO symmetrical_op_amp7 ibias in1 in2 out sourceNmos sourcePmos
+m1 inSourceTransconductanceComplementarySecondStage inSourceTransconductanceComplementarySecondStage sourceNmos sourceNmos nmos4 L=6e-6 W=10e-6
+m2 inOutputTransconductanceComplementarySecondStage inOutputTransconductanceComplementarySecondStage sourceNmos sourceNmos nmos4 L=8e-6 W=11e-6
+m3 inputVoltageBiasXXnXX0 inputVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=3e-6 W=4e-6
+m4 outFirstStage outFirstStage sourceNmos sourceNmos nmos4 L=6e-6 W=10e-6
+m5 ibias ibias sourcePmos sourcePmos pmos4 L=6e-6 W=85e-6
+m6 innerComplementarySecondStage innerComplementarySecondStage sourcePmos sourcePmos pmos4 L=3e-6 W=116e-6
+m7 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=1e-6 W=10e-6
+m8 out inOutputTransconductanceComplementarySecondStage SecondStageYinnerTransconductance SecondStageYinnerTransconductance nmos4 L=8e-6 W=33e-6
+m9 innerComplementarySecondStage inOutputTransconductanceComplementarySecondStage TransconductanceComplementarySecondStageYinner TransconductanceComplementarySecondStageYinner nmos4 L=8e-6 W=33e-6
+m10 outVoltageBiasXXpXX1 inputVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=3e-6 W=78e-6
+m11 SecondStageYinnerTransconductance outFirstStage sourceNmos sourceNmos nmos4 L=6e-6 W=31e-6
+m12 TransconductanceComplementarySecondStageYinner inSourceTransconductanceComplementarySecondStage sourceNmos sourceNmos nmos4 L=6e-6 W=31e-6
+m13 out outVoltageBiasXXpXX1 SecondStageYinnerStageBias SecondStageYinnerStageBias pmos4 L=1e-6 W=10e-6
+m14 inSourceTransconductanceComplementarySecondStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=5e-6 W=92e-6
+m15 inOutputTransconductanceComplementarySecondStage ibias sourcePmos sourcePmos pmos4 L=6e-6 W=349e-6
+m16 inputVoltageBiasXXnXX0 ibias sourcePmos sourcePmos pmos4 L=6e-6 W=38e-6
+m17 outFirstStage in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=5e-6 W=92e-6
+m18 FirstStageYsourceTransconductance ibias sourcePmos sourcePmos pmos4 L=6e-6 W=187e-6
+m19 SecondStageYinnerStageBias innerComplementarySecondStage sourcePmos sourcePmos pmos4 L=3e-6 W=116e-6
+Capacitor1 out sourceNmos 20e-12
+.EOM symmetrical_op_amp7
+
+** Expected Performance Values: 
+** Gain: 92 dB
+** Power consumption: 1.23001 mW
+** Area: 6944 (mu_m)^2
+** Transit frequency: 2.98101 MHz
+** Transit frequency with error factor: 2.98059 MHz
+** Slew rate: 3.50003 V/mu_s
+** Phase margin: 70.4739°
+** CMRR: 140 dB
+** negPSRR: 52 dB
+** posPSRR: 69 dB
+** VoutMax: 4.34001 V
+** VoutMin: 0.600001 V
+** VcmMax: 4.05001 V
+** VcmMin: 0.120001 V
+
+
+** Expected Currents: 
+** NormalTransistorNmos: 8.87161e+07 muA
+** NormalTransistorPmos: -4.49599e+06 muA
+** NormalTransistorPmos: -4.12119e+07 muA
+** DiodeTransistorNmos: 1.11091e+07 muA
+** DiodeTransistorNmos: 1.11091e+07 muA
+** NormalTransistorPmos: -2.22209e+07 muA
+** NormalTransistorPmos: -1.11099e+07 muA
+** NormalTransistorPmos: -1.11099e+07 muA
+** NormalTransistorNmos: 3.50161e+07 muA
+** NormalTransistorNmos: 3.50151e+07 muA
+** NormalTransistorPmos: -3.50169e+07 muA
+** NormalTransistorPmos: -3.50179e+07 muA
+** DiodeTransistorPmos: -3.44369e+07 muA
+** NormalTransistorNmos: 3.44361e+07 muA
+** NormalTransistorNmos: 3.44371e+07 muA
+** DiodeTransistorNmos: 4.49501e+06 muA
+** DiodeTransistorNmos: 4.12111e+07 muA
+** DiodeTransistorPmos: -8.87169e+07 muA
+** DiodeTransistorPmos: -9.99899e+06 muA
+
+
+** Expected Voltages: 
+** ibias: 4.23701  V
+** in1: 2.5  V
+** in2: 2.5  V
+** inOutputTransconductanceComplementarySecondStage: 1.00301  V
+** inSourceTransconductanceComplementarySecondStage: 0.687001  V
+** innerComplementarySecondStage: 4.21201  V
+** inputVoltageBiasXXnXX0: 0.605001  V
+** out: 2.5  V
+** outFirstStage: 0.687001  V
+** outVoltageBiasXXpXX1: 3.72801  V
+** sourceNmos: 0  V
+** sourcePmos: 5  V
+** sourceTransconductance: 3.24701  V
+** innerStageBias: 4.73301  V
+** innerTransconductance: 0.282001  V
+** inner: 0.283001  V
+
+
+.END

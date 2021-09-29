@@ -1,0 +1,234 @@
+<acst_results>
+	<date day="17" month="5" year="2021" hour="17" minute="13" second="42"/>
+	<structure_recognition_results>
+		<structure name="BipolarBufferedCurrentMirror[1]" techType="p" instance="/">
+			<pins>
+				<pin name="Base" net="/bias3"/>
+				<pin name="Collector" net="/vss!"/>
+				<pin name="Emitter" net="/vdd!"/>
+				<pin name="Input" net="/bias2"/>
+				<pin name="Output" net="/n1"/>
+			</pins>
+			<structure name="BipolarNormalArray[4]" techType="p" instance="/">
+				<pins>
+					<pin name="Base" net="/bias3"/>
+					<pin name="Collector" net="/bias2"/>
+					<pin name="Emitter" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/q10" deviceType="Bipolar" techType="p" instance="/"/>
+					<device name="/q5" deviceType="Bipolar" techType="p" instance="/"/>
+					<device name="/q9" deviceType="Bipolar" techType="p" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="BipolarDarlingtonConfiguration2[1]" techType="p" instance="/">
+				<pins>
+					<pin name="Base" net="/bias2"/>
+					<pin name="Collector1" net="/vss!"/>
+					<pin name="Collector2" net="/n1"/>
+					<pin name="Emitter1" net="/bias3"/>
+					<pin name="Emitter2" net="/vdd!"/>
+				</pins>
+				<structure name="BipolarNormalArray[3]" techType="p" instance="/">
+					<pins>
+						<pin name="Base" net="/bias2"/>
+						<pin name="Collector" net="/vss!"/>
+						<pin name="Emitter" net="/bias3"/>
+					</pins>
+					<devices>
+						<device name="/q6" deviceType="Bipolar" techType="p" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="BipolarNormalArray[5]" techType="p" instance="/">
+					<pins>
+						<pin name="Base" net="/bias3"/>
+						<pin name="Collector" net="/n1"/>
+						<pin name="Emitter" net="/vdd!"/>
+					</pins>
+					<devices>
+						<device name="/q11" deviceType="Bipolar" techType="p" instance="/"/>
+						<device name="/q4" deviceType="Bipolar" techType="p" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+		</structure>
+		<structure name="BipolarSimpleCurrentMirror[1]" techType="n" instance="/">
+			<pins>
+				<pin name="Emitter" net="/vss!"/>
+				<pin name="Input" net="/n2"/>
+				<pin name="Output" net="/out"/>
+			</pins>
+			<structure name="BipolarDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Collector" net="/n2"/>
+					<pin name="Emitter" net="/vss!"/>
+				</pins>
+				<devices>
+					<device name="/q2" deviceType="Bipolar" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="BipolarNormalArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Base" net="/n2"/>
+					<pin name="Collector" net="/out"/>
+					<pin name="Emitter" net="/vss!"/>
+				</pins>
+				<devices>
+					<device name="/q3" deviceType="Bipolar" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="BipolarSimpleCurrentMirror[2]" techType="n" instance="/">
+			<pins>
+				<pin name="Emitter" net="/vss!"/>
+				<pin name="Input" net="/n3"/>
+				<pin name="Output" net="/n4"/>
+			</pins>
+			<structure name="BipolarDiodeArray[2]" techType="n" instance="/">
+				<pins>
+					<pin name="Collector" net="/n3"/>
+					<pin name="Emitter" net="/vss!"/>
+				</pins>
+				<devices>
+					<device name="/q1" deviceType="Bipolar" techType="n" instance="/"/>
+					<device name="/q8" deviceType="Bipolar" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="BipolarNormalArray[2]" techType="n" instance="/">
+				<pins>
+					<pin name="Base" net="/n3"/>
+					<pin name="Collector" net="/n4"/>
+					<pin name="Emitter" net="/vss!"/>
+				</pins>
+				<devices>
+					<device name="/q0" deviceType="Bipolar" techType="n" instance="/"/>
+					<device name="/q7" deviceType="Bipolar" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[1]" techType="n" instance="/">
+			<pins>
+				<pin name="Input" net="/bias1"/>
+				<pin name="Output" net="/bias2"/>
+				<pin name="Source" net="/vss!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vss!"/>
+					<pin name="Drain" net="/bias1"/>
+					<pin name="Source" net="/vss!"/>
+				</pins>
+				<devices>
+					<device name="/m0" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vss!"/>
+					<pin name="Drain" net="/bias2"/>
+					<pin name="Gate" net="/bias1"/>
+					<pin name="Source" net="/vss!"/>
+				</pins>
+				<devices>
+					<device name="/m1" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[2]" techType="p" instance="/">
+			<pins>
+				<pin name="Input" net="/n4"/>
+				<pin name="Output" net="/out"/>
+				<pin name="Source" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[2]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vdd!"/>
+					<pin name="Drain" net="/n4"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m4" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[2]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vdd!"/>
+					<pin name="Drain" net="/out"/>
+					<pin name="Gate" net="/n4"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m5" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="CapacitorArray[1]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Minus" net="/vss!"/>
+				<pin name="Plus" net="/out"/>
+			</pins>
+			<devices>
+				<device name="/c0" deviceType="Capacitor" techType="undefined" instance="/"/>
+				<device name="/c1" deviceType="Capacitor" techType="undefined" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="MosfetCapacitorArray[1]" techType="p" instance="/">
+			<pins>
+				<pin name="Gate" net="/out"/>
+				<pin name="Other" net="/net45"/>
+			</pins>
+			<devices>
+				<device name="/m13" deviceType="Mosfet" techType="p" instance="/"/>
+				<device name="/m14" deviceType="Mosfet" techType="p" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="MosfetDummyArray[1]" techType="p" instance="/">
+			<pins/>
+			<devices>
+				<device name="/m11" deviceType="Mosfet" techType="p" instance="/"/>
+				<device name="/m12" deviceType="Mosfet" techType="p" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="MosfetNormalArray[3]" techType="p" instance="/">
+			<pins>
+				<pin name="Bulk" net="/n1"/>
+				<pin name="Drain" net="/n2"/>
+				<pin name="Gate" net="/inn"/>
+				<pin name="Source" net="/n1"/>
+			</pins>
+			<devices>
+				<device name="/m3" deviceType="Mosfet" techType="p" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="MosfetNormalArray[4]" techType="p" instance="/">
+			<pins>
+				<pin name="Bulk" net="/n1"/>
+				<pin name="Drain" net="/n3"/>
+				<pin name="Gate" net="/out"/>
+				<pin name="Source" net="/n1"/>
+			</pins>
+			<devices>
+				<device name="/m2" deviceType="Mosfet" techType="p" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="ResistorArray[1]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Minus" net="/bias3"/>
+				<pin name="Plus" net="/vdd!"/>
+			</pins>
+			<devices>
+				<device name="/r1" deviceType="Resistor" techType="undefined" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="ResistorArray[2]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Minus" net="/bias1"/>
+				<pin name="Plus" net="/vdd!"/>
+			</pins>
+			<devices>
+				<device name="/r0" deviceType="Resistor" techType="undefined" instance="/"/>
+			</devices>
+		</structure>
+	</structure_recognition_results>
+</acst_results>
+

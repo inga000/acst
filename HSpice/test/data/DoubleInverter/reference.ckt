@@ -1,0 +1,10 @@
+.GLOBAL net1! net2! vdd! vss! 
+
+.subckt simple1 in out 
+m0 out in net2! net2! nmos
+m1 out in net1! net1! pmos
+.ends simple1
+
+xi0 in net1 simple1
+xi1 net1 out simple1
+.END

@@ -1,0 +1,29 @@
+** Generated for: hspiceD
+** Generated on: May  3 13:35:09 2018
+** Design library name: Masterarbeit
+** Design cell name: MillerOperationalAmplifierRSS
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: Masterarbeit
+** Cell name: MillerOperationalAmplifierRSS
+** View name: schematic
+m0 vout net18 gnd! gnd! nmos
+m2 net11 net11 gnd! gnd! nmos
+m1 net18 net11 gnd! gnd! nmos
+cl vout gnd! 1e-12
+cc vout net18 1e-12
+m8 net18 in1 net12 net12 pmos
+m7 net11 in2 net12 net12 pmos
+m5 ibias ibias vdd! vdd! pmos
+m4 net12 ibias vdd! vdd! pmos
+m3 vout ibias vdd! vdd! pmos
+.END

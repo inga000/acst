@@ -1,0 +1,88 @@
+** Name: two_stage_single_output_op_amp_79_1
+
+.MACRO two_stage_single_output_op_amp_79_1 ibias in1 in2 out sourceNmos sourcePmos
+m1 inputVoltageBiasXXnXX1 inputVoltageBiasXXnXX1 sourceNmos sourceNmos nmos4 L=3e-6 W=34e-6
+m2 ibias ibias sourceNmos sourceNmos nmos4 L=3e-6 W=8e-6
+m3 outVoltageBiasXXpXX2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=402e-6
+m4 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=1e-6 W=68e-6
+m5 outVoltageBiasXXpXX2 ibias sourceNmos sourceNmos nmos4 L=3e-6 W=552e-6
+m6 outVoltageBiasXXpXX1 ibias sourceNmos sourceNmos nmos4 L=3e-6 W=554e-6
+m7 outFirstStage inputVoltageBiasXXnXX1 FirstStageYinnerTransistorStack2Load2 FirstStageYinnerTransistorStack2Load2 nmos4 L=3e-6 W=93e-6
+m8 out outFirstStage sourceNmos sourceNmos nmos4 L=5e-6 W=407e-6
+m9 FirstStageYinnerStageBias ibias sourceNmos sourceNmos nmos4 L=3e-6 W=65e-6
+m10 FirstStageYout1 inputVoltageBiasXXnXX1 FirstStageYinnerTransistorStack1Load2 FirstStageYinnerTransistorStack1Load2 nmos4 L=3e-6 W=93e-6
+m11 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=141e-6
+m12 FirstStageYinnerTransistorStack1Load2 FirstStageYout1 sourceNmos sourceNmos nmos4 L=7e-6 W=189e-6
+m13 FirstStageYinnerTransistorStack2Load2 FirstStageYout1 sourceNmos sourceNmos nmos4 L=7e-6 W=189e-6
+m14 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=141e-6
+m15 FirstStageYsourceTransconductance inputVoltageBiasXXnXX1 FirstStageYinnerStageBias FirstStageYinnerStageBias nmos4 L=3e-6 W=121e-6
+m16 inputVoltageBiasXXnXX1 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=179e-6
+m17 outFirstStage outVoltageBiasXXpXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 pmos4 L=1e-6 W=83e-6
+m18 out outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=591e-6
+m19 FirstStageYout1 outVoltageBiasXXpXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 pmos4 L=1e-6 W=83e-6
+m20 FirstStageYsourceGCC1 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=59e-6
+m21 FirstStageYsourceGCC2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=59e-6
+Capacitor1 outFirstStage out 9.40001e-12
+Capacitor2 out sourceNmos 20e-12
+.EOM two_stage_single_output_op_amp_79_1
+
+** Expected Performance Values: 
+** Gain: 126 dB
+** Power consumption: 14.5271 mW
+** Area: 13021 (mu_m)^2
+** Transit frequency: 8.23201 MHz
+** Transit frequency with error factor: 8.23148 MHz
+** Slew rate: 6.24718 V/mu_s
+** Phase margin: 60.1606°
+** CMRR: 144 dB
+** VoutMax: 4.69001 V
+** VoutMin: 0.380001 V
+** VcmMax: 5.10001 V
+** VcmMin: 1.34001 V
+
+
+** Expected Currents: 
+** NormalTransistorNmos: 6.90431e+08 muA
+** NormalTransistorNmos: 6.88361e+08 muA
+** NormalTransistorPmos: -3.06508e+08 muA
+** NormalTransistorPmos: -5.90449e+07 muA
+** NormalTransistorPmos: -9.90869e+07 muA
+** NormalTransistorPmos: -5.90449e+07 muA
+** NormalTransistorPmos: -9.90869e+07 muA
+** NormalTransistorNmos: 5.90441e+07 muA
+** NormalTransistorNmos: 5.90431e+07 muA
+** NormalTransistorNmos: 5.90441e+07 muA
+** NormalTransistorNmos: 5.90431e+07 muA
+** NormalTransistorNmos: 8.00821e+07 muA
+** NormalTransistorNmos: 8.00831e+07 muA
+** NormalTransistorNmos: 4.00411e+07 muA
+** NormalTransistorNmos: 4.00411e+07 muA
+** NormalTransistorNmos: 1.012e+09 muA
+** NormalTransistorPmos: -1.01199e+09 muA
+** DiodeTransistorNmos: 3.06509e+08 muA
+** DiodeTransistorNmos: 9.99901e+06 muA
+** DiodeTransistorPmos: -6.9043e+08 muA
+** DiodeTransistorPmos: -6.8836e+08 muA
+
+
+** Expected Voltages: 
+** ibias: 0.615001  V
+** in1: 2.5  V
+** in2: 2.5  V
+** inputVoltageBiasXXnXX1: 0.968001  V
+** out: 2.5  V
+** outFirstStage: 0.787001  V
+** outVoltageBiasXXpXX1: 3.68601  V
+** outVoltageBiasXXpXX2: 4.12801  V
+** sourceNmos: 0  V
+** sourcePmos: 5  V
+** innerStageBias: 0.410001  V
+** innerTransistorStack1Load2: 0.413001  V
+** innerTransistorStack2Load2: 0.413001  V
+** out1: 0.565001  V
+** sourceGCC1: 4.44901  V
+** sourceGCC2: 4.44901  V
+** sourceTransconductance: 1.93101  V
+
+
+.END

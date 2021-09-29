@@ -1,0 +1,37 @@
+** Generated for: hspiceD
+** Generated on: Apr 12 09:34:33 2019
+** Design library name: CascodeSymmetricalCMOSOTA
+** Design cell name: cascodeSymmetricalCMOSOTA
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: CascodeSymmetricalCMOSOTA
+** Cell name: cascodeSymmetricalCMOSOTA
+** View name: schematic
+m17 net30 ibias gnd! gnd! nmos
+m8 ibias ibias gnd! gnd! nmos
+m7 net20 net20 gnd! gnd! nmos
+m6 net26 net20 net48 net48 nmos
+m5 net48 net26 gnd! gnd! nmos
+m4 net40 inp net36 net36 nmos
+m3 net29 inn net36 net36 nmos
+m2 net42 net26 gnd! gnd! nmos
+m1 out net20 net42 net42 nmos
+m0 net36 ibias gnd! gnd! nmos
+m16 net30 net30 vdd! vdd! pmos
+m15 net20 net30 vdd! vdd! pmos
+m14 net26 net30 net27 net27 pmos
+m13 net40 net40 vdd! vdd! pmos
+m12 net27 net29 vdd! vdd! pmos
+m11 net29 net29 vdd! vdd! pmos
+m10 net44 net40 vdd! vdd! pmos
+m9 out net30 net44 net44 pmos
+cl out gnd!
+.END

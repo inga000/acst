@@ -1,0 +1,37 @@
+.suckt  two_stage_fully_differential_op_amp_59_1 ibias in1 in2 out1 out2 sourceNmos sourcePmos vref
+c1 out1FirstStage out1 
+c2 out2FirstStage out2 
+m1 outVoltageBiasXXpXX1 ibias sourceNmos sourceNmos nmos
+m2 outVoltageBiasXXpXX2 ibias sourceNmos sourceNmos nmos
+m3 outInputVoltageBiasXXnXX1 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+m4 FeedbackStageYout1 FeedbackStageYout1 sourcePmos sourcePmos pmos
+m5 outFeedback outFeedback sourcePmos sourcePmos pmos
+m6 FeedbackStageYsourceTransconductance1 ibias sourceNmos sourceNmos nmos
+m7 FeedbackStageYsourceTransconductance2 ibias sourceNmos sourceNmos nmos
+m8 FeedbackStageYout1 out2 FeedbackStageYsourceTransconductance1 FeedbackStageYsourceTransconductance1 nmos
+m9 outFeedback vref FeedbackStageYsourceTransconductance1 FeedbackStageYsourceTransconductance1 nmos
+m10 FeedbackStageYout1 out1 FeedbackStageYsourceTransconductance2 FeedbackStageYsourceTransconductance2 nmos
+m11 outFeedback vref FeedbackStageYsourceTransconductance2 FeedbackStageYsourceTransconductance2 nmos
+m12 out1FirstStage outVoltageBiasXXpXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 pmos
+m13 FirstStageYsourceGCC1 outFeedback sourcePmos sourcePmos pmos
+m14 out2FirstStage outVoltageBiasXXpXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 pmos
+m15 FirstStageYsourceGCC2 outFeedback sourcePmos sourcePmos pmos
+m16 out1FirstStage ibias sourceNmos sourceNmos nmos
+m17 out2FirstStage ibias sourceNmos sourceNmos nmos
+m18 FirstStageYsourceTransconductance outInputVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 nmos
+m19 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m20 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+m21 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+c3 out1 sourceNmos 
+c4 out2 sourceNmos 
+m22 out1 out1FirstStage sourceNmos sourceNmos nmos
+m23 out1 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+m24 out2 out2FirstStage sourceNmos sourceNmos nmos
+m25 out2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+m26 outInputVoltageBiasXXnXX1 outInputVoltageBiasXXnXX1 VoltageBiasXXnXX1Yinner VoltageBiasXXnXX1Yinner nmos
+m27 VoltageBiasXXnXX1Yinner outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m28 ibias ibias sourceNmos sourceNmos nmos
+m29 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos
+m30 outVoltageBiasXXpXX2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos
+.end two_stage_fully_differential_op_amp_59_1
+

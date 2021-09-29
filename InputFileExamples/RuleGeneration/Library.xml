@@ -1,0 +1,9 @@
+ 
+<library>
+	<arrayLibraries>
+		<arrayLibraryFile>../../StructRec/xml/Array/ArrayLibrary.xml</arrayLibraryFile>
+	</arrayLibraries>
+	<pairLibraries>
+		<pairLibraryFile>../../StructRec/xml/Analog/AnalogLibrary.xml</pairLibraryFile>
+	</pairLibraries>
+</library>

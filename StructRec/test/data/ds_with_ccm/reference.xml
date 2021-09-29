@@ -1,0 +1,153 @@
+<acst_results>
+	<date day="10" month="6" year="2021" hour="17" minute="52" second="17"/>
+	<structure_recognition_results>
+		<structure name="MosfetCascodeCurrentMirror[1]" techType="n" instance="/x_ccm/">
+			<pins>
+				<pin name="Inner1" net="/inner1"/>
+				<pin name="Inner2" net="/inner2"/>
+				<pin name="Input" net="/input"/>
+				<pin name="Output" net="/output"/>
+				<pin name="Source" net="/x_scm/source"/>
+			</pins>
+			<structure name="MosfetDiodeStack[1]" techType="n" instance="/x_ccm/">
+				<pins>
+					<pin name="Drain" net="/input"/>
+					<pin name="Inner" net="/inner1"/>
+					<pin name="Source" net="/x_scm/source"/>
+				</pins>
+				<structure name="/x_ls/MosfetDiodeArray[1]" techType="n" instance="/x_ccm/">
+					<pins>
+						<pin name="Bulk" net="/inh_bulk_n"/>
+						<pin name="Drain" net="/in1"/>
+						<pin name="Source" net="/out1"/>
+					</pins>
+					<devices>
+						<device name="/m_ls_diode" deviceType="Mosfet" techType="n" instance="/x_ccm/"/>
+					</devices>
+				</structure>
+				<structure name="/x_scm/MosfetDiodeArray[2]" techType="n" instance="/x_ccm/">
+					<pins>
+						<pin name="Bulk" net="/inh_bulk_n"/>
+						<pin name="Drain" net="/input"/>
+						<pin name="Source" net="/source"/>
+					</pins>
+					<devices>
+						<device name="/m_scm_diode" deviceType="Mosfet" techType="n" instance="/x_ccm/"/>
+					</devices>
+				</structure>
+			</structure>
+			<structure name="MosfetCascodePair[1]" techType="n" instance="/x_ccm/">
+				<pins>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate1" net="/input"/>
+					<pin name="Gate2" net="/inner1"/>
+					<pin name="Inner" net="/inner2"/>
+					<pin name="Source" net="/x_scm/source"/>
+				</pins>
+				<structure name="/x_ls/MosfetNormalArray[1]" techType="n" instance="/x_ccm/">
+					<pins>
+						<pin name="Bulk" net="/inh_bulk_n"/>
+						<pin name="Drain" net="/in2"/>
+						<pin name="Gate" net="/in1"/>
+						<pin name="Source" net="/out2"/>
+					</pins>
+					<devices>
+						<device name="/m_ls_normal" deviceType="Mosfet" techType="n" instance="/x_ccm/"/>
+					</devices>
+				</structure>
+				<structure name="/x_scm/MosfetNormalArray[2]" techType="n" instance="/x_ccm/">
+					<pins>
+						<pin name="Bulk" net="/inh_bulk_n"/>
+						<pin name="Drain" net="/output"/>
+						<pin name="Gate" net="/input"/>
+						<pin name="Source" net="/source"/>
+					</pins>
+					<devices>
+						<device name="/m_scm_normal" deviceType="Mosfet" techType="n" instance="/x_ccm/"/>
+					</devices>
+				</structure>
+			</structure>
+		</structure>
+		<structure name="MosfetDiodeArray[1]" techType="n" instance="/x_ccm/x_ls/">
+			<pins>
+				<pin name="Bulk" net="/inh_bulk_n"/>
+				<pin name="Drain" net="/in1"/>
+				<pin name="Source" net="/out1"/>
+			</pins>
+			<devices>
+				<device name="/m_ls_diode" deviceType="Mosfet" techType="n" instance="/x_ccm/x_ls/"/>
+			</devices>
+		</structure>
+		<structure name="MosfetNormalArray[1]" techType="n" instance="/x_ccm/x_ls/">
+			<pins>
+				<pin name="Bulk" net="/inh_bulk_n"/>
+				<pin name="Drain" net="/in2"/>
+				<pin name="Gate" net="/in1"/>
+				<pin name="Source" net="/out2"/>
+			</pins>
+			<devices>
+				<device name="/m_ls_normal" deviceType="Mosfet" techType="n" instance="/x_ccm/x_ls/"/>
+			</devices>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[1]" techType="n" instance="/x_ccm/x_scm/">
+			<pins>
+				<pin name="Input" net="/input"/>
+				<pin name="Output" net="/output"/>
+				<pin name="Source" net="/source"/>
+			</pins>
+			<structure name="MosfetDiodeArray[2]" techType="n" instance="/x_ccm/x_scm/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_scm_diode" deviceType="Mosfet" techType="n" instance="/x_ccm/x_scm/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[2]" techType="n" instance="/x_ccm/x_scm/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_scm_normal" deviceType="Mosfet" techType="n" instance="/x_ccm/x_scm/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetDifferentialPair[1]" techType="n" instance="/x_dp/">
+			<pins>
+				<pin name="Input1" net="/in1"/>
+				<pin name="Input2" net="/in2"/>
+				<pin name="Output1" net="/out1"/>
+				<pin name="Output2" net="/out2"/>
+				<pin name="Source" net="/source"/>
+			</pins>
+			<structure name="MosfetNormalArray[3]" techType="n" instance="/x_dp/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/out1"/>
+					<pin name="Gate" net="/in1"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_dp_2" deviceType="Mosfet" techType="n" instance="/x_dp/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[4]" techType="n" instance="/x_dp/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/out2"/>
+					<pin name="Gate" net="/in2"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_dp_1" deviceType="Mosfet" techType="n" instance="/x_dp/"/>
+				</devices>
+			</structure>
+		</structure>
+	</structure_recognition_results>
+</acst_results>
+

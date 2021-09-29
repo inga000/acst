@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pairLibrary>
+	<pairLibraryItemFiles>
+		<pairLibraryItemFile>Items/singleSupplyTVVS1.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS2.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS3.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS4.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS5.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS6.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS7.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS8.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS9.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS10.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS11.xml</pairLibraryItemFile>
+		<pairLibraryItemFile>Items/singleSupplyTVVS12.xml</pairLibraryItemFile>
+	</pairLibraryItemFiles>
+	<hierarchyLevels>
+		<hierarchyLevel level="1">
+			<pairLibraryItem persistence="2">singleSupplyTVVS1</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyTVVS2</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyTVVS3</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyTVVS4</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyTVVS5</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyTVVS6</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="2">
+			<pairLibraryItem persistence="1">singleSupplyTVVS7</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyTVVS8</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyTVVS9</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="3">
+			<pairLibraryItem persistence="1">singleSupplyTVVS10</pairLibraryItem>
+			<pairLibraryItem persistence="1">singleSupplyTVVS11</pairLibraryItem>
+		</hierarchyLevel>
+		<hierarchyLevel level="4">
+			<pairLibraryItem>singleSupplyTVVS12</pairLibraryItem>
+		</hierarchyLevel>
+	</hierarchyLevels>
+	<dominanceRelations/>
+</pairLibrary>
+

@@ -1,0 +1,65 @@
+** Generated for: hspiceD
+** Generated on: Aug 17 09:45:38 2018
+** Design library name: oaLib
+** Design cell name: ccm_twoHL
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: oaLib
+** Cell name: OTA
+** View name: schematic
+.subckt OTA ib in ip out inh_bulk_n inh_bulk_p
+m3 net17 net17 gnd! inh_bulk_n nmos
+m2 net13 net12 gnd! inh_bulk_n nmos
+m1 out net17 gnd! inh_bulk_n nmos
+m0 net12 net12 gnd! inh_bulk_n nmos
+m9 out net13 vdd! inh_bulk_p pmos
+m8 net16 ib vdd! inh_bulk_p pmos
+m7 ib ib vdd! inh_bulk_p pmos
+m6 net13 net13 vdd! inh_bulk_p pmos
+m5 net17 ip net16 inh_bulk_p pmos
+m4 net12 in net16 inh_bulk_p pmos
+.ends OTA
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: scm_nmos
+** View name: schematic
+.subckt scm_nmos input output source inh_bulk_n
+m1 input input source inh_bulk_n nmos
+m0 output input source inh_bulk_n nmos
+.ends scm_nmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: OTAwithSCMinOneInstance
+** View name: schematic
+.subckt OTAwithSCMinOneInstance ib in input ip output inh_bulk_n inh_bulk_p
+xi2 ib in ip net11 inh_bulk_n inh_bulk_p OTA
+xi3 input output net11 inh_bulk_n scm_nmos
+.ends OTAwithSCMinOneInstance
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: ls_nmos
+** View name: schematic
+.subckt ls_nmos in1 in2 out1 out2 inh_bulk_n
+m1 in1 in1 out1 inh_bulk_n nmos
+m0 in2 in1 out2 inh_bulk_n nmos
+.ends ls_nmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: ccm_twoHL
+** View name: schematic
+xi0 net05 net03 net1 net04 net2 gnd! vdd! OTAwithSCMinOneInstance
+xi2 net07 net06 net1 net2 gnd! ls_nmos
+.END

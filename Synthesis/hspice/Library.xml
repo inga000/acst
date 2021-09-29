@@ -1,0 +1,27 @@
+<AmplificationStages>
+	<FirstStages>
+		<Stage>FirstStage/cascodeFirstStageNMOS.hspice</Stage>
+		<Stage>FirstStage/cascodeFirstStagePMOS.hspice</Stage>
+		<Stage>FirstStage/foldedCascodeFirstStageNMOS.hspice</Stage>
+		<Stage>FirstStage/foldedCascodeFirstStagePMOS.hspice</Stage>
+		<Stage>FirstStage/simpleFirstStageNMOS.hspice</Stage-->
+		<Stage>FirstStage/simpleFirstStagePMOS.hspice</Stage>
+	</FirstStages>
+	<SymmetricalFirstStages>
+			<Stage>FirstStage/symmetricalFirstStageNMOS.hspice</Stage> 
+			<Stage>FirstStage/symmetricalFirstStagePMOS.hspice</Stage>  
+	</SymmetricalFirstStages>
+	<SecondStages>
+ 		<Stage>SecondStage/cascodeSecondStageNMOS.hspice</Stage>
+		<Stage>SecondStage/cascodeSecondStagePMOS.hspice</Stage>
+		<Stage>SecondStage/simpleSecondStageNMOS.hspice</Stage>
+		<Stage>SecondStage/simpleSecondStagePMOS.hspice</Stage> 
+	</SecondStages>		
+	<ComplementarySecondStages>
+		<Stage>SecondStage/cascodeSecondStageVoltageBiasNMOS.hspice</Stage> 
+		<Stage>SecondStage/cascodeSecondStageVoltageBiasPMOS.hspice</Stage>  
+		<Stage>SecondStage/simpleSecondStageVoltageBiasNMOS.hspice</Stage>
+		<Stage>SecondStage/simpleSecondStageVoltageBiasPMOS.hspice</Stage>   
+	</ComplementarySecondStages>
+</AmplificationStages>
+	

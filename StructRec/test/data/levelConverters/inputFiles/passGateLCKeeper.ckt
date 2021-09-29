@@ -1,0 +1,26 @@
+** Generated for: hspiceD
+** Generated on: May 18 14:57:32 2021
+** Design library name: levelConverters
+** Design cell name: passGateLCKeeper
+** Design view name: schematic
+.GLOBAL vdd! vddd! vss!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: levelConverters
+** Cell name: passGateLCKeeper
+** View name: schematic
+m14 in3 vdd! vx2 vss! nmos
+m12 vy2 in3 vss! vss! nmos
+m13 out3 vy2 vss! vss! nmos
+m16 vy2 vx2 vddd! vdd! pmos
+m18 net12 0 vddd! vdd! pmos
+m17 out3 vy2 vddd! vdd! pmos
+m15 vx2 vy2 net12 vdd! pmos
+.END

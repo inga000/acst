@@ -1,0 +1,27 @@
+** Generated for: hspiceD
+** Generated on: Aug 16 17:13:06 2018
+** Design library name: circuits
+** Design cell name: cross_coupled
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: circuits
+** Cell name: cross_coupled
+** View name: schematic
+m3 net12 net12 gnd! gnd! nmos
+m2 net11 net12 gnd! gnd! nmos
+m1 net11 net11 gnd! gnd! nmos
+m0 net12 net11 gnd! gnd! nmos
+m7 net12 net12 vdd! vdd! pmos
+m6 net11 net12 vdd! vdd! pmos
+m5 net11 net11 vdd! vdd! pmos
+m4 net12 net11 vdd! vdd! pmos
+.END

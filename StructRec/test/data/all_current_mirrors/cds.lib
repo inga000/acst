@@ -1,0 +1,2 @@
+INCLUDE /nfs/tools/cadence/IC_6.1.4HF506/share/cdssetup/cds.lib
+DEFINE oaLib ./oaLib

@@ -1,0 +1,24 @@
+** Generated for: hspiceD
+** Generated on: Apr  5 15:32:53 2019
+** Design library name: twoStageOTATest
+** Design cell name: twoStageOTA
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: twoStageOTATest
+** Cell name: twoStageOTA
+** View name: schematic
+mBOBias vbBias vbBias gnd! gnd! nmos
+mT11 outFirstStage1 in1 dpSource dpSource nmos 
+mT12 outFirstStage2 in2 dpSource dpSource nmos 
+mB11 dpSource vbBias gnd! gnd! nmos
+mL11 outFirstStage1 outFirstStage2 vdd! vdd! pmos
+mL12 outFirstStage2 outFirstStage2 vdd! vdd! pmos
+.END

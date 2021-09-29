@@ -1,0 +1,47 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="ISO-8859-1"?>
+    <arrayLibrary>
+        <arrayLibraryItemFiles>            
+            <arrayLibraryItemFile>Items/Mosfet/MosfetDiodeArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/Mosfet/MosfetNormalArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/Mosfet/MosfetOffArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/Mosfet/MosfetDummyArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/Mosfet/MosfetCapacitorArray.xml</arrayLibraryItemFile>
+
+            <arrayLibraryItemFile>Items/Bipolar/BipolarDiodeArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/Bipolar/BipolarDummyArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/Bipolar/BipolarNormalArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/Bipolar/BipolarOffArray.xml</arrayLibraryItemFile>
+
+            <arrayLibraryItemFile>Items/CapacitorArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/DiodeArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/InductorArray.xml</arrayLibraryItemFile>
+            <arrayLibraryItemFile>Items/ResistorArray.xml</arrayLibraryItemFile>       
+        </arrayLibraryItemFiles>
+        <arrayLibraryItems level = "0">
+            <arrayLibraryItem>MosfetOffArray</library_item>
+            <arrayLibraryItem>MosfetDummyArray</libraryItem>
+            <arrayLibraryItem>MosfetCapacitorArray</libraryItem> 
+            <arrayLibraryItem>MosfetDiodeArray</library_item>
+            <arrayLibraryItem>MosfetNormalArray</libraryItem>
+
+            <arrayLibraryItem>BipolarDummyArray</libraryItem> 
+            <arrayLibraryItem>BipolarOffArray</libraryItem>
+            <arrayLibraryItem>BipolarDiodeArray</libraryItem>
+            <arrayLibraryItem>BipolarNormalArray</library_item>
+
+            <arrayLibraryItem>CapacitorArray</libraryItem>
+            <arrayLibraryItem>DiodeArray</libraryItem> 
+            <arrayLibraryItem>InductorArray</library_item>
+            <arrayLibraryItem>ResistorArray</libraryItem>
+        </arrayLibraryItems>    
+    </arrayLibrary>
+

@@ -1,0 +1,58 @@
+** Generated for: hspiceD
+** Generated on: Aug 16 17:54:08 2018
+** Design library name: oaLib
+** Design cell name: ds_with_ccm
+** Design view name: schematic
+
+.GLOBAL gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: oaLib
+** Cell name: scm2
+** View name: schematic
+.subckt scm2 input output inh_bulk_n 
+m_scm_diode input input source inh_bulk_n nmos
+m_scm_normal output input source inh_bulk_n nmos
+.ends scm2
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: ls_nmos
+** View name: schematic
+.subckt ls_nmos in1 in2 out1 out2 inh_bulk_n
+m_ls_diode in1 in1 out1 inh_bulk_n nmos
+m_ls_normal in2 in1 out2 inh_bulk_n nmos
+.ends ls_nmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: ccm
+** View name: schematic
+.subckt ccm inner1 inner2 input output inh_bulk_n 
+x_scm inner1 inner2 inh_bulk_n  scm2
+x_ls input output inner1 inner2 inh_bulk_n ls_nmos
+.ends ccm
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: dp_nmos
+** View name: schematic
+.subckt dp_nmos in1 in2 out1 out2 source inh_bulk_n
+m_dp_1 out2 in2 source inh_bulk_n nmos
+m_dp_2 out1 in1 source inh_bulk_n nmos
+.ends dp_nmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: ds_with_ccm
+** View name: schematic
+x_ccm net8 net7 net9 net1 gnd!  ccm
+x_dp net05 net04 net03 net02 net1 gnd! dp_nmos
+.END

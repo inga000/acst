@@ -1,0 +1,25 @@
+.suckt  two_stage_single_output_op_amp_155_12 ibias in1 in2 out sourceNmos sourcePmos
+c1 outFirstStage out 
+m1 outVoltageBiasXXpXX1 outVoltageBiasXXnXX2 sourceNmos sourceNmos nmos
+m2 outInputVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos
+m3 outVoltageBiasXXnXX2 ibias sourcePmos sourcePmos pmos
+m4 FirstStageYout1 FirstStageYout1 sourcePmos sourcePmos pmos
+m5 outFirstStage FirstStageYout1 sourcePmos sourcePmos pmos
+m6 FirstStageYout1 outVoltageBiasXXnXX2 sourceNmos sourceNmos nmos
+m7 outFirstStage outVoltageBiasXXnXX2 sourceNmos sourceNmos nmos
+m8 FirstStageYsourceTransconductance outVoltageBiasXXpXX1 FirstStageYinnerStageBias FirstStageYinnerStageBias pmos
+m9 FirstStageYinnerStageBias ibias sourcePmos sourcePmos pmos
+m10 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+m11 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+c2 out sourceNmos 
+m12 out outInputVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 nmos
+m13 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m14 out outVoltageBiasXXpXX1 SecondStageYinnerTransconductance SecondStageYinnerTransconductance pmos
+m15 SecondStageYinnerTransconductance outFirstStage sourcePmos sourcePmos pmos
+m16 outInputVoltageBiasXXnXX1 outInputVoltageBiasXXnXX1 VoltageBiasXXnXX1Yinner VoltageBiasXXnXX1Yinner nmos
+m17 VoltageBiasXXnXX1Yinner outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m18 outVoltageBiasXXnXX2 outVoltageBiasXXnXX2 sourceNmos sourceNmos nmos
+m19 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos
+m20 ibias ibias sourcePmos sourcePmos pmos
+.end two_stage_single_output_op_amp_155_12
+

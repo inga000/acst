@@ -1,0 +1,39 @@
+** Generated for: hspiceD
+** Generated on: Feb  2 12:39:39 2021
+** Design library name: omcd
+** Design cell name: amplifier
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: omcd
+** Cell name: amplifier
+** View name: schematic
+mpdp net55 inp net54 vdd! pmos
+mpdn net52 inn net54 vdd! pmos
+mpbcmsn net086 net041 vdd! vdd! pmos
+mpbcmm net041 net041 vdd! vdd! pmos
+mpbcmsd net54 net041 vdd! vdd! pmos
+mpocms net25 net040 vdd! vdd! pmos
+mpolss out net7 net25 vdd! pmos
+mpocmm net040 net040 vdd! vdd! pmos
+mpolsm net7 net7 net040 vdd! pmos
+mpblss net095 ibias net086 vdd! pmos
+mpblsm ibias ibias net041 vdd! pmos
+mndp net040 inp net27 gnd! nmos
+mndn net25 inn net27 gnd! nmos
+mnbcmm net095 net095 gnd! gnd! nmos
+mnbcms net27 net095 gnd! gnd! nmos
+mnolss out net7 net52 gnd! nmos
+mnocms net52 net55 gnd! gnd! nmos
+mnolsm net7 net7 net55 gnd! nmos
+mnocmm net55 net55 gnd! gnd! nmos
+cl out gnd!
+.END

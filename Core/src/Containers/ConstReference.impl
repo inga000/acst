@@ -1,0 +1,59 @@
+/*******************************************************************************
+        Copyright (C) 2013
+        Institute for Electronic Design Automation
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann
+        Technische Universitaet Muenchen
+        Arcisstrasse 21
+        D-80333 Muenchen
+        Germany
+*******************************************************************************/
+
+#include <sstream>
+
+namespace Core {
+
+    template<class ObjectType>
+    inline ConstReference<ObjectType>::ConstReference(const ObjectType& referencedObject) :
+        referencedObject(&referencedObject)
+    {
+    }
+
+    template<class ObjectType>
+    inline bool ConstReference<ObjectType>::operator ==(const ConstReference& other) const
+    {
+        return *referencedObject == *other.referencedObject;
+    }
+
+    template<class ObjectType>
+    inline bool ConstReference<ObjectType>::operator <(const ConstReference& other) const
+    {
+        return *referencedObject < *other.referencedObject;
+    }
+
+    template<class ObjectType>
+    inline const ObjectType& ConstReference<ObjectType>::operator *() const
+    {
+        return *referencedObject;
+    }
+
+    template<class ObjectType>
+    inline bool ConstReference<ObjectType>::operator !=(const ConstReference& other) const
+    {
+        return !(*this == other);
+    }
+
+    template<class ObjectType>
+    inline bool ConstReference<ObjectType>::operator >(const ConstReference& other) const
+    {
+        return !(*this == other) && !(*this < other);
+    }
+
+    template<class ObjectType>
+    inline std::string ConstReference<ObjectType>::toStr() const
+    {
+        std::ostringstream tempStream;
+        tempStream << "Ref:" << *referencedObject;
+        return tempStream.str();
+    }
+
+}

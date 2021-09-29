@@ -1,0 +1,84 @@
+** Generated for: hspiceD
+** Generated on: Aug 16 19:15:07 2018
+** Design library name: oaLib
+** Design cell name: ota_dpHidenInThreeInstances
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: oaLib
+** Cell name: scm_pmos
+** View name: schematic
+.subckt scm_pmos input output source inh_bulk_p
+m1 input input source inh_bulk_p pmos
+m0 output input source inh_bulk_p pmos
+.ends scm_pmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: scm_hidenInTowInstances
+** View name: schematic
+.subckt scm_hidenInTowInstances input2_2hl input_2hl output2_2hl output_2hl inh_bulk_p
+xi5 input_2hl output_2hl vdd! inh_bulk_p scm_pmos
+xi6 input2_2hl output2_2hl vdd! inh_bulk_p scm_pmos
+.ends scm_hidenInTowInstances
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: dp_pmos
+** View name: schematic
+.subckt dp_pmos in1 in2 out1 out2 source inh_bulk_p
+m1 out2 in2 source inh_bulk_p pmos
+m0 out1 in1 source inh_bulk_p pmos
+.ends dp_pmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: scm
+** View name: schematic
+.subckt scm input output inh_bulk_n
+m1 input input gnd! inh_bulk_n nmos
+m0 output input gnd! inh_bulk_n nmos
+.ends scm
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: dp_hidenInTwoInstances
+** View name: schematic
+.subckt dp_hidenInTwoInstances out1_upperhl out2_upperhl source_upperhl inh_bulk_n inh_bulk_p
+xi6 net010 net011 out1_upperhl net07 source_upperhl inh_bulk_p dp_pmos
+xi10 net07 out2_upperhl inh_bulk_n scm
+.ends dp_hidenInTwoInstances
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: scm_nmos
+** View name: schematic
+.subckt scm_nmos input output source inh_bulk_n
+m1 input input source inh_bulk_n nmos
+m0 output input source inh_bulk_n nmos
+.ends scm_nmos
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: dp_hidenInThreeInstances
+** View name: schematic
+.subckt dp_hidenInThreeInstances out1_3hl out2_3hl source_3hl inh_bulk_n inh_bulk_p
+xi0 net4 out2_3hl source_3hl inh_bulk_n inh_bulk_p dp_hidenInTwoInstances
+xi3 net4 out1_3hl gnd! inh_bulk_n scm_nmos
+.ends dp_hidenInThreeInstances
+** End of subcircuit definition.
+
+** Library name: oaLib
+** Cell name: ota_dpHidenInThreeInstances
+** View name: schematic
+xi2 net04 net07 net05 net1 vdd! scm_hidenInTowInstances
+xi3 net05 net04 net1 vdd! vdd! dp_hidenInThreeInstances
+.END

@@ -1,0 +1,62 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="UTF-8"?>
+<arrayLibraryItem>
+    <structureName>CapacitorArray</structureName>
+    <imageFilePath>../Images/CapacitorArray.png</imageFilePath>
+    <arrayConnection>
+        <connection>
+            <structurePinType>
+                <structureName>CapacitorArray</structureName>
+                <structurePinName>Plus</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Capacitor</deviceTypeName>
+                <devicePinName>Plus</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>CapacitorArray</structureName>
+                <structurePinName>Minus</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Capacitor</deviceTypeName>
+                <devicePinName>Minus</devicePinName>
+            </devicePinType>
+        </connection>
+    </arrayConnection>
+    <recognitionRules>
+        <deviceTypeRule>Capacitor</deviceTypeRule>
+        <connectionRules>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Capacitor</deviceTypeName>
+                    <devicePinName>Plus</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Capacitor</deviceTypeName>
+                    <devicePinName>Minus</devicePinName>
+                </devicePinType>
+            </connectionRule>
+        </connectionRules>
+    </recognitionRules>
+    <parallelNets>
+        <devicePinType>
+            <deviceTypeName>Capacitor</deviceTypeName>
+            <devicePinName>Plus</devicePinName>
+        </devicePinType>
+        <devicePinType>
+            <deviceTypeName>Capacitor</deviceTypeName>
+            <devicePinName>Minus</devicePinName>
+        </devicePinType>
+    </parallelNets>
+</arrayLibraryItem>

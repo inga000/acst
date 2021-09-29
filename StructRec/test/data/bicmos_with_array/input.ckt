@@ -1,0 +1,45 @@
+** Generated for: hspiceD
+** Generated on: Aug 16 16:29:00 2018
+** Design library name: circuits
+** Design cell name: bicmos_with_array
+** Design view name: schematic
+.GLOBAL vdd! vss!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: circuits
+** Cell name: bicmos_with_array
+** View name: schematic
+m0 bias1 bias1 vss! vss! nmos
+m1 bias2 bias1 vss! vss! nmos24 L=6e-6 W=20e-6
+m14 net45 out net45 net45 pmos24 L=6e-6 W=100e-6 M=1
+m13 net45 out net45 net45 pmos24 L=6e-6 W=100e-6 M=1
+m12 vdd! vdd! vdd! vdd! pmos24 L=6e-6 W=100e-6 M=1
+m11 vdd! vdd! vdd! vdd! pmos24 L=6e-6 W=100e-6 M=1
+m5 out n4 vdd! vdd! pmos24 L=6e-6 W=100e-6 M=1
+m4 n4 n4 vdd! vdd! pmos24 L=6e-6 W=100e-6 M=1
+m3 n2 inn n1 n1 pmos24 L=3e-6 W=50e-6 M=5
+m2 n3 out n1 n1 pmos24 L=3e-6 W=50e-6 M=5
+q8 n3 n3 vss! vss! npn 750e-3 M=1
+q7 n4 n3 vss! vss! npn 750e-3 M=2
+q0 n4 n3 vss! vss! npn 750e-3 M=2
+q2 n2 n2 vss! vss! npn 750e-3 M=1
+q3 out n2 vss! vss! npn 750e-3 M=2
+q1 n3 n3 vss! vss! npn 750e-3 M=1
+q11 n1 bias3 vdd! vdd! pnp 750e-3 M=5
+q10 bias2 bias3 vdd! vdd! pnp 750e-3 M=2
+q9 bias2 bias3 vdd! vdd! pnp 750e-3 M=2
+q6 vss! bias2 bias3 vdd! pnp 750e-3 M=2
+q5 bias2 bias3 vdd! vdd! pnp 750e-3 M=2
+q4 n1 bias3 vdd! vdd! pnp 750e-3 M=5
+r0 vdd! bias1 80e3
+r1 vdd! bias3 80e3
+c1 out vss! 1e-12
+c0 out vss! 1e-12
+.END

@@ -1,0 +1,12 @@
+.suckt  one_stage_single_output_op_amp15 ibias in1 in2 out sourceNmos sourcePmos
+m1 FirstStageYout1 FirstStageYout1 sourceNmos sourceNmos nmos
+m2 out FirstStageYout1 sourceNmos sourceNmos nmos
+m3 FirstStageYsourceTransconductance ibias FirstStageYinnerStageBias FirstStageYinnerStageBias pmos
+m4 FirstStageYinnerStageBias outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos
+m5 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+m6 out in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+c1 out sourceNmos 
+m7 ibias ibias outSourceVoltageBiasXXpXX1 outSourceVoltageBiasXXpXX1 pmos
+m8 outSourceVoltageBiasXXpXX1 outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos
+.end one_stage_single_output_op_amp15
+

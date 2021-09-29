@@ -1,0 +1,59 @@
+** Name: two_stage_single_output_op_amp_9_7
+
+.MACRO two_stage_single_output_op_amp_9_7 ibias in1 in2 out sourceNmos sourcePmos
+m1 ibias ibias sourceNmos sourceNmos nmos4 L=2e-6 W=7e-6
+m2 FirstStageYinnerSourceLoad1 FirstStageYinnerSourceLoad1 sourcePmos sourcePmos pmos4 L=5e-6 W=11e-6
+m3 out ibias sourceNmos sourceNmos nmos4 L=2e-6 W=312e-6
+m4 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=10e-6 W=21e-6
+m5 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=10e-6 W=21e-6
+m6 FirstStageYsourceTransconductance ibias sourceNmos sourceNmos nmos4 L=2e-6 W=15e-6
+m7 out outFirstStage sourcePmos sourcePmos pmos4 L=2e-6 W=88e-6
+m8 outFirstStage FirstStageYout1 FirstStageYinnerSourceLoad1 FirstStageYinnerSourceLoad1 pmos4 L=2e-6 W=39e-6
+m9 FirstStageYout1 FirstStageYinnerSourceLoad1 sourcePmos sourcePmos pmos4 L=5e-6 W=11e-6
+Capacitor1 out sourceNmos 20e-12
+Capacitor2 outFirstStage out 4.90001e-12
+.EOM two_stage_single_output_op_amp_9_7
+
+** Expected Performance Values: 
+** Gain: 85 dB
+** Power consumption: 2.38901 mW
+** Area: 1452 (mu_m)^2
+** Transit frequency: 2.80001 MHz
+** Transit frequency with error factor: 2.7966 MHz
+** Slew rate: 4.28046 V/mu_s
+** Phase margin: 60.1606°
+** CMRR: 104 dB
+** negPSRR: 94 dB
+** posPSRR: 90 dB
+** VoutMax: 4.25 V
+** VoutMin: 0.180001 V
+** VcmMax: 4.15001 V
+** VcmMin: 0.830001 V
+
+
+** Expected Currents: 
+** NormalTransistorPmos: -1.05259e+07 muA
+** NormalTransistorPmos: -1.05259e+07 muA
+** DiodeTransistorPmos: -1.05259e+07 muA
+** NormalTransistorNmos: 2.10511e+07 muA
+** NormalTransistorNmos: 1.05251e+07 muA
+** NormalTransistorNmos: 1.05251e+07 muA
+** NormalTransistorNmos: 4.46703e+08 muA
+** NormalTransistorPmos: -4.46702e+08 muA
+** DiodeTransistorNmos: 9.99901e+06 muA
+
+
+** Expected Voltages: 
+** ibias: 0.588001  V
+** in1: 2.5  V
+** in2: 2.5  V
+** out: 2.5  V
+** outFirstStage: 3.68601  V
+** sourceNmos: 0  V
+** sourcePmos: 5  V
+** innerSourceLoad1: 3.91601  V
+** out1: 3.17801  V
+** sourceTransconductance: 1.85101  V
+
+
+.END

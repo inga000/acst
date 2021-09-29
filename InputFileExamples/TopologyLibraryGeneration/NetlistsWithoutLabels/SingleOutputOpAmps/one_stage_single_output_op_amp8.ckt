@@ -1,0 +1,10 @@
+.suckt  one_stage_single_output_op_amp8 ibias in1 in2 out sourceNmos sourcePmos
+m1 FirstStageYout1 FirstStageYout1 sourcePmos sourcePmos pmos
+m2 out FirstStageYout1 sourcePmos sourcePmos pmos
+m3 FirstStageYsourceTransconductance ibias sourceNmos sourceNmos nmos
+m4 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+m5 out in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+c1 out sourceNmos 
+m6 ibias ibias sourceNmos sourceNmos nmos
+.end one_stage_single_output_op_amp8
+

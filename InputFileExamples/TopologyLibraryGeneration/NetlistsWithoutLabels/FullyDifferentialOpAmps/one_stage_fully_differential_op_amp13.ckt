@@ -1,0 +1,19 @@
+.suckt  one_stage_fully_differential_op_amp13 ibias in1 in2 out1 out2 sourceNmos sourcePmos vref
+m1 FeedbackStageYout1 FeedbackStageYout1 sourcePmos sourcePmos pmos
+m2 outFeedback outFeedback sourcePmos sourcePmos pmos
+m3 FeedbackStageYsourceTransconductance1 ibias sourceNmos sourceNmos nmos
+m4 FeedbackStageYsourceTransconductance2 ibias sourceNmos sourceNmos nmos
+m5 FeedbackStageYout1 out2 FeedbackStageYsourceTransconductance1 FeedbackStageYsourceTransconductance1 nmos
+m6 outFeedback vref FeedbackStageYsourceTransconductance1 FeedbackStageYsourceTransconductance1 nmos
+m7 FeedbackStageYout1 out1 FeedbackStageYsourceTransconductance2 FeedbackStageYsourceTransconductance2 nmos
+m8 outFeedback vref FeedbackStageYsourceTransconductance2 FeedbackStageYsourceTransconductance2 nmos
+m9 out1 outFeedback sourcePmos sourcePmos pmos
+m10 out2 outFeedback sourcePmos sourcePmos pmos
+m11 FirstStageYsourceTransconductance ibias sourceNmos sourceNmos nmos
+m12 out1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+m13 out2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+c1 out1 sourceNmos 
+c2 out2 sourceNmos 
+m14 ibias ibias sourceNmos sourceNmos nmos
+.end one_stage_fully_differential_op_amp13
+

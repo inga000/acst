@@ -1,0 +1,20 @@
+.suckt  two_stage_single_output_op_amp_128_1 ibias in1 in2 out sourceNmos sourcePmos
+c1 outFirstStage out 
+m1 inputVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos
+m2 FirstStageYout1 FirstStageYout1 sourcePmos sourcePmos pmos
+m3 outFirstStage FirstStageYout1 sourcePmos sourcePmos pmos
+m4 FirstStageYout1 inputVoltageBiasXXnXX1 FirstStageYinnerTransistorStack1Load2 FirstStageYinnerTransistorStack1Load2 nmos
+m5 FirstStageYinnerTransistorStack1Load2 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m6 outFirstStage inputVoltageBiasXXnXX1 FirstStageYinnerTransistorStack2Load2 FirstStageYinnerTransistorStack2Load2 nmos
+m7 FirstStageYinnerTransistorStack2Load2 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m8 FirstStageYsourceTransconductance ibias sourcePmos sourcePmos pmos
+m9 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+m10 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos
+c2 out sourceNmos 
+m11 out outFirstStage sourceNmos sourceNmos nmos
+m12 out ibias sourcePmos sourcePmos pmos
+m13 inputVoltageBiasXXnXX1 inputVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 nmos
+m14 outSourceVoltageBiasXXnXX1 outSourceVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m15 ibias ibias sourcePmos sourcePmos pmos
+.end two_stage_single_output_op_amp_128_1
+

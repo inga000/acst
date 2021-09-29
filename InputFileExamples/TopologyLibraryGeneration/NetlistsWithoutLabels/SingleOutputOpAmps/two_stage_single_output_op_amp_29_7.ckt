@@ -1,0 +1,18 @@
+.suckt  two_stage_single_output_op_amp_29_7 ibias in1 in2 out sourceNmos sourcePmos
+c1 outFirstStage out 
+m1 outVoltageBiasXXpXX0 ibias sourceNmos sourceNmos nmos
+m2 inputVoltageBiasXXnXX1 outVoltageBiasXXpXX0 sourcePmos sourcePmos pmos
+m3 FirstStageYout1 FirstStageYout1 sourcePmos sourcePmos pmos
+m4 outFirstStage FirstStageYout1 sourcePmos sourcePmos pmos
+m5 FirstStageYsourceTransconductance inputVoltageBiasXXnXX1 FirstStageYinnerStageBias FirstStageYinnerStageBias nmos
+m6 FirstStageYinnerStageBias ibias sourceNmos sourceNmos nmos
+m7 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+m8 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos
+c2 out sourceNmos 
+m9 out ibias sourceNmos sourceNmos nmos
+m10 out outFirstStage sourcePmos sourcePmos pmos
+m11 inputVoltageBiasXXnXX1 inputVoltageBiasXXnXX1 sourceNmos sourceNmos nmos
+m12 ibias ibias sourceNmos sourceNmos nmos
+m13 outVoltageBiasXXpXX0 outVoltageBiasXXpXX0 sourcePmos sourcePmos pmos
+.end two_stage_single_output_op_amp_29_7
+

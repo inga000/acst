@@ -1,0 +1,84 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="UTF-8"?>
+<arrayLibraryItem>
+    <structureName>MosfetCapacitorArray</structureName>
+    <imageFilePath>../../Images/MosfetCapacitorArray.png</imageFilePath>
+    <arrayConnection>
+        <connection>
+            <structurePinType>
+                <structureName>MosfetCapacitorArray</structureName>
+                <structurePinName>Gate</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Mosfet</deviceTypeName>
+                <devicePinName>Gate</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>MosfetCapacitorArray</structureName>
+                <structurePinName>Other</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Mosfet</deviceTypeName>
+                <devicePinName>Source</devicePinName>
+            </devicePinType>
+        </connection>
+    </arrayConnection>
+    <recognitionRules>
+        <deviceTypeRule>Mosfet</deviceTypeRule>
+        <connectionRules>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Drain</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Gate</devicePinName>
+                </devicePinType>
+            </connectionRule>
+            <connectionRule>
+                <connected>true</connected>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Drain</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Source</devicePinName>
+                </devicePinType>
+            </connectionRule>
+            <connectionRule>
+                <connected>true</connected>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Drain</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Mosfet</deviceTypeName>
+                    <devicePinName>Bulk</devicePinName>
+                </devicePinType>
+            </connectionRule>
+        </connectionRules>
+    </recognitionRules>
+    <parallelNets>
+        <devicePinType>
+            <deviceTypeName>Mosfet</deviceTypeName>
+            <devicePinName>Gate</devicePinName>
+        </devicePinType>
+       <devicePinType>
+            <deviceTypeName>Mosfet</deviceTypeName>
+            <devicePinName>Source</devicePinName>
+        </devicePinType>
+    </parallelNets>
+</arrayLibraryItem>

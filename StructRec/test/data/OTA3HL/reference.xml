@@ -1,0 +1,180 @@
+<acst_results>
+	<date day="21" month="6" year="2021" hour="17" minute="25" second="52"/>
+	<structure_recognition_results>
+		<structure name="MosfetAnalogInverter[1]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Gnd" net="/x_dpp_scmn_scmn/x_scmn/gnd!"/>
+				<pin name="InputNMOS1" net="/x_dpp_scmn_scmn/x_scmn/input"/>
+				<pin name="InputPMOS1" net="/net1"/>
+				<pin name="Output" net="/net4"/>
+				<pin name="Vdd" net="/vdd!"/>
+			</pins>
+			<structure name="/x_scmp1_scmp2/x_scmp1/MosfetNormalArray[4]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_scmp_normal" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="/x_dpp_scmn_scmn/x_scmn/MosfetNormalArray[3]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate" net="/input"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m_scmn_normal" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetDifferentialPair[1]" techType="p" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_dpp/">
+			<pins>
+				<pin name="Input1" net="/in1"/>
+				<pin name="Input2" net="/in2"/>
+				<pin name="Output1" net="/out1"/>
+				<pin name="Output2" net="/out2"/>
+				<pin name="Source" net="/source"/>
+			</pins>
+			<structure name="MosfetNormalArray[1]" techType="p" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_dpp/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/out1"/>
+					<pin name="Gate" net="/in1"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_dpp_2" deviceType="Mosfet" techType="p" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_dpp/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[2]" techType="p" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_dpp/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/out2"/>
+					<pin name="Gate" net="/in2"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_dpp_1" deviceType="Mosfet" techType="p" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_dpp/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[1]" techType="n" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_scmn/">
+			<pins>
+				<pin name="Input" net="/input"/>
+				<pin name="Output" net="/output"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_scmn/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/input"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m_scmn_diode" deviceType="Mosfet" techType="n" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_scmn/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[3]" techType="n" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_scmn/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate" net="/input"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m_scmn_normal" deviceType="Mosfet" techType="n" instance="/x_dpp_scmn_scmn/x_dpp_scmn/x_scmn/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[1]" techType="n" instance="/x_dpp_scmn_scmn/x_scmn/">
+			<pins>
+				<pin name="Input" net="/input"/>
+				<pin name="Output" net="/output"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/x_dpp_scmn_scmn/x_scmn/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/input"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m_scmn_diode" deviceType="Mosfet" techType="n" instance="/x_dpp_scmn_scmn/x_scmn/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[3]" techType="n" instance="/x_dpp_scmn_scmn/x_scmn/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate" net="/input"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m_scmn_normal" deviceType="Mosfet" techType="n" instance="/x_dpp_scmn_scmn/x_scmn/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[2]" techType="p" instance="/x_scmp1_scmp2/x_scmp1/">
+			<pins>
+				<pin name="Input" net="/input"/>
+				<pin name="Output" net="/output"/>
+				<pin name="Source" net="/source"/>
+			</pins>
+			<structure name="MosfetDiodeArray[2]" techType="p" instance="/x_scmp1_scmp2/x_scmp1/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_scmp_diode" deviceType="Mosfet" techType="p" instance="/x_scmp1_scmp2/x_scmp1/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[4]" techType="p" instance="/x_scmp1_scmp2/x_scmp1/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_scmp_normal" deviceType="Mosfet" techType="p" instance="/x_scmp1_scmp2/x_scmp1/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[2]" techType="p" instance="/x_scmp1_scmp2/x_scmp2/">
+			<pins>
+				<pin name="Input" net="/input"/>
+				<pin name="Output" net="/output"/>
+				<pin name="Source" net="/source"/>
+			</pins>
+			<structure name="MosfetDiodeArray[2]" techType="p" instance="/x_scmp1_scmp2/x_scmp2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_scmp_diode" deviceType="Mosfet" techType="p" instance="/x_scmp1_scmp2/x_scmp2/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[4]" techType="p" instance="/x_scmp1_scmp2/x_scmp2/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_p"/>
+					<pin name="Drain" net="/output"/>
+					<pin name="Gate" net="/input"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_scmp_normal" deviceType="Mosfet" techType="p" instance="/x_scmp1_scmp2/x_scmp2/"/>
+				</devices>
+			</structure>
+		</structure>
+	</structure_recognition_results>
+</acst_results>
+

@@ -1,0 +1,147 @@
+/**************************************************************************************************
+ *  Main authors:
+ *     Inga Abel <inga.abel@tum.de>, 
+ *	   Maximilian Neuner <maximilian.neuner@tum.de>, 
+ *     Michael Eick <michael.eick@tum.de>
+ *
+ * 
+ *  Copyright (C) 2021
+ *  Chair of Electronic Design Automation
+ *  Univ.-Prof. Dr.-Ing. Ulf Schlichtmann
+ *  TU Muenchen
+ *  Arcisstrasse 21
+ *  D-80333 Muenchen
+ *  Germany
+ *
+ *  This file is part of acst, a analog circuit analysis, sizing and synthesis enviroment:
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining
+ *  a copy of this software and associated documentation files (the
+ *  "Software"), to deal in the Software without restriction, including
+ *  without limitation the rights to use, copy, modify, merge, publish,
+ *  distribute, sublicense, and/or sell copies of the Software, and to
+ *  permit persons to whom the Software is furnished to do so, subject to
+ *  the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be
+ *  included in all copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ *  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ *  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ *************************************************************************************************/
+
+#include "../../incl/Analysis/CircuitAnalysis.h"
+#include "Core/incl/DeviceTypeRegister/DeviceTypeRegister.h"
+#include "Core/incl/Circuit/Circuit.h"
+#include "Core/incl/Common/BacktraceAssert.h"
+#include "Core/incl/FlatCircuitRecursion/FlatCircuitRecursion.h"
+
+#include  <type_traits>
+
+namespace Control {
+
+	template <class LocalOptions>
+	inline CircuitAnalysis<LocalOptions>::CircuitAnalysis() :
+			deviceTypeRegister_(nullptr),
+    		circuit_(nullptr),
+			localOptions_(nullptr)
+    {
+    }
+
+	template <class LocalOptions>
+	inline CircuitAnalysis<LocalOptions>::~CircuitAnalysis()
+    {
+    }
+	
+    template<class LocalOptions>
+    inline void CircuitAnalysis<LocalOptions>::setLocalOptions(const OptionsBase & localOptions)
+    {
+
+        localOptions_ = static_cast<const LocalOptions*>(&localOptions);
+        
+    }
+    
+    template<class LocalOptions>
+    inline void CircuitAnalysis<LocalOptions>::setCircuit(const Core::Circuit & circuit)
+	{
+    	circuit_ = & circuit;
+	}
+
+	template <class LocalOptions>
+	inline void CircuitAnalysis<LocalOptions>::initialize()
+    {
+		
+		if(std::is_base_of<CircuitReadInOptions, LocalOptions>::value)
+		{
+			const CircuitReadInOptions * localOptions = static_cast<const CircuitReadInOptions*>(localOptions_);
+			logDebug(localOptions->getStringDescription());
+			setDeviceTypeRegister(*localOptions->readDeviceTypeRegister());
+			setCircuit(localOptions->readInCircuit(getDeviceTypeRegister()));
+
+			if(localOptions->hasOutputFile())
+			{
+				OutputFile outputFile = localOptions->findOutputFile();
+				setOutputFile(outputFile);
+			}
+		}
+
+
+    }
+
+	template <class LocalOptions>
+	inline void CircuitAnalysis<LocalOptions>::setDeviceTypeRegister(const Core::DeviceTypeRegister& deviceTypeRegister)
+    {
+    	deviceTypeRegister_ = &deviceTypeRegister;
+    }
+
+	template <class LocalOptions>
+	inline void CircuitAnalysis<LocalOptions>::setOutputFile(OutputFile& outputFile)
+    {
+        outputFile_ = outputFile;
+    }
+	
+	template <class LocalOptions>
+	inline const Core::DeviceTypeRegister& CircuitAnalysis<LocalOptions>::getDeviceTypeRegister() const
+    {
+    	assert(deviceTypeRegister_ != nullptr);
+    	return *deviceTypeRegister_;
+    }
+
+	template <class LocalOptions>
+	inline bool CircuitAnalysis<LocalOptions>::hasOutputFile() const
+    {
+        return outputFile_.isInitialized();
+    }
+
+	template <class LocalOptions>
+	inline OutputFile& CircuitAnalysis<LocalOptions>::getOutputFile()
+    {
+        assert(hasOutputFile());
+        return outputFile_;
+    }
+
+	template <class LocalOptions>
+	inline const Core::Circuit & CircuitAnalysis<LocalOptions>::getCircuit() const
+	{
+        assert(circuit_ != nullptr);
+        return *circuit_;
+	}
+	
+    template<class LocalOptions>
+    inline const LocalOptions& CircuitAnalysis<LocalOptions>::getLocalOptions() const
+    {
+        assert(localOptions_ != nullptr);
+        return *localOptions_;
+    }
+
+}
+
+
+
+

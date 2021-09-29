@@ -1,0 +1,27 @@
+** Generated for: hspiceD
+** Generated on: Sep 25 12:32:12 2014
+** Design library name: oaLib
+** Design cell name: allComponents
+** Design view name: schematic
+.GLOBAL vss! vdd!
+
+
+.TEMP 25
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: oaLib
+** Cell name: allComponents
+** View name: schematic
+q1 vss! vss! vdd! 0 pnp
+q0 vss! vss! vdd! 0 npn
+m1 vss! vss! vdd! vdd! nmos24
+m0 vdd! vdd! vss! vss! pmos24
+c0 vdd! vss! 1e-12
+r0 vdd! vss! 1e3
+l0 vdd! vss! 1e-9
+d0 vdd! vss! diode
+.END

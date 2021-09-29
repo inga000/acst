@@ -1,0 +1,17 @@
+.suckt  one_stage_single_output_op_amp86 ibias in1 in2 out sourceNmos sourcePmos
+m1 outVoltageBiasXXpXX1 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos
+m2 outVoltageBiasXXnXX0 ibias sourcePmos sourcePmos pmos
+m3 FirstStageYout1 outVoltageBiasXXpXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 pmos
+m4 out outVoltageBiasXXpXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 pmos
+m5 FirstStageYout1 FirstStageYinnerTransistorStack2Load2 sourceNmos sourceNmos nmos
+m6 out FirstStageYout1 FirstStageYinnerTransistorStack2Load2 FirstStageYinnerTransistorStack2Load2 nmos
+m7 FirstStageYinnerTransistorStack2Load2 FirstStageYinnerTransistorStack2Load2 sourceNmos sourceNmos nmos
+m8 sourceTransconductance ibias sourcePmos sourcePmos pmos
+m9 FirstStageYsourceGCC1 in1 sourceTransconductance sourceTransconductance pmos
+m10 FirstStageYsourceGCC2 in2 sourceTransconductance sourceTransconductance pmos
+c1 out sourceNmos 
+m11 outVoltageBiasXXnXX0 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos
+m12 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourceTransconductance sourceTransconductance pmos
+m13 ibias ibias sourcePmos sourcePmos pmos
+.end one_stage_single_output_op_amp86
+

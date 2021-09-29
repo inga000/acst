@@ -1,0 +1,73 @@
+** Name: OpAmp12
+
+.MACRO OpAmp12 gnd vdd in1 in2 outSecondStage vbBias vbBiasSecondStage vbLoad1 vbLoad2
+mL24 innerLoad2 innerLoad2 vdd! vdd! pmos4 L=2e-6 W=129e-6
+mL22 outFirstStage2 outFirstStage2 innerLoad2 innerLoad2 pmos4 L=2e-6 W=151e-6
+mBOBias vbBias vbBias vdd! vdd! pmos4 L=8e-6 W=94e-6
+mL11 dpDrain1 vbLoad1 gnd! gnd! nmos4 L=3e-6 W=145e-6
+mL12 dpDrain2 vbLoad1 gnd! gnd! nmos4 L=3e-6 W=145e-6
+mL13 outFirstStage1 vbLoad2 dpDrain1 dpDrain1 nmos4 L=3e-6 W=56e-6
+mL14 outFirstStage2 vbLoad2 dpDrain2 dpDrain2 nmos4 L=3e-6 W=56e-6
+mB21 outSecondStage vbBiasSecondStage gnd! gnd! nmos4 L=2e-6 W=201e-6
+mT11 dpDrain1 in1 dpSource dpSource pmos4 L=6e-6 W=399e-6
+mT12 dpDrain2 in2 dpSource dpSource pmos4 L=6e-6 W=399e-6
+mB11 dpSource vbBias vdd! vdd! pmos4 L=8e-6 W=580e-6
+mL23 innerLoad1 innerLoad2 vdd! vdd! pmos4 L=2e-6 W=129e-6
+mL21 outFirstStage1 outFirstStage2 innerLoad1 innerLoad1 pmos4 L=2e-6 W=151e-6
+mT21 outSecondStage outFirstStage1 vdd! vdd! pmos4 L=1e-6 W=384e-6
+cc outFirstStage1 outSecondStage 4.5e-12
+cl outSecondStage gnd! 20e-12
+.EOM OpAmp12
+
+** Expected Performance Values: 
+** Gain: 122 dB
+** Power consumption: 14.9991 mW
+** Area: 13292 (mu_m)^2
+** Transit frequency: 13.4911 MHz
+** Transit frequency with error factor: 13.4908 MHz
+** Slew rate: 13.3162 V/mu_s
+** Phase margin: 63.5984°
+** CMRR: 143 dB
+** VoutMax: 4.36001 V
+** VoutMin: 0.570001 V
+** VcmMax: 4.06001 V
+** VcmMin: -0.409999 V
+
+
+** Expected Currents: 
+** mB11: -6.27639e+07 muA
+** mB21: 2.80579e+09 muA
+** mBOBias: -9.99899e+06 muA
+** mL11: 9.20571e+07 muA
+** mL12: 9.20571e+07 muA
+** mL13: 6.06741e+07 muA
+** mL14: 6.06761e+07 muA
+** mL21: -6.06749e+07 muA
+** mL22: -6.06769e+07 muA
+** mL23: -6.06759e+07 muA
+** mL24: -6.06759e+07 muA
+** mT11: -3.13819e+07 muA
+** mT12: -3.13819e+07 muA
+** mT21: -2.80578e+09 muA
+
+
+** Expected Voltages: 
+** dpDrain1: 0.150001  V
+** dpDrain2: 0.150001  V
+** dpSource: 3.22601  V
+** gnd!: 0  V
+** in1: 2.5  V
+** in2: 2.5  V
+** innerLoad1: 4.20601  V
+** innerLoad2: 4.20601  V
+** outFirstStage1: 3.79401  V
+** outFirstStage2: 3.43001  V
+** outSecondStage: 2.5  V
+** vbBias: 4.21701  V
+** vbBiasSecondStage: 0.977001  V
+** vbLoad1: 0.555001  V
+** vbLoad2: 0.75  V
+** vdd!: 5  V
+
+
+.END

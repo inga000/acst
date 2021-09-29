@@ -1,0 +1,61 @@
+** Generated for: hspiceD
+** Generated on: Aug 16 17:01:30 2018
+** Design library name: circuits
+** Design cell name: cmos_buffer
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: circuits
+** Cell name: cmos_buffer
+** View name: schematic
+m36 net64 net64 net70 vdd! pmos
+m35 0 net64 net52 vdd! pmos
+m34 net21 net21 net71 vdd! pmos
+m33 net46 net21 net76 vdd! pmos
+m17 net39 ip net7 vdd! pmos
+m16 net34 in net7 vdd! pmos
+m15 net71 net70 vdd! vdd! pmos
+m14 net71 net71 vdd! vdd! pmos
+m13 net19 net19 vdd! vdd! pmos
+m12 out net19 vdd! vdd! pmos
+m11 net49 net4 net56 vdd! pmos
+m10 net56 net10 vdd! vdd! pmos
+m9 net69 net4 net42 vdd! pmos
+m8 net42 net10 vdd! vdd! pmos
+m7 net33 net10 vdd! vdd! pmos
+m6 net43 net4 net33 vdd! pmos
+m5 net7 net4 net57 vdd! pmos
+m4 net57 net10 vdd! vdd! pmos
+m3 net29 net29 net4 vdd! pmos
+m2 net4 net4 net10 vdd! pmos
+m1 net10 net10 vdd! vdd! pmos
+m41 net42 ip net32 gnd! nmos
+m40 net33 in net32 gnd! nmos
+m39 net29 net29 net54 gnd! nmos
+m38 net71 net70 gnd! gnd! nmos
+m37 net71 net71 gnd! gnd! nmos
+m32 net69 net69 net70 gnd! nmos
+m31 vdd! net69 net76 gnd! nmos
+m30 net49 net49 net71 gnd! nmos
+m29 net19 net49 net52 gnd! nmos
+m28 net46 net46 gnd! gnd! nmos
+m27 out net46 gnd! gnd! nmos
+m26 net21 net54 net55 gnd! nmos
+m25 net55 net60 gnd! gnd! nmos
+m24 net39 net43 gnd! gnd! nmos
+m23 net64 net54 net39 gnd! nmos
+m49 net43 net54 net34 gnd! nmos
+m48 net34 net43 gnd! gnd! nmos
+m20 net32 net54 net59 gnd! nmos
+m19 net59 net60 gnd! gnd! nmos
+m18 net54 net54 net60 gnd! nmos
+m0 net60 net60 gnd! gnd! nmos
+.END

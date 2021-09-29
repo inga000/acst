@@ -1,0 +1,36 @@
+** Generated for: hspiceD
+** Generated on: Aug 16 17:19:27 2018
+** Design library name: circuits
+** Design cell name: foca
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: circuits
+** Cell name: foca
+** View name: schematic
+mn8 out n7 n6 gnd! nmos L=3.68094684482e-6 W=2.95602037802e-6
+mn7 n7 n7 n5 gnd! nmos L=3.68094684482e-6 W=2.95602037802e-6
+mn5 n3 ip n1 gnd! nmos L=1.21569506942e-6 W=16.8415200562e-6
+mn6 n4 in n1 gnd! nmos L=1.21569506942e-6 W=16.8415200562e-6
+mn4 n6 n5 gnd! gnd! nmos L=1.89346044901e-6 W=2.95602037802e-6
+mn3 n5 n5 gnd! gnd! nmos L=1.89346044901e-6 W=2.95602037802e-6
+mn2 n1 n8 gnd! gnd! nmos L=1.91365763298e-6 W=2.46698276947e-6
+mn1 n8 n8 gnd! gnd! nmos L=1.91365763298e-6 W=1.01902539819e-6
+mp6 n6 in n2 vdd! pmos L=613.454109191e-9 W=21.2843829704e-6
+mp5 n5 ip n2 vdd! pmos L=613.454109191e-9 W=21.2843829704e-6
+mp7 n7 n7 n3 vdd! pmos L=4.38150927241e-6 W=1.83327839777e-6
+mp3 n3 n3 vdd! vdd! pmos L=607.843542516e-9 W=1.83327839777e-6
+mp8 out n7 n4 vdd! pmos L=4.38150927241e-6 W=1.83327839777e-6
+mp4 n4 n3 vdd! vdd! pmos L=607.843542516e-9 W=1.83327839777e-6
+mp2 n2 n9 vdd! vdd! pmos L=898.477413848e-9 W=1.87812575054e-6
+mp1 n9 n9 vdd! vdd! pmos L=898.477413848e-9 W=1.11299403256e-6
+i2 n9 n8 DC=10e-6
+.END

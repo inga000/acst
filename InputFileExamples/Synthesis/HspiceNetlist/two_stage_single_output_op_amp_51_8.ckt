@@ -1,0 +1,83 @@
+** Name: two_stage_single_output_op_amp_51_8
+
+.MACRO two_stage_single_output_op_amp_51_8 ibias in1 in2 out sourceNmos sourcePmos
+m1 outVoltageBiasXXnXX1 outVoltageBiasXXnXX1 sourceNmos sourceNmos nmos4 L=3e-6 W=14e-6
+m2 outVoltageBiasXXnXX2 outVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=1e-6 W=15e-6
+m3 FirstStageYinnerSourceLoad2 FirstStageYinnerSourceLoad2 sourceNmos sourceNmos nmos4 L=2e-6 W=47e-6
+m4 ibias ibias outSourceVoltageBiasXXpXX1 outSourceVoltageBiasXXpXX1 pmos4 L=2e-6 W=13e-6
+m5 outSourceVoltageBiasXXpXX1 outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=2e-6 W=17e-6
+m6 out outVoltageBiasXXnXX1 SecondStageYinnerStageBias SecondStageYinnerStageBias nmos4 L=3e-6 W=469e-6
+m7 outFirstStage FirstStageYout1 FirstStageYinnerSourceLoad2 FirstStageYinnerSourceLoad2 nmos4 L=3e-6 W=47e-6
+m8 FirstStageYout1 FirstStageYinnerSourceLoad2 sourceNmos sourceNmos nmos4 L=2e-6 W=47e-6
+m9 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=1e-6 W=13e-6
+m10 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=1e-6 W=13e-6
+m11 FirstStageYsourceTransconductance outVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=1e-6 W=22e-6
+m12 SecondStageYinnerStageBias outVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=1e-6 W=555e-6
+m13 out outFirstStage sourcePmos sourcePmos pmos4 L=3e-6 W=453e-6
+m14 outFirstStage ibias FirstStageYsourceGCC2 FirstStageYsourceGCC2 pmos4 L=2e-6 W=239e-6
+m15 outVoltageBiasXXnXX1 outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=2e-6 W=347e-6
+m16 outVoltageBiasXXnXX2 outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=2e-6 W=69e-6
+m17 FirstStageYout1 ibias FirstStageYsourceGCC1 FirstStageYsourceGCC1 pmos4 L=2e-6 W=239e-6
+m18 FirstStageYsourceGCC1 outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=2e-6 W=132e-6
+m19 FirstStageYsourceGCC2 outSourceVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=2e-6 W=132e-6
+Capacitor1 out sourceNmos 20e-12
+Capacitor2 outFirstStage out 12.4001e-12
+.EOM two_stage_single_output_op_amp_51_8
+
+** Expected Performance Values: 
+** Gain: 127 dB
+** Power consumption: 9.79101 mW
+** Area: 6131 (mu_m)^2
+** Transit frequency: 4.64501 MHz
+** Transit frequency with error factor: 4.64455 MHz
+** Slew rate: 3.88768 V/mu_s
+** Phase margin: 60.1606°
+** CMRR: 145 dB
+** VoutMax: 4.25 V
+** VoutMin: 0.520001 V
+** VcmMax: 5.15001 V
+** VcmMin: 0.75 V
+
+
+** Expected Currents: 
+** NormalTransistorPmos: -2.06848e+08 muA
+** NormalTransistorPmos: -4.07339e+07 muA
+** NormalTransistorPmos: -4.85329e+07 muA
+** NormalTransistorPmos: -7.86859e+07 muA
+** NormalTransistorPmos: -4.85329e+07 muA
+** NormalTransistorPmos: -7.86859e+07 muA
+** NormalTransistorNmos: 4.85321e+07 muA
+** NormalTransistorNmos: 4.85321e+07 muA
+** DiodeTransistorNmos: 4.85321e+07 muA
+** NormalTransistorNmos: 6.03031e+07 muA
+** NormalTransistorNmos: 3.01521e+07 muA
+** NormalTransistorNmos: 3.01521e+07 muA
+** NormalTransistorNmos: 1.53317e+09 muA
+** NormalTransistorNmos: 1.53317e+09 muA
+** NormalTransistorPmos: -1.53316e+09 muA
+** DiodeTransistorNmos: 2.06849e+08 muA
+** DiodeTransistorNmos: 4.07331e+07 muA
+** DiodeTransistorPmos: -9.99899e+06 muA
+** DiodeTransistorPmos: -1e+07 muA
+
+
+** Expected Voltages: 
+** ibias: 3.32201  V
+** in1: 2.5  V
+** in2: 2.5  V
+** out: 2.5  V
+** outFirstStage: 3.68601  V
+** outSourceVoltageBiasXXpXX1: 4.17901  V
+** outVoltageBiasXXnXX1: 1.125  V
+** outVoltageBiasXXnXX2: 0.585001  V
+** sourceNmos: 0  V
+** sourcePmos: 5  V
+** innerSourceLoad2: 0.561001  V
+** out1: 1.15701  V
+** sourceGCC1: 4.03601  V
+** sourceGCC2: 4.03601  V
+** sourceTransconductance: 1.92901  V
+** innerStageBias: 0.380001  V
+
+
+.END

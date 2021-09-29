@@ -1,0 +1,73 @@
+<!--*******************************************************************************
+        Copyright (C) 2012                                                      
+        Institute for Electronic Design Automation                              
+        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann                                   
+        TU Muenchen                                                             
+        Arcisstrasse 21                                                         
+        D-80333 Muenchen                                                        
+        Germany                                                                 
+********************************************************************************-->
+<?xml version="1.0" encoding="UTF-8"?>
+<arrayLibraryItem>
+    <structureName>BipolarDiodeArray</structureName>
+    <imageFilePath>../../Images/BipolarDiodeArray.png</imageFilePath>
+    <arrayConnection>
+        <connection>
+            <structurePinType>
+                <structureName>BipolarDiodeArray</structureName>
+                <structurePinName>Collector</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Bipolar</deviceTypeName>
+                <devicePinName>Collector</devicePinName>
+            </devicePinType>
+        </connection>
+        <connection>
+            <structurePinType>
+                <structureName>BipolarDiodeArray</structureName>
+                <structurePinName>Emitter</structurePinName>
+            </structurePinType>
+            <devicePinType>
+                <deviceTypeName>Bipolar</deviceTypeName>
+                <devicePinName>Emitter</devicePinName>
+            </devicePinType>
+        </connection>
+    </arrayConnection>
+    <recognitionRules>
+        <deviceTypeRule>Bipolar</deviceTypeRule>
+        <connectionRules>
+            <connectionRule>
+                <connected>true</connected>
+                <devicePinType>
+                    <deviceTypeName>Bipolar</deviceTypeName>
+                    <devicePinName>Collector</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Bipolar</deviceTypeName>
+                    <devicePinName>Base</devicePinName>
+                </devicePinType>
+            </connectionRule>
+            <connectionRule>
+                <connected>false</connected>
+                <devicePinType>
+                    <deviceTypeName>Bipolar</deviceTypeName>
+                    <devicePinName>Collector</devicePinName>
+                </devicePinType>
+                <devicePinType>
+                    <deviceTypeName>Bipolar</deviceTypeName>
+                    <devicePinName>Emitter</devicePinName>
+                </devicePinType>
+            </connectionRule>
+        </connectionRules>
+    </recognitionRules>
+    <parallelNets>
+        <devicePinType>
+            <deviceTypeName>Bipolar</deviceTypeName>
+            <devicePinName>Collector</devicePinName>
+        </devicePinType>
+       <devicePinType>
+            <deviceTypeName>Bipolar</deviceTypeName>
+            <devicePinName>Emitter</devicePinName>
+        </devicePinType>
+    </parallelNets>
+</arrayLibraryItem>
