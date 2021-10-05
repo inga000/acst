@@ -90,7 +90,7 @@
 				<childNumber>2</childNumber>
 				<structurePinType>
 					<structureName>dcvs2</structureName>
-					<structurePinName>vinv</structurePinName>
+					<structurePinName>out</structurePinName>
 				</structurePinType>
 			</childPinType>
 		</pairPinType>
@@ -102,7 +102,7 @@
 		</firstChildPinType>
 		<secondChildPinType>
 			<structureName>dcvs2</structureName>
-			<structurePinName>vin</structurePinName>
+			<structurePinName>net010</structurePinName>
 		</secondChildPinType>
 	</characteristicConnection>
 	<recognitionRules>
@@ -126,7 +126,7 @@
 			<netRule>
 				<structurePinType>
 					<structureName>dcvs2</structureName>
-					<structurePinName>vdda!</structurePinName>
+					<structurePinName>vddd!</structurePinName>
 				</structurePinType>
 				<childNumber>2</childNumber>
 				<supply>vdd</supply>
@@ -134,7 +134,7 @@
 			<netRule>
 				<structurePinType>
 					<structureName>dcvs2</structureName>
-					<structurePinName>vssa!</structurePinName>
+					<structurePinName>vssd!</structurePinName>
 				</structurePinType>
 				<childNumber>2</childNumber>
 				<supply>gnd</supply>
@@ -150,7 +150,7 @@
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>dcvs2</structureName>
-					<structurePinName>vdda!</structurePinName>
+					<structurePinName>vddd!</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>
@@ -161,7 +161,7 @@
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>dcvs2</structureName>
-					<structurePinName>vssa!</structurePinName>
+					<structurePinName>vssd!</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>
@@ -172,7 +172,7 @@
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>dcvs2</structureName>
-					<structurePinName>vinv</structurePinName>
+					<structurePinName>out</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>
@@ -183,7 +183,7 @@
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>dcvs2</structureName>
-					<structurePinName>vinv</structurePinName>
+					<structurePinName>out</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>
@@ -194,7 +194,7 @@
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>dcvs2</structureName>
-					<structurePinName>vinv</structurePinName>
+					<structurePinName>out</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 		</connectionRules>

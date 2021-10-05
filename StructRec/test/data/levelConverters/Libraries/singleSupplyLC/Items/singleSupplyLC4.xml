@@ -6,19 +6,6 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>singleSupplyLC4</structureName>
-				<structurePinName>gnd!</structurePinName>
-			</structurePinType>
-			<childPinType>
-				<childNumber>1</childNumber>
-				<structurePinType>
-					<structureName>singleSupplyLC2</structureName>
-					<structurePinName>gnd!</structurePinName>
-				</structurePinType>
-			</childPinType>
-		</pairPinType>
-		<pairPinType>
-			<structurePinType>
-				<structureName>singleSupplyLC4</structureName>
 				<structurePinName>in4</structurePinName>
 			</structurePinType>
 			<childPinType>
@@ -45,6 +32,19 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>singleSupplyLC4</structureName>
+				<structurePinName>net7</structurePinName>
+			</structurePinType>
+			<childPinType>
+				<childNumber>1</childNumber>
+				<structurePinType>
+					<structureName>singleSupplyLC2</structureName>
+					<structurePinName>net7</structurePinName>
+				</structurePinType>
+			</childPinType>
+		</pairPinType>
+		<pairPinType>
+			<structurePinType>
+				<structureName>singleSupplyLC4</structureName>
 				<structurePinName>out4</structurePinName>
 			</structurePinType>
 			<childPinType>
@@ -58,13 +58,13 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>singleSupplyLC4</structureName>
-				<structurePinName>net7</structurePinName>
+				<structurePinName>gnd!</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>2</childNumber>
 				<structurePinType>
 					<structureName>singleSupplyLC3</structureName>
-					<structurePinName>net7</structurePinName>
+					<structurePinName>gnd!</structurePinName>
 				</structurePinType>
 			</childPinType>
 		</pairPinType>
@@ -83,14 +83,6 @@
 		<netRules>
 			<netRule>
 				<structurePinType>
-					<structureName>singleSupplyLC2</structureName>
-					<structurePinName>gnd!</structurePinName>
-				</structurePinType>
-				<childNumber>1</childNumber>
-				<supply>gnd</supply>
-			</netRule>
-			<netRule>
-				<structurePinType>
 					<structureName>singleSupplyLC3</structureName>
 					<structurePinName>gnd!</structurePinName>
 				</structurePinType>
@@ -104,22 +96,11 @@
 				<connected>true</connected>
 				<firstChildPinType>
 					<structureName>singleSupplyLC2</structureName>
-					<structurePinName>gnd!</structurePinName>
+					<structurePinName>net7</structurePinName>
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>singleSupplyLC3</structureName>
-					<structurePinName>gnd!</structurePinName>
-				</secondChildPinType>
-			</connectionRule>
-			<connectionRule>
-				<connected>true</connected>
-				<firstChildPinType>
-					<structureName>singleSupplyLC2</structureName>
-					<structurePinName>net5</structurePinName>
-				</firstChildPinType>
-				<secondChildPinType>
-					<structureName>singleSupplyLC3</structureName>
-					<structurePinName>net5</structurePinName>
+					<structurePinName>net7</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>
@@ -131,6 +112,17 @@
 				<secondChildPinType>
 					<structureName>singleSupplyLC3</structureName>
 					<structurePinName>out4</structurePinName>
+				</secondChildPinType>
+			</connectionRule>
+			<connectionRule>
+				<connected>false</connected>
+				<firstChildPinType>
+					<structureName>singleSupplyLC2</structureName>
+					<structurePinName>net5</structurePinName>
+				</firstChildPinType>
+				<secondChildPinType>
+					<structureName>singleSupplyLC3</structureName>
+					<structurePinName>gnd!</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 		</connectionRules>
