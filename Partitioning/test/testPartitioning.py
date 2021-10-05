@@ -58,6 +58,8 @@ def readStructure(structure):
     name = structure.getAttribute("name")     
     techType = structure.getAttribute("techType")
     instance = structure.getAttribute("instance")
+
+    name = name.rsplit('[',1)[0]
     
     if name != "":
         strucRes.append((name,techType, instance))
