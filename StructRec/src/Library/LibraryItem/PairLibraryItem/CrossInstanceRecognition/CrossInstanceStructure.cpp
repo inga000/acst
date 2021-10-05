@@ -43,6 +43,9 @@
 #include "StructRec/incl/StructureCircuit/Instance/StructureInstance.h"
 #include "StructRec/incl/StructureCircuit/Terminal/StructureTerminal.h"
 #include "StructRec/incl/Results/StructureCircuits.h"
+
+#include "Core/incl/Circuit/Device/DeviceId/DeviceId.h"
+#include "Core/incl/Circuit/Device/Device.h"
 #include "Core/incl/Circuit/Instance/InstanceId/InstanceId.h"
 #include "Core/incl/Circuit/Instance/InstanceId/InstanceName.h"
 #include "Core/incl/Common/BacktraceAssert.h"
@@ -140,7 +143,9 @@ namespace StructRec {
 
 	 bool CrossInstanceStructure::operator<(const CrossInstanceStructure & other) const
 	 {
-		 return (getStructure().getIdentifier() < other.getStructure().getIdentifier()) || (getInstanceNamePath() < other.getInstanceNamePath());
+		 Core::DeviceId thisId = (*getStructure().getDevices().begin())->getIdentifier();
+		 Core::DeviceId otherId = (*other.getStructure().getDevices().begin())->getIdentifier();
+		 return (thisId < otherId) || (getInstanceNamePath() < other.getInstanceNamePath());
 	 }
 
 	 std::string CrossInstanceStructure::toStr() const

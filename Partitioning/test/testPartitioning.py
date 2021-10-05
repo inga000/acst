@@ -58,6 +58,8 @@ def readStructure(structure):
     name = structure.getAttribute("name")     
     techType = structure.getAttribute("techType")
     instance = structure.getAttribute("instance")
+
+    name = name.rsplit('[',1)[0]
     
     if name != "":
         strucRes.append((name,techType, instance))
@@ -616,8 +618,8 @@ if len("${EXTRA_PARAMS}") != 0:
 else:
     extraParams=[]
     
-cmdLine = [acst,"--input-format",inType, "--circuit-netlist",circuit,"--device-types-file",deviceTypesFile,"--hspice-supplynet-file",supplyNetsFile,"--hspice-mapping-file",HSpiceMappingFile,"--analysis", "partitioning"]+extraParams+["--output-format", "xml","--output-file",outFile,"--xml-structrec-library-file",xmlLibFile,"--log-level-console","OFF"]
-    
+cmdLine = [acst, "--circuit-netlist",circuit,"--device-types-file",deviceTypesFile,"--hspice-supplynet-file",supplyNetsFile,"--hspice-mapping-file",HSpiceMappingFile,"--analysis", "partitioning"]+extraParams+["--output-format", "xml","--output-file",outFile,"--xml-structrec-library-file",xmlLibFile,"--log-level-console","OFF"]
+
 print("Executing '"+" ".join(cmdLine)+"'")
 
 try:

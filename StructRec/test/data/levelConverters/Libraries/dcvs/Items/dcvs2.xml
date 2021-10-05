@@ -6,7 +6,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>dcvs2</structureName>
-				<structurePinName>net010</structurePinName>
+				<structurePinName>vin</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>1</childNumber>
@@ -19,7 +19,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>dcvs2</structureName>
-				<structurePinName>out</structurePinName>
+				<structurePinName>vinv</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>1</childNumber>
@@ -32,7 +32,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>dcvs2</structureName>
-				<structurePinName>vssd!</structurePinName>
+				<structurePinName>vssa!</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>1</childNumber>
@@ -45,7 +45,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>dcvs2</structureName>
-				<structurePinName>vddd!</structurePinName>
+				<structurePinName>vdda!</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>2</childNumber>
