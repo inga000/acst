@@ -42,15 +42,19 @@
 #include "AutomaticSizing/incl/ConstraintProgram/Graph/Graph.h"
 #include "AutomaticSizing/incl/ConstraintProgram/Graph/Edge.h"
 #include "AutomaticSizing/incl/ConstraintProgram/SearchSpace.h"
-#include "Partitioning/incl/Results/Result.h"
+
 #include "AutomaticSizing/incl/CircuitInformation/CircuitInformation.h"
 #include "AutomaticSizing/incl/CircuitInformation/DesignAttributes.h"
 #include "AutomaticSizing/incl/ConstraintProgram/ComponentToIntVarMap.h"
 #include "AutomaticSizing/incl/CircuitInformation/Pin.h"
-#include <gecode/minimodel.hh>
 
 #include "Partitioning/incl/Results/Component.h"
+#include "Partitioning/incl/Results/Result.h"
+
 #include "Core/incl/Common/BacktraceAssert.h"
+
+#include<math.h>
+#include <gecode/float.hh>
 
 namespace AutomaticSizing {
 
@@ -202,7 +206,7 @@ namespace AutomaticSizing {
 		Gecode::FloatVar widthHelperVar(getSpace(), 1 , getSpace().getWidthUpperBound());
 		Gecode::FloatVar lengthHelperVar(getSpace(), 1, getSpace().getLengthUpperBound());
 
-		channel(getSpace(), getTransistorToWidthMap().find(component), widthHelperVar);
+		Gecode::channel(getSpace(), getTransistorToWidthMap().find(component), widthHelperVar);
 		channel(getSpace(), getTransistorToLengthMap().find(component), lengthHelperVar);
 
 		Gecode::FloatVar width = Gecode::expr(getSpace(),widthHelperVar*u);
@@ -412,7 +416,7 @@ namespace AutomaticSizing {
 		Gecode::FloatVar exponent(getSpace(), -100, 100);
 		rel(getSpace(), exponent == 2* velocity);
 
-		exp(getSpace(), exponent, inversionCoefficient);
+		Gecode::exp(getSpace(), exponent, inversionCoefficient);
 		rel(getSpace(),inversionCoefficient <= 0.1);
 		dom(getSpace(), inversionCoefficient, 0, 100);
 

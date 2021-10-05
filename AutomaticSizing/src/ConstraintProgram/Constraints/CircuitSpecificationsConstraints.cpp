@@ -59,6 +59,8 @@
 #include "Core/incl/Common/BacktraceAssert.h"
 
 #include <math.h>
+#include <gecode/minimodel.hh>
+#include <gecode/float.hh>
 
 #include "../../../incl/ConstraintProgram/Constraints/CircuitSpecificationsConstraints.h"
 #include "../../../incl/ConstraintProgram/Constraints/PolesAndZeros.h"
@@ -1498,7 +1500,7 @@ namespace AutomaticSizing {
 		else
 		{
 			Gecode::rel(getSpace(),2* firstStageGain * gmLoad/ gdBiasFirstStage== CMRR);
-//
+
 			Gecode::FloatVar logCMRR(getSpace(), 0, 200);
 			Gecode::rel(getSpace(), log(CMRR) == logCMRR );
 
@@ -3192,7 +3194,7 @@ namespace AutomaticSizing {
 			}
 			logDebug("Calculate higher stages poles and zeros");
 			createBiasHigherStagesNonDominantPolesAndZeros(getPartitioningResult().getPrimarySecondStage(),polesAndZeros);
-//
+
 			if(getPartitioningResult().hasSecondarySecondStage())
 			{
 				if(getPartitioningResult().getBelongingComponents(getPartitioningResult().getPrimarySecondStage()).size() == 1)
@@ -3202,7 +3204,7 @@ namespace AutomaticSizing {
 					polesAndZeros.addImportantZero(positiveZeroSecondStage);
 				}
 			}
-//
+
 		}
 		if(getPartitioningResult().hasThirdStage())
 		{

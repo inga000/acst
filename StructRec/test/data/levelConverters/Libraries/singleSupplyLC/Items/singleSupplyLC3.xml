@@ -6,13 +6,26 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>singleSupplyLC3</structureName>
-				<structurePinName>gnd!</structurePinName>
+				<structurePinName>in4</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>1</childNumber>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Source</structurePinName>
+				</structurePinType>
+			</childPinType>
+		</pairPinType>
+		<pairPinType>
+			<structurePinType>
+				<structureName>singleSupplyLC3</structureName>
+				<structurePinName>net5</structurePinName>
+			</structurePinType>
+			<childPinType>
+				<childNumber>1</childNumber>
+				<structurePinType>
+					<structureName>MosfetNormalArray</structureName>
+					<structurePinName>Gate</structurePinName>
 				</structurePinType>
 			</childPinType>
 		</pairPinType>
@@ -32,20 +45,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>singleSupplyLC3</structureName>
-				<structurePinName>out4</structurePinName>
-			</structurePinType>
-			<childPinType>
-				<childNumber>1</childNumber>
-				<structurePinType>
-					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
-				</structurePinType>
-			</childPinType>
-		</pairPinType>
-		<pairPinType>
-			<structurePinType>
-				<structureName>singleSupplyLC3</structureName>
-				<structurePinName>in4</structurePinName>
+				<structurePinName>gnd!</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>2</childNumber>
@@ -58,7 +58,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>singleSupplyLC3</structureName>
-				<structurePinName>net5</structurePinName>
+				<structurePinName>out4</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>2</childNumber>
@@ -86,7 +86,7 @@
 					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Source</structurePinName>
 				</structurePinType>
-				<childNumber>1</childNumber>
+				<childNumber>2</childNumber>
 				<supply>gnd</supply>
 			</netRule>
 		</netRules>

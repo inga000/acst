@@ -593,7 +593,7 @@ if len("${EXTRA_PARAMS}") != 0:
 else:
     extraParams=[]
     
-cmdLine = [acst,"--input-format",inType, "--circuit-netlist",circuit,"--device-types-file",deviceTypesFile,"--hspice-supplynet-file",supplyNetsFile,"--hspice-mapping-file",HSpiceMappingFile,"--analysis", "partitioning"]+extraParams+["--output-format", "xml","--output-file",outFile,"--xml-library-file",xmlLibFile,"--log-level-console","OFF"]
+cmdLine = [acst, "--circuit-netlist",circuit,"--device-types-file",deviceTypesFile,"--hspice-supplynet-file",supplyNetsFile,"--hspice-mapping-file",HSpiceMappingFile,"--analysis", "partitioning"]+extraParams+["--output-format", "xml","--output-file",outFile,"--xml-structrec-library-file",xmlLibFile,"--log-level-console","OFF"]
     
 print("Executing '"+" ".join(cmdLine)+"'")
 

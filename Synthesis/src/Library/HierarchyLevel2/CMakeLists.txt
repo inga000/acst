@@ -45,5 +45,5 @@ add_source(Synthesis
         CurrentBiases.cpp
         DifferentialPair.cpp
         StructuralLevel.cpp
-        voltageBiases.cpp
+        VoltageBiases.cpp
 )
