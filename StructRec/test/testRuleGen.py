@@ -1,19 +1,40 @@
-#*******************************************************************************
-
-#        Copyright (C) 2012
-
-#        Institute for Electronic Design Automation
-#        Univ.-Prof. Dr.-Ing. Ulf Schlichtmann
-#        TU Muenchen
-#        Arcisstrasse 21
-#        D-80333 Muenchen
-#        Germany
-
-
-#        This source code is property of TUM-EDA.
-#        The content of this file must be treated confidential!
-
-#*******************************************************************************
+#**************************************************************************************************
+#  Main authors:
+#     Inga Abel <inga.abel@tum.de>, 
+#	  Maximilian Neuner <maximilian.neuner@tum.de>, 
+#	  Michael Eick <michael.eick@tum.de>
+#
+# 
+#  Copyright (C) 2021
+#  Chair of Electronic Design Automation
+#  Univ.-Prof. Dr.-Ing. Ulf Schlichtmann
+#  TU Muenchen
+#  Arcisstrasse 21
+#  D-80333 Muenchen
+#  Germany
+#
+#  This file is part of acst, an analog circuit analysis, sizing and synthesis environment:
+#
+#  Permission is hereby granted, free of charge, to any person obtaining
+#  a copy of this software and associated documentation files (the
+#  "Software"), to deal in the Software without restriction, including
+#  without limitation the rights to use, copy, modify, merge, publish,
+#  distribute, sublicense, and/or sell copies of the Software, and to
+#  permit persons to whom the Software is furnished to do so, subject to
+#  the following conditions:
+#
+#  The above copyright notice and this permission notice shall be
+#  included in all copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+#  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+#  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+#  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+#  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+#  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+#  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+#**************************************************************************************************
 import sys
 from subprocess import check_call
 from os import path
@@ -337,12 +358,12 @@ if len("${EXTRA_PARAMS}") != 0:
 else:
     extraParams=[]
     
-cmdLineDcvs = [acst, "--input-format", inType, "--circuit-netlist", cktDcvs, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile,"--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "dcvs", "--xml-library-file", xmlLibFileArray, "--log-level-console","OFF"] 
-cmdLinePassGateLC  = [acst, "--input-format", inType, "--circuit-netlist", cktPassGateLc, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "passGateLC", "--xml-library-file", xmlLibFileArray, "--log-level-console","OFF"] 
-cmdLinePassGateLCKeeper = [acst, "--input-format", inType, "--circuit-netlist", cktPassGateLcKeeper, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "passGateLCKeeper", "--xml-library-file", xmlLibFilePassGateLC, "--log-level-console","OFF"] 
-cmdLineSingleSupplyLC =  [acst, "--input-format", inType, "--circuit-netlist", cktSingleSupplyLC, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "singleSupplyLC", "--xml-library-file", xmlLibFileArray, "--log-level-console","OFF"] 
-cmdLineSingleSupplyTVVS = [acst, "--input-format", inType, "--circuit-netlist", cktSingleSupplyTVVS, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "singleSupplyTVVS", "--xml-library-file", xmlLibFileSingleSupplyLC, "--log-level-console","OFF"]
-cmdLineAllConverters = [acst, "--input-format", inType, "--circuit-netlist", circuit, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "structrec", "--output-format", "xml","--output-file", outFile, "--xml-library-file", xmlLibFileLevelConverters, "--log-level-console","OFF"]
+cmdLineDcvs = [acst, "--input-format", inType, "--circuit-netlist", cktDcvs, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile,"--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "dcvs", "--xml-structrec-library-file", xmlLibFileArray, "--log-level-console","OFF"] 
+cmdLinePassGateLC  = [acst, "--input-format", inType, "--circuit-netlist", cktPassGateLc, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "passGateLC", "--xml-structrec-library-file", xmlLibFileArray, "--log-level-console","OFF"] 
+cmdLinePassGateLCKeeper = [acst, "--input-format", inType, "--circuit-netlist", cktPassGateLcKeeper, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "passGateLCKeeper", "--xml-structrec-library-file", xmlLibFilePassGateLC, "--log-level-console","OFF"] 
+cmdLineSingleSupplyLC =  [acst, "--input-format", inType, "--circuit-netlist", cktSingleSupplyLC, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "singleSupplyLC", "--xml-structrec-library-file", xmlLibFileArray, "--log-level-console","OFF"] 
+cmdLineSingleSupplyTVVS = [acst, "--input-format", inType, "--circuit-netlist", cktSingleSupplyTVVS, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "rulegen", "--structure-name", "singleSupplyTVVS", "--xml-structrec-library-file", xmlLibFileSingleSupplyLC, "--log-level-console","OFF"]
+cmdLineAllConverters = [acst, "--input-format", inType, "--circuit-netlist", circuit, "--device-types-file", deviceTypesFile, "--hspice-mapping-file", hspiceMappingFile, "--hspice-supplynet-file", hspiceSupplyNetFile, "--analysis", "structrec", "--output-format", "xml","--output-file", outFile, "--xml-structrec-library-file", xmlLibFileLevelConverters, "--log-level-console","OFF"]
 
 
 try:
