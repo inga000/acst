@@ -55,6 +55,7 @@ namespace StructRec {
         if(hasArray(parallelNetsMapKey)) {
         	std::vector<const Core::Device*>& array = findArray(parallelNetsMapKey);
             array.push_back(&device);
+
         } else {
         	std::vector<const Core::Device*> newArray;
             newArray.push_back(&device);
@@ -79,6 +80,8 @@ namespace StructRec {
                newArray->setTechType(techType);
                newArray->setPersistence(persistance);
                newArray->setDevices(devices);
+               logDebug("Array: " << newArray);
+               logDebug("Device: " << (**devices.begin()).getIdentifier());
 
                arrayConnection.connectArray(circuit, structureCircuit,*newArray, *devices.front(), visitedInstances);
                structureCircuit.addStructure(*newArray);
@@ -96,13 +99,32 @@ namespace StructRec {
 
     bool ParallelNetsMap::hasArray(const ParallelNetsMapKey& parallelNetsMapKey) const
     {
-        return getArrayMap().find(parallelNetsMapKey) != getArrayMap().end();
+    	for(auto &  it : getArrayMap())
+    	{
+    		const ParallelNetsMapKey& mapKey = it.first;
+    		if(mapKey == parallelNetsMapKey)
+    		{
+    			return true;
+    		}
+    	}
+        return false;
     }
 
     std::vector<const Core::Device*>& ParallelNetsMap::findArray(const ParallelNetsMapKey& parallelNetsMapKey)
     {
         assert(hasArray(parallelNetsMapKey));
-        return getArrayMap()[parallelNetsMapKey];
+		ParallelNetsMapKey mapKey;
+
+    	for(auto &  it : getArrayMap())
+    	{
+    		if(it.first == parallelNetsMapKey)
+    		{
+    			mapKey = it.first;
+    			break;
+    		}
+    	}
+
+        return getArrayMap()[mapKey];
     }
 
     ParallelNetsMap::ArrayMap& ParallelNetsMap::getArrayMap()

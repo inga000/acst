@@ -136,14 +136,12 @@ namespace StructRec {
 				it_children1 != possibleChildren.end(); it_children1++)
 		{
 			NewRecognizedChild * child1 = * it_children1;
-
 			std::vector<StructurePin*> pinsChild1 = child1->getStructure().findAllPins();
 
 			for(std::vector<NewRecognizedChild*>::const_iterator it_children2 = it_children1+1;
 								it_children2 != possibleChildren.end(); it_children2++)
 			{
 				NewRecognizedChild * child2 = * it_children2;
-
 				std::vector<StructurePin*> pinsChild2 = child2->getStructure().findAllPins();
 
 				NewPairLibraryItem * possibleItem = new NewPairLibraryItem;
@@ -335,15 +333,20 @@ namespace StructRec {
 
 	void PairLibraryItemCreator::writeConnectionMap()
 	{
+		logDebug("<<<<<<<<<<<<<<<<<<< Connection map >>>>>>>>>>>>>>>>>>")
 		int id = 1;
 		for(ConnectionMap::const_iterator it = connectionMap_.begin(); it != connectionMap_.end(); it++)
 		{
 			int numberOfConnections = it->first;
+			logDebug(">>>>>>>>>>>>>>>>Number of connections: " << numberOfConnections);
 			std::vector<NewPairLibraryItem*> items = it->second;
 
 			for(std::vector<NewPairLibraryItem*>::const_iterator it_items = items.begin(); it_items != items.end(); it_items++)
 			{
 				NewPairLibraryItem * item = * it_items;
+				logDebug("<<<<Item: " << id);
+				logDebug("Child1: " << item->getChild1().getStructure());
+				logDebug("Child2: " << item->getChild2().getStructure());
 				id++;
 			}
 		}

@@ -40,6 +40,7 @@
 #define STRUCTREC_INCL_LIBRARY_LIBRARYITEM_ARRAYLIBRARYITEM_PARALLELNETS_PARALLELNETSMAPKEY_H_
 
 #include "Core/incl/Circuit/Device/TechType.h"
+#include "Core/incl/Circuit/Device/DeviceId/DeviceId.h"
 #include "Core/incl/Circuit/Net/Net.h"
 #include <vector>
 
@@ -53,21 +54,27 @@ namespace StructRec {
     public:
         ParallelNetsMapKey();
 
-        void setTechType(const Core::TechType& techType);
+        void setTechType(Core::TechType techType);
+        void setDeviceId(Core::DeviceId deviceId);
         void addNet(const Core::Net& net);
 
         const Core::TechType& getTechType() const;
+        const Core::DeviceId& getDeviceId() const;
 
         bool operator<(const ParallelNetsMapKey& other) const;
+        bool operator==(const ParallelNetsMapKey& other) const;
+        bool operator!=(const ParallelNetsMapKey& other) const;
 
     private:
         bool hasTechType() const;
+        bool hasDeviceId() const;
         bool hasParallelNets() const;
 
         const ParallelNets& getParallelNets() const;
 
     private:
         Core::TechType techType_;
+        Core::DeviceId deviceId_;
         ParallelNets parallelNets_;
     };
 }

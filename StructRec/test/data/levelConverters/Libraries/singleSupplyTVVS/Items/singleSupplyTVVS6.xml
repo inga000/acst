@@ -6,7 +6,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>singleSupplyTVVS6</structureName>
-				<structurePinName>net13</structurePinName>
+				<structurePinName>in5</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>1</childNumber>
@@ -25,33 +25,7 @@
 				<childNumber>1</childNumber>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Drain</structurePinName>
-				</structurePinType>
-			</childPinType>
-		</pairPinType>
-		<pairPinType>
-			<structurePinType>
-				<structureName>singleSupplyTVVS6</structureName>
-				<structurePinName>vcc!</structurePinName>
-			</structurePinType>
-			<childPinType>
-				<childNumber>1</childNumber>
-				<structurePinType>
-					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Source</structurePinName>
-				</structurePinType>
-			</childPinType>
-		</pairPinType>
-		<pairPinType>
-			<structurePinType>
-				<structureName>singleSupplyTVVS6</structureName>
-				<structurePinName>in5</structurePinName>
-			</structurePinType>
-			<childPinType>
-				<childNumber>2</childNumber>
-				<structurePinType>
-					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
 				</structurePinType>
 			</childPinType>
 		</pairPinType>
@@ -61,10 +35,36 @@
 				<structurePinName>out5</structurePinName>
 			</structurePinType>
 			<childPinType>
-				<childNumber>2</childNumber>
+				<childNumber>1</childNumber>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Drain</structurePinName>
+				</structurePinType>
+			</childPinType>
+		</pairPinType>
+		<pairPinType>
+			<structurePinType>
+				<structureName>singleSupplyTVVS6</structureName>
+				<structurePinName>net13</structurePinName>
+			</structurePinType>
+			<childPinType>
+				<childNumber>2</childNumber>
+				<structurePinType>
+					<structureName>MosfetNormalArray</structureName>
+					<structurePinName>Gate</structurePinName>
+				</structurePinType>
+			</childPinType>
+		</pairPinType>
+		<pairPinType>
+			<structurePinType>
+				<structureName>singleSupplyTVVS6</structureName>
+				<structurePinName>vcc!</structurePinName>
+			</structurePinType>
+			<childPinType>
+				<childNumber>2</childNumber>
+				<structurePinType>
+					<structureName>MosfetNormalArray</structureName>
+					<structurePinName>Source</structurePinName>
 				</structurePinType>
 			</childPinType>
 		</pairPinType>
@@ -72,11 +72,11 @@
 	<characteristicConnection>
 		<firstChildPinType>
 			<structureName>MosfetNormalArray</structureName>
-			<structurePinName>Drain</structurePinName>
+			<structurePinName>Source</structurePinName>
 		</firstChildPinType>
 		<secondChildPinType>
 			<structureName>MosfetNormalArray</structureName>
-			<structurePinName>Source</structurePinName>
+			<structurePinName>Drain</structurePinName>
 		</secondChildPinType>
 	</characteristicConnection>
 	<recognitionRules>
@@ -86,7 +86,7 @@
 					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Source</structurePinName>
 				</structurePinType>
-				<childNumber>1</childNumber>
+				<childNumber>2</childNumber>
 				<supply>vdd</supply>
 			</netRule>
 		</netRules>
@@ -96,44 +96,44 @@
 				<connected>false</connected>
 				<firstChildPinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
+					<structurePinName>Drain</structurePinName>
 				</firstChildPinType>
 				<secondChildPinType>
+					<structureName>MosfetNormalArray</structureName>
+					<structurePinName>Gate</structurePinName>
+				</secondChildPinType>
+			</connectionRule>
+			<connectionRule>
+				<connected>false</connected>
+				<firstChildPinType>
 					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Drain</structurePinName>
-				</secondChildPinType>
-			</connectionRule>
-			<connectionRule>
-				<connected>false</connected>
-				<firstChildPinType>
-					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
 				</firstChildPinType>
 				<secondChildPinType>
-					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
-				</secondChildPinType>
-			</connectionRule>
-			<connectionRule>
-				<connected>false</connected>
-				<firstChildPinType>
 					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Source</structurePinName>
-				</firstChildPinType>
-				<secondChildPinType>
-					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Drain</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>
 				<connected>false</connected>
 				<firstChildPinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Source</structurePinName>
+					<structurePinName>Gate</structurePinName>
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Gate</structurePinName>
+				</secondChildPinType>
+			</connectionRule>
+			<connectionRule>
+				<connected>false</connected>
+				<firstChildPinType>
+					<structureName>MosfetNormalArray</structureName>
+					<structurePinName>Gate</structurePinName>
+				</firstChildPinType>
+				<secondChildPinType>
+					<structureName>MosfetNormalArray</structureName>
+					<structurePinName>Source</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 		</connectionRules>

@@ -91,11 +91,13 @@ namespace StructRec {
 	void ArrayLibraryItem::recognize(const Core::Circuit& circuit,
 			StructureCircuit& levelCircuit, Core::VisitedInstances & visitedInstances)
 	{
+		logDebug("<<<<<<<Recognize: " << getName());
 	    ParallelNetsMap parallelNetsMap;
         std::vector<const Core::Device*> devices = circuit.findDevices();
         for (auto& it : devices)
         {
             const Core::Device* device = it;
+            logDebug("Device: " << device);
             if (checkRecognitionRules(*device)) {
                 ParallelNetsMapKey parallelNetsMapKey = getParallelNets().computeParallelNetsMapKey(*device);
                 parallelNetsMap.add(parallelNetsMapKey, *device);

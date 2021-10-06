@@ -45,10 +45,27 @@ namespace StructRec {
     {
     }
 
-    void ParallelNetsMapKey::setTechType(const Core::TechType& techType)
+    void ParallelNetsMapKey::setTechType(Core::TechType techType)
     {
         techType_ = techType;
     }
+
+    void ParallelNetsMapKey::setDeviceId(Core::DeviceId deviceId)
+    {
+    	if(hasDeviceId())
+    	{
+    		if(deviceId < deviceId_)
+    		{
+    			deviceId_ = deviceId;
+    		}
+    	}
+    	else
+    	{
+    		deviceId_ = deviceId;
+    	}
+
+    }
+
 
     void ParallelNetsMapKey::addNet(const Core::Net& net)
     {
@@ -61,18 +78,39 @@ namespace StructRec {
         return techType_;
     }
 
+    const Core::DeviceId& ParallelNetsMapKey::getDeviceId()const
+    {
+        assert(hasDeviceId());
+        return deviceId_;
+    }
+
     bool ParallelNetsMapKey::operator <(const ParallelNetsMapKey& other) const
     {
         if(getTechType() == other.getTechType()) {
-            return getParallelNets() < other.getParallelNets();
+            return getDeviceId() < other.getDeviceId();
         } else {
             return getTechType() < other.getTechType();
         }
     }
 
+    bool ParallelNetsMapKey::operator==(const ParallelNetsMapKey& other) const
+	{
+    	return (getTechType() == other.getTechType() && getParallelNets() == other.getParallelNets());
+	}
+
+    bool ParallelNetsMapKey::operator!=(const ParallelNetsMapKey& other) const
+    {
+    	return !(*this == other);
+    }
+
     bool ParallelNetsMapKey::hasTechType() const
     {
         return techType_.isInitialized();
+    }
+
+    bool ParallelNetsMapKey::hasDeviceId() const
+    {
+        return deviceId_.isInitialized();
     }
 
     bool ParallelNetsMapKey::hasParallelNets() const

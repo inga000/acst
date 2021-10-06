@@ -6,7 +6,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>dcvs4</structureName>
-				<structurePinName>net3</structurePinName>
+				<structurePinName>net010</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>1</childNumber>
@@ -19,7 +19,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>dcvs4</structureName>
-				<structurePinName>vin</structurePinName>
+				<structurePinName>vinv</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>1</childNumber>
@@ -45,7 +45,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>dcvs4</structureName>
-				<structurePinName>net010</structurePinName>
+				<structurePinName>net3</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>2</childNumber>
@@ -58,7 +58,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>dcvs4</structureName>
-				<structurePinName>vinv</structurePinName>
+				<structurePinName>vin</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>2</childNumber>
