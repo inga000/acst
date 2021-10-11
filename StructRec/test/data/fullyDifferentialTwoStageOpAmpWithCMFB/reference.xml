@@ -1,0 +1,650 @@
+<acst_results>
+	<date day="8" month="10" year="2021" hour="10" minute="20" second="36"/>
+	<structure_recognition_results>
+		<structure name="MosfetCascodedAnalogInverter[1]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Gnd" net="/gnd!"/>
+				<pin name="Inner1" net="/net43"/>
+				<pin name="Inner2" net="/net14"/>
+				<pin name="InputNMOS1" net="/ibias"/>
+				<pin name="InputNMOS2" net="/vb2"/>
+				<pin name="InputPMOS1" net="/net22"/>
+				<pin name="InputPMOS2" net="/vb1"/>
+				<pin name="Output" net="/net12"/>
+				<pin name="Vdd" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetCascodePair[7]" techType="p" instance="/">
+				<pins>
+					<pin name="Drain" net="/net12"/>
+					<pin name="Gate1" net="/vb1"/>
+					<pin name="Gate2" net="/net22"/>
+					<pin name="Inner" net="/net43"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<structure name="MosfetNormalArray[16]" techType="p" instance="/">
+					<pins>
+						<pin name="Bulk" net="/net43"/>
+						<pin name="Drain" net="/net12"/>
+						<pin name="Gate" net="/vb1"/>
+						<pin name="Source" net="/net43"/>
+					</pins>
+					<devices>
+						<device name="/m6" deviceType="Mosfet" techType="p" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="MosfetNormalArray[18]" techType="p" instance="/">
+					<pins>
+						<pin name="Bulk" net="/vdd!"/>
+						<pin name="Drain" net="/net43"/>
+						<pin name="Gate" net="/net22"/>
+						<pin name="Source" net="/vdd!"/>
+					</pins>
+					<devices>
+						<device name="/m5" deviceType="Mosfet" techType="p" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+			<structure name="MosfetCascodePair[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Drain" net="/net12"/>
+					<pin name="Gate1" net="/vb2"/>
+					<pin name="Gate2" net="/ibias"/>
+					<pin name="Inner" net="/net14"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<structure name="MosfetNormalArray[1]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/net14"/>
+						<pin name="Drain" net="/net12"/>
+						<pin name="Gate" net="/vb2"/>
+						<pin name="Source" net="/net14"/>
+					</pins>
+					<devices>
+						<device name="/m19" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="MosfetNormalArray[2]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/gnd!"/>
+						<pin name="Drain" net="/net14"/>
+						<pin name="Gate" net="/ibias"/>
+						<pin name="Source" net="/gnd!"/>
+					</pins>
+					<devices>
+						<device name="/m20" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+		</structure>
+		<structure name="MosfetCascodedAnalogInverter[2]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Gnd" net="/gnd!"/>
+				<pin name="Inner1" net="/net45"/>
+				<pin name="Inner2" net="/net23"/>
+				<pin name="InputNMOS1" net="/ibias"/>
+				<pin name="InputNMOS2" net="/vb2"/>
+				<pin name="InputPMOS1" net="/net22"/>
+				<pin name="InputPMOS2" net="/vb1"/>
+				<pin name="Output" net="/net27"/>
+				<pin name="Vdd" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetCascodePair[8]" techType="p" instance="/">
+				<pins>
+					<pin name="Drain" net="/net27"/>
+					<pin name="Gate1" net="/vb1"/>
+					<pin name="Gate2" net="/net22"/>
+					<pin name="Inner" net="/net45"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<structure name="MosfetNormalArray[17]" techType="p" instance="/">
+					<pins>
+						<pin name="Bulk" net="/net45"/>
+						<pin name="Drain" net="/net27"/>
+						<pin name="Gate" net="/vb1"/>
+						<pin name="Source" net="/net45"/>
+					</pins>
+					<devices>
+						<device name="/m1" deviceType="Mosfet" techType="p" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="MosfetNormalArray[19]" techType="p" instance="/">
+					<pins>
+						<pin name="Bulk" net="/vdd!"/>
+						<pin name="Drain" net="/net45"/>
+						<pin name="Gate" net="/net22"/>
+						<pin name="Source" net="/vdd!"/>
+					</pins>
+					<devices>
+						<device name="/m0" deviceType="Mosfet" techType="p" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+			<structure name="MosfetCascodePair[2]" techType="n" instance="/">
+				<pins>
+					<pin name="Drain" net="/net27"/>
+					<pin name="Gate1" net="/vb2"/>
+					<pin name="Gate2" net="/ibias"/>
+					<pin name="Inner" net="/net23"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<structure name="MosfetNormalArray[6]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/net23"/>
+						<pin name="Drain" net="/net27"/>
+						<pin name="Gate" net="/vb2"/>
+						<pin name="Source" net="/net23"/>
+					</pins>
+					<devices>
+						<device name="/m10" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="MosfetNormalArray[5]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/gnd!"/>
+						<pin name="Drain" net="/net23"/>
+						<pin name="Gate" net="/ibias"/>
+						<pin name="Source" net="/gnd!"/>
+					</pins>
+					<devices>
+						<device name="/m11" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+		</structure>
+		<structure name="MosfetFoldedCascodeDifferentialPair[1]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Bias1" net="/net43"/>
+				<pin name="Bias2" net="/net45"/>
+				<pin name="Input1" net="/inp"/>
+				<pin name="Input2" net="/inn"/>
+				<pin name="Output1" net="/net12"/>
+				<pin name="Output2" net="/net27"/>
+				<pin name="Source" net="/net8"/>
+			</pins>
+			<structure name="MosfetDifferentialPair[3]" techType="n" instance="/">
+				<pins>
+					<pin name="Input1" net="/inp"/>
+					<pin name="Input2" net="/inn"/>
+					<pin name="Output1" net="/net43"/>
+					<pin name="Output2" net="/net45"/>
+					<pin name="Source" net="/net8"/>
+				</pins>
+				<structure name="MosfetNormalArray[11]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/net8"/>
+						<pin name="Drain" net="/net43"/>
+						<pin name="Gate" net="/inp"/>
+						<pin name="Source" net="/net8"/>
+					</pins>
+					<devices>
+						<device name="/m24" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="MosfetNormalArray[12]" techType="n" instance="/">
+					<pins>
+						<pin name="Bulk" net="/net8"/>
+						<pin name="Drain" net="/net45"/>
+						<pin name="Gate" net="/inn"/>
+						<pin name="Source" net="/net8"/>
+					</pins>
+					<devices>
+						<device name="/m25" deviceType="Mosfet" techType="n" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+			<structure name="MosfetGateConnectedCouple[1]" techType="p" instance="/">
+				<pins>
+					<pin name="Input1" net="/net43"/>
+					<pin name="Input2" net="/net45"/>
+					<pin name="Output1" net="/net12"/>
+					<pin name="Output2" net="/net27"/>
+				</pins>
+				<structure name="MosfetNormalArray[16]" techType="p" instance="/">
+					<pins>
+						<pin name="Bulk" net="/net43"/>
+						<pin name="Drain" net="/net12"/>
+						<pin name="Gate" net="/vb1"/>
+						<pin name="Source" net="/net43"/>
+					</pins>
+					<devices>
+						<device name="/m6" deviceType="Mosfet" techType="p" instance="/"/>
+					</devices>
+				</structure>
+				<structure name="MosfetNormalArray[17]" techType="p" instance="/">
+					<pins>
+						<pin name="Bulk" net="/net45"/>
+						<pin name="Drain" net="/net27"/>
+						<pin name="Gate" net="/vb1"/>
+						<pin name="Source" net="/net45"/>
+					</pins>
+					<devices>
+						<device name="/m1" deviceType="Mosfet" techType="p" instance="/"/>
+					</devices>
+				</structure>
+			</structure>
+		</structure>
+		<structure name="MosfetAnalogInverter[1]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Gnd" net="/gnd!"/>
+				<pin name="InputNMOS1" net="/ibias"/>
+				<pin name="InputPMOS1" net="/net27"/>
+				<pin name="Output" net="/outn"/>
+				<pin name="Vdd" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetNormalArray[20]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vdd!"/>
+					<pin name="Drain" net="/outn"/>
+					<pin name="Gate" net="/net27"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m2" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[14]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/outn"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m12" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetAnalogInverter[2]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Gnd" net="/gnd!"/>
+				<pin name="InputNMOS1" net="/ibias"/>
+				<pin name="InputPMOS1" net="/net12"/>
+				<pin name="Output" net="/outp"/>
+				<pin name="Vdd" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetNormalArray[21]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vdd!"/>
+					<pin name="Drain" net="/outp"/>
+					<pin name="Gate" net="/net12"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m7" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[15]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/outp"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m21" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetDifferentialPair[1]" techType="n" instance="/">
+			<pins>
+				<pin name="Input1" net="/outp"/>
+				<pin name="Input2" net="/vref"/>
+				<pin name="Output1" net="/net22"/>
+				<pin name="Output2" net="/net37"/>
+				<pin name="Source" net="/net34"/>
+			</pins>
+			<structure name="MosfetNormalArray[3]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/net34"/>
+					<pin name="Drain" net="/net22"/>
+					<pin name="Gate" net="/outp"/>
+					<pin name="Source" net="/net34"/>
+				</pins>
+				<devices>
+					<device name="/m15" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[8]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/net34"/>
+					<pin name="Drain" net="/net37"/>
+					<pin name="Gate" net="/vref"/>
+					<pin name="Source" net="/net34"/>
+				</pins>
+				<devices>
+					<device name="/m17" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetDifferentialPair[2]" techType="n" instance="/">
+			<pins>
+				<pin name="Input1" net="/outn"/>
+				<pin name="Input2" net="/vref"/>
+				<pin name="Output1" net="/net22"/>
+				<pin name="Output2" net="/net37"/>
+				<pin name="Source" net="/net38"/>
+			</pins>
+			<structure name="MosfetNormalArray[4]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/net38"/>
+					<pin name="Drain" net="/net22"/>
+					<pin name="Gate" net="/outn"/>
+					<pin name="Source" net="/net38"/>
+				</pins>
+				<devices>
+					<device name="/m18" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[9]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/net38"/>
+					<pin name="Drain" net="/net37"/>
+					<pin name="Gate" net="/vref"/>
+					<pin name="Source" net="/net38"/>
+				</pins>
+				<devices>
+					<device name="/m14" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[1]" techType="n" instance="/">
+			<pins>
+				<pin name="Input" net="/ibias"/>
+				<pin name="Output" net="/net14"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m23" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[2]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/net14"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m20" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[2]" techType="n" instance="/">
+			<pins>
+				<pin name="Input" net="/ibias"/>
+				<pin name="Output" net="/net23"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m23" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[5]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/net23"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m11" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[3]" techType="n" instance="/">
+			<pins>
+				<pin name="Input" net="/ibias"/>
+				<pin name="Output" net="/net34"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m23" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[7]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/net34"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m16" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[4]" techType="n" instance="/">
+			<pins>
+				<pin name="Input" net="/ibias"/>
+				<pin name="Output" net="/net38"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m23" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[10]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/net38"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m13" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[5]" techType="n" instance="/">
+			<pins>
+				<pin name="Input" net="/ibias"/>
+				<pin name="Output" net="/net8"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m23" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[13]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/net8"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m9" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[6]" techType="n" instance="/">
+			<pins>
+				<pin name="Input" net="/ibias"/>
+				<pin name="Output" net="/outn"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m23" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[14]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/outn"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m12" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[7]" techType="n" instance="/">
+			<pins>
+				<pin name="Input" net="/ibias"/>
+				<pin name="Output" net="/outp"/>
+				<pin name="Source" net="/gnd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[1]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m23" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[15]" techType="n" instance="/">
+				<pins>
+					<pin name="Bulk" net="/gnd!"/>
+					<pin name="Drain" net="/outp"/>
+					<pin name="Gate" net="/ibias"/>
+					<pin name="Source" net="/gnd!"/>
+				</pins>
+				<devices>
+					<device name="/m21" deviceType="Mosfet" techType="n" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[8]" techType="p" instance="/">
+			<pins>
+				<pin name="Input" net="/net22"/>
+				<pin name="Output" net="/net43"/>
+				<pin name="Source" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[2]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vdd!"/>
+					<pin name="Drain" net="/net22"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m3" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[18]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vdd!"/>
+					<pin name="Drain" net="/net43"/>
+					<pin name="Gate" net="/net22"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m5" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="MosfetSimpleCurrentMirror[9]" techType="p" instance="/">
+			<pins>
+				<pin name="Input" net="/net22"/>
+				<pin name="Output" net="/net45"/>
+				<pin name="Source" net="/vdd!"/>
+			</pins>
+			<structure name="MosfetDiodeArray[2]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vdd!"/>
+					<pin name="Drain" net="/net22"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m3" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[19]" techType="p" instance="/">
+				<pins>
+					<pin name="Bulk" net="/vdd!"/>
+					<pin name="Drain" net="/net45"/>
+					<pin name="Gate" net="/net22"/>
+					<pin name="Source" net="/vdd!"/>
+				</pins>
+				<devices>
+					<device name="/m0" deviceType="Mosfet" techType="p" instance="/"/>
+				</devices>
+			</structure>
+		</structure>
+		<structure name="CapacitorArray[1]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Minus" net="/outp"/>
+				<pin name="Plus" net="/net12"/>
+			</pins>
+			<devices>
+				<device name="/cc1" deviceType="Capacitor" techType="undefined" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="CapacitorArray[2]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Minus" net="/outn"/>
+				<pin name="Plus" net="/net27"/>
+			</pins>
+			<devices>
+				<device name="/cc2" deviceType="Capacitor" techType="undefined" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="CapacitorArray[3]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Minus" net="/gnd!"/>
+				<pin name="Plus" net="/outn"/>
+			</pins>
+			<devices>
+				<device name="/cl2" deviceType="Capacitor" techType="undefined" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="CapacitorArray[4]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Minus" net="/gnd!"/>
+				<pin name="Plus" net="/outp"/>
+			</pins>
+			<devices>
+				<device name="/cl1" deviceType="Capacitor" techType="undefined" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="MosfetDiodeArray[3]" techType="p" instance="/">
+			<pins>
+				<pin name="Bulk" net="/vdd!"/>
+				<pin name="Drain" net="/net37"/>
+				<pin name="Source" net="/vdd!"/>
+			</pins>
+			<devices>
+				<device name="/m4" deviceType="Mosfet" techType="p" instance="/"/>
+			</devices>
+		</structure>
+	</structure_recognition_results>
+</acst_results>
+

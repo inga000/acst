@@ -73,7 +73,6 @@ namespace StructRec {
 		assert(!parallelNets_.empty());
 		ParallelNetsMapKey key;
 		key.setTechType(device.getTechType());
-		key.setDeviceId(device.getIdentifier());
 		for(PinTypeVector::const_iterator it = parallelNets_.begin(); it != parallelNets_.end(); it++)
 		{
 			Core::PinType pinType = *it;

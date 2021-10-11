@@ -147,6 +147,7 @@ namespace Synthesis {
 			delete functionalBlockLibrary;
         }
 
+        delete &structureLibrary->getStructureCore();
         delete structureLibrary;
     }
 

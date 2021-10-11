@@ -80,8 +80,6 @@ namespace StructRec {
                newArray->setTechType(techType);
                newArray->setPersistence(persistance);
                newArray->setDevices(devices);
-               logDebug("Array: " << newArray);
-               logDebug("Device: " << (**devices.begin()).getIdentifier());
 
                arrayConnection.connectArray(circuit, structureCircuit,*newArray, *devices.front(), visitedInstances);
                structureCircuit.addStructure(*newArray);

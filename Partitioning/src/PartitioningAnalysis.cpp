@@ -66,10 +66,12 @@ namespace Partitioning {
     	result_ = new Result();
 
 		runStructureRecognition();
+		logDebug("<<<<<<<<<<<<<< Structure Recognition Result >>>>>>>>>>>>>>>");
 		logDebug(getStructRecResult());
 
 		Partitioning * partioning = new Partitioning;
 		result_ = &partioning->compute(getStructRecResult().getTopLevelResults());
+		logDebug("<<<<<<<<<<<<<< Partitioning Result >>>>>>>>>>>>>>>");
 		logDebug(*result_);
 
 		delete partioning;

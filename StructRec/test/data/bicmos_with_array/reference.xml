@@ -1,5 +1,5 @@
 <acst_results>
-	<date day="17" month="5" year="2021" hour="17" minute="13" second="42"/>
+	<date day="7" month="10" year="2021" hour="16" minute="2" second="24"/>
 	<structure_recognition_results>
 		<structure name="BipolarBufferedCurrentMirror[1]" techType="p" instance="/">
 			<pins>
@@ -9,7 +9,7 @@
 				<pin name="Input" net="/bias2"/>
 				<pin name="Output" net="/n1"/>
 			</pins>
-			<structure name="BipolarNormalArray[4]" techType="p" instance="/">
+			<structure name="BipolarNormalArray[3]" techType="p" instance="/">
 				<pins>
 					<pin name="Base" net="/bias3"/>
 					<pin name="Collector" net="/bias2"/>
@@ -29,7 +29,7 @@
 					<pin name="Emitter1" net="/bias3"/>
 					<pin name="Emitter2" net="/vdd!"/>
 				</pins>
-				<structure name="BipolarNormalArray[3]" techType="p" instance="/">
+				<structure name="BipolarNormalArray[5]" techType="p" instance="/">
 					<pins>
 						<pin name="Base" net="/bias2"/>
 						<pin name="Collector" net="/vss!"/>
@@ -39,7 +39,7 @@
 						<device name="/q6" deviceType="Bipolar" techType="p" instance="/"/>
 					</devices>
 				</structure>
-				<structure name="BipolarNormalArray[5]" techType="p" instance="/">
+				<structure name="BipolarNormalArray[4]" techType="p" instance="/">
 					<pins>
 						<pin name="Base" net="/bias3"/>
 						<pin name="Collector" net="/n1"/>
@@ -67,7 +67,7 @@
 					<device name="/q2" deviceType="Bipolar" techType="n" instance="/"/>
 				</devices>
 			</structure>
-			<structure name="BipolarNormalArray[1]" techType="n" instance="/">
+			<structure name="BipolarNormalArray[2]" techType="n" instance="/">
 				<pins>
 					<pin name="Base" net="/n2"/>
 					<pin name="Collector" net="/out"/>
@@ -94,7 +94,7 @@
 					<device name="/q8" deviceType="Bipolar" techType="n" instance="/"/>
 				</devices>
 			</structure>
-			<structure name="BipolarNormalArray[2]" techType="n" instance="/">
+			<structure name="BipolarNormalArray[1]" techType="n" instance="/">
 				<pins>
 					<pin name="Base" net="/n3"/>
 					<pin name="Collector" net="/n4"/>
@@ -150,7 +150,7 @@
 					<device name="/m4" deviceType="Mosfet" techType="p" instance="/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[2]" techType="p" instance="/">
+			<structure name="MosfetNormalArray[4]" techType="p" instance="/">
 				<pins>
 					<pin name="Bulk" net="/vdd!"/>
 					<pin name="Drain" net="/out"/>
@@ -189,7 +189,7 @@
 				<device name="/m12" deviceType="Mosfet" techType="p" instance="/"/>
 			</devices>
 		</structure>
-		<structure name="MosfetNormalArray[3]" techType="p" instance="/">
+		<structure name="MosfetNormalArray[2]" techType="p" instance="/">
 			<pins>
 				<pin name="Bulk" net="/n1"/>
 				<pin name="Drain" net="/n2"/>
@@ -200,7 +200,7 @@
 				<device name="/m3" deviceType="Mosfet" techType="p" instance="/"/>
 			</devices>
 		</structure>
-		<structure name="MosfetNormalArray[4]" techType="p" instance="/">
+		<structure name="MosfetNormalArray[3]" techType="p" instance="/">
 			<pins>
 				<pin name="Bulk" net="/n1"/>
 				<pin name="Drain" net="/n3"/>
@@ -213,20 +213,20 @@
 		</structure>
 		<structure name="ResistorArray[1]" techType="undefined" instance="/">
 			<pins>
-				<pin name="Minus" net="/bias3"/>
-				<pin name="Plus" net="/vdd!"/>
-			</pins>
-			<devices>
-				<device name="/r1" deviceType="Resistor" techType="undefined" instance="/"/>
-			</devices>
-		</structure>
-		<structure name="ResistorArray[2]" techType="undefined" instance="/">
-			<pins>
 				<pin name="Minus" net="/bias1"/>
 				<pin name="Plus" net="/vdd!"/>
 			</pins>
 			<devices>
 				<device name="/r0" deviceType="Resistor" techType="undefined" instance="/"/>
+			</devices>
+		</structure>
+		<structure name="ResistorArray[2]" techType="undefined" instance="/">
+			<pins>
+				<pin name="Minus" net="/bias3"/>
+				<pin name="Plus" net="/vdd!"/>
+			</pins>
+			<devices>
+				<device name="/r1" deviceType="Resistor" techType="undefined" instance="/"/>
 			</devices>
 		</structure>
 	</structure_recognition_results>

@@ -1,0 +1,61 @@
+<deviceTypes>
+    <deviceType name = "Mosfet">
+        <techTypes>
+            <techType>n</techType>
+            <techType>p</techType>
+        </techTypes>
+        <pinTypes>
+            <pinType>Drain</pinType>
+            <pinType>Gate</pinType>
+            <pinType>Source</pinType>
+            <pinType optional = "true" autoConnection="Source">Bulk</pinType>
+        </pinTypes>
+    </deviceType>
+    <deviceType name = "Bipolar">
+        <techTypes>
+            <techType>n</techType>
+            <techType>p</techType>
+        </techTypes>
+        <pinTypes>
+            <pinType>Emitter</pinType>
+            <pinType>Base</pinType>
+            <pinType>Collector</pinType>
+        </pinTypes>
+    </deviceType>
+    <deviceType name = "Resistor">
+        <techTypes>
+            <techType>undefined</techType>
+        </techTypes>
+        <pinTypes>
+            <pinType>Plus</pinType>
+            <pinType>Minus</pinType>
+        </pinTypes>
+    </deviceType>
+    <deviceType name = "Capacitor">
+        <techTypes>
+            <techType>undefined</techType>
+        </techTypes>
+        <pinTypes>
+            <pinType>Plus</pinType>
+            <pinType>Minus</pinType>
+        </pinTypes>
+    </deviceType>
+    <deviceType name = "Inductor">
+        <techTypes>
+            <techType>undefined</techType>
+        </techTypes>
+        <pinTypes>
+            <pinType>Plus</pinType>
+            <pinType>Minus</pinType>
+        </pinTypes>
+    </deviceType>
+        <deviceType name = "Diode">
+        <techTypes>
+            <techType>undefined</techType>
+        </techTypes>
+        <pinTypes>
+            <pinType>Anode</pinType>
+            <pinType>Cathode</pinType>
+        </pinTypes>
+    </deviceType>
+</deviceTypes>

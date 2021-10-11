@@ -345,9 +345,6 @@ namespace Synthesis
 	Circuit & OpAmpSizing::runStrictSearch(Circuit & circuit)
 	{
 		Circuit * passedCircuit = nullptr;
-//		logDebug("<<<<<<<<<<<<<<<<<< STRICT SEARCH >>>>>>>>>>>>>>>>>>>>");
-//		logDebug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> CIRCUIT " << circuit.getFlatCircuit().getCircuitIdentifier());
-//		logDebug(circuit);
 		AutomaticSizing::SimpleSearchSpace strictSearchSpace;
 		strictSearchSpace.setResult(circuit.getPartitioningResult());
 		strictSearchSpace.setCircuitInformation(getCircuitInformation());
@@ -363,7 +360,6 @@ namespace Synthesis
 		Gecode::Search::Stop* stop = Gecode::Search::Stop::time(60000);
 		AutomaticSizing::SimpleSearchSpace * solution = nullptr;
 		strictSearchSpace.status();
-//		logDebug(strictSearchSpace.toStr());
 
 		Gecode::Search::Cutoff * luby = Gecode::Search::Cutoff::luby(10);
 		Gecode::Search::Options opt;
@@ -374,7 +370,6 @@ namespace Synthesis
 		int numSolution =0;
 		while(AutomaticSizing::SimpleSearchSpace* space = search.next())
 		{
-//			logDebug(space->toStr());
 			numSolution ++;
 			Gecode::FloatVal circuitPerformance = space->getBestCircuitPerformance();
 			 if(circuitPerformance > bestCircuitPerformance)
@@ -385,7 +380,7 @@ namespace Synthesis
 				  }
 				  solution = space;
 				 bestCircuitPerformance = circuitPerformance;
-//				 break;
+
 			 }
 			else
 			{
@@ -396,8 +391,7 @@ namespace Synthesis
 		Gecode::Search::Statistics statistics = search.statistics();
 		std::ostringstream stat;
 		stat << "FailureNodes " << statistics.fail << std::endl << "Number of nodes " << statistics.node << std::endl << "Number of restarts " << statistics.restart << std::endl << "Depth " << statistics.depth << std::endl ;
-//		logDebug(stat.str());
-//		logDebug(circuit.getFlatCircuit().getCircuitIdentifier() << "<<<<<<<<numSolutions " << numSolution); // neu
+
 
 		if(solution != NULL)
 		{
@@ -414,9 +408,7 @@ namespace Synthesis
 	Circuit & OpAmpSizing::runOptimizingSearch(Circuit & circuit)
 	{
 		Circuit * passedCircuit = nullptr;
-//		logDebug("<<<<<<<<<<<<<<<<<< OPTIMIZING SEARCH >>>>>>>>>>>>>>>>>>>>");
-//		logDebug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> CIRCUIT " << circuit.getFlatCircuit().getCircuitIdentifier());
-//		logDebug(circuit);
+
 		AutomaticSizing::OptimizingSearchSpace searchSpace;
 		searchSpace.setResult(circuit.getPartitioningResult());
 		searchSpace.setCircuitInformation(getCircuitInformation());
@@ -430,7 +422,7 @@ namespace Synthesis
 		Gecode::Search::Stop* stop = Gecode::Search::Stop::time(60000);
 		AutomaticSizing::OptimizingSearchSpace * solution = nullptr;
 		searchSpace.status();
-//		logDebug(searchSpace.toStr());
+
 
 		Gecode::Search::Cutoff * luby = Gecode::Search::Cutoff::luby(10);
 		Gecode::Search::Options opt;
@@ -441,21 +433,17 @@ namespace Synthesis
 		int numSolution =0;
 		while(AutomaticSizing::OptimizingSearchSpace* space = search.next())
 		{
-//			logDebug(space->toStr());
 			numSolution ++;
 			if(solution != NULL)
 			{
 				delete solution;
 			}
 			solution = space;
-//			break;
 		}
 
 		Gecode::Search::Statistics statistics = search.statistics();
 		std::ostringstream stat;
-		stat << "FailureNodes " << statistics.fail << std::endl << "Number of nodes " << statistics.node << std::endl << "Number of restarts " << statistics.restart << std::endl << "Depth " << statistics.depth << std::endl ;
-//		logDebug(stat.str());
-//		logDebug(circuit.getFlatCircuit().getCircuitIdentifier() << "<<<<<<<<numSolutions " << numSolution);
+		stat << "FailureNodes " << statistics.fail << std::endl << "Number of nodes " << statistics.node << std::endl << "Number of restarts " << statistics.restart << std::endl << "Depth " << statistics.depth << std::endl;
 
 		if(solution != NULL)
 		{
@@ -513,7 +501,6 @@ namespace Synthesis
 
 		std::ostringstream opAmpId;
 		std::string opAmpName = circuit.getFlatCircuit().getCircuitIdentifier().getName();
-//		logDebug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> WRITE HSPICE OUTPUT FILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><");
 		int opAmpNum = circuit.getFlatCircuit().getCircuitIdentifier().getId();
 
 		if(oneStageOpAmpId == "empty")
@@ -531,7 +518,6 @@ namespace Synthesis
 		outputFile.setPath(stringFilePath);
 		outputFile.setId(opAmpId.str());
 		outputFile.write(circuit);
-//		logDebug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END WRITE HSPICE OUTPUT FILE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><");
 	}
 
 }

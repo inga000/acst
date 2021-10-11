@@ -484,7 +484,6 @@ namespace Synthesis {
             
         }
 
-        // logDebug("FOUR TRANSISTORS LOAD PARTS VOLTAGE BIASES");
         oss << "FOUR TRANSISTORS LOAD PARTS VOLTAGE BIASES" << std::endl;
         for(auto & loadPart : fourTransistorsLoadPartsPmosVoltageBiases_)
         {

@@ -63,8 +63,6 @@ namespace Control {
     {
         Core::FlatCircuitRecursion flatCircuitRecursion;
         flatCircuit_ = flatCircuitRecursion.createNewFlatCopy(this->getCircuit());
-        logDebug("Flat Circuit:")
-        logDebug(getFlatCircuit())
     }
 
 	template <class LocalOptions>

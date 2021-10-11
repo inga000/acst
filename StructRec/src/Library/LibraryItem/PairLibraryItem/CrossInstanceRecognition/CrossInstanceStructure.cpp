@@ -143,9 +143,7 @@ namespace StructRec {
 
 	 bool CrossInstanceStructure::operator<(const CrossInstanceStructure & other) const
 	 {
-		 Core::DeviceId thisId = (*getStructure().getDevices().begin())->getIdentifier();
-		 Core::DeviceId otherId = (*other.getStructure().getDevices().begin())->getIdentifier();
-		 return (thisId < otherId) || (getInstanceNamePath() < other.getInstanceNamePath());
+		 return (getStructure().getIdentifier() < other.getStructure().getIdentifier()) || (getInstanceNamePath() < other.getInstanceNamePath());
 	 }
 
 	 std::string CrossInstanceStructure::toStr() const

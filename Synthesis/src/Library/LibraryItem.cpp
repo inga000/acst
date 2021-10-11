@@ -156,11 +156,6 @@ namespace Synthesis {
         Core::TerminalId terminalId;
         terminalId.setTerminalName(terminalName);
         Core::InstanceTerminal & terminal = instance.findInstanceTerminal(terminalId);
-//         if(terminal.isConnected())
-//         logDebug(terminal.getNet());
-
-//        logDebug("Net that should be in circuit");
-//        logDebug(netId);
         terminal.connect(circuit.findNet(netId));
     }
 
@@ -230,7 +225,7 @@ namespace Synthesis {
 
         }
 
-        delete flatCircuit; //TODO DevicePath is pointer!!!!
+        delete flatCircuit;
         delete flatCircuitRecursion;
         return devices;
         
@@ -290,7 +285,7 @@ namespace Synthesis {
             devicesInCircuit.push_back(device->getIdentifier());
         }
 
-        delete flatCircuit; //TODO devicePath is pointer
+        delete flatCircuit;
         delete flatCircuitRecursion;
 
         return devicesInCircuit;

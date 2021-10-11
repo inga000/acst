@@ -80,7 +80,6 @@ namespace Control {
 		if(std::is_base_of<CircuitReadInOptions, LocalOptions>::value)
 		{
 			const CircuitReadInOptions * localOptions = static_cast<const CircuitReadInOptions*>(localOptions_);
-			logDebug(localOptions->getStringDescription());
 			setDeviceTypeRegister(*localOptions->readDeviceTypeRegister());
 			setCircuit(localOptions->readInCircuit(getDeviceTypeRegister()));
 

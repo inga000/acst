@@ -219,7 +219,6 @@ namespace AutomaticSizing {
 			techSpec = getCircuitInformation().getTechnologieSpecificationSHMNmos();
 			Gecode::FloatVal muCox = techSpec.getMobilityOxideCapacityCoefficient();
 			Gecode::FloatVal vth = techSpec.getThresholdVoltage();
-			Gecode::FloatVal earlyVoltage = techSpec.getEarlyVoltage();
 			Gecode::FloatVar lamda(getSpace(), 0.001,0.9);
 
 			Gecode::rel(getSpace(), lamda == techSpec.getChannelLengthCoefficientStrongInversion());
@@ -294,7 +293,6 @@ namespace AutomaticSizing {
 			techSpec = getCircuitInformation().getTechnologieSpecificationSHMPmos();
 			Gecode::FloatVal muCox = techSpec.getMobilityOxideCapacityCoefficient();
 			Gecode::FloatVal vth = techSpec.getThresholdVoltage();
-			Gecode::FloatVal earlyVoltage = techSpec.getEarlyVoltage();
 
 			Gecode::FloatVar lamda(getSpace(), 0.01,0.9);
 			Gecode::rel(getSpace(), lamda == techSpec.getChannelLengthCoefficientStrongInversion());
@@ -650,10 +648,7 @@ namespace AutomaticSizing {
 			techSpec = getCircuitInformation().getTechnologieSpecificationSHMNmos();
 			Gecode::FloatVal muCox = techSpec.getMobilityOxideCapacityCoefficient();
 			Gecode::FloatVal vth = techSpec.getThresholdVoltage();
-			Gecode::FloatVal earlyVoltage = techSpec.getEarlyVoltage();
-			Gecode::FloatVar lamda(getSpace(), 0.01,0.9);
-			Gecode::rel(getSpace(), lamda * (lengthHelperVar* earlyVoltage) == 1);
-			Gecode::rel(getSpace(), muCox *(width/length) * ((vgs - vth)-0.5*vds) * vds /** (1+lamda * vds)*/ == 1 * ids);
+			Gecode::rel(getSpace(), muCox *(width/length) * ((vgs - vth)-0.5*vds) * vds  == 1 * ids);
 			Gecode::rel(getSpace(), vgs - vth > vds);
 			Gecode::rel(getSpace(), vds > 0);
 			Gecode::rel(getSpace(), vgs - vth > 0);
@@ -663,10 +658,7 @@ namespace AutomaticSizing {
 			techSpec = getCircuitInformation().getTechnologieSpecificationSHMPmos();
 			Gecode::FloatVal muCox = techSpec.getMobilityOxideCapacityCoefficient();
 			Gecode::FloatVal vth = techSpec.getThresholdVoltage();
-			Gecode::FloatVal earlyVoltage = techSpec.getEarlyVoltage();
-			Gecode::FloatVar lamda(getSpace(), 0.01,0.9);
-			Gecode::rel(getSpace(), lamda * (lengthHelperVar * earlyVoltage) == 1);
-			Gecode::rel(getSpace(), -1* muCox * (width/length) * ((vgs - vth) - vds * 0.5) * vds /** (1-lamda * vds)*/ / ids == 1);
+			Gecode::rel(getSpace(), -1* muCox * (width/length) * ((vgs - vth) - vds * 0.5) * vds  / ids == 1);
 			Gecode::rel(getSpace(), vgs - vth <  vds);
 			Gecode::rel(getSpace(), vds < 0);
 			Gecode::rel(getSpace(), vgs - vth < 0);

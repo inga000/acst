@@ -1,0 +1,43 @@
+** Generated for: hspiceD
+** Generated on: Apr  5 15:35:14 2019
+** Design library name: foldedCascosdeOpAmpTest
+** Design cell name: foldedCascodeOpAmp
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: foldedCascosdeOpAmpTest
+** Cell name: foldedCascodeOpAmp
+** View name: schematic
+m23 net32 ibias vdd! vdd! pmos 
+m1 ibias ibias vdd! vdd! pmos
+m0 net35 ibias vdd! vdd! pmos
+m7 cas1 vinn net35 net35 pmos 
+m17 gnd! voutp net31 net31 pmos
+m16 net13 vref net31 net31 pmos
+m15 net13 vref net32 net32 pmos
+m14 gnd! voutn net32 net32 pmos
+m6 net8 vinp net35 net35 pmos 
+m5 voutp vb2 net25 net25 pmos
+m4 voutn vb2 net37 net37 pmos
+m3 net37 ibias vdd! vdd! pmos 
+m2 net25 ibias vdd! vdd! pmos
+m19 net31 ibias vdd! vdd! pmos
+m8 vdd! voutp cas1 cas1 nmos
+m21 cas1 net13 gnd! gnd! nmos
+m9 voutn vb3 net8 net8 nmos
+m12 voutp vb3 cas1 cas1 nmos
+m13 cas1 vb4 gnd! gnd! nmos
+m11 vdd! voutn net8 net8 nmos
+m10 net8 vb4 gnd! gnd! nmos
+m22 net13 net13 gnd! gnd! nmos
+m20 net8 net13 gnd! gnd! nmos
+cl1 voutp gnd!
+cl2 voutn gnd!
+.END

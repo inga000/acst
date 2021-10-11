@@ -76,15 +76,11 @@ namespace Control {
         }
         else {
             const OptionsBase & localOptions = parseLocalOptions(argc, argv);
-            logDebug("Option description: ");
-            logDebug(localOptions.getStringDescription());
-
             AbstractAnalysis* analysis = createNewAnalysis(localOptions);
-
 
             analysis->compute();
             analysis->write();
-            delete analysis; // TODO: What happens here sometimes
+            delete analysis;
 
         }
     }

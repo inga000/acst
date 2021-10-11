@@ -163,7 +163,6 @@ namespace Partitioning {
 			const StructRec::Structure& structure = * it;
 			const StructRec::Array& array = static_cast<const StructRec::Array&>(structure);
 			const Core::Device* testDevice = array.getFirstDevice();
-			// logDebug(testDevice->getDeviceType());
 			if(testDevice->getDeviceType().getName() == Core::DeviceTypeName("Mosfet") )
 			{
 				Transistor * newComp = new Transistor;

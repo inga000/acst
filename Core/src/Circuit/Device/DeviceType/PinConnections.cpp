@@ -152,8 +152,7 @@ namespace Core {
 					newPin.setNetAssignment(netAssignment);
 				}
             } else {
-                logDebug("Nothing works for that pin!");
-                assert(false);
+                assert(false, "Nothing works for that pin!");
             }
         }
     }

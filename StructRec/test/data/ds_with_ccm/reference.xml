@@ -1,5 +1,5 @@
 <acst_results>
-	<date day="5" month="10" year="2021" hour="17" minute="28" second="30"/>
+	<date day="7" month="10" year="2021" hour="15" minute="42" second="1"/>
 	<structure_recognition_results>
 		<structure name="MosfetCascodeCurrentMirror[1]" techType="n" instance="/x_ccm/">
 			<pins>
@@ -119,23 +119,12 @@
 		</structure>
 		<structure name="MosfetDifferentialPair[1]" techType="n" instance="/x_dp/">
 			<pins>
-				<pin name="Input1" net="/in2"/>
-				<pin name="Input2" net="/in1"/>
-				<pin name="Output1" net="/out2"/>
-				<pin name="Output2" net="/out1"/>
+				<pin name="Input1" net="/in1"/>
+				<pin name="Input2" net="/in2"/>
+				<pin name="Output1" net="/out1"/>
+				<pin name="Output2" net="/out2"/>
 				<pin name="Source" net="/source"/>
 			</pins>
-			<structure name="MosfetNormalArray[4]" techType="n" instance="/x_dp/">
-				<pins>
-					<pin name="Bulk" net="/inh_bulk_n"/>
-					<pin name="Drain" net="/out2"/>
-					<pin name="Gate" net="/in2"/>
-					<pin name="Source" net="/source"/>
-				</pins>
-				<devices>
-					<device name="/m_dp_1" deviceType="Mosfet" techType="n" instance="/x_dp/"/>
-				</devices>
-			</structure>
 			<structure name="MosfetNormalArray[3]" techType="n" instance="/x_dp/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_n"/>
@@ -145,6 +134,17 @@
 				</pins>
 				<devices>
 					<device name="/m_dp_2" deviceType="Mosfet" techType="n" instance="/x_dp/"/>
+				</devices>
+			</structure>
+			<structure name="MosfetNormalArray[4]" techType="n" instance="/x_dp/">
+				<pins>
+					<pin name="Bulk" net="/inh_bulk_n"/>
+					<pin name="Drain" net="/out2"/>
+					<pin name="Gate" net="/in2"/>
+					<pin name="Source" net="/source"/>
+				</pins>
+				<devices>
+					<device name="/m_dp_1" deviceType="Mosfet" techType="n" instance="/x_dp/"/>
 				</devices>
 			</structure>
 		</structure>

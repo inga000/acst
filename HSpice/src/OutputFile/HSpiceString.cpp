@@ -68,8 +68,7 @@ namespace HSpice {
 
     std::string HSpiceString::convertToHSpice(const Core::NetId& netId)
     {
-        //std::string netName = std::string("net_") + netId.toStr();
-        std::string netName = netId.toStr(); //TODO: Own hspice function
+        std::string netName = netId.toStr();
         netName.erase(0,1); //erase leading slash
 
         convertToLowerCase(netName);
@@ -87,7 +86,7 @@ namespace HSpice {
     {
         const Core::DeviceId& componentId = component.getIdentifier();
 
-        std::string deviceName = componentId.toStr(); //TODO: own hspice function
+        std::string deviceName = componentId.toStr();
         deviceName.erase(0,1); // leading erase slash
         convertToLowerCase(deviceName);
 

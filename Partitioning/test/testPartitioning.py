@@ -58,8 +58,6 @@ def readStructure(structure):
     name = structure.getAttribute("name")     
     techType = structure.getAttribute("techType")
     instance = structure.getAttribute("instance")
-
-    name = name.rsplit('[',1)[0]
     
     if name != "":
         strucRes.append((name,techType, instance))
@@ -170,7 +168,7 @@ def readGmParts(resultsNode):
             structureNodeList = getNodes(gmPartNode, "structure")
             for structureNode in structureNodeList:            
                 structure = readStructure(structureNode)
-        	structures.append(structure)
+                structures.append(structure)
 
             gmPart = {"type" : typeAttribute, "structure" : structures}
             gmParts.append(gmPart)
@@ -307,12 +305,10 @@ def readPositiveFeedbackParts(resultsNode):
     	positiveFeedbackPartNodeList = getNodes(positiveFeedbackPartsNodeList[0], "positiveFeedbackPart")
     	for positiveFeedbackPartNode in positiveFeedbackPartNodeList:		
     	    structureNodeList = getNodes(positiveFeedbackPartNode, "structure")
-    	    if len(structureNodeList) != 1:
-    	        print("Error: Several <structure> tags.")
-    	        exit(-1)
 
-    	    positiveFeedbackPart = readStructure(structureNodeList[0])
-    	    positiveFeedbackParts.append(positiveFeedbackPart)
+    	    for structureNode in structureNodeList:            
+    	        positiveFeedbackPart = readStructure(structureNode)
+    	        positiveFeedbackParts.append(positiveFeedbackPart)
 
     	return positiveFeedbackParts 
 
@@ -484,21 +480,27 @@ def compareResults(resA, resB):
 def compareGmParts(resA, resB):
     gmPartsA = resA["gmParts"]
     gmPartsB = resB["gmParts"]
-    
+    print("Compare gm parts")
+   
     equalGmParts = True
     for partA in gmPartsA:
         typeA = partA["type"]
         strucA = partA["structure"]
         
         hasEqualPart = False
+        index = 1
         for partB in gmPartsB:
             typeB = partB["type"]
             strucB = partB["structure"]
             
-            if (typeA == typeB) and compareStructures(strucA, strucB):
-                hasEqualPart = True
-                break
-        
+            if (typeA == typeB):
+                print("<<<<<< Compare structures of gm part type ", typeA, " Round: ", index, " >>>>>>>")
+                index += 1
+                if compareStructures(strucA, strucB):
+                    hasEqualPart = True
+                    print("Equal structures found")
+                    break
+
         if not hasEqualPart:
             equalGmParts = False
             break
@@ -520,10 +522,11 @@ def compareStructures(strucsA, strucsB):
                 
         if not hasEqualStructure:
             equalStructures = False;
-            print("No equal Structures found.")
+            print("No equal Structures found!")
+            print("Structure A:")
             print(strucsA)
+            print("Structure B:")
             print(strucsB)
-            exit(-1)
             break 
 
     return equalStructures
@@ -555,36 +558,37 @@ def compareCapacitances(resA, resB):
 def compareLoadParts(resA, resB):
     loadPartsA = resA["loadParts"]
     loadPartsB = resB["loadParts"]
+    print("Compare load parts structures")
     return compareStructures(loadPartsA, loadPartsB)
 
 def compareBiasParts(resA, resB):
     biasPartsA = resA["biasParts"]
     biasPartsB = resB["biasParts"]
-    
+    print("Compare bias parts structures")
     return compareStructures(biasPartsA, biasPartsB)
     
 def compareUndefinedParts(resA, resB):
     undefinedPartsA = resA["undefinedParts"]
     undefinedPartsB = resB["undefinedParts"]
-    
+    print("Compare undefined parts structures")
     return compareStructures(undefinedPartsA, undefinedPartsB)
    
 def compareResistorParts(resA, resB):
     resistorPartsA = resA["resistorParts"]
     resistorPartsB = resB["resistorParts"]
-    
+    print("Compare resistor parts structures")
     return compareStructures(resistorPartsA, resistorPartsB)
 
 def compareCommonModeSignalDetectorParts(resA, resB):
     commonModeSignalDetectorPartsA = resA["commonModeSignalDetectorParts"]
     commonModeSignalDetectorPartsB = resB["commonModeSignalDetectorParts"]
-    
+    print("Compare common mode signal detector parts structures")
     return compareStructures(commonModeSignalDetectorPartsA, commonModeSignalDetectorPartsB)
 
 def comparePositiveFeedbackParts(resA, resB):
     positiveFeedbackPartsA = resA["undefinedParts"]
     positiveFeedbackPartsB = resB["undefinedParts"]
-    
+    print("Compare positive feedback parts structures")
     return compareStructures(positiveFeedbackPartsA, positiveFeedbackPartsB)
     
     

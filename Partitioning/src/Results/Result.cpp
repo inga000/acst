@@ -174,7 +174,6 @@ bool Result::deviceAlreadyClassified(const Core::Device & device) const
 			const TwoPort & twoPort = *it.second;
 			for(auto & dev : twoPort.getArray().getDevices())
 			{
-				logDebug("DevId:" <<dev->getIdentifier() );
 				if(device.getIdentifier() == dev->getIdentifier())
 				{
 					isClassified = true;
@@ -953,14 +952,11 @@ bool Result::hasFirstStage() const
 
 bool Result::hasSecondStage() const
 {
-//	logDebug("Partitioning results");
-//	logDebug(this);
 	bool hasIt = false;
 	for(std::map<PartId, TransconductancePart*>::const_iterator it = transconductanceParts_.begin();
 			it != transconductanceParts_.end(); it++)
 	{
 		TransconductancePart * transPart = it->second;
-//		logDebug(*transPart);
 		if(transPart->isPrimarySecondStage() || transPart->isSecondarySecondStage() )
 		{
 			hasIt = true;

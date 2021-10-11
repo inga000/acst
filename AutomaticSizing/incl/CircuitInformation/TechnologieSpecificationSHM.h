@@ -57,7 +57,6 @@ namespace AutomaticSizing {
 
 		void setThresholdVoltage(float voltage);
 		void setMobilityOxideCapacityCoefficient(float muCox);
-		void setEarlyVoltage(float earlyVoltage);
 		void setOverlapCapacity(float overlapCapacity);
 		void setGateOxideCapacity(float gateOxideCapacity);
 		void setSlopeFactor(float slopeFactor);
@@ -77,7 +76,6 @@ namespace AutomaticSizing {
 		float getOverlapCapacity() const;
 		float getThresholdVoltage() const;
 		float getMobilityOxideCapacityCoefficient() const;
-		float getEarlyVoltage() const;
 		float getGateOxideCapacity() const;
 		float getSlopeFactor() const;
 		float getChannelLengthCoefficientStrongInversion() const;
@@ -98,7 +96,6 @@ namespace AutomaticSizing {
 		bool hasOverlapCapacity() const;
 		bool hasThresholdVoltage() const;
 		bool hasMobilityOxideCapacityCoefficient() const;
-		bool hasEarlyVoltage() const;
 		bool hasGateOxideCapacity() const;
 		bool hasSlopeFactor() const;
 
@@ -112,7 +109,6 @@ namespace AutomaticSizing {
 
 		float thresholdVoltage_;
 		float muCox_;
-		float earlyVoltage_;
 		float overlapCapacity_;
 		float gateOxideCapacity_;
 		float slopeFactor_;

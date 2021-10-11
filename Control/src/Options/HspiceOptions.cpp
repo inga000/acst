@@ -117,8 +117,6 @@ namespace Control {
 
     bool HspiceOptions::hasDeviceTypesFile() const
     {
-//    	logDebug("Option value:");
-//    	logDebug(getStringDescription());
     	return hasOptionValue(DEVICETYPES_FILE_OPTION_);
     }
 

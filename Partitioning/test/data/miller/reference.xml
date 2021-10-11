@@ -1,5 +1,5 @@
 <acst_results>
-	<date day="5" month="10" year="2021" hour="17" minute="52" second="9"/>
+	<date day="7" month="10" year="2021" hour="16" minute="2" second="55"/>
 	<circuit_partitioning_results>
 		<gmParts>
 			<gmPart type="firstStage">
@@ -11,7 +11,7 @@
 						<pin name="Output2" net="/net18"/>
 						<pin name="Source" net="/net12"/>
 					</pins>
-					<structure name="MosfetNormalArray[5]" techType="p" instance="/">
+					<structure name="MosfetNormalArray[3]" techType="p" instance="/">
 						<pins>
 							<pin name="Bulk" net="/net12"/>
 							<pin name="Drain" net="/net11"/>
@@ -22,7 +22,7 @@
 							<device name="/m7" deviceType="Mosfet" techType="p" instance="/"/>
 						</devices>
 					</structure>
-					<structure name="MosfetNormalArray[3]" techType="p" instance="/">
+					<structure name="MosfetNormalArray[5]" techType="p" instance="/">
 						<pins>
 							<pin name="Bulk" net="/net12"/>
 							<pin name="Drain" net="/net18"/>
@@ -76,7 +76,7 @@
 		</loadParts>
 		<biasParts>
 			<biasPart>
-				<structure name="MosfetNormalArray[6]" techType="p" instance="/">
+				<structure name="MosfetNormalArray[4]" techType="p" instance="/">
 					<pins>
 						<pin name="Bulk" net="/vdd!"/>
 						<pin name="Drain" net="/net12"/>
@@ -89,7 +89,7 @@
 				</structure>
 			</biasPart>
 			<biasPart>
-				<structure name="MosfetNormalArray[4]" techType="p" instance="/">
+				<structure name="MosfetNormalArray[6]" techType="p" instance="/">
 					<pins>
 						<pin name="Bulk" net="/vdd!"/>
 						<pin name="Drain" net="/vout"/>
@@ -115,25 +115,25 @@
 			</biasPart>
 		</biasParts>
 		<capacitances>
-			<capacitance type="compensation">
-				<structure name="CapacitorArray[1]" techType="undefined" instance="/">
-					<pins>
-						<pin name="Minus" net="/net18"/>
-						<pin name="Plus" net="/vout"/>
-					</pins>
-					<devices>
-						<device name="/cc" deviceType="Capacitor" techType="undefined" instance="/"/>
-					</devices>
-				</structure>
-			</capacitance>
 			<capacitance type="load">
-				<structure name="CapacitorArray[2]" techType="undefined" instance="/">
+				<structure name="CapacitorArray[1]" techType="undefined" instance="/">
 					<pins>
 						<pin name="Minus" net="/gnd!"/>
 						<pin name="Plus" net="/vout"/>
 					</pins>
 					<devices>
 						<device name="/cl" deviceType="Capacitor" techType="undefined" instance="/"/>
+					</devices>
+				</structure>
+			</capacitance>
+			<capacitance type="compensation">
+				<structure name="CapacitorArray[2]" techType="undefined" instance="/">
+					<pins>
+						<pin name="Minus" net="/net18"/>
+						<pin name="Plus" net="/vout"/>
+					</pins>
+					<devices>
+						<device name="/cc" deviceType="Capacitor" techType="undefined" instance="/"/>
 					</devices>
 				</structure>
 			</capacitance>

@@ -1,0 +1,46 @@
+** Generated for: hspiceD
+** Generated on: Sep 23 09:37:12 2020
+** Design library name: FoldedCascodeOpAmpWithCMFB
+** Design cell name: TwoStageFoldedCascodeWithCMFB
+** Design view name: schematic
+
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: FoldedCascodeOpAmpWithCMFB
+** Cell name: TwoStageFoldedCascodeWithCMFB
+** View name: schematic
+m7 outp net12 vdd! vdd! pmos4
+m6 net12 vb1 net43 net43 pmos4
+m5 net43 net22 vdd! vdd! pmos4
+m4 net37 net37 vdd! vdd! pmos4
+m3 net22 net22 vdd! vdd! pmos4
+m2 outn net27 vdd! vdd! pmos4
+m1 net27 vb1 net45 net45 pmos4
+m0 net45 net22 vdd! vdd! pmos4
+m25 net45 inn net8 net8 nmos
+m24 net43 inp net8 net8 nmos
+m23 ibias ibias gnd! gnd! nmos
+m21 outp ibias gnd! gnd! nmos
+m20 net14 ibias gnd! gnd! nmos
+m19 net12 vb2 net14 net14 nmos
+m18 net22 outn net38 net38 nmos
+m17 net37 vref net34 net34 nmos
+m16 net34 ibias gnd! gnd! nmos
+m15 net22 outp net34 net34 nmos
+m14 net37 vref net38 net38 nmos
+m13 net38 ibias gnd! gnd! nmos
+m12 outn ibias gnd! gnd! nmos
+m11 net23 ibias gnd! gnd! nmos
+m10 net27 vb2 net23 net23 nmos
+m9 net8 ibias gnd! gnd! nmos
+cc1 net12 outp 
+cc2 net27 outn 
+cl1 outp gnd!
+cl2 outn gnd!
+.END

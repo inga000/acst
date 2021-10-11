@@ -108,15 +108,13 @@ namespace Synthesis {
 	{
 		//Writting all op-amps needs lots of space as especially many two stage op-amp exist (Printing all simple two stage op-amps needs more than 8 GB RAM or a different algoritm which must be written...)
 		std::ostringstream oss;
-		logDebug("Trying to write simple op amps");
+
 		int caseNumber = 1; //neu
 		int amountOfOpAmps = 1; //neu
 		oss << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> SIMPLE OP AMPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
 		for(auto & opAmp : createSimpleOneStageOpAmps(caseNumber, amountOfOpAmps))
 		{
-			logDebug("Finishing creating simple op amps");
 			oss << ">>>>>>>>>>>>> " << opAmp->getFlatCircuit().getCircuitIdentifier().toStr() << ">>>>>>>>>>>>>>>>>>" << std::endl;
-			logDebug("Getting in here!");
 			oss << opAmp->toStr() << std::endl;
 		}
 		oss << std::endl;
@@ -136,7 +134,6 @@ namespace Synthesis {
 			oss << opAmp->toStr() << std::endl;
 		}
 		oss <<std::endl;
-//
 
 		oss << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> SYMMETRICAL OP AMPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
 		for(auto & opAmp : createSymmetricalOpAmps(caseNumber, amountOfOpAmps))
@@ -178,7 +175,7 @@ namespace Synthesis {
 		auto diff = end - start;
 		int timeParaMinutes = std::chrono::duration_cast<std::chrono::minutes>(diff).count();
 		int timeParaSeconds = std::chrono::duration_cast<std::chrono::seconds>(diff).count() - timeParaMinutes * 60;
-		logDebug("\nRuntime Create simple op amps parallel: " << timeParaMinutes <<"min " << timeParaSeconds << "s");
+		logDebug("\nRuntime Create simple op amps: " << timeParaMinutes <<"min " << timeParaSeconds << "s");
         
 		for(auto & circuit : opAmpCircuits)
 		{
@@ -201,7 +198,7 @@ namespace Synthesis {
 		auto diff = end - start;
 		int timeParaMinutes = std::chrono::duration_cast<std::chrono::minutes>(diff).count();
 		int timeParaSeconds = std::chrono::duration_cast<std::chrono::seconds>(diff).count() - timeParaMinutes * 60;
-		logDebug("\nRuntime Create FullyDifferential parallel: " << timeParaMinutes <<"min " << timeParaSeconds << "s");
+		logDebug("\nRuntime Create FullyDifferential: " << timeParaMinutes <<"min " << timeParaSeconds << "s");
 
 		for(auto & circuit : opAmpCircuits)
 		{
@@ -224,7 +221,7 @@ namespace Synthesis {
 		auto diff = end - start;
 		int timeParaMinutes = std::chrono::duration_cast<std::chrono::minutes>(diff).count();
 		int timeParaSeconds = std::chrono::duration_cast<std::chrono::seconds>(diff).count() - timeParaMinutes * 60;
-		logDebug("\nRuntime Create Complementary parallel: " << timeParaMinutes <<"min " << timeParaSeconds << "s");
+		logDebug("\nRuntime Create Complementary: " << timeParaMinutes <<"min " << timeParaSeconds << "s");
 
 		for(auto & circuit : opAmpCircuits)
 		{

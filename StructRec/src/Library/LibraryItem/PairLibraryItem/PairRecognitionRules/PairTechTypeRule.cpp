@@ -74,7 +74,7 @@ namespace StructRec {
 			return false;
 		}
 
-		const PairTechTypeRule& otherRule = static_cast<const PairTechTypeRule&>(other); //TODO: Genauere Implementierung nötig?
+		const PairTechTypeRule& otherRule = static_cast<const PairTechTypeRule&>(other);
 		return (typeRule_ == otherRule.typeRule_);
 	}
 

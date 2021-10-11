@@ -70,7 +70,7 @@ namespace Partitioning {
 	Result & Partitioning::compute(const StructRec::StructureCircuits & circuits)
 	{
 		Result * result = new Result;
-		logDebug("Starting Partitioning");
+
 		setResult(*result);
 		partitioningDifferentialPairs(circuits);
 		if(result->hasTransconductanceParts())
@@ -959,8 +959,8 @@ namespace Partitioning {
 	{
 
 		assert(getResult().hasFirstStage(), "A first stage needs to be recognized before the positive feedback can be found!");
-		TransconductancePart & firstStage = getResult().getFirstStage();
 
+		TransconductancePart & firstStage = getResult().getFirstStage();
 
 		//Complementary First Stage are not yet supported
 		if(!firstStage.isComplementary())
@@ -1128,11 +1128,6 @@ namespace Partitioning {
 			const StructRec::Structure & capacitor = *it_capacitors;
 			const StructRec::StructureNet &netMinus = capacitor.findNet(minus);
 			const StructRec::StructureNet& netPlus = capacitor.findNet(plus);
-
-//			logDebug("FirstStage Output net connection minus?  " << hasFirstStageOutputConnection(netMinus, circuits));
-//			logDebug("FirstStage Output net connection Plus?  " << hasFirstStageOutputConnection(netPlus, circuits));
-//			logDebug("Ground net connections minus: " << hasGroundConnection(netMinus));
-//			logDebug("Ground net connections plus: " << hasGroundConnection(netPlus));
 
 			if( (hasSecondStageOutputConnection(netMinus, circuits) && hasGroundConnection(netPlus) ) || (hasSecondStageOutputConnection(netPlus, circuits) && hasGroundConnection(netMinus) )
 					||(hasFirstStageOutputConnection(netPlus, circuits) && hasGroundConnection(netMinus)) || (hasFirstStageOutputConnection(netMinus, circuits) && hasGroundConnection(netPlus))
@@ -1397,8 +1392,6 @@ namespace Partitioning {
 
 		findWithDrainConnectedLoadStructures(drainNet1, dpArray1, *loadPartSameTechType, loadPartOppositeTechType);
 		findWithDrainConnectedLoadStructures(drainNet2, dpArray2, *loadPartSameTechType, loadPartOppositeTechType);
-
-
 
 		if(dP.getStructureName().toStr() == "MosfetDifferentialPair" && dP.hasParent() && !getResult().getTransconductancePart(dP).isComplementary())
 		{
@@ -1958,10 +1951,7 @@ namespace Partitioning {
 		}
 		else if(stage.isLoadPart())
 		{
-//			logDebug("Is Load Part");
-
 			LoadPart & loadPart = getResult().getLoadPart(**stage.getMainStructures().begin());
-//			logDebug("loadPart.consistsOfTwoDiodeArraysConnectedToSecondStageInput(getResult()) " <<loadPart.consistsOfTwoDiodeArraysConnectedToSecondStageInput(getResult()));
 			if(getResult().getFirstStage().getLoadPart().size() ==1
 				&& isSymmetricalOpAmpLoadPart(loadPart))
 			{
@@ -2374,7 +2364,6 @@ namespace Partitioning {
 
 			if(inverter.hasPin(inputNmos))
 			{
-//				logDebug("Has first stage out put connection with input pin nmos" << hasFirstStageOutputConnection(inverter.findNet(inputNmos), circuits));
 				if(hasFirstStageOutputConnection(inverter.findNet(inputNmos), circuits))
 				{
 					isConnected = true;
@@ -2383,7 +2372,6 @@ namespace Partitioning {
 			}
 			if(inverter.hasPin(inputPmos))
 			{
-//				logDebug("Has first stage out put connection with input pin pmos" << hasFirstStageOutputConnection(inverter.findNet(inputNmos), circuits));
 				if(hasFirstStageOutputConnection(inverter.findNet(inputPmos), circuits))
 				{
 					isConnected = true;
@@ -2711,6 +2699,7 @@ namespace Partitioning {
 					*connectedStructure != structure && connectedStructure->hasPin(StructRec::StructurePinType(connectedStructure->getStructureName(), "Drain"))
 					&& connectedStructure->findNet(StructRec::StructurePinType(connectedStructure->getStructureName(), "Drain"))  == net  )
 			{
+
 
 				 const StructRec::StructureNet & sourceNet =connectedStructure->findNet(StructRec::StructurePinType(connectedStructure->getStructureName(), "Source"));
 				 if(connectedStructure->getTechType() == structure.getTechType())

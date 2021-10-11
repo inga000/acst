@@ -130,7 +130,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("ThresholdVoltage needs to be specified.");
+			assert(false, "ThresholdVoltage needs to be specified.");
 		}
 		rapidxml::xml_node<>* mobilityOxideCapacityNode = typeNode.first_node(MOBILITY_OXIDE_CAPACITY_NODE_.c_str());
 		if(mobilityOxideCapacityNode != NULL)
@@ -140,7 +140,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Mobility times oxide capacity needs to be specified.");
+			assert(false, "Mobility times oxide capacity needs to be specified.");
 		}
 
 		rapidxml::xml_node<>* earlyVoltageNode = typeNode.first_node(EARLY_VOLTAGE_NODE_.c_str());
@@ -152,7 +152,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Early voltage needs to be specified.");
+			assert(false, "Early voltage needs to be specified.");
 		}
 		rapidxml::xml_node<>* overlapCapacityNode = typeNode.first_node(OVERLAP_CAPACITY_NODE_.c_str());
 		if(overlapCapacityNode != NULL)
@@ -162,7 +162,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Overlap capacity needs to be specified.");
+			assert(false, "Overlap capacity needs to be specified.");
 		}
 		rapidxml::xml_node<>* slopeFactorNode = typeNode.first_node(SLOPE_FACTOR_NODE_.c_str());
 		if(slopeFactorNode != NULL)
@@ -172,7 +172,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("SlopeFactor needs to be specified.");
+			assert(false, "SlopeFactor needs to be specified.");
 		}
 		rapidxml::xml_node<>* gateOxideCapacityNode = typeNode.first_node(GATE_OXIDE_CAPACITY_NODE_.c_str());
 		if(gateOxideCapacityNode != NULL)
@@ -182,7 +182,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Gate oxide capacity needs to be specified.");
+			assert(false, "Gate oxide capacity needs to be specified.");
 		}
 		rapidxml::xml_node<>* minAreaNode = typeNode.first_node(MIN_AREA_NODE_.c_str());
 		if(minAreaNode != NULL)
@@ -192,7 +192,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Minimal area needs to be specified.");
+			assert(false, "Minimal area needs to be specified.");
 		}
 		rapidxml::xml_node<>* minLengthNode = typeNode.first_node(MIN_LENGTH_NODE_.c_str());
 		if(minLengthNode != NULL)
@@ -202,7 +202,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Minimal length needs to be specified.");
+			assert(false, "Minimal length needs to be specified.");
 		}
 		rapidxml::xml_node<>* minWidthNode = typeNode.first_node(MIN_WIDTH_NODE_.c_str());
 		if(minWidthNode != NULL)
@@ -212,7 +212,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Minimal Width needs to be specified.");
+			assert(false, "Minimal Width needs to be specified.");
 		}
 		rapidxml::xml_node<>* channelLengthCoefficientNode = typeNode.first_node(CHANNEL_LENGTH_COEFFICIENT_NODE_.c_str());
 		if(channelLengthCoefficientNode != NULL)
@@ -222,7 +222,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Channel length coefficient needs to be specified.");
+			assert(false, "Channel length coefficient needs to be specified.");
 		}
 
 		rapidxml::xml_node<>* zeroBiasBulkJunctionCapacitanceNode = typeNode.first_node(ZERO_BIAS_BULK_JUNCTION_CAPACITANCE_NODE_.c_str());
@@ -233,7 +233,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Zero-bias bulk junction capacitance needs to be specified.");
+			assert(false, "Zero-bias bulk junction capacitance needs to be specified.");
 		}
 		rapidxml::xml_node<>* zeroBiasSidewallBulkJunctionCapacitanceNode = typeNode.first_node(ZERO_BIAS_SIDEWALL_BULK_JUNCTION_CAPACITANCE_NODE_.c_str());
 		if(zeroBiasSidewallBulkJunctionCapacitanceNode != NULL)
@@ -243,7 +243,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Zero-bias sidewall  bulk junction capacitance needs to be specified.");
+			assert(false, "Zero-bias sidewall  bulk junction capacitance needs to be specified.");
 		}
 		rapidxml::xml_node<>* bulkJunctionContactPotentialNode = typeNode.first_node(BULK_JUNCTION_CONTACT_POTENTIAL_NODE_.c_str());
 		if(bulkJunctionContactPotentialNode != NULL)
@@ -253,7 +253,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Bulk junction contact potential needs to be specified.");
+			assert(false, "Bulk junction contact potential needs to be specified.");
 		}
 		rapidxml::xml_node<>* lateralDiffusionLengthNode = typeNode.first_node(LATERAL_DIFFUSION_LENGTH_NODE_.c_str());
 		if(lateralDiffusionLengthNode != NULL)
@@ -264,7 +264,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-			logDebug("Channel length coefficient needs to be specified.");
+			assert(false, "Channel length coefficient needs to be specified.");
 		}
 
 	}

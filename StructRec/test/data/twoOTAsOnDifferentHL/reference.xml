@@ -1,5 +1,5 @@
 <acst_results>
-	<date day="21" month="6" year="2021" hour="17" minute="25" second="55"/>
+	<date day="7" month="10" year="2021" hour="16" minute="2" second="46"/>
 	<structure_recognition_results>
 		<structure name="MosfetSimpleCurrentMirror[6]" techType="n" instance="/">
 			<pins>
@@ -65,7 +65,7 @@
 				<pin name="Output" net="/out"/>
 				<pin name="Vdd" net="/vdd!"/>
 			</pins>
-			<structure name="MosfetNormalArray[5]" techType="p" instance="/xi2/xi0/">
+			<structure name="MosfetNormalArray[6]" techType="p" instance="/xi2/xi0/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_p"/>
 					<pin name="Drain" net="/out"/>
@@ -76,7 +76,7 @@
 					<device name="/m9" deviceType="Mosfet" techType="p" instance="/xi2/xi0/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[1]" techType="n" instance="/xi2/xi0/">
+			<structure name="MosfetNormalArray[2]" techType="n" instance="/xi2/xi0/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_n"/>
 					<pin name="Drain" net="/out"/>
@@ -107,7 +107,7 @@
 					<device name="/m4" deviceType="Mosfet" techType="p" instance="/xi2/xi0/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[4]" techType="p" instance="/xi2/xi0/">
+			<structure name="MosfetNormalArray[5]" techType="p" instance="/xi2/xi0/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_p"/>
 					<pin name="Drain" net="/net17"/>
@@ -135,7 +135,7 @@
 					<device name="/m7" deviceType="Mosfet" techType="p" instance="/xi2/xi0/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[6]" techType="p" instance="/xi2/xi0/">
+			<structure name="MosfetNormalArray[4]" techType="p" instance="/xi2/xi0/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_p"/>
 					<pin name="Drain" net="/net16"/>
@@ -163,7 +163,7 @@
 					<device name="/m0" deviceType="Mosfet" techType="n" instance="/xi2/xi0/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[2]" techType="n" instance="/xi2/xi0/">
+			<structure name="MosfetNormalArray[1]" techType="n" instance="/xi2/xi0/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_n"/>
 					<pin name="Drain" net="/net13"/>
@@ -191,7 +191,7 @@
 					<device name="/m6" deviceType="Mosfet" techType="p" instance="/xi2/xi0/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[5]" techType="p" instance="/xi2/xi0/">
+			<structure name="MosfetNormalArray[6]" techType="p" instance="/xi2/xi0/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_p"/>
 					<pin name="Drain" net="/out"/>
@@ -219,7 +219,7 @@
 					<device name="/m3" deviceType="Mosfet" techType="n" instance="/xi2/xi0/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[1]" techType="n" instance="/xi2/xi0/">
+			<structure name="MosfetNormalArray[2]" techType="n" instance="/xi2/xi0/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_n"/>
 					<pin name="Drain" net="/out"/>
@@ -239,7 +239,7 @@
 				<pin name="Output" net="/out"/>
 				<pin name="Vdd" net="/vdd!"/>
 			</pins>
-			<structure name="MosfetNormalArray[5]" techType="p" instance="/xi4/">
+			<structure name="MosfetNormalArray[6]" techType="p" instance="/xi4/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_p"/>
 					<pin name="Drain" net="/out"/>
@@ -250,7 +250,7 @@
 					<device name="/m9" deviceType="Mosfet" techType="p" instance="/xi4/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[1]" techType="n" instance="/xi4/">
+			<structure name="MosfetNormalArray[2]" techType="n" instance="/xi4/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_n"/>
 					<pin name="Drain" net="/out"/>
@@ -281,7 +281,7 @@
 					<device name="/m4" deviceType="Mosfet" techType="p" instance="/xi4/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[4]" techType="p" instance="/xi4/">
+			<structure name="MosfetNormalArray[5]" techType="p" instance="/xi4/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_p"/>
 					<pin name="Drain" net="/net17"/>
@@ -309,7 +309,7 @@
 					<device name="/m7" deviceType="Mosfet" techType="p" instance="/xi4/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[6]" techType="p" instance="/xi4/">
+			<structure name="MosfetNormalArray[4]" techType="p" instance="/xi4/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_p"/>
 					<pin name="Drain" net="/net16"/>
@@ -337,7 +337,7 @@
 					<device name="/m0" deviceType="Mosfet" techType="n" instance="/xi4/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[2]" techType="n" instance="/xi4/">
+			<structure name="MosfetNormalArray[1]" techType="n" instance="/xi4/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_n"/>
 					<pin name="Drain" net="/net13"/>
@@ -365,7 +365,7 @@
 					<device name="/m6" deviceType="Mosfet" techType="p" instance="/xi4/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[5]" techType="p" instance="/xi4/">
+			<structure name="MosfetNormalArray[6]" techType="p" instance="/xi4/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_p"/>
 					<pin name="Drain" net="/out"/>
@@ -393,7 +393,7 @@
 					<device name="/m3" deviceType="Mosfet" techType="n" instance="/xi4/"/>
 				</devices>
 			</structure>
-			<structure name="MosfetNormalArray[1]" techType="n" instance="/xi4/">
+			<structure name="MosfetNormalArray[2]" techType="n" instance="/xi4/">
 				<pins>
 					<pin name="Bulk" net="/inh_bulk_n"/>
 					<pin name="Drain" net="/out"/>

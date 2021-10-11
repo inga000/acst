@@ -1,0 +1,40 @@
+** Generated for: hspiceD
+** Generated on: Apr 26 18:03:52 2019
+** Design library name: FoldedCascodeCMOSOTA
+** Design cell name: foldedCascodeCMOSOTA
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: FoldedCascodeCMOSOTA
+** Cell name: foldedCascodeCMOSOTA
+** View name: schematic
+m22 net039 net018 net022 net022 nmos
+m19 net018 net018 net017 net017 nmos
+m21 net022 net017 gnd! gnd! nmos
+m20 net017 net017 gnd! gnd! nmos
+m8 net42 net42 gnd! gnd! nmos
+m12 net041 net42 net62 net62 nmos
+m9 out net42 net61 net61 nmos
+m14 net40 net40 gnd! gnd! nmos
+m11 net62 net40 gnd! gnd! nmos
+m10 net61 net40 gnd! gnd! nmos
+m24 net039 net039 vdd! vdd! pmos
+m23 net018 ibias vdd! vdd! pmos
+m13 net42 ibias vdd! vdd! pmos
+m16 ibias ibias vdd! vdd! pmos
+m6 net041 net041 vdd! vdd! pmos
+m2 net44 ibias vdd! vdd! pmos
+m0 net59 net041 vdd! vdd! pmos
+m15 net40 ibias vdd! vdd! pmos
+m1 out net039 net59 net59 pmos
+m4 net62 inp net44 net44 pmos
+m3 net61 inn net44 net44 pmos
+cl out gnd!
+.END

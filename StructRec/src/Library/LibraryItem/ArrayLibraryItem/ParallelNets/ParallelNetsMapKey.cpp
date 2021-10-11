@@ -43,6 +43,7 @@ namespace StructRec {
 
     ParallelNetsMapKey::ParallelNetsMapKey()
     {
+    	netKey_.clear();
     }
 
     void ParallelNetsMapKey::setTechType(Core::TechType techType)
@@ -50,26 +51,10 @@ namespace StructRec {
         techType_ = techType;
     }
 
-    void ParallelNetsMapKey::setDeviceId(Core::DeviceId deviceId)
-    {
-    	if(hasDeviceId())
-    	{
-    		if(deviceId < deviceId_)
-    		{
-    			deviceId_ = deviceId;
-    		}
-    	}
-    	else
-    	{
-    		deviceId_ = deviceId;
-    	}
-
-    }
-
-
     void ParallelNetsMapKey::addNet(const Core::Net& net)
     {
         parallelNets_.push_back(&net);
+        netKey_ += net.getIdentifier().toStr();
     }
 
     const Core::TechType& ParallelNetsMapKey::getTechType()const
@@ -78,16 +63,16 @@ namespace StructRec {
         return techType_;
     }
 
-    const Core::DeviceId& ParallelNetsMapKey::getDeviceId()const
+    const std::string& ParallelNetsMapKey::getNetKey() const
     {
-        assert(hasDeviceId());
-        return deviceId_;
+    	assert(hasNetKey());
+    	return netKey_;
     }
 
     bool ParallelNetsMapKey::operator <(const ParallelNetsMapKey& other) const
     {
         if(getTechType() == other.getTechType()) {
-            return getDeviceId() < other.getDeviceId();
+            return getNetKey() < other.getNetKey();
         } else {
             return getTechType() < other.getTechType();
         }
@@ -95,7 +80,7 @@ namespace StructRec {
 
     bool ParallelNetsMapKey::operator==(const ParallelNetsMapKey& other) const
 	{
-    	return (getTechType() == other.getTechType() && getParallelNets() == other.getParallelNets());
+    	return (getTechType() == other.getTechType() && getNetKey() == other.getNetKey());
 	}
 
     bool ParallelNetsMapKey::operator!=(const ParallelNetsMapKey& other) const
@@ -108,9 +93,9 @@ namespace StructRec {
         return techType_.isInitialized();
     }
 
-    bool ParallelNetsMapKey::hasDeviceId() const
+    bool ParallelNetsMapKey::hasNetKey() const
     {
-        return deviceId_.isInitialized();
+        return !netKey_.empty();
     }
 
     bool ParallelNetsMapKey::hasParallelNets() const

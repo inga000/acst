@@ -62,7 +62,6 @@ namespace StructRec {
 
 	Library::~Library()
 	{
-//		delete structureCore_; //TODO!!!
 		delete arrayLibrary_;
 		delete pairLibrary_;
 	}

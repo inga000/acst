@@ -1,0 +1,34 @@
+** Generated for: hspiceD
+** Generated on: May  2 10:43:00 2019
+** Design library name: symmetricalCMOSOTAwithHighPSRR
+** Design cell name: symmetricalCMOSOTAWithHighPSRR
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: symmetricalCMOSOTAwithHighPSRR
+** Cell name: symmetricalCMOSOTAWithHighPSRR
+** View name: schematic
+m6 net42 net42 gnd! gnd! nmos
+m5 net29 inn net25 net25 nmos 
+m4 ibias ibias gnd! gnd! nmos
+m7 out net025 gnd! gnd! nmos
+m2 net025 net42 gnd! gnd! nmos
+m1 net20 inp net25 net25 nmos
+m0 net25 ibias gnd! gnd! nmos
+m18 net025 gnd! net038 net038 pmos
+m17 net42 gnd! net033 net033 pmos
+m14 out net20 vdd! vdd! pmos
+m12 net29 net29 vdd! vdd! pmos
+m11 net033 net20 vdd! vdd! pmos
+m9 net20 net20 vdd! vdd! pmos
+m8 net038 net29 vdd! vdd! pmos
+c1 out net038 cap
+cl out gnd!
+.END

@@ -66,9 +66,7 @@ namespace Synthesis {
 
 		AmplificationStageLevel::~AmplificationStageLevel()
         {
-			logDebug("Delete inverting stages");
 			delete invertingStages_;
-			logDebug("Delete non inverting stages");
 			delete nonInvertingStages_;
         }
 

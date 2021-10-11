@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<deviceLineMapper>
+    <deviceLineMapping identifier ="q">
+        <deviceTypeName>Bipolar</deviceTypeName>
+        <deviceIdentifier position="0"/>
+        <pins>
+            <pin pinType="Collector" position="1"/>
+            <pin pinType="Base" position="2"/>
+            <pin pinType="Emitter" position="3"/>
+        </pins>
+        <modelName position="5">
+            <model name="pnp" techType="p"/>
+            <model name="npn" techType="n"/>
+        </modelName>    
+    </deviceLineMapping>
+    <deviceLineMapping identifier ="m">
+        <deviceTypeName>Mosfet</deviceTypeName>
+        <deviceIdentifier position="0"/>
+        <pins>
+            <pin pinType="Drain" position="1"/>
+            <pin pinType="Gate" position="2"/>
+            <pin pinType="Source" position="3"/>
+            <pin pinType="Bulk" position="4"/>
+        </pins>
+        <modelName position="5">
+            <model name="pmos" techType="p"/>
+            <model name ="pmos4" techType="p"/>
+            <model name ="pmos24" techType="p"/>
+            <model name="nmos" techType="n"/>
+            <model name="nmos4" techType="n"/>
+            <model name="nmos24" techType="n"/>
+        </modelName>    
+    </deviceLineMapping>
+    <deviceLineMapping identifier ="c">
+        <deviceTypeName>Capacitor</deviceTypeName>
+        <deviceIdentifier position="0"/>
+        <pins>
+            <pin pinType="Plus" position="1"/>
+            <pin pinType="Minus" position="2"/>
+        </pins>
+        <techType>undefined</techType>   
+    </deviceLineMapping>
+    <deviceLineMapping identifier ="r">
+        <deviceTypeName>Resistor</deviceTypeName>
+        <deviceIdentifier position="0"/>
+        <pins>
+            <pin pinType="Plus" position="1"/>
+            <pin pinType="Minus" position="2"/>
+        </pins>
+        <techType>undefined</techType>   
+    </deviceLineMapping>
+    <deviceLineMapping identifier ="l">
+        <deviceTypeName>Inductor</deviceTypeName>
+        <deviceIdentifier position="0"/>
+        <pins>
+            <pin pinType="Plus" position="1"/>
+            <pin pinType="Minus" position="2"/>
+        </pins>
+        <techType>undefined</techType>   
+    </deviceLineMapping>
+    <deviceLineMapping identifier ="d">
+        <deviceTypeName>Diode</deviceTypeName>
+        <deviceIdentifier position="0"/>
+        <pins>
+            <pin pinType="Anode" position="1"/>
+            <pin pinType="Cathode" position="2"/>
+        </pins>
+        <techType>undefined</techType>   
+    </deviceLineMapping>
+</deviceLineMapping>

@@ -52,6 +52,7 @@ namespace StructRec {
 
 	Result::~Result()
 	{
+		delete &getTopLevelResults().getStructureCore();
 		delete topLevelResults_;
 		delete circuitRegister_;
 	}

@@ -12,7 +12,7 @@
 				<childNumber>1</childNumber>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
+					<structurePinName>Drain</structurePinName>
 				</structurePinType>
 			</childPinType>
 		</pairPinType>
@@ -25,7 +25,7 @@
 				<childNumber>1</childNumber>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Drain</structurePinName>
+					<structurePinName>Gate</structurePinName>
 				</structurePinType>
 			</childPinType>
 		</pairPinType>
@@ -46,11 +46,11 @@
 	<characteristicConnection>
 		<firstChildPinType>
 			<structureName>MosfetNormalArray</structureName>
-			<structurePinName>Gate</structurePinName>
+			<structurePinName>Drain</structurePinName>
 		</firstChildPinType>
 		<secondChildPinType>
 			<structureName>MosfetNormalArray</structureName>
-			<structurePinName>Drain</structurePinName>
+			<structurePinName>Gate</structurePinName>
 		</secondChildPinType>
 	</characteristicConnection>
 	<recognitionRules>
@@ -78,11 +78,11 @@
 				<connected>true</connected>
 				<firstChildPinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Drain</structurePinName>
+					<structurePinName>Gate</structurePinName>
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
+					<structurePinName>Drain</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>

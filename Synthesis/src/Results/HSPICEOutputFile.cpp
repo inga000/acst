@@ -328,10 +328,8 @@ namespace Synthesis
 				std::ostringstream deviceInformation;
 				if(partitioningResult != nullptr)
 				{
-					logDebug("Create DeviceInformation");
 					deviceInformation << createDeviceInformation(*partitioningResult, device);
 				}
-				logDebug("Write Device Name to output");
 				getOutputFile() << "m" << deviceInformation.str() << tranIndex << " ";
 
 				const Core::Pin& drainPin = device.findPin(mosfetDeviceType.drain());
@@ -371,12 +369,8 @@ namespace Synthesis
 				std::ostringstream deviceInformation;
 				if(partitioningResult != nullptr)
 				{
-					logDebug("Create DeviceInformation");
 					deviceInformation << createDeviceInformation(*partitioningResult, device);
 				}
-				logDebug("Write Device Name to output");
-
-
 				getOutputFile() << "c" << deviceInformation.str() << capIndex << " ";
 
 				const Core::Pin& plusPin = device.findPin(capacitorDeviceType.plus());
@@ -397,10 +391,8 @@ namespace Synthesis
 				std::ostringstream deviceInformation;
 				if(partitioningResult != nullptr)
 				{
-					logDebug("Create DeviceInformation");
 					deviceInformation << createDeviceInformation(*partitioningResult, device);
 				}
-				logDebug("Write Device Name to output");
 				getOutputFile() << "r" << deviceInformation.str() << resIndex << " ";
 
 				const Core::Pin& plusPin = device.findPin(resistorDeviceType.plus());
@@ -554,43 +546,34 @@ namespace Synthesis
 	std::string HSPICEOutputFile::createDeviceInformation(const Partitioning::Result & partitioningResult, const Core::Device & device) const
 	{
 		std::ostringstream deviceInformation;
-		logDebug("Device to analyze:" << device);
 
 		const Partitioning::Part & part = partitioningResult.getPart(device);
-		logDebug("Part " << part.getPartId());
-
-		logDebug("Create Circuit type information");
 		std::string circuitTypeInformation = createCircuitTypeInformation(partitioningResult);
 		deviceInformation << circuitTypeInformation;
 
 		if(part.isTransconductancePart())
 		{
-			logDebug("Create transconductance part information");
 			const Partitioning::TransconductancePart& transconductor = static_cast<const Partitioning::TransconductancePart&>(part);
 			deviceInformation << createTransconductorInformation(partitioningResult, transconductor);
 		}
 		else if(part.isBiasPart())
 		{
 			const Partitioning::BiasPart& bias = static_cast<const Partitioning::BiasPart&>(part);
-			logDebug("Create bias part information");
 			deviceInformation << createBiasInformation(partitioningResult, bias);
 		}
 		else if(part.isLoadPart())
 		{
 			const Partitioning::LoadPart& load = static_cast<const Partitioning::LoadPart&>(part);
-			logDebug("Create load part information");
 			deviceInformation << createLoadInformation(partitioningResult, load);
 		}
 		else if(part.isCapacitancePart())
 		{
 			const Partitioning::CapacitancePart& capacitor = static_cast<const Partitioning::CapacitancePart&>(part);
-			logDebug("Create capacitance part information");
 			deviceInformation << createCapacitorInformation(partitioningResult, capacitor);
 		}
 		else if(part.isResistorPart())
 		{
 			const Partitioning::ResistorPart& resistor = static_cast<const Partitioning::ResistorPart&>(part);
-			logDebug("Create resistor part information");
 			deviceInformation << createResistorInformation(partitioningResult, resistor);
 		}
 

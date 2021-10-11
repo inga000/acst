@@ -1,0 +1,40 @@
+** Generated for: hspiceD
+** Generated on: Mar  8 09:37:10 2019
+** Design library name: SymmetricalCMOSOTA
+** Design cell name: symmetricalCMOSOTA
+** Design view name: schematic
+.GLOBAL vdd! gnd!
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: SymmetricalCMOSOTA
+** Cell name: symmetricalCMOSOTA
+** View name: schematic
+m19 out net45 vdd! vdd! pmos
+m9 net50 inn net28 net28 pmos
+m8 net25 net25 vdd! vdd! pmos
+m7 net20 net20 vdd! vdd! pmos
+m6 net39 net20 vdd! vdd! pmos
+m5 net51 inp net28 net28 pmos
+m4 net38 net25 net34 net34 pmos
+m3 net34 net38 vdd! vdd! pmos
+m2 net45 net25 net43 net43 pmos
+m1 net43 net38 vdd! vdd! pmos
+m0 net28 net20 vdd! vdd! pmos
+m18 net50 ibias gnd! gnd! nmos
+m17 net38 net39 net50 net50 nmos
+m16 out ibias gnd! gnd! nmos
+m15 net45 net39 net51 net51 nmos
+m14 net51 ibias gnd! gnd! nmos
+m13 net39 net39 gnd! gnd! nmos
+m12 net25 ibias gnd! gnd! nmos
+m11 net20 ibias gnd! gnd! nmos
+m10 ibias ibias gnd! gnd! nmos
+c0 out net45 1e-12
+cl out gnd!
+.END

@@ -98,7 +98,6 @@ namespace HSpice {
         	if(getDeviceLineMapping().hasModel())
         	{
             	HSpice::InputFile::ModelName modelName(tokens[getDeviceLineMapping().getModelNamePosition()]);
-            	logDebug("DeviceId : " << deviceId << " ModelName: " << modelName);
             	techType = getDeviceLineMapping().findTechType(modelName);
         	}
 

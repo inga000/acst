@@ -158,14 +158,6 @@ namespace Core {
 
     bool InstanceTerminal::operator ==(const InstanceTerminal& other) const
     {
-//    	logDebug("This::::::::::");
-//    	logDebug(getIdentifier());
-//    	logDebug("Instance: " << getInstance());
-
-//    	logDebug("Other::::::::::");
-//    	logDebug(other.getIdentifier());
-//    	logDebug("Instance: " << other.getInstance());
-
     	assert(hasInstance() && hasTerminal());
         if(isConnected() && other.isConnected())
         {

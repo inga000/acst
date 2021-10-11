@@ -47,7 +47,6 @@ const int TechnologieSpecificationSHM::NOT_INITIALIZED_ = -100;
 				thermalVoltage_(NOT_INITIALIZED_),
 				thresholdVoltage_(NOT_INITIALIZED_),
 				muCox_(NOT_INITIALIZED_),
-				earlyVoltage_(NOT_INITIALIZED_),
 				overlapCapacity_(NOT_INITIALIZED_),
 				gateOxideCapacity_(NOT_INITIALIZED_),
 				slopeFactor_(NOT_INITIALIZED_),
@@ -71,7 +70,6 @@ const int TechnologieSpecificationSHM::NOT_INITIALIZED_ = -100;
 		techSpec->setChannelLengthCoefficientStrongInversion(getChannelLengthCoefficientStrongInversion());
 		techSpec->setChannelLengthCoefficientWeakInversion(getChannelLengthCoefficientWeakInversion());
 		techSpec->setThermalVoltage(getThermalVoltage());
-		techSpec->setEarlyVoltage(getEarlyVoltage());
 		techSpec->setGateOxideCapacity(getGateOxideCapacity());
 		techSpec->setLateralDiffusionLength(getLateralDiffusionLength());
 		techSpec->setMinArea(getMinArea());
@@ -112,12 +110,6 @@ const int TechnologieSpecificationSHM::NOT_INITIALIZED_ = -100;
 		muCox_ = muCox;
 	}
 
-	void TechnologieSpecificationSHM::setEarlyVoltage(
-		float earlyVoltage)
-	{
-		earlyVoltage_ = earlyVoltage;
-	}
-
 	float TechnologieSpecificationSHM::getThresholdVoltage() const
 	{
 		assert(hasThresholdVoltage());
@@ -130,12 +122,6 @@ const int TechnologieSpecificationSHM::NOT_INITIALIZED_ = -100;
 		return muCox_;
 	}
 
-	float TechnologieSpecificationSHM::getEarlyVoltage() const
-	{
-		assert(hasEarlyVoltage());
-		return earlyVoltage_;
-	}
-
 	bool TechnologieSpecificationSHM::hasThresholdVoltage() const
 	{
 		return thresholdVoltage_ != NOT_INITIALIZED_;
@@ -146,10 +132,6 @@ const int TechnologieSpecificationSHM::NOT_INITIALIZED_ = -100;
 		return muCox_ != NOT_INITIALIZED_;
 	}
 
-	bool TechnologieSpecificationSHM::hasEarlyVoltage() const
-	{
-		return earlyVoltage_ != NOT_INITIALIZED_;
-	}
 
 	void TechnologieSpecificationSHM::setOverlapCapacity(float overlapCapacity)
 	{

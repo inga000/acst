@@ -6,33 +6,7 @@
 		<pairPinType>
 			<structurePinType>
 				<structureName>passGateLC3</structureName>
-				<structurePinName>gnd!</structurePinName>
-			</structurePinType>
-			<childPinType>
-				<childNumber>1</childNumber>
-				<structurePinType>
-					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Source</structurePinName>
-				</structurePinType>
-			</childPinType>
-		</pairPinType>
-		<pairPinType>
-			<structurePinType>
-				<structureName>passGateLC3</structureName>
 				<structurePinName>in2</structurePinName>
-			</structurePinType>
-			<childPinType>
-				<childNumber>1</childNumber>
-				<structurePinType>
-					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
-				</structurePinType>
-			</childPinType>
-		</pairPinType>
-		<pairPinType>
-			<structurePinType>
-				<structureName>passGateLC3</structureName>
-				<structurePinName>vy</structurePinName>
 			</structurePinType>
 			<childPinType>
 				<childNumber>1</childNumber>
@@ -48,7 +22,7 @@
 				<structurePinName>vdd!</structurePinName>
 			</structurePinType>
 			<childPinType>
-				<childNumber>2</childNumber>
+				<childNumber>1</childNumber>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
 					<structurePinName>Gate</structurePinName>
@@ -61,6 +35,19 @@
 				<structurePinName>vx</structurePinName>
 			</structurePinType>
 			<childPinType>
+				<childNumber>1</childNumber>
+				<structurePinType>
+					<structureName>MosfetNormalArray</structureName>
+					<structurePinName>Source</structurePinName>
+				</structurePinType>
+			</childPinType>
+		</pairPinType>
+		<pairPinType>
+			<structurePinType>
+				<structureName>passGateLC3</structureName>
+				<structurePinName>gnd!</structurePinName>
+			</structurePinType>
+			<childPinType>
 				<childNumber>2</childNumber>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
@@ -68,15 +55,28 @@
 				</structurePinType>
 			</childPinType>
 		</pairPinType>
+		<pairPinType>
+			<structurePinType>
+				<structureName>passGateLC3</structureName>
+				<structurePinName>vy</structurePinName>
+			</structurePinType>
+			<childPinType>
+				<childNumber>2</childNumber>
+				<structurePinType>
+					<structureName>MosfetNormalArray</structureName>
+					<structurePinName>Drain</structurePinName>
+				</structurePinType>
+			</childPinType>
+		</pairPinType>
 	</pairConnection>
 	<characteristicConnection>
 		<firstChildPinType>
 			<structureName>MosfetNormalArray</structureName>
-			<structurePinName>Gate</structurePinName>
+			<structurePinName>Drain</structurePinName>
 		</firstChildPinType>
 		<secondChildPinType>
 			<structureName>MosfetNormalArray</structureName>
-			<structurePinName>Drain</structurePinName>
+			<structurePinName>Gate</structurePinName>
 		</secondChildPinType>
 	</characteristicConnection>
 	<recognitionRules>
@@ -84,18 +84,18 @@
 			<netRule>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Source</structurePinName>
+					<structurePinName>Gate</structurePinName>
 				</structurePinType>
 				<childNumber>1</childNumber>
-				<supply>gnd</supply>
+				<supply>vdd</supply>
 			</netRule>
 			<netRule>
 				<structurePinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
+					<structurePinName>Source</structurePinName>
 				</structurePinType>
 				<childNumber>2</childNumber>
-				<supply>vdd</supply>
+				<supply>gnd</supply>
 			</netRule>
 		</netRules>
 		<supplyLevelRules/>
@@ -104,18 +104,18 @@
 				<connected>false</connected>
 				<firstChildPinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Drain</structurePinName>
+					<structurePinName>Gate</structurePinName>
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
+					<structurePinName>Drain</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>
 				<connected>false</connected>
 				<firstChildPinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Drain</structurePinName>
+					<structurePinName>Gate</structurePinName>
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>MosfetNormalArray</structureName>
@@ -130,7 +130,7 @@
 				</firstChildPinType>
 				<secondChildPinType>
 					<structureName>MosfetNormalArray</structureName>
-					<structurePinName>Gate</structurePinName>
+					<structurePinName>Drain</structurePinName>
 				</secondChildPinType>
 			</connectionRule>
 			<connectionRule>

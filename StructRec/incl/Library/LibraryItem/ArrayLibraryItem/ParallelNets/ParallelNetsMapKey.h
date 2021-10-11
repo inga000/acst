@@ -55,11 +55,10 @@ namespace StructRec {
         ParallelNetsMapKey();
 
         void setTechType(Core::TechType techType);
-        void setDeviceId(Core::DeviceId deviceId);
         void addNet(const Core::Net& net);
 
         const Core::TechType& getTechType() const;
-        const Core::DeviceId& getDeviceId() const;
+        const std::string& getNetKey() const;
 
         bool operator<(const ParallelNetsMapKey& other) const;
         bool operator==(const ParallelNetsMapKey& other) const;
@@ -67,14 +66,14 @@ namespace StructRec {
 
     private:
         bool hasTechType() const;
-        bool hasDeviceId() const;
+        bool hasNetKey() const;
         bool hasParallelNets() const;
 
         const ParallelNets& getParallelNets() const;
 
     private:
         Core::TechType techType_;
-        Core::DeviceId deviceId_;
+        std::string netKey_;
         ParallelNets parallelNets_;
     };
 }

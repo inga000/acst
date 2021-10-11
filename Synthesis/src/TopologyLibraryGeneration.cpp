@@ -129,7 +129,6 @@ namespace Synthesis {
 		AutomaticSizing::CircuitInformation * circuitInformation = new AutomaticSizing::CircuitInformation;
 		AutomaticSizing::CircuitParameter * circuitParameter = new AutomaticSizing::CircuitParameter;
 
-		logDebug("Edit circuit parameters!");
 		circuitParameter->setFullyDifferential(true);
 		circuitInformation->setCircuitParameter(*circuitParameter);
 
@@ -175,7 +174,6 @@ namespace Synthesis {
 
 		do
 		{
-			logDebug("caseNumber: " << caseNumber);
 			if (circuitParameter.isComplementary())
 			{
 				oneStageOpAmps = library.getOpAmps().createComplementaryOpAmps(caseNumber, indexComplementary);
@@ -186,10 +184,8 @@ namespace Synthesis {
 			}
 			else
 			{
-				logDebug("Creating one stage op-amps");
 				oneStageOpAmps = library.getOpAmps().createSimpleOneStageOpAmps(caseNumber, indexSingleOutput);
 				symmetricalOpAmps = library.getOpAmps().createSymmetricalOpAmps(caseNumber, indexSymmetrical);
-				logDebug("Done creating");
 			}
 
 			for(auto & oneStageOpAmp : oneStageOpAmps)
@@ -238,7 +234,7 @@ namespace Synthesis {
 
 			caseNumber ++;
 		} while (!oneStageOpAmps.empty() || !symmetricalOpAmps.empty());
-		logDebug("Leaving While loop!");
+
 	}
 
 	void TopologyLibraryGeneration::writeHSpiceFile(const Core::Circuit &  circuit, const AutomaticSizing::CircuitParameter & circuitParameter, std::string oneStageOpAmpId)

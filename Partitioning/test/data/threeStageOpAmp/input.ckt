@@ -1,0 +1,38 @@
+** Generated for: hspiceD
+** Generated on: Jun 22 12:00:11 2021
+** Design library name: ThreeStageOpAmp
+** Design cell name: ThreeStageOpAmp
+** Design view name: schematic
+.GLOBAL gnd! vdd!
+
+.TEMP 25.0
+.OPTION
++    ARTIST=2
++    INGOLD=2
++    PARHIER=LOCAL
++    PSF=2
+
+** Library name: ThreeStageOpAmp
+** Cell name: ThreeStageOpAmp
+** View name: schematic
+m18 net049 ibias vdd! vdd! pmos 
+m24 out net41 vdd! vdd! pmos 
+m9 ibias ibias vdd! vdd! pmos 
+m6 net035 net41 vdd! vdd! pmos 
+m5 net41 net41 vdd! vdd! pmos 
+m4 net34 inn net30 net30 pmos 
+m23 net040 net035 vdd! vdd! pmos 
+m1 net043 inp net30 net30 pmos 
+m0 net30 ibias vdd! vdd! pmos 
+m22 net049 net049 net17 net17 nmos 
+m16 net17 net17 gnd! gnd! nmos 
+m13 net043 net17 gnd! gnd! nmos 
+m12 net41 net049 net043 net043 nmos 
+m11 net34 net17 gnd! gnd! nmos 
+m10 net035 net049 net34 net34 nmos 
+m20 net040 net17 gnd! gnd! nmos 
+m21 out net040 gnd! gnd! nmos 
+c1 out net040 
+c0 out net035 
+cl out gnd!
+.END

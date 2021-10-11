@@ -106,18 +106,12 @@ namespace Synthesis
 
 		std::vector<Circuit*> Library::createOneStageOpAmps() const
 		{
-			logDebug("Getting in here");
 			std::vector<Circuit*> oneStageOpAmps;
 			for(auto & firstStage : firstStages_)
 			{
 				Circuit * stage = new Circuit;
-				logDebug("Clone Device Circuit");
 				Core::Circuit & oneStageOpAmp = firstStage->clone();
-				logDebug("Adding load capacity to circuit");
 				addLoadCapacityToCircuit(oneStageOpAmp, Core::NetName("outFirstStage1").createRootIdentifier());
-				logDebug("One stage circuit:");
-				logDebug(oneStageOpAmp);
-				logDebug("Analyse Circuit");
 				stage->initialize(oneStageOpAmp, getStructRecLibrary());
 				oneStageOpAmps.push_back(stage);
 			}
@@ -321,10 +315,6 @@ namespace Synthesis
 
 
         	pinConnections.addAndConnectPins(device);
-
-			logDebug("Printing load capacity");
-			logDebug(device);
-
 		}
 
 		void Library::printFirstStages(std::ostream & stream) const

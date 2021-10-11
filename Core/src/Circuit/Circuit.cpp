@@ -562,15 +562,10 @@ namespace Core {
 
     void Circuit::print(std::ostream& stream) const
     {
-//        logDebug("WritemSummary");
         printSummary(stream);
-//       logDebug("Print terminals");
         printTerminals(stream);
-//        logDebug("print Nets");
         printNets(stream);
-//        logDebug("print instances");
         printInstances(stream);
-//        logDebug("print Devices");
         printDevices(stream);
     }
 

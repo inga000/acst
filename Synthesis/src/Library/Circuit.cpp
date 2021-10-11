@@ -156,10 +156,8 @@ namespace Synthesis
 		std::ostringstream oss;
 
 		oss << "<<<<<<<<<<<<<<< DEVICE CIRCUIT >>>>>>>>>>>>>>>>" << std::endl;
-		// logDebug("<<<<<<<<<<<<<<< DEVICE CIRCUIT >>>>>>>>>>>>>>>>");
 		oss << getFlatCircuit().toStr()<< std::endl;
 		oss << "<<<<<<<<<<<<<<<<<< RECOGNIZED STRUCTURES >>>>>>>>>>>>>>>>>>" << std::endl;
-		// logDebug("<<<<<<<<<<<<<<<<<< RECOGNIZED STRUCTURES >>>>>>>>>>>>>>>>>>");
 		oss << getConstStructRecResult().toStr() << std::endl;
 		oss << "<<<<<<<<<<<<<<<<<<<<< FUNCTIONAL BLOCKS >>>>>>>>>>>>>>>>>>>>" << std::endl;
 		oss << getPartitioningResult().toStr() << std::endl;
@@ -171,7 +169,7 @@ namespace Synthesis
 	bool Circuit::fulfillsFirstStageSpecifications() const
 	{
 		bool fulfills = true;
-
+		logDebug(">>>>>>>>>>>>>>>Does not fulfill following specifications: ");
 		if(getSizingResult().getCMRR() < getCircuitInformation().getCircuitSpecification().getCMRR())
 		{
 			fulfills = false;
@@ -206,7 +204,7 @@ namespace Synthesis
 			logDebug("MinCommonModeInputVoltage");
 		}
 
-		logDebug("Fulfills: " << fulfills);
+		logDebug("Fulfills? " << fulfills);
 		return fulfills;
 	}
 
@@ -214,15 +212,16 @@ namespace Synthesis
 	{
 		bool fulfills = true;
 
+		logDebug("Does not fulfill following specifications: ")
 		if(!fulfillsFirstStageSpecifications())
 		{
 			fulfills = false;
-			logDebug("FirstStageSpecifications!!!!")
+			logDebug("FirstStageSpecifications!")
 		}
 		if(getSizingResult().getGain() < getCircuitInformation().getCircuitSpecification().getGain())
 		{
 			fulfills = false;
-			logDebug("GAIN " << getSizingResult().getGain());
+			logDebug("Gain " << getSizingResult().getGain());
 		}
 		if(getSizingResult().getMaxOutputVoltage() < getCircuitInformation().getCircuitSpecification().getMaxOutputVoltage())
 		{

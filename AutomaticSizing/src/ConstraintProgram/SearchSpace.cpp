@@ -983,8 +983,6 @@ namespace AutomaticSizing {
 		variables_ = Gecode::IntVarArray(*this, numOfVariables, -pow(10,9), pow(10,9));
 		cost_ = Gecode::FloatVar(*this, -10000000, 100000000000000000);
 
-		logDebug("VARIABLE SIZE: " << variables_.size());
-
 		helper_ =Gecode::FloatVar(*this, - pow(10,16), pow(10,16));
 	}
 
@@ -2083,36 +2081,36 @@ namespace AutomaticSizing {
 		bool fulfills = true;
 		if(getPhaseMargin() < getCircuitInformation().getCircuitSpecification().getPhaseMargin())
 		{
-			logDebug("PhaseMargn!");
+//			logDebug("PhaseMargn!");
 			fulfills = false;
 		}
 		if(getMinCommonModeInputVoltage() >
 		getCircuitInformation().getCircuitParameter().getInputPinMinus().getValue() + getCircuitInformation().getCircuitSpecification().getMinCommonModeInputVoltage())
 		{
-			logDebug(getMinCommonModeInputVoltage());
-			logDebug("MinCommonModeInputVoltage!");
+
+//			logDebug("MinCommonModeInputVoltage!");
 			fulfills = false;
 		}
 		if(getMaxCommonModeInputVoltage() <
 	 			getCircuitInformation().getCircuitParameter().getInputPinMinus().getValue() + getCircuitInformation().getCircuitSpecification().getMaxCommonModeInputVoltage()
 				&& getMaxCommonModeInputVoltage() > -100000 )
 		{
-			logDebug("MaxCommonModeInputVoltage!");
+//			logDebug("MaxCommonModeInputVoltage!");
 			fulfills = false;
 		}
 		if(getCMRR()< getCircuitInformation().getCircuitSpecification().getCMRR())
 		{
-			logDebug("CMRR!");
+//			logDebug("CMRR!");
 			fulfills = false;
 		}
 		if(getArea() > getCircuitInformation().getCircuitSpecification().getMaxArea())
 		{
-			logDebug("Area!");
+//			logDebug("Area!");
 			fulfills = false;
 		}
 		if(getPowerConsumption() > getCircuitInformation().getCircuitSpecification().getPowerConsumption())
 		{
-			logDebug("PowerConsumption!");
+//			logDebug("PowerConsumption!");
 			fulfills = false;
 		}
 		return fulfills;
@@ -2124,48 +2122,48 @@ namespace AutomaticSizing {
 		bool fulfills = true;
 		if(!fulfillsFirstStageSpecifications())
 		{
-			logDebug("FirstStageSpecification!!!!");
+//			logDebug("FirstStageSpecification!!!!");
 			fulfills = false;
 		}
 		if(getGain() < getCircuitInformation().getCircuitSpecification().getGain())
 		{
-			logDebug("Gain!");
+//			logDebug("Gain!");
 			fulfills = false;
 		}
 		if(getMinOutputVoltage() > getCircuitInformation().getCircuitSpecification().getMinOutputVoltage())
 		{
-			logDebug("MinOutputVoltageSwing!!");
+//			logDebug("MinOutputVoltageSwing!!");
 			fulfills = false;
 
 		}
 		if(getMaxOutputVoltage() < getCircuitInformation().getCircuitSpecification().getMaxOutputVoltage())
 		{
-			logDebug("MaxOutputVoltageSwing!");
+//			logDebug("MaxOutputVoltageSwing!");
 			fulfills = false;
 		}
 		if(getTransitFrequency() < getCircuitInformation().getCircuitSpecification().getTransientFrequency())
 		{
-			logDebug("TransitFrequency!");
+//			logDebug("TransitFrequency!");
 			fulfills = false;
 		}
 		if(getTransitFrequencyWithErrorFactor() < getCircuitInformation().getCircuitSpecification().getTransientFrequency())
 		{
-			logDebug("TransitFrequencyWithErrorFactor!");
+//			logDebug("TransitFrequencyWithErrorFactor!");
 			fulfills = false;
 		}
 		if(getSlewRate() < getCircuitInformation().getCircuitSpecification().getSlewRate())
 		{
-			logDebug("SlewRate!");
+//			logDebug("SlewRate!");
 			fulfills = false;
 		}
 		if(getNegPSRR() < getCircuitInformation().getCircuitSpecification().getNegPSRR() && getNegPSRR()>0)
 		{
-			logDebug("negPSRR!");
+//			logDebug("negPSRR!");
 			fulfills = false;
 		}
 		if(getPosPSRR()< getCircuitInformation().getCircuitSpecification().getPosPSRR() && getPosPSRR() >0)
 		{
-			logDebug("posPSRR!");
+//			logDebug("posPSRR!");
 			fulfills = false;
 		}
 

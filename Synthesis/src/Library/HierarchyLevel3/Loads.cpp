@@ -597,7 +597,6 @@ namespace Synthesis {
 
 			const Core::Circuit & symmetricalLoadPart = createSymmetricalLoadFourTransistorMixedLoadParts(
 									createInstance(pmosLoadPart, LOADPART1_), createInstance(nmosLoadPart, LOADPART2_), index);
-			// logDebug("in loop " << index);
 			if(symmetricalLoadPart.everyGateNetIsNotConnectedToMoreThanOneDrainOfComponentWithSameTechType())
 			{
 				symmetricalLoadParts.push_back(&symmetricalLoadPart);

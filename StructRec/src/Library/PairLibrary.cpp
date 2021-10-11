@@ -175,7 +175,7 @@ namespace StructRec {
 
 	void PairLibrary::flagItemsNotOnTopLevelAndWithoutPersistence() const
 	{
-		//TODO: required for what?
+		//Function is needed to mark newly created library pairs that are not used for the final description of the structure
 		for(HierarchyLevelMap::const_iterator it = getHierarchyLevelMap().begin(); it != --(getHierarchyLevelMap().end()); it++)
 		{
 			int level = it->first;

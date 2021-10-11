@@ -87,6 +87,7 @@ namespace AutomaticSizing {
 
     	StructRec::Library* structRecLibrary = parseStructRecLibrary();
 		runStructureRecognition(*structRecLibrary);
+		logDebug("<<<<<<<<<<<<<<<< Structure Recognition Results >>>>>>>>>>>>>>>>>>>>");
 		logDebug(getStructureRecognitionResult());
 
 
@@ -94,6 +95,8 @@ namespace AutomaticSizing {
 
 		Partitioning::Partitioning * partioning = new Partitioning::Partitioning;
 		partitioningResult_ = &partioning->compute(getStructureRecognitionResult().getTopLevelResults());
+
+		logDebug("<<<<<<<<<<<<<<<< Partitioning Results >>>>>>>>>>>>>>>>>>>>");
 		logDebug(partitioningResult_);
 
 		delete partioning;
@@ -107,7 +110,7 @@ namespace AutomaticSizing {
 		automaticSizing->setDefinition(getLocalOptions().getScaling());
 		automaticSizing->setRuntime(getLocalOptions().getRuntime());
 		result_ = &automaticSizing->compute();
-		logDebug("<<<<<<<<<<<<<<<<Final Result after sizing >>>>>>>>>>>>>>>>>>>>");
+		logDebug("<<<<<<<<<<<<<<<< Final Result After Sizing >>>>>>>>>>>>>>>>>>>>");
 		logDebug(result_);
 
 		delete automaticSizing;

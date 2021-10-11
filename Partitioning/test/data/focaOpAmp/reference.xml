@@ -1,5 +1,5 @@
 <acst_results>
-	<date day="5" month="10" year="2021" hour="17" minute="52" second="12"/>
+	<date day="7" month="10" year="2021" hour="16" minute="2" second="59"/>
 	<circuit_partitioning_results>
 		<gmParts>
 			<gmPart type="firstStage">
@@ -11,7 +11,7 @@
 						<pin name="Output2" net="/net25"/>
 						<pin name="Source" net="/net12"/>
 					</pins>
-					<structure name="MosfetNormalArray[6]" techType="n" instance="/">
+					<structure name="MosfetNormalArray[3]" techType="n" instance="/">
 						<pins>
 							<pin name="Bulk" net="/gnd!"/>
 							<pin name="Drain" net="/net24"/>
@@ -38,7 +38,7 @@
 		</gmParts>
 		<loadParts>
 			<loadPart>
-				<structure name="MosfetNormalArray[5]" techType="n" instance="/">
+				<structure name="MosfetNormalArray[6]" techType="n" instance="/">
 					<pins>
 						<pin name="Bulk" net="/gnd!"/>
 						<pin name="Drain" net="/out"/>
@@ -49,7 +49,7 @@
 						<device name="/mnlss" deviceType="Mosfet" techType="n" instance="/"/>
 					</devices>
 				</structure>
-				<structure name="MosfetNormalArray[3]" techType="n" instance="/">
+				<structure name="MosfetNormalArray[5]" techType="n" instance="/">
 					<pins>
 						<pin name="Bulk" net="/gnd!"/>
 						<pin name="Drain" net="/net30"/>
@@ -60,7 +60,7 @@
 						<device name="/mncms" deviceType="Mosfet" techType="n" instance="/"/>
 					</devices>
 				</structure>
-				<structure name="MosfetDiodeArray[3]" techType="n" instance="/">
+				<structure name="MosfetDiodeArray[2]" techType="n" instance="/">
 					<pins>
 						<pin name="Bulk" net="/gnd!"/>
 						<pin name="Drain" net="/net19"/>
@@ -70,7 +70,7 @@
 						<device name="/mnlsm" deviceType="Mosfet" techType="n" instance="/"/>
 					</devices>
 				</structure>
-				<structure name="MosfetDiodeArray[2]" techType="n" instance="/">
+				<structure name="MosfetDiodeArray[3]" techType="n" instance="/">
 					<pins>
 						<pin name="Bulk" net="/gnd!"/>
 						<pin name="Drain" net="/net29"/>
@@ -82,7 +82,7 @@
 				</structure>
 			</loadPart>
 			<loadPart>
-				<structure name="MosfetNormalArray[9]" techType="p" instance="/">
+				<structure name="MosfetNormalArray[8]" techType="p" instance="/">
 					<pins>
 						<pin name="Bulk" net="/vdd!"/>
 						<pin name="Drain" net="/net24"/>
@@ -93,7 +93,7 @@
 						<device name="/mpcmsn" deviceType="Mosfet" techType="p" instance="/"/>
 					</devices>
 				</structure>
-				<structure name="MosfetNormalArray[7]" techType="p" instance="/">
+				<structure name="MosfetNormalArray[9]" techType="p" instance="/">
 					<pins>
 						<pin name="Bulk" net="/vdd!"/>
 						<pin name="Drain" net="/net25"/>
@@ -104,7 +104,7 @@
 						<device name="/mpcmsp" deviceType="Mosfet" techType="p" instance="/"/>
 					</devices>
 				</structure>
-				<structure name="MosfetNormalArray[8]" techType="p" instance="/">
+				<structure name="MosfetNormalArray[10]" techType="p" instance="/">
 					<pins>
 						<pin name="Bulk" net="/vdd!"/>
 						<pin name="Drain" net="/out"/>
@@ -115,7 +115,7 @@
 						<device name="/mplssn" deviceType="Mosfet" techType="p" instance="/"/>
 					</devices>
 				</structure>
-				<structure name="MosfetNormalArray[10]" techType="p" instance="/">
+				<structure name="MosfetNormalArray[7]" techType="p" instance="/">
 					<pins>
 						<pin name="Bulk" net="/vdd!"/>
 						<pin name="Drain" net="/net19"/>
@@ -130,7 +130,7 @@
 		</loadParts>
 		<biasParts>
 			<biasPart>
-				<structure name="MosfetNormalArray[2]" techType="n" instance="/">
+				<structure name="MosfetNormalArray[1]" techType="n" instance="/">
 					<pins>
 						<pin name="Bulk" net="/gnd!"/>
 						<pin name="Drain" net="/net12"/>
@@ -184,7 +184,7 @@
 				</structure>
 			</biasPart>
 			<biasPart>
-				<structure name="MosfetNormalArray[1]" techType="n" instance="/">
+				<structure name="MosfetNormalArray[2]" techType="n" instance="/">
 					<pins>
 						<pin name="Bulk" net="/gnd!"/>
 						<pin name="Drain" net="/net17"/>

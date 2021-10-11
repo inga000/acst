@@ -240,7 +240,7 @@ namespace Synthesis
 		Gecode::Search::Stop* stop = Gecode::Search::Stop::time(60000);
 		AutomaticSizing::SimpleSearchSpace * solution = nullptr;
 		strictSearchSpace.status();
-//		logDebug(strictSearchSpace.toStr());
+
 
 		Gecode::Search::Cutoff * luby = Gecode::Search::Cutoff::luby(10);
 		Gecode::Search::Options opt;
@@ -251,7 +251,7 @@ namespace Synthesis
 		int numSolution =0;
 		while(AutomaticSizing::SimpleSearchSpace* space = search.next())
 		{
-//			logDebug(space->toStr());
+
 			numSolution ++;
 			Gecode::FloatVal circuitPerformance = space->getBestCircuitPerformance();
 			 if(circuitPerformance > bestCircuitPerformance)
@@ -273,8 +273,7 @@ namespace Synthesis
 		Gecode::Search::Statistics statistics = search.statistics();
 		std::ostringstream stat;
 		stat << "FailureNodes " << statistics.fail << std::endl << "Number of nodes " << statistics.node << std::endl << "Number of restarts " << statistics.restart << std::endl << "Depth " << statistics.depth << std::endl ;
-//		logDebug(stat.str());
-//		logDebug("<<<<<<<<numSolutions " << numSolution);
+
 
 		if(solution != NULL)
 		{
@@ -310,7 +309,6 @@ namespace Synthesis
 		Gecode::Search::Stop* stop = Gecode::Search::Stop::time(60000);
 		AutomaticSizing::OptimizingSearchSpace * solution = nullptr;
 		searchSpace.status();
-//		logDebug(searchSpace.toStr());
 
 		Gecode::Search::Cutoff * luby = Gecode::Search::Cutoff::luby(10);
 		Gecode::Search::Options opt;
@@ -321,21 +319,18 @@ namespace Synthesis
 		int numSolution =0;
 		while(AutomaticSizing::OptimizingSearchSpace* space = search.next())
 		{
-//			logDebug(space->toStr());
 			numSolution ++;
 			if(solution != NULL)
 			{
 				delete solution;
 			}
 			solution = space;
-//			break;
+
 		}
 
 		Gecode::Search::Statistics statistics = search.statistics();
 		std::ostringstream stat;
 		stat << "FailureNodes " << statistics.fail << std::endl << "Number of nodes " << statistics.node << std::endl << "Number of restarts " << statistics.restart << std::endl << "Depth " << statistics.depth << std::endl ;
-//		logDebug(stat.str());
-//		logDebug("<<<<<<<<numSolutions " << numSolution);
 
 		if(solution != NULL)
 		{

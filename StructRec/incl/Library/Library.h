@@ -78,7 +78,7 @@ namespace StructRec {
 		std::vector<StructureName> getStructureNames();
 		std::vector<StructurePinType> getPinTypes(const StructureName& structureName) const;
 
-		//TODO: make private again! (required by rulegeneration)
+
 		const StructureCore& getStructureCore() const;
 		StructureCore& getStructureCore();
 

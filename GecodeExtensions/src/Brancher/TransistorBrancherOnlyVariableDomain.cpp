@@ -165,7 +165,6 @@ namespace Gecode{
 					else
 					{
 						posValue = transistorVariables_[position].med();
-//						logDebug(transistorVariables_[position].med());
 					}
 
 					if(transistorVariables_[position].in(posValue))

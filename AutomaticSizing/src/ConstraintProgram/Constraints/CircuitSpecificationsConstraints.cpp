@@ -918,7 +918,6 @@ namespace AutomaticSizing {
 			for(auto & edge : vddToOutputPath)
 			{
 				Partitioning::Component & comp = getPartitioningResult().findComponent(edge->getEdgeKey().getStructureId());
-//				logDebug("Component: " << comp);
 				const Edge* gateSourceEdge = nullptr;
 				if(comp.getArray().getStructureName().toStr() == "MosfetDiodeArray")
 					gateSourceEdge = edge;
@@ -1455,7 +1454,6 @@ namespace AutomaticSizing {
 
 		if(loadComp == nullptr)
 		{
-			logDebug("NO GATE CONNECTED LOAD DEVICE FOUND USING DEFAULT OUTPUT COMP!!!!!!!");
 			for(auto & loadCompIt : getPartitioningResult().getBelongingComponents(*loadPart))
 			{
 				const Core::Device & loadDevice = **loadCompIt->getArray().getDevices().begin();
@@ -3216,7 +3214,7 @@ namespace AutomaticSizing {
 
 
 		}
-//		logDebug("Initialize Integer poles and zeros");
+
 		getSpace().initializeIntegerPolesAndZeros();
 	}
 
@@ -3239,7 +3237,6 @@ namespace AutomaticSizing {
 			channel(getSpace(), valueHelperVarCompCap, compCapValue);
 			Gecode::FloatVar normedCompCapValue = Gecode::expr(getSpace(), valueHelperVarCompCap * p);
 
-//			logDebug("compensationCapacityConnectedBetween(getPartitioningResult().getFirstStage(),getPartitioningResult().getPrimarySecondStage() ) " << compensationCapacityConnectedBetween(getPartitioningResult().getFirstStage(),getPartitioningResult().getPrimarySecondStage() ));
 			if(compensationCapacityConnectedBetween(getPartitioningResult().getFirstStage(),getPartitioningResult().getPrimarySecondStage() ))
 			{
 				Gecode::FloatVar gainSecondStage = createGainConstraintSecondStage();
@@ -3289,9 +3286,7 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-//			logDebug("Compute output resistance " );
 			Gecode::FloatVar Rout1 = computeOutputResistanceFirstStage();
-//			logDebug("Calculating dominant pole");
 			dom(getSpace(), Rout1, 0, 100000000000000000000);
 			Gecode::rel(getSpace(), dominantPole * (2* 3.14159265 * Rout1  *Cout) == 1);
 
@@ -4226,12 +4221,11 @@ namespace AutomaticSizing {
 
 	 Gecode::FloatVar CircuitSpecificationsConstraints::computeOutputResistanceFirstStage()
 	 {
-		 Partitioning::TransconductancePart & firstStage = getPartitioningResult().getFirstStage();
+		Partitioning::TransconductancePart & firstStage = getPartitioningResult().getFirstStage();
 		Partitioning::Component & transPartTransistor = **getPartitioningResult().getBelongingComponents(firstStage).begin();
 		std::vector<Partitioning::LoadPart *> loadParts = firstStage.getLoadPart();
-		 Gecode::FloatVar rout(getSpace(), 0, 100000000000000);
-//		 logDebug("Compute output resistance of trans part");
-		 Gecode::FloatVar gdTran = computeOutputConductance(transPartTransistor);
+		Gecode::FloatVar rout(getSpace(), 0, 100000000000000);
+		Gecode::FloatVar gdTran = computeOutputConductance(transPartTransistor);
 
 		if(getPartitioningResult().hasSecondarySecondStage())
 		{
@@ -4285,13 +4279,10 @@ namespace AutomaticSizing {
 		}
 		else
 		{
-//			logDebug("Compute output conductance of loadPart 1");
 			Gecode::FloatVar gdLoad1 = computeOutputConductance(**loadParts.begin(), firstStage);
 			dom(getSpace(), gdLoad1, 0, 100);
-//			logDebug("Compute output conductance of loadPart 2");
 			Gecode::FloatVar gdLoad2 = computeOutputConductance(**std::next(loadParts.begin()), firstStage);
 			dom(getSpace(), gdLoad2, 0, 100);
-//			logDebug("Compute rout");
 			Gecode::rel(getSpace(), rout * (gdLoad1 + gdLoad2 + gdTran) == 1);
 		 }
 		return rout;
@@ -5119,7 +5110,6 @@ namespace AutomaticSizing {
 
 		Gecode::FloatVar CircuitSpecificationsConstraints::computeOutputConductance(Partitioning::Part & part, Partitioning::TransconductancePart & stage)
 		{
-//			logDebug("Part >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << part);
 			 std::vector<Partitioning::Component * > comps = getPartitioningResult().getBelongingComponents(part);
 			 if(part.isTransconductancePart() && stage.isFirstStage())
 			 {

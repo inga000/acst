@@ -333,20 +333,15 @@ namespace StructRec {
 
 	void PairLibraryItemCreator::writeConnectionMap()
 	{
-		logDebug("<<<<<<<<<<<<<<<<<<< Connection map >>>>>>>>>>>>>>>>>>")
 		int id = 1;
 		for(ConnectionMap::const_iterator it = connectionMap_.begin(); it != connectionMap_.end(); it++)
 		{
 			int numberOfConnections = it->first;
-			logDebug(">>>>>>>>>>>>>>>>Number of connections: " << numberOfConnections);
 			std::vector<NewPairLibraryItem*> items = it->second;
 
 			for(std::vector<NewPairLibraryItem*>::const_iterator it_items = items.begin(); it_items != items.end(); it_items++)
 			{
 				NewPairLibraryItem * item = * it_items;
-				logDebug("<<<<Item: " << id);
-				logDebug("Child1: " << item->getChild1().getStructure());
-				logDebug("Child2: " << item->getChild2().getStructure());
 				id++;
 			}
 		}
