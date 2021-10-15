@@ -1,29 +1,29 @@
 ** Name: two_stage_single_output_op_amp_79_1
 
 .MACRO two_stage_single_output_op_amp_79_1 ibias in1 in2 out sourceNmos sourcePmos
-m1 inputVoltageBiasXXnXX1 inputVoltageBiasXXnXX1 sourceNmos sourceNmos nmos4 L=3e-6 W=34e-6
-m2 ibias ibias sourceNmos sourceNmos nmos4 L=3e-6 W=8e-6
-m3 outVoltageBiasXXpXX2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=402e-6
-m4 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=1e-6 W=68e-6
-m5 outVoltageBiasXXpXX2 ibias sourceNmos sourceNmos nmos4 L=3e-6 W=552e-6
-m6 outVoltageBiasXXpXX1 ibias sourceNmos sourceNmos nmos4 L=3e-6 W=554e-6
-m7 outFirstStage inputVoltageBiasXXnXX1 FirstStageYinnerTransistorStack2Load2 FirstStageYinnerTransistorStack2Load2 nmos4 L=3e-6 W=93e-6
-m8 out outFirstStage sourceNmos sourceNmos nmos4 L=5e-6 W=407e-6
-m9 FirstStageYinnerStageBias ibias sourceNmos sourceNmos nmos4 L=3e-6 W=65e-6
-m10 FirstStageYout1 inputVoltageBiasXXnXX1 FirstStageYinnerTransistorStack1Load2 FirstStageYinnerTransistorStack1Load2 nmos4 L=3e-6 W=93e-6
-m11 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=141e-6
-m12 FirstStageYinnerTransistorStack1Load2 FirstStageYout1 sourceNmos sourceNmos nmos4 L=7e-6 W=189e-6
-m13 FirstStageYinnerTransistorStack2Load2 FirstStageYout1 sourceNmos sourceNmos nmos4 L=7e-6 W=189e-6
-m14 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=141e-6
-m15 FirstStageYsourceTransconductance inputVoltageBiasXXnXX1 FirstStageYinnerStageBias FirstStageYinnerStageBias nmos4 L=3e-6 W=121e-6
-m16 inputVoltageBiasXXnXX1 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=179e-6
-m17 outFirstStage outVoltageBiasXXpXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 pmos4 L=1e-6 W=83e-6
-m18 out outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=591e-6
-m19 FirstStageYout1 outVoltageBiasXXpXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 pmos4 L=1e-6 W=83e-6
-m20 FirstStageYsourceGCC1 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=59e-6
-m21 FirstStageYsourceGCC2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=59e-6
-Capacitor1 outFirstStage out 9.40001e-12
-Capacitor2 out sourceNmos 20e-12
+m1 ibias ibias sourceNmos sourceNmos nmos4 L=3e-6 W=8e-6
+m2 outVoltageBiasXXnXX1 outVoltageBiasXXnXX1 sourceNmos sourceNmos nmos4 L=3e-6 W=34e-6
+m3 inputVoltageBiasXXpXX1 inputVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=1e-6 W=68e-6
+m4 outVoltageBiasXXpXX2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=402e-6
+m5 FirstStageYinnerStageBias ibias sourceNmos sourceNmos nmos4 L=3e-6 W=65e-6
+m6 FirstStageYinnerTransistorStack1Load2 FirstStageYout1 sourceNmos sourceNmos nmos4 L=7e-6 W=189e-6
+m7 FirstStageYinnerTransistorStack2Load2 FirstStageYout1 sourceNmos sourceNmos nmos4 L=7e-6 W=189e-6
+m8 FirstStageYout1 outVoltageBiasXXnXX1 FirstStageYinnerTransistorStack1Load2 FirstStageYinnerTransistorStack1Load2 nmos4 L=3e-6 W=93e-6
+m9 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=141e-6
+m10 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=141e-6
+m11 FirstStageYsourceTransconductance outVoltageBiasXXnXX1 FirstStageYinnerStageBias FirstStageYinnerStageBias nmos4 L=3e-6 W=121e-6
+m12 inputVoltageBiasXXpXX1 ibias sourceNmos sourceNmos nmos4 L=3e-6 W=554e-6
+m13 out outFirstStage sourceNmos sourceNmos nmos4 L=5e-6 W=407e-6
+m14 outFirstStage outVoltageBiasXXnXX1 FirstStageYinnerTransistorStack2Load2 FirstStageYinnerTransistorStack2Load2 nmos4 L=3e-6 W=93e-6
+m15 outVoltageBiasXXpXX2 ibias sourceNmos sourceNmos nmos4 L=3e-6 W=552e-6
+m16 FirstStageYout1 inputVoltageBiasXXpXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 pmos4 L=1e-6 W=83e-6
+m17 FirstStageYsourceGCC1 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=59e-6
+m18 FirstStageYsourceGCC2 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=59e-6
+m19 out outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=591e-6
+m20 outFirstStage inputVoltageBiasXXpXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 pmos4 L=1e-6 W=83e-6
+m21 outVoltageBiasXXnXX1 outVoltageBiasXXpXX2 sourcePmos sourcePmos pmos4 L=1e-6 W=179e-6
+Capacitor1 out sourceNmos 20e-12
+Capacitor2 outFirstStage out 9.40001e-12
 .EOM two_stage_single_output_op_amp_79_1
 
 ** Expected Performance Values: 
@@ -69,10 +69,10 @@ Capacitor2 out sourceNmos 20e-12
 ** ibias: 0.615001  V
 ** in1: 2.5  V
 ** in2: 2.5  V
-** inputVoltageBiasXXnXX1: 0.968001  V
+** inputVoltageBiasXXpXX1: 3.68601  V
 ** out: 2.5  V
 ** outFirstStage: 0.787001  V
-** outVoltageBiasXXpXX1: 3.68601  V
+** outVoltageBiasXXnXX1: 0.968001  V
 ** outVoltageBiasXXpXX2: 4.12801  V
 ** sourceNmos: 0  V
 ** sourcePmos: 5  V

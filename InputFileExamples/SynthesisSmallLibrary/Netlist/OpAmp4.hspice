@@ -1,19 +1,19 @@
 ** Name: OpAmp4
 
 .MACRO OpAmp4 gnd vdd in1 in2 outFirstStage1 vbBias vbLoad1 vbLoad2
-mL22 outFirstStage2 outFirstStage2 innerLoad2 innerLoad2 pmos4 L=1e-6 W=293e-6
-mL24 innerLoad2 innerLoad2 vdd! vdd! pmos4 L=1e-6 W=413e-6
-mBOBias vbBias vbBias vdd! vdd! pmos4 L=1e-6 W=11e-6
-mL11 dpDrain1 vbLoad1 gnd! gnd! nmos4 L=1e-6 W=344e-6
-mL12 dpDrain2 vbLoad1 gnd! gnd! nmos4 L=1e-6 W=344e-6
-mL13 outFirstStage1 vbLoad2 dpDrain1 dpDrain1 nmos4 L=1e-6 W=34e-6
-mL14 outFirstStage2 vbLoad2 dpDrain2 dpDrain2 nmos4 L=1e-6 W=34e-6
-mT11 dpDrain1 in1 dpSource dpSource pmos4 L=1e-6 W=554e-6
-mT12 dpDrain2 in2 dpSource dpSource pmos4 L=1e-6 W=554e-6
-mB11 dpSource vbBias vdd! vdd! pmos4 L=1e-6 W=592e-6
-mL23 innerLoad1 innerLoad2 vdd! vdd! pmos4 L=1e-6 W=413e-6
-mL21 outFirstStage1 outFirstStage2 innerLoad1 innerLoad1 pmos4 L=1e-6 W=293e-6
-cl outFirstStage1 gnd! 20e-12
+mFoldedCascodeFirstStageLoad1 innerLoad2 innerLoad2 vdd! vdd! pmos4 L=1e-6 W=413e-6
+mFoldedCascodeFirstStageLoad2 outFirstStage2 outFirstStage2 innerLoad2 innerLoad2 pmos4 L=1e-6 W=293e-6
+mMainBias3 vbBias vbBias vdd! vdd! pmos4 L=1e-6 W=11e-6
+mFoldedCascodeFirstStageLoad4 dpDrain1 vbLoad1 gnd! gnd! nmos4 L=1e-6 W=344e-6
+mFoldedCascodeFirstStageLoad5 dpDrain2 vbLoad1 gnd! gnd! nmos4 L=1e-6 W=344e-6
+mFoldedCascodeFirstStageLoad6 outFirstStage1 vbLoad2 dpDrain1 dpDrain1 nmos4 L=1e-6 W=34e-6
+mFoldedCascodeFirstStageLoad7 outFirstStage2 vbLoad2 dpDrain2 dpDrain2 nmos4 L=1e-6 W=34e-6
+mFoldedCascodeFirstStageTransconductor8 dpDrain1 in1 dpSource dpSource pmos4 L=1e-6 W=554e-6
+mFoldedCascodeFirstStageTransconductor9 dpDrain2 in2 dpSource dpSource pmos4 L=1e-6 W=554e-6
+mFoldedCascodeFirstStageStageBias10 dpSource vbBias vdd! vdd! pmos4 L=1e-6 W=592e-6
+mFoldedCascodeFirstStageLoad11 innerLoad1 innerLoad2 vdd! vdd! pmos4 L=1e-6 W=413e-6
+mFoldedCascodeFirstStageLoad12 outFirstStage1 outFirstStage2 innerLoad1 innerLoad1 pmos4 L=1e-6 W=293e-6
+mLoadCapacitor1 outFirstStage1 gnd! 20e-12
 .EOM OpAmp4
 
 ** Expected Performance Values: 

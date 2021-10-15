@@ -61,6 +61,7 @@ namespace Partitioning {
 		~TransconductancePart();
 
 		void setType(const std::string type);
+		void setFirstStageType(const std::string firstStageType);
 		void setHelperStructure(const StructRec::Structure & helperStructure);
 		void addBiasPart(BiasPart & biasPart);
 		void addLoadPart(LoadPart & loadPart);
@@ -71,6 +72,7 @@ namespace Partitioning {
 		std::vector<BiasPart*> & getBiasPart();
 		std::vector<LoadPart*> & getLoadPart();
 		std::string getType() const;
+		std::string getFirstStageType() const;
 
 		std::vector<const Core::Net*> getOutputNets();
 
@@ -79,13 +81,19 @@ namespace Partitioning {
         bool isSecondarySecondStage() const;
         bool isThirdStage() const;
         bool isFeedBack() const;
-        bool isComplementary() const;
         bool isHigherStage() const;
+
+        bool isSimple() const;
+        bool isComplementary() const;
+        bool isFoldedCascode() const;
+        bool isTelescopic() const;
+        bool isSymmetrical() const;
 
         bool hasHelperStructure() const;
         bool hasLoadPart() const;
         bool hasBiasPart(PartId partId) const;
 
+        bool hasFirstStageType() const;
 
         bool isBiasPart() const;
         bool isLoadPart() const;
@@ -112,27 +120,46 @@ namespace Partitioning {
 		       TYPE_PRIMARYSECONDSTAGE,
 			   TYPE_SECONDARYSECONDSTAGE,
 		       TYPE_FEEDBACK,
-			   TYPE_COMPLEMENTARY,
 			   TYPE_THIRDSTAGE
 	   };
+
+		enum FirstStageTypeEnum {
+			FIRSTSTAGETYPE_UNINITIALIZED,
+			TYPE_SIMPLE,
+			TYPE_COMPLEMENTARY,
+			TYPE_FOLDEDCASCODE,
+			TYPE_TELESCOPIC,
+			TYPE_SYMMETRICAL
+		};
 
 	  static const std::string FIRSTSTAGE_STRING_;
 	  static const std::string PRIMARYSECONDSTAGE_STRING_;
 	  static const std::string SECONDARYSECONDSTAGE_STRING_;
 	  static const std::string THIRDSTAGE_STRING_;
 	  static const std::string FEEDBACK_STRING_;
-	  static const std::string COMPLEMENTARY_STRING_;
 
-	  typedef std::map<std::string,TypeEnum> StringToEnumMap;
-	  typedef std::map<TypeEnum,std::string> EnumToStringMap;
+	  static const std::string SIMPLE_STRING_;
+	  static const std::string COMPLEMENTARY_STRING_;
+	  static const std::string FOLDEDCASCODE_STRING_;
+	  static const std::string TELESCOPIC_STRING_;
+	  static const std::string SYMMETRICAL_STRING_;
+
+	  typedef std::map<std::string,TypeEnum> StringToTypeEnumMap;
+	  typedef std::map<TypeEnum,std::string> TypeEnumToStringMap;
+	  typedef std::map<std::string,FirstStageTypeEnum> StringToFirstStageTypeEnumMap;
+	  typedef std::map<FirstStageTypeEnum,std::string> FirstStageTypeEnumToStringMap;
 
 	  static bool isValidString(const std::string & ttStr);
 
-	  static const StringToEnumMap & getStringToEnumMap();
-	  static const EnumToStringMap & getEnumToStringMap();
+	  static const StringToTypeEnumMap & getStringToTypeEnumMap();
+	  static const TypeEnumToStringMap & getTypeEnumToStringMap();
+	  static const StringToFirstStageTypeEnumMap & getStringToFirstStageTypeEnumMap();
+	  static const FirstStageTypeEnumToStringMap & getFirstStageTypeEnumToStringMap();
 
-	  static TypeEnum mapStringToEnum(const std::string & ttStr);
-	  static std::string mapEnumToString(const TypeEnum & tt);
+	  static TypeEnum mapStringToTypeEnum(const std::string & ttStr);
+	  static std::string mapTypeEnumToString(const TypeEnum & tt);
+	  static FirstStageTypeEnum mapStringToFirstStageTypeEnum(const std::string & ttStr);
+	  static std::string mapFirstStageTypeEnumToString(const FirstStageTypeEnum & tt);
 
 	private:
 	  bool hasBiasPart() const;
@@ -143,6 +170,7 @@ namespace Partitioning {
 	  std::vector<BiasPart*> biasParts_;
 	  std::vector<LoadPart*> loadParts_;
 	  TypeEnum typeEnum_;
+	  FirstStageTypeEnum firstStageTypeEnum_;
 	};
 
 }

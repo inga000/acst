@@ -368,7 +368,7 @@ namespace AutomaticSizing {
 		rel(*this, floatGain >= gain -0.5);
 		rel(*this, floatGain <= gain+0.5);
 
-		rel(*this, floatGain <= getCircuitInformation().getCircuitSpecification().getGain() + 50);
+		rel(*this, floatGain <= getCircuitInformation().getCircuitSpecification().getGain() + 150);
 		rel(*this, variables_[getVariables().findOther(GAIN_).getIndex()] == intGain);
 	}
 
@@ -1982,7 +1982,7 @@ namespace AutomaticSizing {
 
 	std::vector<const StructRec::StructureNet *> SearchSpace::findOutputNets(Partitioning::TransconductancePart & stage) const
 	{
-		assert(stage.isFirstStage() || stage.isPrimarySecondStage() || stage.isSecondarySecondStage()|| stage.isThirdStage() || stage.isComplementary(), "Transconductance might only be a helper Structure");
+		assert(stage.isFirstStage() || stage.isPrimarySecondStage() || stage.isSecondarySecondStage()|| stage.isThirdStage() , "Transconductance might only be a helper Structure");
 
 		std::vector<const StructRec::StructureNet *> outputNets;
 

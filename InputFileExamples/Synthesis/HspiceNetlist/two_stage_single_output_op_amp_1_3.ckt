@@ -1,21 +1,21 @@
 ** Name: two_stage_single_output_op_amp_1_3
 
 .MACRO two_stage_single_output_op_amp_1_3 ibias in1 in2 out sourceNmos sourcePmos
-m1 FirstStageYout1 FirstStageYout1 sourceNmos sourceNmos nmos4 L=6e-6 W=184e-6
-m2 outVoltageBiasXXnXX0 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=10e-6 W=10e-6
-m3 ibias ibias sourcePmos sourcePmos pmos4 L=2e-6 W=11e-6
-m4 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=5e-6 W=5e-6
-m5 out outFirstStage sourceNmos sourceNmos nmos4 L=3e-6 W=363e-6
-m6 outFirstStage FirstStageYout1 sourceNmos sourceNmos nmos4 L=6e-6 W=184e-6
-m7 outVoltageBiasXXpXX1 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=10e-6 W=12e-6
-m8 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=3e-6 W=19e-6
-m9 FirstStageYsourceTransconductance ibias sourcePmos sourcePmos pmos4 L=2e-6 W=127e-6
-m10 SecondStageYinnerStageBias ibias sourcePmos sourcePmos pmos4 L=2e-6 W=252e-6
-m11 out outVoltageBiasXXpXX1 SecondStageYinnerStageBias SecondStageYinnerStageBias pmos4 L=5e-6 W=469e-6
-m12 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=3e-6 W=19e-6
-m13 outVoltageBiasXXnXX0 ibias sourcePmos sourcePmos pmos4 L=2e-6 W=9e-6
-Capacitor1 out sourceNmos 20e-12
-Capacitor2 outFirstStage out 4.5e-12
+mSimpleFirstStageLoad1 FirstStageYout1 FirstStageYout1 sourceNmos sourceNmos nmos4 L=6e-6 W=184e-6
+mMainBias2 outVoltageBiasXXnXX0 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=10e-6 W=10e-6
+mMainBias3 ibias ibias sourcePmos sourcePmos pmos4 L=2e-6 W=11e-6
+mMainBias4 outVoltageBiasXXpXX1 outVoltageBiasXXpXX1 sourcePmos sourcePmos pmos4 L=5e-6 W=5e-6
+mSecondStage1Transconductor5 out outFirstStage sourceNmos sourceNmos nmos4 L=3e-6 W=363e-6
+mSimpleFirstStageLoad6 outFirstStage FirstStageYout1 sourceNmos sourceNmos nmos4 L=6e-6 W=184e-6
+mMainBias7 outVoltageBiasXXpXX1 outVoltageBiasXXnXX0 sourceNmos sourceNmos nmos4 L=10e-6 W=12e-6
+mSimpleFirstStageTransconductor8 FirstStageYout1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=3e-6 W=19e-6
+mSimpleFirstStageStageBias9 FirstStageYsourceTransconductance ibias sourcePmos sourcePmos pmos4 L=2e-6 W=127e-6
+mSecondStage1StageBias10 SecondStageYinnerStageBias ibias sourcePmos sourcePmos pmos4 L=2e-6 W=252e-6
+mSecondStage1StageBias11 out outVoltageBiasXXpXX1 SecondStageYinnerStageBias SecondStageYinnerStageBias pmos4 L=5e-6 W=469e-6
+mSimpleFirstStageTransconductor12 outFirstStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=3e-6 W=19e-6
+mMainBias13 outVoltageBiasXXnXX0 ibias sourcePmos sourcePmos pmos4 L=2e-6 W=9e-6
+mLoadCapacitor1 out sourceNmos 20e-12
+mCompensationCapacitor2 outFirstStage out 4.5e-12
 .EOM two_stage_single_output_op_amp_1_3
 
 ** Expected Performance Values: 

@@ -364,7 +364,7 @@ bool Result::hasMaxCommonModeInputVoltage() const
 
 bool Result::hasMinCommonModeInputVoltage() const
 {
-	return vcmMin_ != NOT_INITIALIZED_;
+	return vcmMin_ > -10000;
 }
 
 bool Result::hasMaxOutputVoltage() const
@@ -388,9 +388,9 @@ void Result::writeXmlAutomaticSizingResult(Control::OutputFile & file)const
 	Core::RapidXmlUtils::writeDateXML(root, doc);
 	Core::XmlNode & headLine = Core::RapidXmlUtils::addNode(root, doc, "automatic_sizing-results");
 
-		writeXmlExpectedPerformance(headLine, doc);
-		writeXmlVoltages(headLine, doc);
-		writeXmlCurrents(headLine, doc);
+	writeXmlExpectedPerformance(headLine, doc);
+	writeXmlVoltages(headLine, doc);
+	writeXmlCurrents(headLine, doc);
 
 	writeXmlComponentDimensions(headLine, doc);
 
@@ -486,16 +486,22 @@ void Result::writeXmlExpectedPerformance(Core::XmlNode & node, Core::XmlDocument
 	Core::XmlNode & minOutputVoltageNode = Core::RapidXmlUtils::addNode(performance, doc, "MinimumOutputVoltage", minOutputVoltageString.str());
 	Core::RapidXmlUtils::addAttr(minOutputVoltageNode, doc, "unit", "V");
 
+	if(hasMaxCommonModeInputVoltage())
+	{
+		std::ostringstream maxCommonModeInputVoltageString;
+		maxCommonModeInputVoltageString << getMaxCommonModeInputVoltage();
+		Core::XmlNode & maxCommonModeInputVoltageNode = Core::RapidXmlUtils::addNode(performance, doc, "maxCommonModeInputVoltage", maxCommonModeInputVoltageString.str());
+		Core::RapidXmlUtils::addAttr(maxCommonModeInputVoltageNode, doc, "unit", "V");
+	}
 
-	std::ostringstream maxCommonModeInputVoltageString;
-	maxCommonModeInputVoltageString << getMaxCommonModeInputVoltage();
-	Core::XmlNode & maxCommonModeInputVoltageNode = Core::RapidXmlUtils::addNode(performance, doc, "maxCommonModeInputVoltage", maxCommonModeInputVoltageString.str());
-	Core::RapidXmlUtils::addAttr(maxCommonModeInputVoltageNode, doc, "unit", "V");
+	if(hasMinCommonModeInputVoltage())
+	{
+		std::ostringstream minCommonModeInputVoltageString;
+		minCommonModeInputVoltageString << getMinCommonModeInputVoltage();
+		Core::XmlNode & minCommonModeInputVoltageNode = Core::RapidXmlUtils::addNode(performance, doc, "minCommonModeInputVoltage", minCommonModeInputVoltageString.str());
+		Core::RapidXmlUtils::addAttr(minCommonModeInputVoltageNode, doc, "unit", "V");
+	}
 
-	std::ostringstream minCommonModeInputVoltageString;
-	minCommonModeInputVoltageString << getMinCommonModeInputVoltage();
-	Core::XmlNode & minCommonModeInputVoltageNode = Core::RapidXmlUtils::addNode(performance, doc, "minCommonModeInputVoltage", minCommonModeInputVoltageString.str());
-	Core::RapidXmlUtils::addAttr(minCommonModeInputVoltageNode, doc, "unit", "V");
 }
 
 
@@ -568,12 +574,12 @@ void Result::writeExpectedPerformance(std::ostream& stream) const
 	 stream << "VoutMin: " << getMinOutputVoltage() <<  " V" <<std::endl;
 	}
 
-	if(vcmMax_ != NOT_INITIALIZED_)
+	if(hasMaxCommonModeInputVoltage())
 	{
 		stream << "VcmMax: " << getMaxCommonModeInputVoltage() << " V" << std::endl;
 	}
 
-	if(vcmMin_ != NOT_INITIALIZED_)
+	if(hasMinCommonModeInputVoltage())
 	{
 		stream << "VcmMin: " << getMinCommonModeInputVoltage() << " V" << std::endl;
 	}

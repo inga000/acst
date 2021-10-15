@@ -1,26 +1,26 @@
 ** Name: two_stage_single_output_op_amp_44_2
 
 .MACRO two_stage_single_output_op_amp_44_2 ibias in1 in2 out sourceNmos sourcePmos
-m1 inputVoltageBiasXXnXX2 inputVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=4e-6 W=9e-6
-m2 outVoltageBiasXXnXX1 outVoltageBiasXXnXX1 sourceNmos sourceNmos nmos4 L=5e-6 W=6e-6
-m3 ibias ibias sourcePmos sourcePmos pmos4 L=4e-6 W=30e-6
-m4 FirstStageYinnerSourceLoad2 FirstStageYinnerSourceLoad2 sourcePmos sourcePmos pmos4 L=9e-6 W=271e-6
-m5 out outVoltageBiasXXnXX1 SecondStageYinnerTransconductance SecondStageYinnerTransconductance nmos4 L=5e-6 W=205e-6
-m6 outFirstStage outVoltageBiasXXnXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 nmos4 L=5e-6 W=49e-6
-m7 FirstStageYout1 outVoltageBiasXXnXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 nmos4 L=5e-6 W=49e-6
-m8 FirstStageYsourceGCC1 inputVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=4e-6 W=137e-6
-m9 FirstStageYsourceGCC2 inputVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=4e-6 W=137e-6
-m10 SecondStageYinnerTransconductance outFirstStage sourceNmos sourceNmos nmos4 L=3e-6 W=282e-6
-m11 inputVoltageBiasXXnXX2 ibias sourcePmos sourcePmos pmos4 L=4e-6 W=13e-6
-m12 out ibias sourcePmos sourcePmos pmos4 L=4e-6 W=597e-6
-m13 outFirstStage FirstStageYout1 FirstStageYinnerSourceLoad2 FirstStageYinnerSourceLoad2 pmos4 L=9e-6 W=286e-6
-m14 outVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos4 L=4e-6 W=96e-6
-m15 FirstStageYout1 FirstStageYinnerSourceLoad2 sourcePmos sourcePmos pmos4 L=9e-6 W=271e-6
-m16 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=8e-6 W=25e-6
-m17 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=8e-6 W=25e-6
-m18 FirstStageYsourceTransconductance ibias sourcePmos sourcePmos pmos4 L=4e-6 W=162e-6
-Capacitor1 out sourceNmos 20e-12
-Capacitor2 outFirstStage out 4.5e-12
+mMainBias1 inputVoltageBiasXXnXX2 inputVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=4e-6 W=9e-6
+mMainBias2 outVoltageBiasXXnXX1 outVoltageBiasXXnXX1 sourceNmos sourceNmos nmos4 L=5e-6 W=6e-6
+mFoldedCascodeFirstStageLoad3 FirstStageYinnerSourceLoad2 FirstStageYinnerSourceLoad2 sourcePmos sourcePmos pmos4 L=9e-6 W=271e-6
+mMainBias4 ibias ibias sourcePmos sourcePmos pmos4 L=4e-6 W=30e-6
+mFoldedCascodeFirstStageLoad5 FirstStageYout1 outVoltageBiasXXnXX1 FirstStageYsourceGCC1 FirstStageYsourceGCC1 nmos4 L=5e-6 W=49e-6
+mFoldedCascodeFirstStageLoad6 FirstStageYsourceGCC1 inputVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=4e-6 W=137e-6
+mFoldedCascodeFirstStageLoad7 FirstStageYsourceGCC2 inputVoltageBiasXXnXX2 sourceNmos sourceNmos nmos4 L=4e-6 W=137e-6
+mSecondStage1Transconductor8 SecondStageYinnerTransconductance outFirstStage sourceNmos sourceNmos nmos4 L=3e-6 W=282e-6
+mSecondStage1Transconductor9 out outVoltageBiasXXnXX1 SecondStageYinnerTransconductance SecondStageYinnerTransconductance nmos4 L=5e-6 W=205e-6
+mFoldedCascodeFirstStageLoad10 outFirstStage outVoltageBiasXXnXX1 FirstStageYsourceGCC2 FirstStageYsourceGCC2 nmos4 L=5e-6 W=49e-6
+mFoldedCascodeFirstStageLoad11 FirstStageYout1 FirstStageYinnerSourceLoad2 sourcePmos sourcePmos pmos4 L=9e-6 W=271e-6
+mFoldedCascodeFirstStageTransconductor12 FirstStageYsourceGCC1 in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=8e-6 W=25e-6
+mFoldedCascodeFirstStageTransconductor13 FirstStageYsourceGCC2 in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance pmos4 L=8e-6 W=25e-6
+mFoldedCascodeFirstStageStageBias14 FirstStageYsourceTransconductance ibias sourcePmos sourcePmos pmos4 L=4e-6 W=162e-6
+mMainBias15 inputVoltageBiasXXnXX2 ibias sourcePmos sourcePmos pmos4 L=4e-6 W=13e-6
+mSecondStage1StageBias16 out ibias sourcePmos sourcePmos pmos4 L=4e-6 W=597e-6
+mFoldedCascodeFirstStageLoad17 outFirstStage FirstStageYout1 FirstStageYinnerSourceLoad2 FirstStageYinnerSourceLoad2 pmos4 L=9e-6 W=286e-6
+mMainBias18 outVoltageBiasXXnXX1 ibias sourcePmos sourcePmos pmos4 L=4e-6 W=96e-6
+mLoadCapacitor1 out sourceNmos 20e-12
+mCompensationCapacitor2 outFirstStage out 4.5e-12
 .EOM two_stage_single_output_op_amp_44_2
 
 ** Expected Performance Values: 

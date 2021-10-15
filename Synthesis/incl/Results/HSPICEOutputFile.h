@@ -95,8 +95,8 @@ namespace Synthesis
 		void writeExpectedPerformance(const AutomaticSizing::Result & sizingResult);
 		void writeCurrents(const AutomaticSizing::Result & sizingResult);
 		void writeVoltages(const AutomaticSizing::Result & sizingResult);
-		void writeTransistor(const Partitioning::Transistor & transistor, int tranIndex);
-		void writeTwoPort(const Partitioning::TwoPort & twoPort, int twoPortIndex);
+		void writeTransistor(const Partitioning::Result & partitioningResult, const Partitioning::Transistor & transistor, int tranIndex);
+		void writeTwoPort(const Partitioning::Result & partitioningResult, const Partitioning::TwoPort & twoPort, int twoPortIndex);
 		void writeDevices(const Core::Circuit & circuit, const Partitioning::Result * partitioningResult = nullptr);
 
 		Core::NetId findGateNetOfSecondTransconductanceDevice(const Partitioning::Result & partitioningResult,

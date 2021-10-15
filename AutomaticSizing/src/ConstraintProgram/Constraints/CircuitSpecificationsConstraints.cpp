@@ -4096,52 +4096,54 @@ namespace AutomaticSizing {
 		std::vector<Partitioning::Component*> comps = getPartitioningResult().getBelongingComponents(stage);
 		if(stage.isFirstStage())
 		{
-
-			assert(comps.size() == 2, "There is no first stage consisting of differential pair");
-			Gecode::FloatVar firstTranTransconductance = computeTransconductance(**comps.begin());
-			Gecode::FloatVar secondTranTransconductance = computeTransconductance(**std::next(comps.begin()));
-			Gecode::rel(getSpace(), firstTranTransconductance == secondTranTransconductance);
-
-			return firstTranTransconductance;
-		}
-		else if(stage.isComplementary())
-		{
-			assert(comps.size() == 4, "A complementary first stage should have 4 devices!");
-			Partitioning::Component * pmosComp1 = nullptr;
-			Partitioning::Component * pmosComp2 = nullptr;
-			Partitioning::Component * nmosComp1 = nullptr;
-			Partitioning::Component * nmosComp2 = nullptr;
-
-			for(auto & comp : comps)
+			if(stage.isComplementary())
 			{
-				if(comp->getArray().getTechType().isP() && pmosComp1 == nullptr)
+				assert(comps.size() == 4, "A complementary first stage should have 4 devices!");
+				Partitioning::Component * pmosComp1 = nullptr;
+				Partitioning::Component * pmosComp2 = nullptr;
+				Partitioning::Component * nmosComp1 = nullptr;
+				Partitioning::Component * nmosComp2 = nullptr;
+
+				for(auto & comp : comps)
 				{
-					pmosComp1 = comp;
+					if(comp->getArray().getTechType().isP() && pmosComp1 == nullptr)
+					{
+						pmosComp1 = comp;
+					}
+					else if(comp->getArray().getTechType().isP())
+					{
+						pmosComp2 = comp;
+					}
+					else if(comp->getArray().getTechType().isN() && nmosComp1 == nullptr)
+					{
+						nmosComp1 = comp;
+					}
+					else
+					{
+						nmosComp2 = comp;
+					}
 				}
-				else if(comp->getArray().getTechType().isP())
-				{
-					pmosComp2 = comp;
-				}
-				else if(comp->getArray().getTechType().isN() && nmosComp1 == nullptr)
-				{
-					nmosComp1 = comp;
-				}
-				else
-				{
-					nmosComp2 = comp;
-				}
+				assert(nmosComp1 != nullptr && nmosComp2 != nullptr && pmosComp1 != nullptr && pmosComp2 != nullptr, "There should be two devices for each tech type!" );
+
+				Gecode::FloatVar nmos1Transconductance = computeTransconductance(*nmosComp1);
+				Gecode::FloatVar nmos2Transconductance = computeTransconductance(*nmosComp2);
+				Gecode::rel(getSpace(), nmos1Transconductance == nmos2Transconductance);
+
+				Gecode::FloatVar pmos1Transconductance = computeTransconductance(*pmosComp1);
+				Gecode::FloatVar pmos2Transconductance = computeTransconductance(*pmosComp2);
+				Gecode::rel(getSpace(), pmos1Transconductance == pmos2Transconductance);
+
+				return expr(getSpace(), nmos1Transconductance + pmos1Transconductance);
 			}
-			assert(nmosComp1 != nullptr && nmosComp2 != nullptr && pmosComp1 != nullptr && pmosComp2 != nullptr, "There should be two devices for each tech type!" );
+			else
+			{
+				assert(comps.size() == 2, "There is no first stage consisting of differential pair");
+				Gecode::FloatVar firstTranTransconductance = computeTransconductance(**comps.begin());
+				Gecode::FloatVar secondTranTransconductance = computeTransconductance(**std::next(comps.begin()));
+				Gecode::rel(getSpace(), firstTranTransconductance == secondTranTransconductance);
 
-			Gecode::FloatVar nmos1Transconductance = computeTransconductance(*nmosComp1);
-			Gecode::FloatVar nmos2Transconductance = computeTransconductance(*nmosComp2);
-			Gecode::rel(getSpace(), nmos1Transconductance == nmos2Transconductance);
-
-			Gecode::FloatVar pmos1Transconductance = computeTransconductance(*pmosComp1);
-			Gecode::FloatVar pmos2Transconductance = computeTransconductance(*pmosComp2);
-			Gecode::rel(getSpace(), pmos1Transconductance == pmos2Transconductance);
-
-			return expr(getSpace(), nmos1Transconductance + pmos1Transconductance);
+				return firstTranTransconductance;
+			}
 
 		}
 		else
@@ -4159,7 +4161,6 @@ namespace AutomaticSizing {
 
 			assert(supplyComp != nullptr, "Every higher stage should have a to supply connected component");
 			return computeTransconductance(*supplyComp);
-
 		}
 
 	}
@@ -4315,7 +4316,7 @@ namespace AutomaticSizing {
 		Gecode::FloatVar CircuitSpecificationsConstraints::computeOutputResistance(Partitioning::TransconductancePart & stage)
 		{
 			Gecode::FloatVar rout(getSpace(), 0, 100000000000000000);
-			if(stage.isFirstStage() || stage.isComplementary() || stage.isFeedBack())
+			if(stage.isFirstStage() || stage.isFeedBack())
 			{
 
 				rout = computeOutputResistanceFirstStage();
@@ -4933,7 +4934,7 @@ namespace AutomaticSizing {
 				plusNet = & plusNetCap;
 			}
 
-			if((stage1.isFirstStage() || stage1.isComplementary()) && stage1.hasHelperStructure())
+			if((stage1.isFirstStage()) && stage1.hasHelperStructure())
 			{
 				Partitioning::Component & diffPair1Comp = **getPartitioningResult().getBelongingComponents(stage1).begin();
 				Partitioning::Component & diffPair2Comp = **std::next(getPartitioningResult().getBelongingComponents(stage1).begin());
@@ -4949,7 +4950,7 @@ namespace AutomaticSizing {
 						|| (outputNetDiffPair2.getIdentifier() == plusNet->getIdentifier() && (isOutputNetStage(*minusNet, stage2)));
 
 			}
-			else if((stage2.isFirstStage() || stage2.isComplementary()) && stage2.hasHelperStructure())
+			else if((stage2.isFirstStage()) && stage2.hasHelperStructure())
 			{
 				Partitioning::Component & diffPair1Comp = **getPartitioningResult().getBelongingComponents(stage2).begin();
 				Partitioning::Component & diffPair2Comp = **std::next(getPartitioningResult().getBelongingComponents(stage2).begin());
@@ -5012,7 +5013,7 @@ namespace AutomaticSizing {
 
 		std::vector<const StructRec::StructureNet*>  CircuitSpecificationsConstraints::findOutputNets(Partitioning::TransconductancePart & stage) const
 		{
-			assert(stage.isFirstStage() || stage.isPrimarySecondStage() || stage.isThirdStage() || stage.isComplementary() || stage.isFeedBack(), "Transconductance might only be a helper Structure");
+			assert(stage.isFirstStage() || stage.isPrimarySecondStage() || stage.isThirdStage() || stage.isFeedBack(), "Transconductance might only be a helper Structure");
 
 			std::vector<const StructRec::StructureNet *> outputNets;
 
@@ -5024,7 +5025,7 @@ namespace AutomaticSizing {
 						outputNets.push_back(&comp->getArray().findNet(StructRec::StructurePinType(comp->getArray().getStructureName(), "Drain")));
 				}
 			}
-			else if(stage.isFirstStage() || stage.isComplementary())
+			else if(stage.isFirstStage())
 			{
 				if(getPartitioningResult().hasSecondStage())
 				{

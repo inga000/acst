@@ -1,5 +1,5 @@
 <acst_results>
-	<date day="8" month="10" year="2021" hour="11" minute="29" second="13"/>
+	<date day="13" month="10" year="2021" hour="17" minute="56" second="15"/>
 	<circuit_partitioning_results>
 		<gmParts>
 			<gmPart type="feedBack">
@@ -66,7 +66,7 @@
 					</structure>
 				</structure>
 			</gmPart>
-			<gmPart type="firstStage">
+			<gmPart type="firstStage" firstStageType="foldedCascode">
 				<structure name="MosfetDifferentialPair[3]" techType="n" instance="/">
 					<pins>
 						<pin name="Input1" net="/inp"/>

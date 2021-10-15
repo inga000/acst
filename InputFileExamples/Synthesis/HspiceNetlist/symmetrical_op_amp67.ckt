@@ -1,28 +1,28 @@
 ** Name: symmetrical_op_amp67
 
 .MACRO symmetrical_op_amp67 ibias in1 in2 out sourceNmos sourcePmos
-m1 inOutputStageBiasComplementarySecondStage inOutputStageBiasComplementarySecondStage sourceNmos sourceNmos nmos4 L=1e-6 W=10e-6
-m2 ibias ibias sourceNmos sourceNmos nmos4 L=5e-6 W=13e-6
-m3 inOutputTransconductanceComplementarySecondStage inOutputTransconductanceComplementarySecondStage sourcePmos sourcePmos pmos4 L=1e-6 W=10e-6
-m4 inSourceTransconductanceComplementarySecondStage inSourceTransconductanceComplementarySecondStage sourcePmos sourcePmos pmos4 L=5e-6 W=159e-6
-m5 outFirstStage outFirstStage sourcePmos sourcePmos pmos4 L=5e-6 W=159e-6
-m6 outVoltageBiasXXpXX0 outVoltageBiasXXpXX0 sourcePmos sourcePmos pmos4 L=5e-6 W=7e-6
-m7 inOutputTransconductanceComplementarySecondStage ibias sourceNmos sourceNmos nmos4 L=5e-6 W=133e-6
-m8 inSourceTransconductanceComplementarySecondStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=52e-6
-m9 innerComplementarySecondStage inOutputStageBiasComplementarySecondStage StageBiasComplementarySecondStageYinner StageBiasComplementarySecondStageYinner nmos4 L=1e-6 W=74e-6
-m10 out inOutputStageBiasComplementarySecondStage SecondStageYinnerStageBias SecondStageYinnerStageBias nmos4 L=1e-6 W=73e-6
-m11 outFirstStage in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=52e-6
-m12 outVoltageBiasXXpXX0 ibias sourceNmos sourceNmos nmos4 L=5e-6 W=15e-6
-m13 FirstStageYinnerStageBias ibias sourceNmos sourceNmos nmos4 L=5e-6 W=534e-6
-m14 FirstStageYsourceTransconductance inOutputStageBiasComplementarySecondStage FirstStageYinnerStageBias FirstStageYinnerStageBias nmos4 L=1e-6 W=118e-6
-m15 SecondStageYinnerStageBias innerComplementarySecondStage sourceNmos sourceNmos nmos4 L=1e-6 W=39e-6
-m16 StageBiasComplementarySecondStageYinner innerComplementarySecondStage sourceNmos sourceNmos nmos4 L=1e-6 W=39e-6
-m17 inOutputStageBiasComplementarySecondStage outVoltageBiasXXpXX0 sourcePmos sourcePmos pmos4 L=5e-6 W=90e-6
-m18 innerComplementarySecondStage inOutputTransconductanceComplementarySecondStage TransconductanceComplementarySecondStageYinner TransconductanceComplementarySecondStageYinner pmos4 L=1e-6 W=475e-6
-m19 out inOutputTransconductanceComplementarySecondStage SecondStageYinnerTransconductance SecondStageYinnerTransconductance pmos4 L=1e-6 W=475e-6
-m20 SecondStageYinnerTransconductance outFirstStage sourcePmos sourcePmos pmos4 L=5e-6 W=148e-6
-m21 TransconductanceComplementarySecondStageYinner inSourceTransconductanceComplementarySecondStage sourcePmos sourcePmos pmos4 L=5e-6 W=148e-6
-Capacitor1 out sourceNmos 20e-12
+mMainBias1 ibias ibias sourceNmos sourceNmos nmos4 L=5e-6 W=13e-6
+mMainBias2 inOutputStageBiasComplementarySecondStage inOutputStageBiasComplementarySecondStage sourceNmos sourceNmos nmos4 L=1e-6 W=10e-6
+mSecondStage1StageBias3 inOutputTransconductanceComplementarySecondStage inOutputTransconductanceComplementarySecondStage sourcePmos sourcePmos pmos4 L=1e-6 W=10e-6
+mSymmetricalFirstStageLoad4 inSourceTransconductanceComplementarySecondStage inSourceTransconductanceComplementarySecondStage sourcePmos sourcePmos pmos4 L=5e-6 W=159e-6
+mSymmetricalFirstStageLoad5 outFirstStage outFirstStage sourcePmos sourcePmos pmos4 L=5e-6 W=159e-6
+mMainBias6 outVoltageBiasXXpXX0 outVoltageBiasXXpXX0 sourcePmos sourcePmos pmos4 L=5e-6 W=7e-6
+mSymmetricalFirstStageStageBias7 FirstStageYinnerStageBias ibias sourceNmos sourceNmos nmos4 L=5e-6 W=534e-6
+mSymmetricalFirstStageStageBias8 FirstStageYsourceTransconductance inOutputStageBiasComplementarySecondStage FirstStageYinnerStageBias FirstStageYinnerStageBias nmos4 L=1e-6 W=118e-6
+mSecondStage1StageBias9 SecondStageYinnerStageBias innerComplementarySecondStage sourceNmos sourceNmos nmos4 L=1e-6 W=39e-6
+mSecondStageWithVoltageBiasAsStageBiasStageBias10 StageBiasComplementarySecondStageYinner innerComplementarySecondStage sourceNmos sourceNmos nmos4 L=1e-6 W=39e-6
+mMainBias11 inOutputTransconductanceComplementarySecondStage ibias sourceNmos sourceNmos nmos4 L=5e-6 W=133e-6
+mSymmetricalFirstStageTransconductor12 inSourceTransconductanceComplementarySecondStage in2 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=52e-6
+mSecondStageWithVoltageBiasAsStageBiasStageBias13 innerComplementarySecondStage inOutputStageBiasComplementarySecondStage StageBiasComplementarySecondStageYinner StageBiasComplementarySecondStageYinner nmos4 L=1e-6 W=74e-6
+mSecondStage1StageBias14 out inOutputStageBiasComplementarySecondStage SecondStageYinnerStageBias SecondStageYinnerStageBias nmos4 L=1e-6 W=73e-6
+mSymmetricalFirstStageTransconductor15 outFirstStage in1 FirstStageYsourceTransconductance FirstStageYsourceTransconductance nmos4 L=8e-6 W=52e-6
+mMainBias16 outVoltageBiasXXpXX0 ibias sourceNmos sourceNmos nmos4 L=5e-6 W=15e-6
+mSecondStage1Transconductor17 SecondStageYinnerTransconductance outFirstStage sourcePmos sourcePmos pmos4 L=5e-6 W=148e-6
+mSecondStageWithVoltageBiasAsStageBiasTransconductor18 TransconductanceComplementarySecondStageYinner inSourceTransconductanceComplementarySecondStage sourcePmos sourcePmos pmos4 L=5e-6 W=148e-6
+mMainBias19 inOutputStageBiasComplementarySecondStage outVoltageBiasXXpXX0 sourcePmos sourcePmos pmos4 L=5e-6 W=90e-6
+mSecondStageWithVoltageBiasAsStageBiasTransconductor20 innerComplementarySecondStage inOutputTransconductanceComplementarySecondStage TransconductanceComplementarySecondStageYinner TransconductanceComplementarySecondStageYinner pmos4 L=1e-6 W=475e-6
+mSecondStage1Transconductor21 out inOutputTransconductanceComplementarySecondStage SecondStageYinnerTransconductance SecondStageYinnerTransconductance pmos4 L=1e-6 W=475e-6
+mLoadCapacitor1 out sourceNmos 20e-12
 .EOM symmetrical_op_amp67
 
 ** Expected Performance Values: 

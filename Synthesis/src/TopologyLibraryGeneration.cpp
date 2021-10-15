@@ -90,7 +90,7 @@ namespace Synthesis {
     	mkdir(fullyDifferentialOpAmpsDirectoryPath.c_str(), ACCESSPERMS);
     	fullyDifferentialOpAmpFilePath_ = fullyDifferentialOpAmpsDirectoryPath;
 
-    	std::string complementaryOpAmpsDirectoryPath(getLocalOptions().getHSPICENetlistDirectoryPath() + "/CommplementaryOpAmps");
+    	std::string complementaryOpAmpsDirectoryPath(getLocalOptions().getHSPICENetlistDirectoryPath() + "/ComplementaryOpAmps");
     	mkdir(complementaryOpAmpsDirectoryPath.c_str(), ACCESSPERMS);
     	complementaryOpAmpFilePath_ = complementaryOpAmpsDirectoryPath;
 	}

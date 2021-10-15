@@ -1,8 +1,8 @@
 <acst_results>
-	<date day="8" month="10" year="2021" hour="12" minute="14" second="24"/>
+	<date day="13" month="10" year="2021" hour="17" minute="56" second="23"/>
 	<circuit_partitioning_results>
 		<gmParts>
-			<gmPart type="firstStage">
+			<gmPart type="firstStage" firstStageType="symmetrical">
 				<structure name="MosfetDifferentialPair[1]" techType="n" instance="/">
 					<pins>
 						<pin name="Input1" net="/inp"/>

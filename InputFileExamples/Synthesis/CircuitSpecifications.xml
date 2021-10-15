@@ -1,4 +1,6 @@
 <Specifications>
+	<complementary>no</complementary>
+	<fullyDifferential>no</fullyDifferential>
 	<BiasCurrent Ibias = "10"></BiasCurrent><!--- [muA] -->
 	<LoadCapacity Cl = "20"></LoadCapacity><!--- [pF] -->
 	<SupplyVoltage Vdd="5">	</SupplyVoltage><!--- [V] -->

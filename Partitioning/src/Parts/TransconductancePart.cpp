@@ -56,10 +56,17 @@ namespace Partitioning {
    const std::string TransconductancePart::SECONDARYSECONDSTAGE_STRING_ = "secondarySecondStage";
    const std::string TransconductancePart::THIRDSTAGE_STRING_ = "thirdStage";
    const std::string TransconductancePart::FEEDBACK_STRING_ = "feedBack";
+
+
+   const std::string TransconductancePart::SIMPLE_STRING_= "simple";
    const std::string TransconductancePart::COMPLEMENTARY_STRING_ = "complementary";
+   const std::string TransconductancePart::FOLDEDCASCODE_STRING_ = "foldedCascode";
+   const std::string TransconductancePart::TELESCOPIC_STRING_ = "telescopic";
+   const std::string TransconductancePart::SYMMETRICAL_STRING_ = "symmetrical";
 
    TransconductancePart::TransconductancePart(int & num) :
            typeEnum_(TYPE_UNINITIALIZED),
+		   firstStageTypeEnum_(FIRSTSTAGETYPE_UNINITIALIZED),
 		   helperStructure_(NULL)
    {
 		const PartName & name = PartName("TransconductancePart");
@@ -76,24 +83,41 @@ namespace Partitioning {
 
    void TransconductancePart::setType(const std::string string)
    {
-      typeEnum_ = mapStringToEnum(string);
+      typeEnum_ = mapStringToTypeEnum(string);
+   }
+
+   void TransconductancePart::setFirstStageType(const std::string string)
+   {
+      firstStageTypeEnum_ = mapStringToFirstStageTypeEnum(string);
    }
 
    bool TransconductancePart::isValidString(const std::string & str)
    {
-       return getStringToEnumMap().find(str) != getStringToEnumMap().end();
+       return getStringToTypeEnumMap().find(str) != getStringToTypeEnumMap().end() || getStringToFirstStageTypeEnumMap().find(str) != getStringToFirstStageTypeEnumMap().end();
    }
 
    std::string TransconductancePart::getType() const
    {
        assert(hasType());
-       return mapEnumToString(typeEnum_);
+       return mapTypeEnumToString(typeEnum_);
    }
 
-   TransconductancePart::TypeEnum TransconductancePart::mapStringToEnum(const std::string & str)
+   std::string TransconductancePart::getFirstStageType() const
+   {
+       assert(hasFirstStageType());
+       return mapFirstStageTypeEnumToString(firstStageTypeEnum_);
+   }
+
+   TransconductancePart::TypeEnum TransconductancePart::mapStringToTypeEnum(const std::string & str)
    {
        assert(isValidString(str));
-       return getStringToEnumMap().at(str);
+       return getStringToTypeEnumMap().at(str);
+   }
+
+   TransconductancePart::FirstStageTypeEnum TransconductancePart::mapStringToFirstStageTypeEnum(const std::string & str)
+   {
+       assert(isValidString(str));
+       return getStringToFirstStageTypeEnumMap().at(str);
    }
 
    bool TransconductancePart::isInitialized() const
@@ -173,10 +197,42 @@ namespace Partitioning {
        return typeEnum_ == TYPE_FEEDBACK;
    }
 
+   bool TransconductancePart::isSimple() const
+   {
+       assert(isInitialized());
+       assert(isFirstStage() && hasFirstStageType());
+       return firstStageTypeEnum_ == TYPE_SIMPLE;
+   }
+
+
+
+
    bool TransconductancePart::isComplementary() const
    {
        assert(isInitialized());
-       return typeEnum_ == TYPE_COMPLEMENTARY;
+       assert(hasType());
+       return typeEnum_ == TYPE_FIRSTSTAGE && firstStageTypeEnum_ == TYPE_COMPLEMENTARY;
+   }
+
+   bool TransconductancePart::isFoldedCascode() const
+   {
+       assert(isInitialized());
+       assert(isFirstStage() && hasFirstStageType());
+       return firstStageTypeEnum_ == TYPE_FOLDEDCASCODE;
+   }
+
+   bool TransconductancePart::isTelescopic() const
+   {
+       assert(isInitialized());
+       assert(isFirstStage() && hasFirstStageType());
+       return firstStageTypeEnum_ == TYPE_TELESCOPIC;
+   }
+
+   bool TransconductancePart::isSymmetrical() const
+   {
+       assert(isInitialized());
+       assert(isFirstStage() && hasFirstStageType());
+       return firstStageTypeEnum_ == TYPE_SYMMETRICAL;
    }
 
    void TransconductancePart::setHelperStructure(
@@ -218,14 +274,19 @@ namespace Partitioning {
 	   return helperStructure_ != NULL;
    }
 
-   std::string TransconductancePart::mapEnumToString(const TypeEnum & tt)
+   std::string TransconductancePart::mapTypeEnumToString(const TypeEnum & tt)
    {
-       return getEnumToStringMap().at(tt);
+       return getTypeEnumToStringMap().at(tt);
    }
 
-   const TransconductancePart::StringToEnumMap & TransconductancePart::getStringToEnumMap()
+   std::string TransconductancePart::mapFirstStageTypeEnumToString(const FirstStageTypeEnum & tt)
    {
-       static StringToEnumMap theMap;
+       return getFirstStageTypeEnumToStringMap().at(tt);
+   }
+
+   const TransconductancePart::StringToTypeEnumMap & TransconductancePart::getStringToTypeEnumMap()
+   {
+       static StringToTypeEnumMap theMap;
 
        if(theMap.empty()) {
            theMap[FIRSTSTAGE_STRING_] = TYPE_FIRSTSTAGE;
@@ -233,14 +294,27 @@ namespace Partitioning {
            theMap[SECONDARYSECONDSTAGE_STRING_] = TYPE_SECONDARYSECONDSTAGE;
            theMap[THIRDSTAGE_STRING_] = TYPE_THIRDSTAGE;
            theMap[FEEDBACK_STRING_] = TYPE_FEEDBACK;
-           theMap[COMPLEMENTARY_STRING_] = TYPE_COMPLEMENTARY;
        }
        return theMap;
    }
 
-   const TransconductancePart::EnumToStringMap & TransconductancePart::getEnumToStringMap()
+   const TransconductancePart::StringToFirstStageTypeEnumMap & TransconductancePart::getStringToFirstStageTypeEnumMap()
    {
-       static EnumToStringMap theMap;
+       static StringToFirstStageTypeEnumMap theMap;
+
+       if(theMap.empty()) {
+           theMap[SIMPLE_STRING_] = TYPE_SIMPLE;
+           theMap[COMPLEMENTARY_STRING_] = TYPE_COMPLEMENTARY;
+           theMap[FOLDEDCASCODE_STRING_] = TYPE_FOLDEDCASCODE;
+           theMap[TELESCOPIC_STRING_] = TYPE_TELESCOPIC;
+           theMap[SYMMETRICAL_STRING_] = TYPE_SYMMETRICAL;
+       }
+       return theMap;
+   }
+
+   const TransconductancePart::TypeEnumToStringMap & TransconductancePart::getTypeEnumToStringMap()
+   {
+       static TypeEnumToStringMap theMap;
 
        if(theMap.empty()) {
            theMap[TYPE_FIRSTSTAGE] = FIRSTSTAGE_STRING_;
@@ -248,7 +322,21 @@ namespace Partitioning {
            theMap[TYPE_SECONDARYSECONDSTAGE] = SECONDARYSECONDSTAGE_STRING_;
            theMap[TYPE_THIRDSTAGE] = THIRDSTAGE_STRING_;
            theMap[TYPE_FEEDBACK] = FEEDBACK_STRING_;
+       }
+       return theMap;
+   }
+
+
+   const TransconductancePart::FirstStageTypeEnumToStringMap & TransconductancePart::getFirstStageTypeEnumToStringMap()
+   {
+       static FirstStageTypeEnumToStringMap theMap;
+
+       if(theMap.empty()) {
+           theMap[TYPE_SIMPLE] = SIMPLE_STRING_;
            theMap[TYPE_COMPLEMENTARY] = COMPLEMENTARY_STRING_;
+           theMap[TYPE_FOLDEDCASCODE] = FOLDEDCASCODE_STRING_;
+           theMap[TYPE_TELESCOPIC] = TELESCOPIC_STRING_;
+           theMap[TYPE_SYMMETRICAL] = SYMMETRICAL_STRING_;
        }
        return theMap;
    }
@@ -284,9 +372,19 @@ namespace Partitioning {
 	   return typeEnum_ != TYPE_UNINITIALIZED;
    }
 
+   bool TransconductancePart::hasFirstStageType() const
+   {
+	   return firstStageTypeEnum_ != FIRSTSTAGETYPE_UNINITIALIZED;
+   }
+
    void TransconductancePart::print(std::ostream &stream) const
    {
 	   stream << " Type: " << getType() << std::endl;
+	   if(hasFirstStageType())
+	   {
+		   stream << "    FirstStageType: " << getFirstStageType() << std::endl;
+	   }
+
 	   if(hasHelperStructure())
 	   {
 		   stream << " HelperStructure: " << getHelperStructure().getIdentifier().toStr() << std::endl;
@@ -317,6 +415,12 @@ namespace Partitioning {
    {
 	   Core::XmlNode& gmPart = Core::RapidXmlUtils::addNode(xmlNode, doc, "gmPart");
 	   Core::RapidXmlUtils::addAttr(gmPart, doc, "type", getType());
+
+	   if(isFirstStage())
+	   {
+		   Core::RapidXmlUtils::addAttr(gmPart, doc, "firstStageType", getFirstStageType());
+	   }
+
 	   Part::writeXml(gmPart, doc);
    }
 

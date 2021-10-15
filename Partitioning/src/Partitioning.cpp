@@ -81,6 +81,16 @@ namespace Partitioning {
 		partitioningSecondStage(circuits);
 		partitioningThirdStage(circuits);
 		recognizeSecondSecondStage(circuits);
+
+		if(result->hasSecondarySecondStage())
+		{
+			result->getFirstStage().setFirstStageType("symmetrical");
+		}
+		else if(!result->getFirstStage().hasFirstStageType())
+		{
+			result->getFirstStage().setFirstStageType("simple");
+		}
+
 		partitioningRemainingCurrentMirrors(circuits);
 		partitioningVoltageReference1(circuits);
 		classifyDiodeArrays(circuits);
@@ -123,7 +133,8 @@ namespace Partitioning {
 						const StructRec::Structure & otherDP = findOtherDifferentialPair(dPsWithGatePin1OnGatePin1Net, dPsWithGatePin2OnGatePin1Net, dP);
 						if(dP.getTechType() != otherDP.getTechType())
 						{
-							transPart->setType("complementary");
+							transPart->setType("firstStage");
+							transPart->setFirstStageType("complementary");
 						}
 						else
 						{
@@ -147,6 +158,15 @@ namespace Partitioning {
 						const StructRec::Structure * parent = & dP.getParent();
 						const StructRec::Pair * parentPair =static_cast<const StructRec::Pair*>(parent);
 						transPart->setHelperStructure(parentPair->getChild2());
+						if(parentPair->getChild2().getTechType() == dP.getTechType())
+						{
+							transPart->setFirstStageType("telescopic");
+						}
+						else
+						{
+								transPart->setFirstStageType("foldedCascode");
+						}
+
 					}
 				}
 
@@ -497,6 +517,7 @@ namespace Partitioning {
 			}
 		}
 	}
+
 	void Partitioning::recognizeSecondSecondStage(const StructRec::StructureCircuits & circuits)
 	{
 		if(getResult().hasSecondStage() && getResult().getFirstStage().getLoadPart().size() ==1

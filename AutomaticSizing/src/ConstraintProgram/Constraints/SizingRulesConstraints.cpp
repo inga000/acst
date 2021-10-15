@@ -1417,7 +1417,7 @@ namespace AutomaticSizing {
 
 	std::vector<const StructRec::StructureNet*> SizingRulesConstraints::findOutputNets(Partitioning::TransconductancePart & stage) const
 	{
-		assert(stage.isFirstStage() || stage.isPrimarySecondStage() || stage.isThirdStage() || stage.isComplementary(), "Transconductance might only be a helper Structure");
+		assert(stage.isFirstStage() || stage.isPrimarySecondStage() || stage.isThirdStage(), "Transconductance might only be a helper Structure");
 
 		std::vector<const StructRec::StructureNet *> outputNets;
 
@@ -1434,7 +1434,7 @@ namespace AutomaticSizing {
 			}
 			assert(!outputNets.empty(), "There should be at least one transistor in the second stage NOT connected to supply");
 		}
-		else if(stage.isFirstStage() || stage.isComplementary())
+		else if(stage.isFirstStage())
 		{
 			if(getPartitioningResult().hasSecondStage() && !getPartitioningResult().hasSecondarySecondStage())
 			{

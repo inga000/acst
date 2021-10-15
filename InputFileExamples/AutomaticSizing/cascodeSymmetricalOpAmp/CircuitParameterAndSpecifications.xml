@@ -41,6 +41,6 @@
 	<GateOverDriveVoltage Vover="0.13"></GateOverDriveVoltage><!--- [V] --->
 	<maximumPowerConsumption P ="10"></maximumPowerConsumption><!--- [mW] -->
 	<maximumArea Area = "15000"></maximumArea><!--- [mum^2]--->
-	<phaseMargin PM = "60"></phaseMargin><!-- [ns] -->
+	<phaseMargin PM = "60"></phaseMargin><!-- [°] -->
 </Specifications>
 	

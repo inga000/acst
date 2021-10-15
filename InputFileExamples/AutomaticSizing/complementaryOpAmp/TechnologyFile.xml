@@ -1,0 +1,38 @@
+<general>
+	<thermalVoltage Vt = "0.026"></thermalVoltage><!--- [V] -->
+</general>
+<pmos>
+	<thresholdVoltage vth="-0.564"></thresholdVoltage><!--- [V] -->
+	<mobilityOxideCapacity muCox="0.00003574"></mobilityOxideCapacity><!--- [A/(V^2)] -->
+	<earlyVoltage earlyVoltage="2.86"></earlyVoltage><!--- [V/mum] -->
+	<overlapCapacity Cgdov = "0.000000000666" ></overlapCapacity><!--- [F/m] -->
+	<gateOxideCapacity Cox = "0.006058"></gateOxideCapacity><!--- [F/m2] --->
+	<zeroBiasBulkJunctionCapacitance Cj = "0.001894"></zeroBiasBulkJunctionCapacitance><!--- [F/m^2] -->
+	<zeroBiasSidewallBulkJunctionCapacitance Cjsw = "0.0000000003626"></zeroBiasSidewallBulkJunctionCapacitance><!--- [F/m] -->
+	<bulkJunctionContactPotential pb = "0.99"></bulkJunctionContactPotential><!--- [V] -->
+	<lateralDiffusionLength Ldiff= "0.0000009968"></lateralDiffusionLength><!-- [mum] -->
+	<slopeFactor n="1.31"></slopeFactor>
+	<channelLengthCoefficientStrongInversion lamda="0.029"></channelLengthCoefficientStrongInversion>
+	<channelLengthCoefficientWeakInversion lamda="0.074"></channelLengthCoefficientWeakInversion>
+	<minArea Amin="10"></minArea><!--- [mum^2] -->
+	<minLength Lmin="1"></minLength><!--- [mum] --><!--- Is used as integer in the program -->
+	<minWidth Wmin="1"></minWidth><!--- [mum] --><!--- Is used as integer in the program -->
+</pmos>
+<nmos>
+	<thresholdVoltage vth="0.405"></thresholdVoltage><!--- [V] -->
+	<mobilityOxideCapacity muCox="0.0001693"></mobilityOxideCapacity><!--- [A/(V^2)] -->
+	<earlyVoltage earlyVoltage="4.4"></earlyVoltage><!--- [V/mum] -->
+	<overlapCapacity Cgdov = "0.000000000620" ></overlapCapacity><!--- [F/m] -->
+	<gateOxideCapacity Cox = "0.006058"></gateOxideCapacity><!--- [F/m2] --->
+	<zeroBiasBulkJunctionCapacitance Cj = "0.001812"></zeroBiasBulkJunctionCapacitance><!--- [F/m^2] -->
+	<zeroBiasSidewallBulkJunctionCapacitance Cjsw = "0.0000000005341"></zeroBiasSidewallBulkJunctionCapacitance><!--- [F/m] -->q
+	<bulkJunctionContactPotential pb = "0.5"></bulkJunctionContactPotential><!--- [V] -->
+	<lateralDiffusionLength Ldiff= "0.00003162"></lateralDiffusionLength><!-- [mum] -->
+	<slopeFactor n="1.75"></slopeFactor>
+	<channelLengthCoefficientStrongInversion lamda="0.024"></channelLengthCoefficientStrongInversion>
+	<channelLengthCoefficientWeakInversion lamda="0.07"></channelLengthCoefficientWeakInversion>
+	<minArea Amin="10"></minArea><!--- [mum] -->
+	<minLength Lmin="1"></minLength><!--- [mum] --><!--- Is used as integer in the program -->
+	<minWidth Wmin="1"></minWidth><!--- [mum] --><!--- Is used as integer in the program -->
+</nmos>
+

@@ -1,21 +1,21 @@
 ** Name: OpAmp5
 
 .MACRO OpAmp5 gnd vdd in1 in2 outSecondStage vbBias vbTrans
-mBOBias vbBias vbBias gnd! gnd! nmos4 L=6e-6 W=11e-6
-mBV22 vbBiasSecondStage vbBiasSecondStage gnd! gnd! nmos4 L=4e-6 W=296e-6
-mBV21 vbBiasSecondStage2 vbBiasSecondStage2 vbBiasSecondStage vbBiasSecondStage nmos4 L=4e-6 W=289e-6
-mL11 outFirstStage1 outFirstStage1 vdd! vdd! pmos4 L=1e-6 W=75e-6
-mL12 outFirstStage2 outFirstStage2 vdd! vdd! pmos4 L=1e-6 W=75e-6
-mB11 dpSource vbBias gnd! gnd! nmos4 L=6e-6 W=252e-6
-mT11 outFirstStage1 in1 dpSource dpSource nmos4 L=8e-6 W=339e-6
-mT12 outFirstStage2 in2 dpSource dpSource nmos4 L=8e-6 W=339e-6
-mB22 innerBias vbBiasSecondStage gnd! gnd! nmos4 L=4e-6 W=296e-6
-mB21 outSecondStage vbBiasSecondStage2 innerBias innerBias nmos4 L=4e-6 W=145e-6
-mT21 innerTrans outFirstStage1 vdd! vdd! pmos4 L=1e-6 W=103e-6
-mT22 outSecondStage vbTrans innerTrans innerTrans pmos4 L=1e-6 W=262e-6
-mTC22 vbBiasSecondStage2 vbTrans innerTC2 innerTC2 pmos4 L=1e-6 W=262e-6
-mTC21 innerTC2 outFirstStage2 vdd! vdd! pmos4 L=1e-6 W=103e-6
-cl outSecondStage gnd! 20e-12
+mMainBias1 vbBias vbBias gnd! gnd! nmos4 L=6e-6 W=11e-6
+mSecondStageWithVoltageBiasAsStageBiasStageBias2 vbBiasSecondStage vbBiasSecondStage gnd! gnd! nmos4 L=4e-6 W=296e-6
+mSecondStageWithVoltageBiasAsStageBiasStageBias3 vbBiasSecondStage2 vbBiasSecondStage2 vbBiasSecondStage vbBiasSecondStage nmos4 L=4e-6 W=289e-6
+mSymmetricalFirstStageLoad4 outFirstStage1 outFirstStage1 vdd! vdd! pmos4 L=1e-6 W=75e-6
+mSymmetricalFirstStageLoad5 outFirstStage2 outFirstStage2 vdd! vdd! pmos4 L=1e-6 W=75e-6
+mSymmetricalFirstStageStageBias6 dpSource vbBias gnd! gnd! nmos4 L=6e-6 W=252e-6
+mSecondStage1StageBias7 innerBias vbBiasSecondStage gnd! gnd! nmos4 L=4e-6 W=296e-6
+mSymmetricalFirstStageTransconductor8 outFirstStage1 in1 dpSource dpSource nmos4 L=8e-6 W=339e-6
+mSymmetricalFirstStageTransconductor9 outFirstStage2 in2 dpSource dpSource nmos4 L=8e-6 W=339e-6
+mSecondStage1StageBias10 outSecondStage vbBiasSecondStage2 innerBias innerBias nmos4 L=4e-6 W=145e-6
+mSecondStageWithVoltageBiasAsStageBiasTransconductor11 innerTC2 outFirstStage2 vdd! vdd! pmos4 L=1e-6 W=103e-6
+mSecondStage1Transconductor12 innerTrans outFirstStage1 vdd! vdd! pmos4 L=1e-6 W=103e-6
+mSecondStage1Transconductor13 outSecondStage vbTrans innerTrans innerTrans pmos4 L=1e-6 W=262e-6
+mSecondStageWithVoltageBiasAsStageBiasTransconductor14 vbBiasSecondStage2 vbTrans innerTC2 innerTC2 pmos4 L=1e-6 W=262e-6
+mLoadCapacitor1 outSecondStage gnd! 20e-12
 .EOM OpAmp5
 
 ** Expected Performance Values: 

@@ -941,7 +941,7 @@ bool Result::hasFirstStage() const
 			it != transconductanceParts_.end(); it++)
 	{
 		TransconductancePart * transPart = it->second;
-		if(transPart->isFirstStage() || transPart->isComplementary())
+		if(transPart->isFirstStage() )
 		{
 			hasIt = true;
 			break;
@@ -1096,7 +1096,7 @@ TransconductancePart & Result::getFirstStage() const
 					it != transconductanceParts_.end(); it++)
 	{
 		TransconductancePart * transPart = it->second;
-		if(transPart->isFirstStage() || transPart->isComplementary())
+		if(transPart->isFirstStage())
 		{
 			firstStage =  transPart;
 			break;
@@ -1115,7 +1115,7 @@ TransconductancePart & Result::getFeedbackStage() const
 					it != transconductanceParts_.end(); it++)
 	{
 		TransconductancePart * transPart = it->second;
-		if(transPart->isFeedBack() || transPart->isComplementary())
+		if(transPart->isFeedBack())
 		{
 			feedbackStage =  transPart;
 			break;

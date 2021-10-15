@@ -1,72 +1,80 @@
 ** Name: OpAmp9
 
-.MACRO OpAmp9 gnd vdd in1 in2 outSecondStage vbBias vbBiasSecondStage vbLoad1 vbLoad2
-mL22 outFirstStage2 outFirstStage2 innerLoad2 innerLoad2 nmos4 L=7e-6 W=90e-6
-mL24 innerLoad2 innerLoad2 gnd! gnd! nmos4 L=7e-6 W=130e-6
-mBOBias vbBias vbBias gnd! gnd! nmos4 L=2e-6 W=5e-6
-mT21 outSecondStage outFirstStage1 gnd! gnd! nmos4 L=1e-6 W=68e-6
-mL23 innerLoad1 innerLoad2 gnd! gnd! nmos4 L=7e-6 W=130e-6
-mL21 outFirstStage1 outFirstStage2 innerLoad1 innerLoad1 nmos4 L=7e-6 W=90e-6
-mB11 dpSource vbBias gnd! gnd! nmos4 L=2e-6 W=35e-6
-mT12 dpDrain2 in2 dpSource dpSource nmos4 L=4e-6 W=34e-6
-mT11 dpDrain1 in1 dpSource dpSource nmos4 L=4e-6 W=34e-6
-mB21 outSecondStage vbBiasSecondStage vdd! vdd! pmos4 L=3e-6 W=582e-6
-mL13 outFirstStage1 vbLoad2 dpDrain1 dpDrain1 pmos4 L=1e-6 W=56e-6
-mL14 outFirstStage2 vbLoad2 dpDrain2 dpDrain2 pmos4 L=1e-6 W=56e-6
-mL12 dpDrain2 vbLoad1 vdd! vdd! pmos4 L=3e-6 W=33e-6
-mL11 dpDrain1 vbLoad1 vdd! vdd! pmos4 L=3e-6 W=33e-6
-cl outSecondStage gnd! 20e-12
-cc outFirstStage1 outSecondStage 4.5e-12
+.MACRO OpAmp9 gnd vdd in1 in2 outSecondStage vbBias vbBiasSecondStage2 vbBiasSecondStage vbLoad1 vbLoad2 vbTrans
+mFoldedCascodeFirstStageLoad1 innerLoad2 innerLoad2 vdd! vdd! pmos4 L=4e-6 W=57e-6
+mFoldedCascodeFirstStageLoad2 outFirstStage2 outFirstStage2 innerLoad2 innerLoad2 pmos4 L=4e-6 W=182e-6
+mMainBias3 vbBias vbBias vdd! vdd! pmos4 L=7e-6 W=114e-6
+mFoldedCascodeFirstStageLoad4 dpDrain1 vbLoad1 gnd! gnd! nmos4 L=2e-6 W=9e-6
+mFoldedCascodeFirstStageLoad5 dpDrain2 vbLoad1 gnd! gnd! nmos4 L=2e-6 W=9e-6
+mSecondStage1StageBias6 innerBias vbBiasSecondStage gnd! gnd! nmos4 L=1e-6 W=391e-6
+mFoldedCascodeFirstStageLoad7 outFirstStage1 vbLoad2 dpDrain1 dpDrain1 nmos4 L=2e-6 W=6e-6
+mFoldedCascodeFirstStageLoad8 outFirstStage2 vbLoad2 dpDrain2 dpDrain2 nmos4 L=2e-6 W=6e-6
+mSecondStage1StageBias9 outSecondStage vbBiasSecondStage2 innerBias innerBias nmos4 L=2e-6 W=578e-6
+mFoldedCascodeFirstStageTransconductor10 dpDrain1 in1 dpSource dpSource pmos4 L=8e-6 W=215e-6
+mFoldedCascodeFirstStageTransconductor11 dpDrain2 in2 dpSource dpSource pmos4 L=8e-6 W=215e-6
+mFoldedCascodeFirstStageStageBias12 dpSource vbBias vdd! vdd! pmos4 L=7e-6 W=243e-6
+mFoldedCascodeFirstStageLoad13 innerLoad1 innerLoad2 vdd! vdd! pmos4 L=4e-6 W=57e-6
+mSecondStage1Transconductor14 innerTrans outFirstStage1 vdd! vdd! pmos4 L=2e-6 W=564e-6
+mFoldedCascodeFirstStageLoad15 outFirstStage1 outFirstStage2 innerLoad1 innerLoad1 pmos4 L=4e-6 W=182e-6
+mSecondStage1Transconductor16 outSecondStage vbTrans innerTrans innerTrans pmos4 L=1e-6 W=599e-6
+mCompensationCapacitor1 outFirstStage1 outSecondStage 5.5e-12
+mLoadCapacitor2 outSecondStage gnd! 20e-12
 .EOM OpAmp9
 
 ** Expected Performance Values: 
-** Gain: 119 dB
-** Power consumption: 10.6311 mW
-** Area: 5556 (mu_m)^2
-** Transit frequency: 11.0291 MHz
-** Transit frequency with error factor: 11.0285 MHz
-** Slew rate: 10.6265 V/mu_s
-** Phase margin: 66.4632°
-** CMRR: 138 dB
-** VoutMax: 4.25 V
-** VoutMin: 0.580001 V
-** VcmMax: 4.75 V
-** VcmMin: 0.840001 V
+** Gain: 166 dB
+** Power consumption: 11.0811 mW
+** Area: 11185 (mu_m)^2
+** Transit frequency: 4.13201 MHz
+** Transit frequency with error factor: 4.13232 MHz
+** Slew rate: 3.90062 V/mu_s
+** Phase margin: 80.2142°
+** CMRR: 143 dB
+** VoutMax: 3.90001 V
+** VoutMin: 0.550001 V
+** VcmMax: 4.10001 V
+** VcmMin: -0.269999 V
 
 
 ** Expected Currents: 
-** mB11: 6.90661e+07 muA
-** mB21: -1.95041e+09 muA
-** mBOBias: 9.99901e+06 muA
-** mL11: -8.28779e+07 muA
-** mL12: -8.28799e+07 muA
-** mL13: -4.83439e+07 muA
-** mL14: -4.83459e+07 muA
-** mL21: 4.83431e+07 muA
-** mL22: 4.83451e+07 muA
-** mL23: 4.83441e+07 muA
-** mL24: 4.83441e+07 muA
-** mT11: 3.45331e+07 muA
-** mT12: 3.45331e+07 muA
-** mT21: 1.95042e+09 muA
+** mB11: -2.16779e+07 muA
+** mB21: 2.1411e+09 muA
+** mB22: 2.1411e+09 muA
+** mBOBias: -9.99899e+06 muA
+** mL11: 3.25171e+07 muA
+** mL12: 3.25191e+07 muA
+** mL13: 2.16791e+07 muA
+** mL14: 2.16811e+07 muA
+** mL21: -2.16799e+07 muA
+** mL22: -2.16819e+07 muA
+** mL23: -2.16809e+07 muA
+** mL24: -2.16809e+07 muA
+** mT11: -1.08389e+07 muA
+** mT12: -1.08389e+07 muA
+** mT21: -2.14109e+09 muA
+** mT22: -2.14109e+09 muA
 
 
 ** Expected Voltages: 
-** dpDrain1: 2.09501  V
-** dpDrain2: 2.09501  V
-** dpSource: 1.875  V
+** dpDrain1: 0.291001  V
+** dpDrain2: 0.291001  V
+** dpSource: 3.21401  V
 ** gnd!: 0  V
 ** in1: 2.5  V
 ** in2: 2.5  V
-** innerLoad1: 0.579001  V
-** innerLoad2: 0.580001  V
-** outFirstStage1: 0.990001  V
-** outFirstStage2: 1.19501  V
+** innerBias: 0.254001  V
+** innerLoad1: 4.14401  V
+** innerLoad2: 4.14401  V
+** innerTrans: 4.34501  V
+** outFirstStage1: 3.78101  V
+** outFirstStage2: 3.41701  V
 ** outSecondStage: 2.5  V
-** vbBias: 0.622001  V
-** vbBiasSecondStage: 3.68601  V
-** vbLoad1: 3.78401  V
-** vbLoad2: 1.31101  V
+** vbBias: 4.25  V
+** vbBiasSecondStage: 0.659001  V
+** vbBiasSecondStage2: 0.954001  V
+** vbLoad1: 0.696001  V
+** vbLoad2: 0.987001  V
+** vbTrans: 3.33601  V
 ** vdd!: 5  V
 
 

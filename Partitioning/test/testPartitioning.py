@@ -163,6 +163,7 @@ def readGmParts(resultsNode):
     	gmPartNodeList = getNodes(gmPartsNodeList[0], "gmPart")
     	for gmPartNode in gmPartNodeList:
             typeAttribute = gmPartNode.getAttribute("type")
+            firstStageTypeAttribute = gmPartNode.getAttribute("firstStageType")
         
     	    structures = []
             structureNodeList = getNodes(gmPartNode, "structure")
@@ -170,7 +171,7 @@ def readGmParts(resultsNode):
                 structure = readStructure(structureNode)
                 structures.append(structure)
 
-            gmPart = {"type" : typeAttribute, "structure" : structures}
+            gmPart = {"type" : typeAttribute, "firstStageType" : firstStageTypeAttribute, "structure" : structures}
             gmParts.append(gmPart)
 
         return gmParts 
@@ -485,15 +486,17 @@ def compareGmParts(resA, resB):
     equalGmParts = True
     for partA in gmPartsA:
         typeA = partA["type"]
+        firstStageTypeA = partA["firstStageType"]
         strucA = partA["structure"]
         
         hasEqualPart = False
         index = 1
         for partB in gmPartsB:
             typeB = partB["type"]
+            firstStageTypeB = partB["firstStageType"]
             strucB = partB["structure"]
             
-            if (typeA == typeB):
+            if (typeA == typeB) and (firstStageTypeA == firstStageTypeB):
                 print("<<<<<< Compare structures of gm part type ", typeA, " Round: ", index, " >>>>>>>")
                 index += 1
                 if compareStructures(strucA, strucB):

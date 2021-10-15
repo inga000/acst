@@ -198,28 +198,27 @@ namespace Synthesis
 		int tranIndex = 1;
 		for(auto & transistor : circuit.getSizingResult().getAllTransistors())
 		{
-			writeTransistor(*transistor, tranIndex);
+			writeTransistor(circuit.getPartitioningResult(), *transistor, tranIndex);
 			tranIndex ++;
 		}
 
 		int twoPortIndex = 1;
 		for(auto & twoPort : circuit.getSizingResult().getAllTwoPorts())
 		{
-			writeTwoPort(*twoPort, twoPortIndex);
+			writeTwoPort(circuit.getPartitioningResult(), *twoPort, twoPortIndex);
 			twoPortIndex++;
 		}
 
 		getOutputFile() << ".EOM "  << getId() << "\n\n";
 	}
 
-	void HSPICEOutputFile::writeTransistor(const Partitioning::Transistor & transistor, int tranIndex)
+	void HSPICEOutputFile::writeTransistor(const Partitioning::Result & partitioningResult, const Partitioning::Transistor & transistor, int tranIndex)
 	{
 		const Core::Device & device = **transistor.getArray().getDevices().begin();
 
-		if(usesHspiceLibrary())
-			getOutputFile() << transistor.getDeviceId().getDeviceName() << " ";
-		else
-			getOutputFile() << "m" << tranIndex << " ";
+		std::ostringstream deviceInformation;
+		deviceInformation << createDeviceInformation(partitioningResult, device);
+		getOutputFile() << "m" << deviceInformation.str() << tranIndex << " ";
 
         Core::MosfetDeviceType mosfetDeviceType;
 
@@ -261,14 +260,13 @@ namespace Synthesis
 
 	}
 
-	void HSPICEOutputFile::writeTwoPort(const Partitioning::TwoPort & twoPort, int twoPortIndex)
+	void HSPICEOutputFile::writeTwoPort(const Partitioning::Result & partitioningResult, const Partitioning::TwoPort & twoPort, int twoPortIndex)
 	{
 		const Core::Device & device = **twoPort.getArray().getDevices().begin();
 
-		if(usesHspiceLibrary())
-			getOutputFile() << twoPort.getDeviceId().getDeviceName() << " ";
-		else
-			getOutputFile() << twoPort.getDeviceId().getDeviceName() << twoPortIndex << " ";
+		std::ostringstream deviceInformation;
+		deviceInformation << createDeviceInformation(partitioningResult, device);
+		getOutputFile() << "m" << deviceInformation.str() << twoPortIndex << " ";
 
 		if(device.getDeviceType() == Core::DeviceTypeNames::Capacitor)
 		{
@@ -549,7 +547,7 @@ namespace Synthesis
 
 		const Partitioning::Part & part = partitioningResult.getPart(device);
 		std::string circuitTypeInformation = createCircuitTypeInformation(partitioningResult);
-		deviceInformation << circuitTypeInformation;
+//		deviceInformation << circuitTypeInformation;
 
 		if(part.isTransconductancePart())
 		{
@@ -585,34 +583,50 @@ namespace Synthesis
 	{
 		std::ostringstream transconductorInformation;
 
-		if(transconductor.isComplementary())
+		if(transconductor.isFirstStage())
 		{
-			transconductorInformation << "FirstStage_";
+			if(transconductor.isSimple())
+			{
+				transconductorInformation << "Simple";
+			}
+			else if(transconductor.isFoldedCascode())
+			{
+				transconductorInformation << "FoldedCascode";
+			}
+			else if(transconductor.isTelescopic())
+			{
+				transconductorInformation << "Telescopic";
+			}
+			else if(transconductor.isSymmetrical())
+			{
+				transconductorInformation << "Symmetrical";
+			}
+			else if(transconductor.isComplementary())
+			{
+				transconductorInformation << "Complementary";
+			}
+			transconductorInformation << "FirstStage";
 		}
 		else if(transconductor.isFeedBack())
 		{
-			transconductorInformation << "FeedbackStage_";
-		}
-		else if(transconductor.isFirstStage())
-		{
-			transconductorInformation << "FirstStage_";
+			transconductorInformation << "FeedbackStage";
 		}
 		else if(transconductor.isPrimarySecondStage())
 		{
 			int index = createIndexSecondStage(partitioningResult,transconductor);
-			transconductorInformation << "SecondStage" << index << "_";
+			transconductorInformation << "SecondStage" << index;
 
 		}
 		else if(transconductor.isSecondarySecondStage())
 		{
-			transconductorInformation << "SecondStageWithVoltageBiasAsStageBias_";
+			transconductorInformation << "SecondStageWithVoltageBiasAsStageBias";
 		}
 		else if(transconductor.isThirdStage())
 		{
-			transconductorInformation << "ThirdStage_";
+			transconductorInformation << "ThirdStage";
 		}
 
-		transconductorInformation << "Transconductor_";
+		transconductorInformation << "Transconductor";
 
 		return transconductorInformation.str();
 	}
@@ -681,31 +695,52 @@ namespace Synthesis
 
 		if(isFirstStageBias)
 		{
-			biasInformation << "FirstStage_Stage";
+			const Partitioning::TransconductancePart & transconductor = partitioningResult.getFirstStage();
+			if(transconductor.isSimple())
+			{
+				biasInformation << "Simple";
+			}
+			else if(transconductor.isFoldedCascode())
+			{
+				biasInformation << "FoldedCascode";
+			}
+			else if(transconductor.isTelescopic())
+			{
+				biasInformation << "Telescopic";
+			}
+			else if(transconductor.isSymmetrical())
+			{
+				biasInformation << "Symmetrical";
+			}
+			else if(transconductor.isComplementary())
+			{
+				biasInformation << "Complementary";
+			}
+			biasInformation << "FirstStageStage";
 		}
 		else if(isSecondStageBias)
 		{
 			int index = createIndexSecondStage(partitioningResult,bias);
-			biasInformation << "SecondStage" << index << "_Stage";
+			biasInformation << "SecondStage" << index << "Stage";
 		}
 		else if(isSecondStageBiasWithVoltageBiasAsStageBias)
 		{
-			biasInformation << "SecondStageWithVoltageBiasAsStageBias_Stage";
+			biasInformation << "SecondStageWithVoltageBiasAsStageBiasStage";
 		}
 		else if(isThirdStageBias)
 		{
-			biasInformation << "ThirdStage_Stage";
+			biasInformation << "ThirdStageStage";
 		}
 		else if(isFeedbackStageBias)
 		{
-			biasInformation << "FeedbackdStage_Stage";
+			biasInformation << "FeedbackdStageStage";
 		}
 		else
 		{
 			biasInformation << "Main";
 		}
 
-		biasInformation << "Bias_";
+		biasInformation << "Bias";
 
 		return biasInformation.str();
 	}
@@ -740,14 +775,36 @@ namespace Synthesis
 
 		if(isFirstStageLoad)
 		{
-			loadInformation << "FirstStage_";
+			const Partitioning::TransconductancePart & transconductor = partitioningResult.getFirstStage();
+			if(transconductor.isSimple())
+			{
+				loadInformation << "Simple";
+			}
+			else if(transconductor.isFoldedCascode())
+			{
+				loadInformation << "FoldedCascode";
+			}
+			else if(transconductor.isTelescopic())
+			{
+				loadInformation << "Telescopic";
+			}
+			else if(transconductor.isSymmetrical())
+			{
+				loadInformation << "Symmetrical";
+			}
+			else if(transconductor.isComplementary())
+			{
+				loadInformation << "Complementary";
+			}
+
+			loadInformation << "FirstStage";
 		}
 		else if(isFeedbackStageLoad)
 		{
-			loadInformation << "FeedbackdStage_";
+			loadInformation << "FeedbackdStage";
 		}
 
-		loadInformation << "Load_";
+		loadInformation << "Load";
 
 		return loadInformation.str();
 	}
@@ -758,9 +815,9 @@ namespace Synthesis
 
 		if(resistor.isCompensationResistor())
 		{
-			resistorInformation << "Compensation_";
+			resistorInformation << "Compensation";
 		}
-		resistorInformation << "Resistor_";
+		resistorInformation << "Resistor";
 
 
 
@@ -773,14 +830,14 @@ namespace Synthesis
 
 		if(capacitor.isCompensationCapacitance())
 		{
-			capacitorInformation << "Compensation_";
+			capacitorInformation << "Compensation";
 		}
 		else if(capacitor.isLoadCapacitance())
 		{
-			capacitorInformation << "Load_";
+			capacitorInformation << "Load";
 		}
 
-		capacitorInformation << "Capacitor_";
+		capacitorInformation << "Capacitor";
 
 		return capacitorInformation.str();
 	}
@@ -789,23 +846,23 @@ namespace Synthesis
 	std::string HSPICEOutputFile::createCircuitTypeInformation(const Partitioning::Result & partitioningResult) const
 	{
 		std::ostringstream circuitTypeInformation;
-		circuitTypeInformation << "_";
+
 
 		if(partitioningResult.hasFeedbackStage())
 		{
-			circuitTypeInformation << "FullyDifferential_";
+			circuitTypeInformation << "FullyDifferential";
 		}
 		else if(partitioningResult.getFirstStage().isComplementary())
 		{
-			circuitTypeInformation << "Complementary_";
+			circuitTypeInformation << "Complementary";
 		}
 		else if(partitioningResult.hasSecondarySecondStage())
 		{
-			circuitTypeInformation << "Symmetrical_";
+			circuitTypeInformation << "Symmetrical";
 		}
 		else
 		{
-			circuitTypeInformation << "SingleOutput_";
+			circuitTypeInformation << "SingleOutput";
 		}
 
 		return circuitTypeInformation.str();
