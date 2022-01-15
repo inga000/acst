@@ -1,0 +1,45 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Overview}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Structure Recognition}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Rule Generation}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Partitioning}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Automatic Sizing}{5}{section.1.4}
+\contentsline {section}{\numberline {1.5}Synthesis}{5}{section.1.5}
+\contentsline {section}{\numberline {1.6}Topology Library Generation}{5}{section.1.6}
+\contentsline {chapter}{\numberline {2}Compiling and Installing acst}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}Commands}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}General Commands}{8}{section.3.1}
+\contentsline {section}{\numberline {3.2}Method Specific Commands}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Structure Recognition}{9}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Rule Generation}{10}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Partitioning}{11}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Automatic Sizing}{12}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Synthesis}{14}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Topology Library Generation}{16}{subsection.3.2.6}
+\contentsline {chapter}{\numberline {4}Tests}{17}{chapter.4}
+\contentsline {chapter}{\numberline {5}Examples}{17}{chapter.5}
+\contentsline {chapter}{\numberline {A}Example Input Files}{18}{appendix.A}
+\contentsline {section}{\numberline {A.1}Circuit Netlist}{18}{section.A.1}
+\contentsline {section}{\numberline {A.2}HSpice Mapping File}{19}{section.A.2}
+\contentsline {section}{\numberline {A.3}Supply Net File}{21}{section.A.3}
+\contentsline {section}{\numberline {A.4}Device Types File}{21}{section.A.4}
+\contentsline {section}{\numberline {A.5}Technology File}{23}{section.A.5}
+\contentsline {section}{\numberline {A.6}Circuit Parameters and Specifications}{24}{section.A.6}
+\contentsline {section}{\numberline {A.7}Library File}{25}{section.A.7}
+\contentsline {section}{\numberline {A.8}Circuit Specifications}{25}{section.A.8}
+\contentsline {chapter}{\numberline {B}Output File Examples}{26}{appendix.B}
+\contentsline {section}{\numberline {B.1}Structure Recognition}{26}{section.B.1}
+\contentsline {section}{\numberline {B.2}Rule Generation}{31}{section.B.2}
+\contentsline {section}{\numberline {B.3}Partitioning}{32}{section.B.3}
+\contentsline {section}{\numberline {B.4}Automatic Sizing}{37}{section.B.4}
+\contentsline {section}{\numberline {B.5}Synthesis}{40}{section.B.5}
+\contentsline {section}{\numberline {B.6}Topology Library Generation}{42}{section.B.6}
+\contentsline {chapter}{\numberline {C}Examples of Supported Op-Amps}{43}{appendix.C}
+\contentsline {section}{\numberline {C.1}Symmetrical Op-Amps}{44}{section.C.1}
+\contentsline {section}{\numberline {C.2}Single-Output Op-Amps}{47}{section.C.2}
+\contentsline {section}{\numberline {C.3}Fully-differential Op-Amps}{52}{section.C.3}
+\contentsline {chapter}{\numberline {D}Installation Guide for Supplementary Libraries Needed by acst}{53}{appendix.D}
+\contentsline {section}{\numberline {D.1}Installation of Boost}{53}{section.D.1}
+\contentsline {section}{\numberline {D.2}Installation of RapidXml}{54}{section.D.2}
+\contentsline {section}{\numberline {D.3}Installation of GeCode}{54}{section.D.3}
+\contentsline {chapter}{\nonumberline Bibliography}{56}{chapter*.45}

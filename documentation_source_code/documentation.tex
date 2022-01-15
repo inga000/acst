@@ -1,0 +1,77 @@
+\documentclass[msc,oneside]{eda_thesis}
+
+% Class options:
+%  msc  : Master thesis
+%  da   : Diplomarbeit
+%  bsc  : Bachelor thesis
+%  stua : Studienarbeit
+%  ingp : Ingenieurpraxis
+%  ints : Internship report
+%  outertitle : second title page for cover
+%  oneside, twoside : as usual
+
+\usepackage[utf8]{inputenc}
+% For english texts change package option to english.
+% \usepackage[english]{babel}
+\usepackage[english]{babel}
+
+\usepackage[breaklinks,pdfborder={0 0 0}]{hyperref}
+\usepackage[abbr]{harvard}
+\renewcommand{\harvardurl}[1]{\url{#1}} % fix bug in harvard package
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfig}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{fixltx2e}
+\usepackage[all]{nowidow}
+\usepackage{cite}
+\usepackage{etoolbox}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\makeatletter
+\patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+
+% set options for KOMA script
+%  type setting correction for binding = 5mm
+\KOMAoptions{BCOR=5mm}
+
+\begin{document}
+
+
+\title{acst - An Analog Circuit Synthesis Tool}
+\authors{Inga Abel, Helmut Graeb}
+\address{inga.abel@tum.de}
+
+%\period{1.1.2099 - 31.6.2099} % only for internships
+\maketitle
+
+%\input{abstract}
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+\widowpenalty = 10000000
+\clubpenalty = 10000000
+\displaywidowpenalty = 10000000
+
+\pagebreak
+
+
+\input{Body}
+
+% Include more chapters
+
+
+% Include more appendices
+\pagebreak
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{custom}
+
+\end{document}

@@ -1,0 +1,68 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{tumcdTitlePage}[2010/01/26 Title Page according to TUM Corporate Design]
+\RequirePackage{graphicx}
+
+\ProcessOptions
+
+\newcommand{\tumcd@iflang}[3]
+{%
+	\@ifundefined{iflanguage}{#3}{\@ifundefined{l@#1}{#3}{\iflanguage{#1}{#2}{#3}}}%
+}
+
+\newcommand{\tumcd@lang}[2]{
+  %~ \@ifundefined{iflanguage}{#2}{\iflanguage{german}{#1}{\iflanguage{ngerman}{#1}{#2}}}
+  \tumcd@iflang{german}{#1}{\tumcd@iflang{ngerman}{#1}{#2}}
+}
+
+\newcommand{\tumcd@tum}{\tumcd@lang{Technische Universit\"at M\"unchen}{Technical University of Munich}}
+\newcommand{\tumcd@ei}{\tumcd@lang{Fakult\"at f\"ur Elektrotechnik und Informationstechnik}{Department of Electrical and Computer Engineering}}
+\newcommand{\tumcd@eda}{\tumcd@lang{Lehrstuhl f\"ur Entwurfsautomatisierung}{Chair of Electronic Design Automation}}
+
+\newcommand{\tumcd@title}{\PackageError{tumcdTitlePage}{Title not defined}{Provide a title using \title!}}
+\def\tumcd@subtitle{}
+\newcommand{\tumcd@authors}{}
+%\newcommand{\tumcd@history}{}
+%\newcommand{\tumcd@addauthor}{}
+\newcommand{\tumcd@titletext}{}
+\newcommand{\tumcd@titleback}{}
+
+\renewcommand{\title}[1]{\renewcommand{\tumcd@title}{#1}}
+\providecommand{\subtitle}[1]{}
+\renewcommand{\subtitle}[1]{\def\tumcd@subtitle{#1}}
+\newcommand{\authors}[1]{\renewcommand{\tumcd@authors}{#1}}
+%\newcommand{\addauthorinfo}[1]{\renewcommand{\tumcd@addauthor}{#1}}
+%\newcommand{\history}[1]{\renewcommand{\tumcd@history}{#1}}
+\newcommand{\titletext}[1]{\renewcommand{\tumcd@titletext}{#1}}
+\newcommand{\titleback}[1]{\renewcommand{\tumcd@titleback}{\newpage#1}}
+
+\renewcommand{\maketitle}{
+	\begin{titlepage}
+        \noindent
+        \begin{minipage}{\linewidth}
+            \vspace*{-5mm}
+            \noindent
+            \hfill
+        \end{minipage}
+        \\\vspace{10mm}\\
+        \begin{minipage}{\linewidth}
+            \sf
+            \tumcd@tum\\
+            \tumcd@ei\\
+            \tumcd@eda\\
+            \vspace{15mm}\\
+            {\LARGE\bf\sf \tumcd@title}\\
+            \vspace{5mm}\\
+            \ifx\tumcd@subtitle\empty
+            \else
+                {\Large \tumcd@subtitle%\\
+                }
+                \vspace{10mm}\\
+            \fi
+            {\tumcd@authors}
+            \vspace{10mm}\\
+            {\tumcd@titletext}
+        \end{minipage}
+	\tumcd@titleback
+    \end{titlepage}
+}

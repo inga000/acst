@@ -1,0 +1,19 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.3.16)  8 SEP 2021 11:15
+entering extended mode
+**custom_added_2.tex
+
+! Emergency stop.
+<*> custom_added_2.tex
+                      
+*** (job aborted, file error in nonstop mode)
+
+ 
+Here is how much of TeX's memory you used:
+ 2 strings out of 492891
+ 24 string characters out of 3135206
+ 57050 words of memory out of 3000000
+ 4024 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
