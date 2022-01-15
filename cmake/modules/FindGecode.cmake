@@ -41,7 +41,7 @@ if(NOT GECODE_FEATURES)
 endif()
 
 
-set(GECODE_INCLUDE {file path to gecode}/gecode-release-6.2.0)
+set(GECODE_INCLUDE {file path to gecode directory, eg., usr/local/public/include/gecode-release-6.2.0})
 if(GECODE_INCLUDE STREQUAL "GECODE_INCLUDE-NOTFOUND")
     message("ERROR: Gecode include directory not found!")
 else()
@@ -50,7 +50,7 @@ endif()
 
 foreach(FEATURE ${GECODE_FEATURES})
     if(NOT EXISTS ${GECODE_INCLUDE}/gecode/${FEATURE}.hh)
-        set(MESSAGE "Could not find ${GECODE_INCLUDE}/gecode/${FEATURE}.hh")
+        set(MESSAGE "Could not find ${GECODE_INCLUDE}/gecode/${FEATURE}.hh") ##Please check if this file path points to your gecode header files
         set(GECODE_INCLUDE "")
         break()
     endif()
@@ -58,7 +58,7 @@ endforeach(FEATURE)
 
 set(GECODE_LIBS "")
 foreach(FEATURE ${GECODE_FEATURES})
-    list(APPEND GECODE_LIBS ${GECODE_INCLUDE}/libgecode${FEATURE}.so)
+    list(APPEND GECODE_LIBS ${GECODE_INCLUDE}/libgecode${FEATURE}.so) ##Please check if this file path points to your gecode library files
 endforeach(FEATURE)
 
 message(${GECODE_LIBS})
